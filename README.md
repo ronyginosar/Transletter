@@ -10,7 +10,7 @@ This links to the CSS files <a href="https://github.com/Adir-SL/otiot-new/blob/m
 
 Also it loads the JS scripts from <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.min.js">jquery.min.js</a>, <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.fittext.js">jquery.fittext.js*</a> and <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>.
 
----
+<!-- --- -->
 
 ## letters.html
 This is the Demo page for this project.
@@ -19,4 +19,4 @@ This links to the CSS files <a href="https://github.com/Adir-SL/otiot-new/blob/m
 
 Also it loads the JS scripts from <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.min.js">jquery.min.js</a>, <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/roundslider.min.js">roundslider.min.js</a>, <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.fittext.js">jquery.fittext.js*</a> and <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>.
 
----
+<!-- --- -->
