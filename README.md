@@ -4,4 +4,4 @@ This is a newer version of Gaia Gonen's Project called "otiot" (https://github.c
 
 # File usage
 ### index.html
-The splash page of the project.
+The splash page of the project. This links to the CSS files styles.css and custom.css.
