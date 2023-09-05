@@ -13,7 +13,7 @@ Also it loads the JS scripts from <a href="https://github.com/Adir-SL/otiot-new/
 ---
 
 ### letters.html
-The splash page of the project.
+This is the Demo page for this project.
 
 This links to the CSS files <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/roundslider.min.css">roundslider.min.css</a>, <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/styles.css">styles.css</a> and <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>.
 
