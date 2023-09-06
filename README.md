@@ -50,7 +50,7 @@ This is used as a screen saver.
 4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>
 
 ## about.html
-This is used as a screen saver.
+An "about" page for the project.
 
 1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/normalize.css">normalize.css</a>
 2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/webflow.css">webflow.css</a>
