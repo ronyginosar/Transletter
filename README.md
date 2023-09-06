@@ -27,3 +27,6 @@ This is the Demo page for this project.
 4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>
 
 
+## free.html
+A freeform version to test, "Transformation" as starting word.
+
