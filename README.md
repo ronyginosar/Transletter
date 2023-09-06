@@ -54,12 +54,12 @@ An "about" page for the project.
 
 1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/normalize.css">normalize.css</a>
 2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/webflow.css">webflow.css</a>
-2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/shanis-amazing-project.webflow.css">shanis-amazing-project.webflow.css</a>
-1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/styles.css">styles.css</a>
-2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>
+3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/shanis-amazing-project.webflow.css">shanis-amazing-project.webflow.css</a>
+4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/styles.css">styles.css</a>
+5. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>
 ### 
 1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.min.js">jquery.min.js</a>
 2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/roundslider.min.js">roundslider.min.js</a>
 3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.fittext.js">jquery.fittext.js*</a>
 4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>
-4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/webflow.js">webflow.js</a>
+5. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/webflow.js">webflow.js</a>
