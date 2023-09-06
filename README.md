@@ -22,8 +22,9 @@ This is the Demo page for this project.
 3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>
 ### 
 1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.min.js">jquery.min.js</a>
-2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.fittext.js">jquery.fittext.js*</a>
-3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>
+2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/roundslider.min.js">roundslider.min.js</a>
+3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.fittext.js">jquery.fittext.js*</a>
+4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>
 
 This links to the CSS files <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/roundslider.min.css">roundslider.min.css</a>, <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/styles.css">styles.css</a> and <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>.
 
