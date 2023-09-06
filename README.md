@@ -39,7 +39,7 @@ A freeform version to test, "Transformation" as starting word.
 4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>
 
 ## saver.html
-A screen saver
+This is used as a screen saver.
 
 1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/styles.css">styles.css</a>
 2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>
