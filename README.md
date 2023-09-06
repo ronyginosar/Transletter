@@ -5,6 +5,8 @@ This is a newer version of Gaia Gonen's Project called "otiot" (https://github.c
 # File usage
 ## index.html
 The splash page of the project.
+1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/styles.css">styles.css</a>
+2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>
 
 This links to the CSS files <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/styles.css">styles.css</a> and <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/css/custom.css">custom.css</a>.
 
