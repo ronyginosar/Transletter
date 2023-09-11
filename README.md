@@ -2,7 +2,7 @@
 
 This is a newer version of Gaia Gonen's Project called "otiot" (https://github.com/GaiaGonen/otiot).
 
-# File structure
+# File structure - HTML files
 ## index.html
 The splash page of the project.
 
