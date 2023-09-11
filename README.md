@@ -82,6 +82,9 @@ This has the circular slider element, it's a JQuery plugin, see more <a href="ht
 
 This only gets called from here:
 1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
+2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
+3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
+4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
 
 ## scripts.js
 Cat and dogs functions that do lots of small things.
