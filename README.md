@@ -69,6 +69,7 @@ An "about" page for the project.
 Fits the element's text inside its container to keep it dynamic and/ or responsive.
 
 ## jquery.min.js
+JQuery is a JavaScript library, probably got added for its plugins, or from Webflow.
 
 ## roundslider.min.js
 This has the circular slider element, it's a JQuery plugin, see more <a href="https://roundsliderui.com/">here.</a>
