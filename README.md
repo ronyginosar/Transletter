@@ -71,4 +71,6 @@ Fits the element's text inside its container to keep it dynamic and/ or responsi
 ## jquery.min.js
 ## roundslider.min.js
 ## scripts.js
+Cat and dogs functions that do lots of small things.
+
 ## webflow.js
