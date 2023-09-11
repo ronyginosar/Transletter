@@ -63,3 +63,5 @@ An "about" page for the project.
 3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/jquery.fittext.js">jquery.fittext.js*</a>
 4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/scripts.js">scripts.js</a>
 5. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/webflow.js">webflow.js</a>
+
+# File structure - JS files
