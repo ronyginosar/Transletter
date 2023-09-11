@@ -81,8 +81,8 @@ JQuery is a JavaScript library, probably got added for its plugins, or from Webf
 This has the circular slider element, it's a JQuery plugin, see more <a href="https://roundsliderui.com/">here.</a>
 
 This only gets called from here:
-1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
-2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
+1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/letters.html">letters.html</a>
+2. <a href="https://github.com/Adir-SL/otiot-new/blob/main/free.html">free.html</a>
 3. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
 4. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
 
