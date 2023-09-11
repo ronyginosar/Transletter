@@ -68,7 +68,8 @@ An "about" page for the project.
 ## jquery.fittext.js
 Fits the element's text inside its container to keep it dynamic and/ or responsive.
 
-This gets called from every HTML file.
+> [!NOTE]
+> This gets called from every HTML file.
 
 ## jquery.min.js
 JQuery is a JavaScript library, probably got added for its plugins, or from Webflow.
