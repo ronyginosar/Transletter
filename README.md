@@ -80,6 +80,9 @@ JQuery is a JavaScript library, probably got added for its plugins, or from Webf
 ## roundslider.min.js
 This has the circular slider element, it's a JQuery plugin, see more <a href="https://roundsliderui.com/">here.</a>
 
+This only gets called from here:
+1. <a href="https://github.com/Adir-SL/otiot-new/blob/main/about.html">about.html</a>
+
 ## scripts.js
 Cat and dogs functions that do lots of small things.
 > [!NOTE]
