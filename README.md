@@ -65,3 +65,5 @@ An "about" page for the project.
 5. <a href="https://github.com/Adir-SL/otiot-new/blob/main/assets/js/webflow.js">webflow.js</a>
 
 # File structure - JS files
+## jquery.fittext.js
+## jquery.min.js
