@@ -70,6 +70,8 @@ Fits the element's text inside its container to keep it dynamic and/ or responsi
 
 ## jquery.min.js
 ## roundslider.min.js
+This has the circular slider element, it's a JQuery plugin, see more <a href="https://roundsliderui.com/">here.</a>
+
 ## scripts.js
 Cat and dogs functions that do lots of small things.
 
