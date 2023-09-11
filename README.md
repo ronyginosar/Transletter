@@ -67,3 +67,4 @@ An "about" page for the project.
 # File structure - JS files
 ## jquery.fittext.js
 ## jquery.min.js
+## roundslider.min.js
