@@ -80,8 +80,8 @@ This has the circular slider element, it's a JQuery plugin, see more <a href="ht
 
 ## scripts.js
 Cat and dogs functions that do lots of small things.
-
-This gets called from every HTML file.
+> [!NOTE]
+> This gets called from every HTML file.
 
 ## webflow.js
 From Webflow io.
