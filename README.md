@@ -68,3 +68,5 @@ An "about" page for the project.
 ## jquery.fittext.js
 ## jquery.min.js
 ## roundslider.min.js
+## scripts.js
+## webflow.js
