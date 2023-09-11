@@ -73,7 +73,8 @@ This gets called from every HTML file.
 ## jquery.min.js
 JQuery is a JavaScript library, probably got added for its plugins, or from Webflow.
 
-This gets called from every HTML file.
+> [!NOTE]
+> This gets called from every HTML file.
 
 ## roundslider.min.js
 This has the circular slider element, it's a JQuery plugin, see more <a href="https://roundsliderui.com/">here.</a>
