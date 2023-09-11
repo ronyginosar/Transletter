@@ -66,6 +66,8 @@ An "about" page for the project.
 
 # File structure - JS files
 ## jquery.fittext.js
+Fits the element's text inside its container to keep it dynamic and/ or responsive.
+
 ## jquery.min.js
 ## roundslider.min.js
 ## scripts.js
