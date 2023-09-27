@@ -25,7 +25,8 @@
             if(window.wdthScroll == 710){
                 window.wdthScroll = 50;
             }
-            
+            document.getElementById("scrollPara").style.fontVariationSettings = "wdth " + window.wdthScroll;
+            console.log(document.getElementById("scrollPara").style.fontVariationSettings)
         }
         window.wdthScroll = 50;
     </script>
