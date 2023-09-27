@@ -6,6 +6,9 @@
     <title>Scroll</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
+        :root{
+            --wdth: 50;
+        }
         #wrapper{
             position: absolute;
             inset: 0;
@@ -16,7 +19,7 @@
             font-size: 2em;
             font-family: TransletterGX;
             line-height: 125%;
-            font-variation-settings: "wdth" 50;
+            font-variation-settings: "wdth" var(--wdth);
         }
     </style>
     <script>
@@ -25,8 +28,9 @@
             if(window.wdthScroll == 710){
                 window.wdthScroll = 50;
             }
-            document.getElementById("scrollPara").style.fontVariationSettings = "wdth " + window.wdthScroll;
-            console.log(document.getElementById("scrollPara").style.fontVariationSettings)
+            document.querySelector(':root').style.setProperty('--wdth', window.wdthScroll);
+            // document.getElementById("scrollPara").style.fontVariationSettings = "wdth " + window.wdthScroll;
+            // console.log(document.getElementById("scrollPara").style.fontVariationSettings)
         }
         window.wdthScroll = 50;
     </script>
