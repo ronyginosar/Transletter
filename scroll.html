@@ -25,6 +25,7 @@
     <script>
         function changeWdth(){
             window.wdthScroll += 10;
+            window.count += 1;
             if(window.wdthScroll == 710){
                 window.wdthScroll = 50;
             }
@@ -33,6 +34,7 @@
             // console.log(document.getElementById("scrollPara").style.fontVariationSettings)
         }
         window.wdthScroll = 50;
+        window.count = 0;
     </script>
 </head>
 <body lang="heb" dir="rtl" onscroll="changeWdth();">
