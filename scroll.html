@@ -21,8 +21,11 @@
     </style>
     <script>
         function changeWdth(){
-            window.wdth += 10;
-            console.log(window.wdth)
+            window.wdthScroll += 10;
+            if(window.wdthScroll == 710){
+                window.wdthScroll = 50;
+            }
+            
         }
         window.wdthScroll = 50;
     </script>
