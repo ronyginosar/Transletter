@@ -6,8 +6,26 @@
     <title>Range</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-        
+
     </style>
+    <script>
+        function changeWdth(){
+            window.count += 1;
+            if(window.count < 66){
+                window.wdthScroll += 10;
+            }else{
+                if(window.count > 131){
+                    window.wdthScroll = 50;
+                    window.count = 0;
+                }else{
+                    window.wdthScroll -= 10;
+                }
+            }
+            document.querySelector(':root').style.setProperty('--wdth', window.wdthScroll);
+        }
+        window.wdthScroll = 50;
+        window.count = 0;
+    </script>
 </head>
 <body>
     
