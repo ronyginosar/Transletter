@@ -26,7 +26,7 @@
             font-variation-settings: "wdth" var(--wdth);
         }
         .class-first, .class-second, .class-third, .class-forth{
-            animation: fontVar 5000ms linear infinite;
+            animation: fontVar 4000ms linear infinite;
         }
         .class-first{
             color: blue;
@@ -37,9 +37,11 @@
         }
         .class-third{
             color: green;
+            animation-delay: -2000ms;
         }
         .class-forth{
             color: purple;
+            animation-delay: -3000ms;
         }
         @keyframes fontVar{
             0%{font-variation-settings: "wdth" 50;}
