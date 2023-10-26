@@ -26,7 +26,7 @@
             font-variation-settings: "wdth" var(--wdth);
         }
         .class-first, .class-second, .class-third, .class-forth{
-            animation: fontVar 8000ms linear infinite;
+            animation: fontVar-1 8000ms linear infinite;
         }
         /* .class-first{
             color: blue;
@@ -42,6 +42,13 @@
         .class-forth{
             /* color: purple; */
             animation-delay: -6000ms;
+        }
+        @keyframes fontVar-1{
+            0%{font-variation-settings: "wdth" 50;}
+            40%{font-variation-settings: "wdth" 200;}
+            50%{font-variation-settings: "wdth" 200;}
+            90%{font-variation-settings: "wdth" 50;}
+            100%{font-variation-settings: "wdth" 50;}
         }
         @keyframes fontVar{
             0%{font-variation-settings: "wdth" 50;}
