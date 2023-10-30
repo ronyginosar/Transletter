@@ -111,8 +111,10 @@
             for (j = 0; j < t.length; j++) {
                 t[j].style.fontVariationSettings = '"wdth" ' + randomVar_4;
             }
+
+            setTimeout(function(){ randomWdth(); }, 1500);
         }
-        setInterval(function(){ randomWdth(); }, 1500);
+        randomWdth();
     </script>
 </head>
 <body>
