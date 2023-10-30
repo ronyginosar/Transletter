@@ -81,22 +81,16 @@
         }
     </style>
     <script>
-        function changeWdth(){
-            window.count += 1;
-            if(window.count < 66){
-                window.wdthScroll += 10;
-            }else{
-                if(window.count > 131){
-                    window.wdthScroll = 50;
-                    window.count = 0;
-                }else{
-                    window.wdthScroll -= 10;
-                }
+        function randomWdth(){
+            randomVar = Math.ceil(Math.random() * 700);
+            console.log(randomVar);
+
+            var x = document.getElementsByClassName("class-first");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.fontVariationSettings = '"wdth" ' + randomVar;
             }
-            document.querySelector(':root').style.setProperty('--wdth', window.wdthScroll);
         }
-        window.wdthScroll = 50;
-        window.count = 0;
     </script>
 </head>
 <body>
