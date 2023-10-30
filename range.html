@@ -82,10 +82,31 @@
     </style>
     <script>
         function randomWdth(){
-            randomVar = Math.ceil(Math.random() * 700);
-            console.log(randomVar);
+            randomVar_1 = Math.ceil(Math.random() * 700);
+            randomVar_2 = Math.ceil(Math.random() * 700);
+            randomVar_3 = Math.ceil(Math.random() * 700);
+            randomVar_4 = Math.ceil(Math.random() * 700);
+            // console.log(randomVar);
 
             var x = document.getElementsByClassName("class-first");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.fontVariationSettings = '"wdth" ' + randomVar;
+            }
+
+            var x = document.getElementsByClassName("second-first");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.fontVariationSettings = '"wdth" ' + randomVar;
+            }
+
+            var x = document.getElementsByClassName("third-first");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.fontVariationSettings = '"wdth" ' + randomVar;
+            }
+
+            var x = document.getElementsByClassName("fourch-first");
             var i;
             for (i = 0; i < x.length; i++) {
                 x[i].style.fontVariationSettings = '"wdth" ' + randomVar;
