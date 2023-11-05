@@ -22,8 +22,10 @@
     <script src="assets/js/scripts.js"></script>
     <script>
       function correctLetter(){
+        window.whatLetter += 1;
         document.getElementById('charDiv_1').innerText = "ב";
       }
+      window.whatLetter = 1;
       setInterval(function(){ correctLetter(); }, 8100);
     </script>
     <!-- endinject -->
