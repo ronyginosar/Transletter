@@ -23,6 +23,9 @@
     <script>
       function correctLetter(){
         window.whatLetter += 1;
+        if(window.whatLetter == 28){
+          window.whatLetter = 0;
+        }
         document.getElementById('charDiv_1').innerText = "ב";
       }
       window.whatLetter = 1;
