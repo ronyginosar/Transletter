@@ -1905,8 +1905,8 @@ input[type=range]::-webkit-slider-runnable-track {
     text-align: center;
     line-height: 60vh;
     opacity: 0;
-    -webkit-animation: otAnim 8s ease-in-out;
-    animation: otAnim 8s ease-in-out;
+    -webkit-animation: otAnim 8s ease-in-out infinite;
+    animation: otAnim 8s ease-in-out infinite;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards
 }
