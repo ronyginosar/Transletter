@@ -24,7 +24,13 @@
             font-family: TransletterGX;
             font-variation-settings: 50 var(--wdth);
         }
-
+        @keyframes charAnim {
+            0%{font-variation-settings: 50 var(--wdth);}
+            45%{font-variation-settings: 700 var(--wdth);}
+            55%{font-variation-settings: 700 var(--wdth);}
+            90%{font-variation-settings: 50 var(--wdth);}
+            100%{font-variation-settings: 50 var(--wdth);}
+        }
     </style>
 </head>
 <body lang="heb" dir="rtl" onscroll="changeWdth();">
