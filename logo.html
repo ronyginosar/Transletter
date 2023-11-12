@@ -21,9 +21,23 @@
             font-family: TransletterGX;
             font-variation-settings: 'wdth' 50;
         }
-        #logoPara span{
+        #logoPara nobr span{
             animation: charAnim 10000ms linear infinite;
+            animation-delay: -2000ms;
         }
+        #logoPara nobr span:nth-of-type(2){
+            animation-delay: -1500ms;
+        }
+        #logoPara nobr span:nth-of-type(3){
+            animation-delay: -1000ms;
+        }
+        #logoPara nobr span:nth-of-type(4){
+            animation-delay: -500ms;
+        }
+        #logoPara nobr span:nth-of-type(5){
+            animation-delay: 0;
+        }
+
         @keyframes charAnim {
             0%{font-variation-settings: 'wdth' 50;}
             45%{font-variation-settings: 'wdth' 700;}
