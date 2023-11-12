@@ -14,45 +14,27 @@
             inset: 0;
             height: 200vh;
         }
-        #scrollPara{
+        #logoPara{
             padding: 12.5% 25%;
             font-size: 2.5vw;
             font-family: TransletterGX;
             line-height: 125%;
             font-variation-settings: "wdth" var(--wdth);
         }
-        #scrollPara nobr{
+        #logoPara nobr{
             font-variation-settings: "wdth" var(--wdth);
         }
         @media (max-width:1100px) {
-            #scrollPara{
+            #logoPara{
                 padding: 12.5% 12.5%;
                 font-size: 3.25vw;
             }
         }
     </style>
-    <script>
-        function changeWdth(){
-            window.count += 1;
-            if(window.count < 66){
-                window.wdthScroll += 10;
-            }else{
-                if(window.count > 131){
-                    window.wdthScroll = 50;
-                    window.count = 0;
-                }else{
-                    window.wdthScroll -= 10;
-                }
-            }
-            document.querySelector(':root').style.setProperty('--wdth', window.wdthScroll);
-        }
-        window.wdthScroll = 50;
-        window.count = 0;
-    </script>
 </head>
 <body lang="heb" dir="rtl" onscroll="changeWdth();">
     <div id="wrapper">
-        <p id="scrollPara">
+        <p id="logoPara">
             <nobr>
             'תנואות' הוא פרויקט טיפוגרפי ניסיוני, החוקר את
             </nobr><br/>
