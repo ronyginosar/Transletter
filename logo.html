@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        :root{
+            --wdth: 50;
+        }
+        #wrapper{
+            position: absolute;
+            inset: 0;
+            height: 200vh;
+        }
+        #scrollPara{
+            padding: 12.5% 25%;
+            font-size: 2.5vw;
+            font-family: TransletterGX;
+            line-height: 125%;
+            font-variation-settings: "wdth" var(--wdth);
+        }
+        #scrollPara nobr{
+            font-variation-settings: "wdth" var(--wdth);
+        }
+        @media (max-width:1100px) {
+            #scrollPara{
+                padding: 12.5% 12.5%;
+                font-size: 3.25vw;
+            }
+        }
+    </style>
+    <script>
+        function changeWdth(){
+            window.count += 1;
+            if(window.count < 66){
+                window.wdthScroll += 10;
+            }else{
+                if(window.count > 131){
+                    window.wdthScroll = 50;
+                    window.count = 0;
+                }else{
+                    window.wdthScroll -= 10;
+                }
+            }
+            document.querySelector(':root').style.setProperty('--wdth', window.wdthScroll);
+        }
+        window.wdthScroll = 50;
+        window.count = 0;
+    </script>
+</head>
+<body lang="heb" dir="rtl" onscroll="changeWdth();">
+    <div id="wrapper">
+        <p id="scrollPara">
+            <nobr>
+            'תנואות' הוא פרויקט טיפוגרפי ניסיוני, החוקר את
+            </nobr><br/>
+            <nobr>
+            תולדותיו וסגנונותיו של כתב היד העברי, בתוך סביבה
+            </nobr><br/>
+            <nobr>
+            טכנולוגית עכשווית. המדיום הוא גופן וריאבלי, המוצג דרך
+            </nobr><br/>
+            <nobr>
+            ממשק דיגיטלי אינטרקטיבי.
+            </nobr><br/>
+            <nobr>
+            אנו חיים בשלב מעבר, בתקופה שבה הולך ונעלם כתב היד,
+            </nobr><br/>
+            <nobr>
+            לטובת תקשורת ואינטימיות דיגיטלית. עבורי, זהו המקום
+            </nobr><br/>
+            <nobr>
+            והזמן להנציח את מורשת הצורניות מן העבר, ולברר כיצד
+            </nobr><br/>
+            <nobr>
+            היא עוברת טרנספורמציה או אדפטציה להווה.
+            </nobr><br/>
+        </p>
+    </div>
+</body>
+</html>
