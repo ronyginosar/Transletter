@@ -14,11 +14,11 @@
         :root{
             --wdth: 50;
         }
-        #wrapper{
+        /* #wrapper{
             position: absolute;
             inset: 0;
             height: 200vh;
-        }
+        } */
         #scrollPara{
             padding: 12.5% 25%;
             font-size: 2.5vw;
@@ -36,11 +36,59 @@
             }
         }
     </style>
+    <script>
+        function changeWdth(){
+            window.count += 1;
+            if(window.count < 66){
+                window.wdthScroll += 10;
+            }else{
+                if(window.count > 131){
+                    window.wdthScroll = 50;
+                    window.count = 0;
+                }else{
+                    window.wdthScroll -= 10;
+                }
+            }
+            document.querySelector(':root').style.setProperty('--wdth', window.wdthScroll);
+        }
+        window.wdthScroll = 50;
+        window.count = 0;
+    </script>
 </head>
-<body>
+<body lang="heb" dir="rtl" onscroll="changeWdth();">
 
     <iframe src="new-logo.html"></iframe>
-    <iframe src="scroll-section.html"></iframe>
+    <!-- <iframe src="scroll-section.html"></iframe> -->
+
+    <div id="wrapper">
+        <p id="scrollPara">
+            <nobr>
+            'תנואות' הוא פרויקט טיפוגרפי ניסיוני, החוקר את
+            </nobr><br/>
+            <nobr>
+            תולדותיו וסגנונותיו של כתב היד העברי, בתוך סביבה
+            </nobr><br/>
+            <nobr>
+            טכנולוגית עכשווית. המדיום הוא גופן וריאבלי, המוצג דרך
+            </nobr><br/>
+            <nobr>
+            ממשק דיגיטלי אינטרקטיבי.
+            </nobr><br/>
+            <nobr>
+            אנו חיים בשלב מעבר, בתקופה שבה הולך ונעלם כתב היד,
+            </nobr><br/>
+            <nobr>
+            לטובת תקשורת ואינטימיות דיגיטלית. עבורי, זהו המקום
+            </nobr><br/>
+            <nobr>
+            והזמן להנציח את מורשת הצורניות מן העבר, ולברר כיצד
+            </nobr><br/>
+            <nobr>
+            היא עוברת טרנספורמציה או אדפטציה להווה.
+            </nobr><br/>
+        </p>
+    </div>
+
     <iframe src="screen-saver.html"></iframe>
     <iframe src="letter-range.html"></iframe>
 
