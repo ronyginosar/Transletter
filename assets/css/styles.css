@@ -88,7 +88,7 @@ a {
     -webkit-font-feature-settings: "kern" on, "liga" on, "calt" on;
     -ms-font-feature-settings: "kern" on, "liga" on, "calt" on;
     -o-font-feature-settings: "kern" on, "liga" on, "calt" on;
-    font-variation-settings: "wdth" 100;
+    font-variation-settings: "vrot" 100;
     outline: none !important
 }
 
@@ -406,7 +406,7 @@ p {
 }
 
 .ktav {
-    font-variation-settings: "wdth" 700
+    font-variation-settings: "vrot" 700
 }
 
 .blue {
@@ -643,7 +643,7 @@ nav li {
 nav li.active,
 nav li:hover {
     color: #3232be;
-    font-variation-settings: "wdth" 700
+    font-variation-settings: "vrot" 700
 }
 
 nav li.active {
@@ -676,7 +676,7 @@ nav a.inactive {
 }
 
 .ham-wrapper .nav-title:hover .letter-wrapper {
-    font-variation-settings: "wdth" 500 !important;
+    font-variation-settings: "vrot" 500 !important;
 }
 
 .nav-title {
@@ -1079,49 +1079,49 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 }
 
 .wght-change-letter .letter-wrapper:first-of-type {
-    font-variation-settings: "wdth" 400
+    font-variation-settings: "vrot" 400
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(2) {
-    font-variation-settings: "wdth" 100
+    font-variation-settings: "vrot" 100
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(3) {
-    font-variation-settings: "wdth" 700
+    font-variation-settings: "vrot" 700
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(4),
 .wght-change-letter .letter-wrapper:nth-of-type(5),
 .wght-change-letter .letter-wrapper:nth-of-type(6) {
-    font-variation-settings: "wdth" 200
+    font-variation-settings: "vrot" 200
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(7) {
-    font-variation-settings: "wdth" 300
+    font-variation-settings: "vrot" 300
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(8) {
-    font-variation-settings: "wdth" 600
+    font-variation-settings: "vrot" 600
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(9) {
-    font-variation-settings: "wdth" 400
+    font-variation-settings: "vrot" 400
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(10) {
-    font-variation-settings: "wdth" 100
+    font-variation-settings: "vrot" 100
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(11) {
-    font-variation-settings: "wdth" 700
+    font-variation-settings: "vrot" 700
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(12) {
-    font-variation-settings: "wdth" 200
+    font-variation-settings: "vrot" 200
 }
 
 .wght-change-letter .letter-wrapper:nth-of-type(13) {
-    font-variation-settings: "wdth" 500
+    font-variation-settings: "vrot" 500
 }
 
 .letter-wrapper {
@@ -1233,7 +1233,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row .text-row:first-of-type .row-input {
     font-size: 187px;
-    font-variation-settings: "wdth" 250
+    font-variation-settings: "vrot" 250
 }
 
 @media (min-width:1700px) {
@@ -1244,7 +1244,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row .text-row:nth-of-type(2) .row-input {
     font-size: 97px;
-    font-variation-settings: "wdth" 400;
+    font-variation-settings: "vrot" 400;
     line-height: .5;
     letter-spacing: 1px
 }
@@ -1257,7 +1257,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row .text-row:nth-of-type(3) .row-input {
     font-size: 27px;
-    font-variation-settings: "wdth" 500;
+    font-variation-settings: "vrot" 500;
     line-height: 1.7;
     letter-spacing: .5px;
     margin-bottom: 10px
@@ -1271,7 +1271,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row .text-row:nth-of-type(4) .row-input {
     font-size: 16px;
-    font-variation-settings: "wdth" 100;
+    font-variation-settings: "vrot" 100;
     line-height: 1.5
 }
 
@@ -1283,7 +1283,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row .text-row:nth-of-type(5) .row-input {
     font-size: 28px;
-    font-variation-settings: "wdth" 700;
+    font-variation-settings: "vrot" 700;
     line-height: 1.1;
     margin: 15px 0 12px
 }
@@ -1296,7 +1296,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row .text-row:nth-of-type(6) .row-input {
     font-size: 16px;
-    font-variation-settings: "wdth" 700;
+    font-variation-settings: "vrot" 700;
     line-height: 2
 }
 
@@ -1628,7 +1628,7 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 .free-page-wrapper .show-btn-wrapper:hover .show-btn {
-    font-variation-settings: "wdth" 700
+    font-variation-settings: "vrot" 700
 }
 
 .free-page-wrapper .round-slider .rs-handle:after {
@@ -1871,27 +1871,27 @@ input[type=range]::-webkit-slider-runnable-track {
     color: #91aedb;
     text-align: center;
     font-size: 3.5vh;
-    font-variation-settings: "wdth" 100
+    font-variation-settings: "vrot" 100
 }
 
 .screensaver .wrapper .logoDiv span:nth-of-type(2) {
-    font-variation-settings: "wdth" 200
+    font-variation-settings: "vrot" 200
 }
 
 .screensaver .wrapper .logoDiv span:nth-of-type(3) {
-    font-variation-settings: "wdth" 300
+    font-variation-settings: "vrot" 300
 }
 
 .screensaver .wrapper .logoDiv span:nth-of-type(4) {
-    font-variation-settings: "wdth" 400
+    font-variation-settings: "vrot" 400
 }
 
 .screensaver .wrapper .logoDiv span:nth-of-type(5) {
-    font-variation-settings: "wdth" 500
+    font-variation-settings: "vrot" 500
 }
 
 .screensaver .wrapper .logoDiv span:nth-of-type(6) {
-    font-variation-settings: "wdth" 600
+    font-variation-settings: "vrot" 600
 }
 
 .screensaver .otDiv {
@@ -1922,121 +1922,121 @@ input[type=range]::-webkit-slider-runnable-track {
 
 @-webkit-keyframes otAnim {
     0% {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 0;
         left: -20%
     }
 
     3% {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 1;
         left: 0
     }
 
     5% {
-        font-variation-settings: "wdth" 100
+        font-variation-settings: "vrot" 100
     }
 
     8% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     10% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     16% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     18% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     24% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     26% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     32% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     34% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     40% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     42% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     45% {
-        font-variation-settings: "wdth" 700
+        font-variation-settings: "vrot" 700
     }
 
     52% {
-        font-variation-settings: "wdth" 700
+        font-variation-settings: "vrot" 700
     }
 
     58% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     60% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     66% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     68% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     74% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     76% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     82% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     84% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     90% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     92% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     95% {
-        font-variation-settings: "wdth" 100
+        font-variation-settings: "vrot" 100
     }
 
     97% {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 1;
         left: 0
     }
 
     to {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 0;
         left: 20%
     }
@@ -2044,121 +2044,121 @@ input[type=range]::-webkit-slider-runnable-track {
 
 @keyframes otAnim {
     0% {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 0;
         left: -20%
     }
 
     3% {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 1;
         left: 0
     }
 
     5% {
-        font-variation-settings: "wdth" 100
+        font-variation-settings: "vrot" 100
     }
 
     8% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     10% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     16% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     18% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     24% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     26% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     32% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     34% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     40% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     42% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     45% {
-        font-variation-settings: "wdth" 700
+        font-variation-settings: "vrot" 700
     }
 
     52% {
-        font-variation-settings: "wdth" 700
+        font-variation-settings: "vrot" 700
     }
 
     58% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     60% {
-        font-variation-settings: "wdth" 600
+        font-variation-settings: "vrot" 600
     }
 
     66% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     68% {
-        font-variation-settings: "wdth" 500
+        font-variation-settings: "vrot" 500
     }
 
     74% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     76% {
-        font-variation-settings: "wdth" 400
+        font-variation-settings: "vrot" 400
     }
 
     82% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     84% {
-        font-variation-settings: "wdth" 300
+        font-variation-settings: "vrot" 300
     }
 
     90% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     92% {
-        font-variation-settings: "wdth" 200
+        font-variation-settings: "vrot" 200
     }
 
     95% {
-        font-variation-settings: "wdth" 100
+        font-variation-settings: "vrot" 100
     }
 
     97% {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 1;
         left: 0
     }
 
     to {
-        font-variation-settings: "wdth" 100;
+        font-variation-settings: "vrot" 100;
         opacity: 0;
         left: 20%
     }
@@ -2225,12 +2225,12 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 .container-3 .paragraph {
-    font-variation-settings: "wdth" 700;
+    font-variation-settings: "vrot" 700;
     font-size: 32px
 }
 
 .container-3 .paragraph-12 {
-    font-variation-settings: "wdth" 700
+    font-variation-settings: "vrot" 700
 }
 
 .inactive-tab {
@@ -2243,31 +2243,31 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 .inactive-tab.w--current {
-    font-variation-settings: "wdth" 700;
+    font-variation-settings: "vrot" 700;
     border-color: #fff
 }
 
 .inactive-tab.w--current div {
-    font-variation-settings: "wdth" 700;
+    font-variation-settings: "vrot" 700;
     transition: all .2s
 }
 
 .paragraph-4 span:nth-of-type(2) {
-    font-variation-settings: "wdth" 300
+    font-variation-settings: "vrot" 300
 }
 
 .paragraph-4 span:nth-of-type(3) {
-    font-variation-settings: "wdth" 500
+    font-variation-settings: "vrot" 500
 }
 
 .paragraph-4 span:nth-of-type(4),
 .paragraph-6,
 .paragraph-28 span {
-    font-variation-settings: "wdth" 700
+    font-variation-settings: "vrot" 700
 }
 
 .heading-4 {
-    font-variation-settings: "wdth" 500
+    font-variation-settings: "vrot" 500
 }
 
 .text-block-6 {
