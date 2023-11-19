@@ -1830,7 +1830,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .screensaver {
     background-color: #231f20;
-    background-color: #fffabe;
+    background-color: #fff;
     font: 50vw TransletterGX;
     overflow: hidden;
     height: 100vh;
