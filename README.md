@@ -1,6 +1,7 @@
 # otiot-new
 
 This is a newer version of Gaia Gonen's Project called "otiot" (https://github.com/GaiaGonen/otiot).
+And Adir's SL https://github.com/Adir-SL/otiot-new
 
 # File structure - HTML files
 ## index.html
