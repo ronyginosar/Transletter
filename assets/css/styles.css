@@ -1,3 +1,8 @@
+:root {
+    /* GLOBAL VARIABLES */
+    --logoAnimationSpeed: 10000ms;
+}
+
 button,
 input {
     -webkit-appearance: none;
@@ -77,12 +82,14 @@ a {
 }
 
 @font-face {
+    /* font-family: TransletterGX; */
     font-family: TransletterGX;
-    src: url(fonts/TransletterGX.ttf)
+    /* src: url(fonts/TransletterGX.ttf) */
+    src: url('../font/Transletter_v7VF.ttf')
 }
 
 * {
-    font-family: TransletterGX, arial;
+    font-family: TransletterGX;
     font-feature-settings: "kern" on, "liga" on, "calt" on;
     -moz-font-feature-settings: "kern" on, "liga" on, "calt" on;
     -webkit-font-feature-settings: "kern" on, "liga" on, "calt" on;
