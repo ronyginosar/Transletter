@@ -1,0 +1,402 @@
+
+
+.screensaver {
+    background-color: #231f20;
+    background-color: #fff;
+    font: 50vw TransletterGX;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+    z-index: -1
+}
+
+.screensaver .wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #000;
+    -webkit-animation: fontColor 8s linear;
+    animation: fontColor 8s linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: none
+}
+
+.screensaver .logoDiv {
+    position: absolute;
+    bottom: 2.5vh;
+    width: 100%;
+    color: #91aedb;
+    text-align: center;
+    font-size: 3.5vh;
+    font-variation-settings: "vrot" 100
+}
+
+.wrapper{
+    position: absolute;
+    bottom: 2.5vh;
+    width: 100%;
+    color: #91aedb;
+    text-align: center;
+    font-size: 3.5vh;
+    font-variation-settings: "vrot" 100;
+/* BAD NAME! */
+}
+
+
+.screensaver .wrapper .logoDiv span:nth-of-type(2) {
+    font-variation-settings: "vrot" 200
+}
+
+.screensaver .wrapper .logoDiv span:nth-of-type(3) {
+    font-variation-settings: "vrot" 300
+}
+
+.screensaver .wrapper .logoDiv span:nth-of-type(4) {
+    font-variation-settings: "vrot" 400
+}
+
+.screensaver .wrapper .logoDiv span:nth-of-type(5) {
+    font-variation-settings: "vrot" 500
+}
+
+.screensaver .wrapper .logoDiv span:nth-of-type(6) {
+    font-variation-settings: "vrot" 600
+}
+
+.screensaver .otDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 60vh;
+    opacity: 0;
+    -webkit-animation: otAnim 8s ease-in-out infinite;
+    animation: otAnim 8s ease-in-out infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards
+}
+
+.screensaver .otDiv:nth-of-type(2) {
+    left: -30%
+}
+
+.screensaver.active {
+    opacity: 1;
+    z-index: 100000
+}
+
+@-webkit-keyframes otAnim {
+    0% {
+        font-variation-settings: "vrot" 100;
+        opacity: 0;
+        left: -20%
+    }
+
+    3% {
+        font-variation-settings: "vrot" 100;
+        opacity: 1;
+        left: 0
+    }
+
+    5% {
+        font-variation-settings: "vrot" 100
+    }
+
+    8% {
+        font-variation-settings: "vrot" 200
+    }
+
+    10% {
+        font-variation-settings: "vrot" 200
+    }
+
+    16% {
+        font-variation-settings: "vrot" 300
+    }
+
+    18% {
+        font-variation-settings: "vrot" 300
+    }
+
+    24% {
+        font-variation-settings: "vrot" 400
+    }
+
+    26% {
+        font-variation-settings: "vrot" 400
+    }
+
+    32% {
+        font-variation-settings: "vrot" 500
+    }
+
+    34% {
+        font-variation-settings: "vrot" 500
+    }
+
+    40% {
+        font-variation-settings: "vrot" 600
+    }
+
+    42% {
+        font-variation-settings: "vrot" 600
+    }
+
+    45% {
+        font-variation-settings: "vrot" 700
+    }
+
+    52% {
+        font-variation-settings: "vrot" 700
+    }
+
+    58% {
+        font-variation-settings: "vrot" 600
+    }
+
+    60% {
+        font-variation-settings: "vrot" 600
+    }
+
+    66% {
+        font-variation-settings: "vrot" 500
+    }
+
+    68% {
+        font-variation-settings: "vrot" 500
+    }
+
+    74% {
+        font-variation-settings: "vrot" 400
+    }
+
+    76% {
+        font-variation-settings: "vrot" 400
+    }
+
+    82% {
+        font-variation-settings: "vrot" 300
+    }
+
+    84% {
+        font-variation-settings: "vrot" 300
+    }
+
+    90% {
+        font-variation-settings: "vrot" 200
+    }
+
+    92% {
+        font-variation-settings: "vrot" 200
+    }
+
+    95% {
+        font-variation-settings: "vrot" 100
+    }
+
+    97% {
+        font-variation-settings: "vrot" 100;
+        opacity: 1;
+        left: 0
+    }
+
+    to {
+        font-variation-settings: "vrot" 100;
+        opacity: 0;
+        left: 20%
+    }
+}
+
+@keyframes otAnim {
+    0% {
+        font-variation-settings: "vrot" 100;
+        opacity: 0;
+        left: -20%
+    }
+
+    3% {
+        font-variation-settings: "vrot" 100;
+        opacity: 1;
+        left: 0
+    }
+
+    5% {
+        font-variation-settings: "vrot" 100
+    }
+
+    8% {
+        font-variation-settings: "vrot" 200
+    }
+
+    10% {
+        font-variation-settings: "vrot" 200
+    }
+
+    16% {
+        font-variation-settings: "vrot" 300
+    }
+
+    18% {
+        font-variation-settings: "vrot" 300
+    }
+
+    24% {
+        font-variation-settings: "vrot" 400
+    }
+
+    26% {
+        font-variation-settings: "vrot" 400
+    }
+
+    32% {
+        font-variation-settings: "vrot" 500
+    }
+
+    34% {
+        font-variation-settings: "vrot" 500
+    }
+
+    40% {
+        font-variation-settings: "vrot" 600
+    }
+
+    42% {
+        font-variation-settings: "vrot" 600
+    }
+
+    45% {
+        font-variation-settings: "vrot" 700
+    }
+
+    52% {
+        font-variation-settings: "vrot" 700
+    }
+
+    58% {
+        font-variation-settings: "vrot" 600
+    }
+
+    60% {
+        font-variation-settings: "vrot" 600
+    }
+
+    66% {
+        font-variation-settings: "vrot" 500
+    }
+
+    68% {
+        font-variation-settings: "vrot" 500
+    }
+
+    74% {
+        font-variation-settings: "vrot" 400
+    }
+
+    76% {
+        font-variation-settings: "vrot" 400
+    }
+
+    82% {
+        font-variation-settings: "vrot" 300
+    }
+
+    84% {
+        font-variation-settings: "vrot" 300
+    }
+
+    90% {
+        font-variation-settings: "vrot" 200
+    }
+
+    92% {
+        font-variation-settings: "vrot" 200
+    }
+
+    95% {
+        font-variation-settings: "vrot" 100
+    }
+
+    97% {
+        font-variation-settings: "vrot" 100;
+        opacity: 1;
+        left: 0
+    }
+
+    to {
+        font-variation-settings: "vrot" 100;
+        opacity: 0;
+        left: 20%
+    }
+}
+
+@-webkit-keyframes fontColor {
+    0% {
+        color: #000
+    }
+
+    45% {
+        color: #3232be
+    }
+
+    52% {
+        color: #3232be
+    }
+
+    to {
+        color: #000
+    }
+}
+
+@keyframes fontColor {
+    0% {
+        color: #000
+    }
+
+    45% {
+        color: #3232be
+    }
+
+    52% {
+        color: #3232be
+    }
+
+    to {
+        color: #000
+    }
+}
+
+body.screensaver {
+    pointer-events: all;
+    opacity: 1
+}
+
+body.screensaver .wrapper {
+    cursor: default
+}
+
+body.screensaver nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000
+}
