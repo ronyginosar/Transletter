@@ -7,20 +7,20 @@
     <!-- inject:css -->
 
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/screensaver.css">
+    <!-- <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
     <!-- endinject -->
   </head>
-<body class="screensaver" style="opacity: 1;">
-    <div class="wrapper" id="wrapperDiv">
+<body class="screensaver">
+    <div class="wrapper">
         <div class="otDiv" id="charDiv_1">א</div>
-
     </div>
     <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="assets/js/roundslider.min.js" type="text/javascript"></script>
-    <!-- inject:js -->
-    <script src="assets/js/jquery.fittext.js"></script>
+    <!-- <script src="assets/js/roundslider.min.js" type="text/javascript"></script> -->
+    <!-- <script src="assets/js/jquery.fittext.js"></script> -->
     <!-- <script src="assets/js/scripts.js"></script> -->
     <script>
+      let changeSpeed = 8000;
       function correctLetter(){
         window.whatLetter += 1;
         if(window.whatLetter == 28){
@@ -30,8 +30,7 @@
       }
       window.whatLetter = 0;
       const letters = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ך", "ל", "מ", "ם", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ץ", "ק", "ר", "ש", "ת"];
-      setInterval(function(){ correctLetter(); }, 8000);
+      setInterval(function(){ correctLetter(); }, changeSpeed);
     </script>
-    <!-- endinject -->
   </body>
 </html>
