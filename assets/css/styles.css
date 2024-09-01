@@ -91,7 +91,8 @@ a {
     src: url('../font/Transletter_v7VF.ttf')
 }
 
-* {
+/* * { */
+html,body {
     font-family: TransletterGX;
     font-feature-settings: "kern" on, "liga" on, "calt" on;
     -moz-font-feature-settings: "kern" on, "liga" on, "calt" on;
@@ -160,14 +161,14 @@ input[type=range] {
     content: "";
     width: 25px;
     height: 25px;
-    background-image: url(../imgs/arrow.gif);
+    background-image: url(../gui_images/arrow.gif);
     background-position: 50%;
     background-size: 100%;
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%)
+    /* transform: translateY(-50%) */
 }
 
 @media (min-width:1700px) {
@@ -1010,7 +1011,7 @@ section.by-letter .letter-row .input-box:after {
     top: 67%;
     height: 80%;
     width: 2px;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     background: #000;
     -webkit-animation: flicker 1s step-end infinite;
     animation: flicker 1s step-end infinite;
@@ -1472,7 +1473,7 @@ input[type=range]::-webkit-slider-runnable-track {
     left: 10px;
     border-radius: 5px;
     background-position: 50%;
-    background-image: url(../imgs/go.svg);
+    background-image: url(../gui_images/go.svg);
     background-repeat: no-repeat
 }
 
@@ -1482,7 +1483,7 @@ input[type=range]::-webkit-slider-runnable-track {
         font-size: 40px;
         height: 40px;
         top: 50%;
-        transform: translateY(-50%);
+        /* transform: translateY(-50%); */
         left: 15px
     }
 }
@@ -1616,14 +1617,14 @@ input[type=range]::-webkit-slider-runnable-track {
 .free-page-wrapper .show-btn:after {
     content: "";
     position: absolute;
-    background-image: url(../imgs/go-big.svg);
+    background-image: url(../gui_images/go-big.svg);
     height: 20px;
     width: 20px;
     background-size: contain;
     background-repeat: no-repeat;
     left: 20px;
     top: 50%;
-    transform: translateY(-50%)
+    /* transform: translateY(-50%) */
 }
 
 @media (min-width:2700px) {

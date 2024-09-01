@@ -12,7 +12,6 @@
     font-family: TransletterGX;
     line-height: 125%;
     font-variation-settings: "vrot" var(--vrot);
-    overflow: hidden;
 }
 
 #scrollPara nobr{

@@ -2,5 +2,5 @@ iframe{
     width: calc(100vw - 32px);
     /* HIGH PRIORITY */
     height: 90vh;
-    border: none;
+    /* border: none; */
 }

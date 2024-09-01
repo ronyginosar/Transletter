@@ -11,7 +11,7 @@
 
 #logoPara{
     font-size: 20vw;
-    transform: translateY(-6vh);
+    /* transform: translateY(-6vh); */
 }
 #logoPara nobr{
     font-family: TransletterGX;
