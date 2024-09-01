@@ -1,12 +1,14 @@
 /* future parametrize all this */
 
 #wrapper{
+    /* WARNING for animated logo, causes confusion... */
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 #logoPara{
     font-size: 20vw;
     transform: translateY(-6vh);

@@ -1,7 +1,10 @@
 :root {
     /* GLOBAL VARIABLES */
     --logoAnimationSpeed: 10000ms;
+    --vrot: 50;
 }
+
+/* TODO unify wrapper div/class */
 
 button,
 input {
@@ -117,8 +120,9 @@ body {
     body.letters {
         width: 100vw;
         height: 100vh;
-        overflow: hidden;
-        position: fixed
+        /* note: this killed the page scroll */
+        /* overflow: hidden; */
+        /* position: fixed */
     }
 }
 
@@ -820,7 +824,8 @@ nav a.inactive {
     height: 100vh;
     padding: 0;
     margin: 0;
-    overflow: hidden
+    /* note: this killed the page scroll */
+    /* overflow: hidden */ 
 }
 
 .home-page .container {
@@ -1871,7 +1876,7 @@ input[type=range]::-webkit-slider-runnable-track {
     cursor: none
 }
 
-.screensaver .wrapper .logoDiv {
+.screensaver .logoDiv {
     position: absolute;
     bottom: 2.5vh;
     width: 100%;
@@ -1879,6 +1884,17 @@ input[type=range]::-webkit-slider-runnable-track {
     text-align: center;
     font-size: 3.5vh;
     font-variation-settings: "vrot" 100
+}
+
+.wrapper{
+    position: absolute;
+    bottom: 2.5vh;
+    width: 100%;
+    color: #91aedb;
+    text-align: center;
+    font-size: 3.5vh;
+    font-variation-settings: "vrot" 100;
+
 }
 
 .screensaver .wrapper .logoDiv span:nth-of-type(2) {

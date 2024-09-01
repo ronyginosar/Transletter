@@ -5,52 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <style>
-        :root{
-            --vrot: 50;
-        }
-        #wrapper{
-            position: absolute;
-            inset: 0;
-            height: 200vh;
-        }
-        #scrollPara{
-            padding: 12.5% 25%;
-            font-size: 2.5vw;
-            font-family: TransletterGX;
-            line-height: 125%;
-            font-variation-settings: "vrot" var(--vrot);
-        }
-        #scrollPara nobr{
-            font-variation-settings: "vrot" var(--vrot);
-        }
-        @media (max-width:1100px) {
-            #scrollPara{
-                padding: 12.5% 12.5%;
-                font-size: 3.25vw;
-            }
-        }
-    </style>
-    <script>
-        function changevrot(){
-            window.count += 1;
-            if(window.count < 66){
-                window.vrotScroll += 10;
-            }else{
-                if(window.count > 131){
-                    window.vrotScroll = 50;
-                    window.count = 0;
-                }else{
-                    window.vrotScroll -= 10;
-                }
-            }
-            document.querySelector(':root').style.setProperty('--vrot', window.vrotScroll);
-        }
-        window.vrotScroll = 50;
-        window.count = 0;
-    </script>
+    <link rel="stylesheet" href="assets/css/scroll_section.css">
 </head>
 <body lang="heb" dir="rtl" onscroll="changevrot();">
+    <script src="assets/js/animated_logo_script.js"></script> 
+    <!-- If this works - change js name TODO -->
     <div id="wrapper">
         <p id="scrollPara">
             <nobr>
