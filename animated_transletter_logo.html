@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/iframe.css"> -->
+    <link rel="stylesheet" href="assets/css/animated_logo.css">
+    <script>
+        function changevrot(){
+            window.count += 1;
+            if(window.count < 66){
+                window.vrotScroll += 10;
+            }else{
+                if(window.count > 131){
+                    window.vrotScroll = 50;
+                    window.count = 0;
+                }else{
+                    window.vrotScroll -= 10;
+                }
+            }
+            document.querySelector(':root').style.setProperty('--vrot', window.vrotScroll);
+        }
+        window.vrotScroll = 50;
+        window.count = 0;
+    </script>
+</head>
+<body lang="heb" dir="rtl" onscroll="changevrot();">
+    <!-- <script src="assets/js/animated_logo_script.js"></script> -->
+    <div id="wrapper">
+        <p id="logoPara">
+            <nobr>
+            <span>ת</span><span>נ</span><span>ו</span><span>א</span><span>ו</span><span>ת</span>
+            </nobr>
+        </p>
+    </div>
+</body>
+</html>
