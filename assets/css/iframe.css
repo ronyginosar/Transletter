@@ -1,6 +1,8 @@
 iframe{
-    width: calc(100vw - 32px);
+    /* width: calc(100vw - 32px); */
     /* HIGH PRIORITY */
-    height: 90vh;
+    height: 98vh;
     /* border: none; */
+    width: 100%;
+    
 }

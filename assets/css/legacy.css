@@ -437,3 +437,47 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0
 }
+
+input::-webkit-input-placeholder {
+    color: #000
+}
+
+input::-moz-placeholder {
+    color: #000
+}
+
+input:-ms-input-placeholder {
+    color: #000
+}
+
+input::-ms-input-placeholder {
+    color: #000
+}
+
+input::placeholder {
+    color: #000
+}
+
+
+button,
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
