@@ -4,10 +4,13 @@
     --vrot: 100;
     --min_vrot: 100;
     --max_vrot: 700;
-    --gradient-blue: #3232be;
+    /* --gradient-blue: #3232be; */
+    --gradient-blue: rgb(117,252,253);
+    --gradient-dark: rgb(50,115,142);
     --gradient-black: #000;
     --element-color: #000;
     --background-color: #ffffff;
+    --footer-gray: rgb(240,240,240);
 
 }
 
@@ -97,7 +100,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(113, 113, 113);
+    background-color: var(--footer-gray);
     color: var(--element-color);
     height: 98vh;
     width: 100%;
@@ -119,4 +122,15 @@ body::-webkit-scrollbar {
 .horizontal_screensaver_tech::-webkit-scrollbar { 
     /* remove scroll bar: */
     display: none;  /* Safari and Chrome */
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--footer-gray);
+    color: var(--element-color);
+    height: 98vh;
+    width: 100%;
 }
