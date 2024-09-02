@@ -2,7 +2,7 @@ iframe{
     /* width: calc(100vw - 32px); */
     /* HIGH PRIORITY */
     height: 98vh;
-    /* border: none; */
+    border: none;
     width: 100%;
     
 }

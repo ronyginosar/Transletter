@@ -14,12 +14,13 @@
     width: 100%;
     /* background-color: rgb(200, 73, 73); */
     background-color: rgb(0, 0, 0);
+
+    /* remove scroll bar: */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
-
 }
-
 #wrapper::-webkit-scrollbar { 
+    /* remove scroll bar: */
     display: none;  /* Safari and Chrome */
 }
 

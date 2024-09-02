@@ -88,5 +88,13 @@ html,body {
     align-items: center;
     color: #000000;
     height: 98vh;
+    /* TODO */
     width: 100%;
+    /* remove scroll bar: */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.horizontal_screensaver_tech::-webkit-scrollbar { 
+    /* remove scroll bar: */
+    display: none;  /* Safari and Chrome */
 }
