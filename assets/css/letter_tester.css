@@ -1,17 +1,35 @@
 
+/* .letters-page {
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--element-color);
+    color: rgb(222, 250, 10);
+    height: 98vh;
+    width: 100%;
+} */
+
 .letters-page {
-    padding-bottom: 100px
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1%;
+
+    color: rgb(222, 250, 10);
 }
 
-.letters-page .main-title {
+/* .letters-page .main-title {
     width: 100%;
     margin: 100px 0;
     display: flex;
     align-items: center;
     justify-content: center
-}
+} */
 
-.letters-page .sep-text {
+/* .letters-page .sep-text {
     text-align: center;
     margin: 0 0 80px;
     letter-spacing: 1px
@@ -40,14 +58,19 @@
     .letters-page .small-subtitle {
         font-size: 35px
     }
-}
+} */
 
 .letters-page .round-slider {
     margin-bottom: 2px
 }
 
-.letters-page .input-box {
+/* .letters-page .input-box {
     position: relative
+} */
+
+.input-box{
+    display: flex;
+    flex-direction: column;
 }
 
 .letters-page .range-tooltip {
@@ -62,7 +85,7 @@
 .letters-page .input-box:hover .range-tooltip {
     opacity: 1
 }
-
+/* 
 .container.letter {
     overflow: visible
 }
@@ -112,7 +135,7 @@ section.by-letter .letter-row .input-box:after {
     top: 67%;
     height: 80%;
     width: 2px;
-    /* transform: translateY(-50%); */
+    /* transform: translateY(-50%); 
     background: #000;
     -webkit-animation: flicker 1s step-end infinite;
     animation: flicker 1s step-end infinite;
@@ -161,8 +184,8 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
     text-align: center;
     padding-bottom: 20px;
     cursor: default
-}
-
+} */
+/* 
 .changing-letter {
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -244,8 +267,8 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .letter-wrapper:hover {
     color: #3232be
-}
-
+} */
+/* 
 .by-row h2.tiny {
     text-align: right;
     border-bottom: 1px solid #000;
@@ -265,39 +288,40 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row>.row {
     position: relative
-}
+} */
 
-.by-row .inputs-wrapper {
-    height: 500px;
-    width: 10%;
+/* .by-row .inputs-wrapper { */
+.inputs-wrapper {
+    /* height: 500px; */
+    /* width: 10%; */
     display: flex;
-    background-color: transparent;
-    border-radius: 5px;
+    /* background-color: transparent; */
+    /* border-radius: 5px; */
     justify-content: space-around;
     flex-direction: column;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
-    margin-top: 52px
+    /* top: 0; */
+    /* margin-top: 52px */
 }
 
-.by-row .inputs-wrapper .input-box {
+.inputs-wrapper .input-box {
     height: auto;
     width: 100%
 }
 
-.by-row .inputs-wrapper .input-box .row-input {
+.inputs-wrapper .input-box .row-input {
     text-align: center
 }
 
-.by-row .inputs-wrapper .colors {
+/* .inputs-wrapper .colors {
     display: flex;
     flex-wrap: wrap;
     width: 100px;
     justify-content: space-between
 }
 
-.by-row .inputs-wrapper .colors .color {
+.inputs-wrapper .colors .color {
     background: #d2232a;
     width: 20px;
     height: 20px;
@@ -306,30 +330,41 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
     cursor: pointer
 }
 
-.by-row .inputs-wrapper .colors .color.blue,
-.by-row .inputs-wrapper .colors .color.dark-blue {
+.inputs-wrapper .colors .color.blue,
+.inputs-wrapper .colors .color.dark-blue {
     background: #3232be
 }
 
-.by-row .inputs-wrapper .colors .color.yellow {
+.inputs-wrapper .colors .color.yellow {
     background: #ffd800
 }
 
-.by-row .inputs-wrapper .colors .color.black {
+.inputs-wrapper .colors .color.black {
     background: #000
+} */
+
+.text-rows .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10%;
 }
 
-.by-row .text-rows.wrapper {
-    width: 88%
+.text-rows {
+    width: 100%;
 }
 
-.by-row .text-row {
-    height: auto;
-    padding: 0;
-    width: 100%
+.text-row {
+    /* height: auto;
+    padding: 0; */
+    width: 100%;
 }
 
-.by-row .text-row .row-input[data-color=blue] {
+.row-input{
+    width: 80%;
+}
+/* 
+.text-row .row-input[data-color=blue] {
     color: #3232be
 }
 
@@ -343,7 +378,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 .by-row .text-row .row-input[data-color=black] {
     color: #000
-}
+} */
 
 .by-row .text-row:first-of-type .row-input {
     font-size: 187px;
@@ -422,7 +457,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 
 input[type=range] {
     -webkit-appearance: none;
-    width: 100px;
+    /* width: 100px; */
     background: transparent;
     margin: 0 0 10px
 }
