@@ -46,8 +46,19 @@
 
     <!-- 4. tester TODO black - adapt from old sliders -->
     <div class="tester">
-      <!-- placeholder tester -->
-      <iframe src="letter-tester.html"></iframe>
+      <!-- TODO Make axis update with slider -->
+      <iframe src="letter-tester.html" id="tester-iframe"></iframe>
+      <!-- <script>
+        // Selecting the iframe element
+        var frame = document.getElementById("tester-iframe");
+        
+        // Adjusting the iframe height onload event
+        frame.onload = function() {
+            // set the height of the iframe as the height&width of the iframe content
+            frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+            // frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
+        }
+      </script> -->
     </div>
 
 

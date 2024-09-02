@@ -11,14 +11,53 @@
 } */
 
 .letters-page {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 1%;
+    
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* justify-content: flex-start; */
+    /* overflow: hidden; */
+    /* padding: 1%; */
 
     color: rgb(222, 250, 10);
+    /* font-family: ; */
+}
+
+/* .letters-page-wrapper .letters{
+    overflow: hidden;
+} */
+
+/* .container{
+    overflow: hidden;
+} */
+/* body{ */
+    /* overflow: hidden; */
+    /* height: 100%; */
+    /* position:fixed; */
+/* } */
+
+/* .by-row{
+    overflow: hidden;
+} */
+
+/* iframe{
+    height: 100%;
+} */
+
+        /* remove scroll bar: 
+        -ms-overflow-style: none;  /* Internet Explorer 10+ 
+        scrollbar-width: none;  /* Firefox 
+}
+.container::-webkit-scrollbar { 
+        /* remove scroll bar: 
+        display: none;  /* Safari and Chrome */
+
+
+.row{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 /* .letters-page .main-title {
@@ -61,7 +100,7 @@
 } */
 
 .letters-page .round-slider {
-    margin-bottom: 2px
+    margin-bottom: 2px;
 }
 
 /* .letters-page .input-box {
@@ -74,12 +113,13 @@
 }
 
 .letters-page .range-tooltip {
-    position: absolute;
+    /* position: absolute; */
     top: calc(100% + 3px);
-    left: 50%;
+    /* left: 50%; */
     transform: translateX(-50%);
     opacity: 0;
-    transition: all .3s
+    transition: all .3s;
+    /* width: 50%; */
 }
 
 .letters-page .input-box:hover .range-tooltip {
@@ -293,25 +333,41 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 /* .by-row .inputs-wrapper { */
 .inputs-wrapper {
     /* height: 500px; */
+    height: 100%;
     /* width: 10%; */
     display: flex;
     /* background-color: transparent; */
     /* border-radius: 5px; */
     justify-content: space-around;
     flex-direction: column;
-    position: -webkit-sticky;
-    position: sticky;
+    /* position: -webkit-sticky; */
+    /* position: sticky; */
     /* top: 0; */
     /* margin-top: 52px */
+    padding: 1%;
+    
 }
 
-.inputs-wrapper .input-box {
+textarea {
+    resize: none;
+    border: none;
+    font-family: inherit;
+    background-color: transparent;
+    color: inherit;
+
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* .inputs-wrapper .input-box {
     height: auto;
     width: 100%
-}
+} */
 
 .inputs-wrapper .input-box .row-input {
-    text-align: center
+    text-align: center;
 }
 
 /* .inputs-wrapper .colors {
@@ -343,15 +399,18 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
     background: #000
 } */
 
-.text-rows .wrapper {
-    width: 100%;
-    display: flex;
+/* .text-rows .wrapper { */
+    /* width: 80%; */
+    /* display: flex;
     flex-direction: column;
-    padding-right: 10%;
-}
+    padding-right: 10%; */
+/* } */
 
 .text-rows {
-    width: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 5%;
 }
 
 .text-row {
@@ -361,7 +420,7 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 }
 
 .row-input{
-    width: 80%;
+    width: 100%;
 }
 /* 
 .text-row .row-input[data-color=blue] {
@@ -381,7 +440,9 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 } */
 
 .by-row .text-row:first-of-type .row-input {
-    font-size: 187px;
+    font-size: 165px;
+    line-height: 0.7;
+    /* line-height: 106px; */
     font-variation-settings: "vrot" 250
 }
 
@@ -392,22 +453,22 @@ section.by-letter .letter-row .text-row .fixed-letters .letter-wrapper {
 }
 
 .by-row .text-row:nth-of-type(2) .row-input {
-    font-size: 97px;
+    font-size: 80px;
     font-variation-settings: "vrot" 400;
-    line-height: .5;
-    letter-spacing: 1px
+    line-height: .4;
+    letter-spacing: 1px;
 }
 
 @media (min-width:1700px) {
     .by-row .text-row:nth-of-type(2) .row-input {
-        font-size: 110px
+        font-size: 110px;
     }
 }
 
 .by-row .text-row:nth-of-type(3) .row-input {
     font-size: 27px;
     font-variation-settings: "vrot" 500;
-    line-height: 1.7;
+    line-height: 1.2;
     letter-spacing: .5px;
     margin-bottom: 10px
 }
