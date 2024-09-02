@@ -118,7 +118,7 @@
 .free-page-wrapper .controls .input-wrapper .free-btn {
     position: absolute;
     cursor: pointer;
-    background: #3232be;
+    background: var(--gradient-blue);
     width: 25px;
     height: 25px;
     top: 10px;
@@ -141,7 +141,7 @@
 }
 
 .free-page-wrapper .controls p {
-    color: #3232be;
+    color: var(--gradient-blue);
     margin-left: 20px
 }
 
@@ -242,7 +242,7 @@
 
 .free-page-wrapper .show-btn {
     color: #fff;
-    background: #3232be;
+    background: var(--gradient-blue);
     width: 240px;
     height: 100px;
     margin: auto;
@@ -350,66 +350,66 @@
 }
 
 .letters .selected.active {
-    color: #000
+    color: var(--gradient-black)
 }
 
 .free .selected.active {
-    color: #3232be
+    color: var(--gradient-blue)
 }
 
 @-webkit-keyframes change-from-black {
     0% {
-        color: #000
+        color: var(--gradient-black)
     }
 
     50% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     to {
-        color: #000
+        color: var(--gradient-black)
     }
 }
 
 @keyframes change-from-black {
     0% {
-        color: #000
+        color: var(--gradient-black)
     }
 
     50% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     to {
-        color: #000
+        color: var(--gradient-black)
     }
 }
 
 @-webkit-keyframes change-from-blue {
     0% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     50% {
-        color: #000
+        color: var(--gradient-black)
     }
 
     to {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 }
 
 @keyframes change-from-blue {
     0% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     50% {
-        color: #000
+        color: var(--gradient-black)
     }
 
     to {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 }
 
@@ -419,7 +419,7 @@
     }
 
     50% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     to {
@@ -433,7 +433,7 @@
     }
 
     50% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     to {
@@ -447,7 +447,7 @@
     }
 
     50% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     to {
@@ -461,7 +461,7 @@
     }
 
     50% {
-        color: #3232be
+        color: var(--gradient-blue)
     }
 
     to {
@@ -477,7 +477,7 @@
     }
 
     50% {
-        background-color: #000
+        background-color: var(--gradient-black)
     }
 }
 
@@ -489,6 +489,6 @@
     }
 
     50% {
-        background-color: #000
+        background-color: var(--gradient-black)
     }
 }
