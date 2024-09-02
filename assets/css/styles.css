@@ -4,6 +4,11 @@
     --vrot: 100;
     --min_vrot: 100;
     --max_vrot: 700;
+    --gradient-blue: #3232be;
+    --gradient-black: #000;
+    --element-color: #000;
+    --background-color: #ffffff;
+
 }
 
 /* TODO unify wrapper div/class */
@@ -65,7 +70,7 @@ html,body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: var(--element-color);
     color: rgb(222, 250, 10);
     height: 98vh;
     width: 100%;
@@ -76,7 +81,7 @@ html,body {
     justify-content: center;
     align-items: center;
     background-color: rgb(113, 113, 113);
-    color: #000000;
+    color: var(--element-color);
     height: 98vh;
     width: 100%;
 }

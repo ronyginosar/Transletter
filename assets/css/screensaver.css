@@ -32,7 +32,7 @@ html,body{
     /* height: 100%; */
     /* top: 0; */
     /* left: 0; */
-    color: #000;
+    /* color: var() */
     -webkit-animation: fontColor 8s linear;
     animation: fontColor 8s linear;
     -webkit-animation-fill-mode: forwards;
@@ -336,37 +336,37 @@ html,body{
 
 @-webkit-keyframes fontColor {
     0% {
-        color: #000
+        color: var(--gradient-black);
     }
 
     45% {
-        color: #3232be
+        color: var(--gradient-blue);
     }
 
     52% {
-        color: #3232be
+        color: var(--gradient-blue);
     }
 
     to {
-        color: #000
+        color: var(--gradient-black);
     }
 }
 
 @keyframes fontColor {
     0% {
-        color: #000
+        color: var(--gradient-black);
     }
 
     45% {
-        color: #3232be
+        color: var(--gradient-blue);
     }
 
     52% {
-        color: #3232be
+        color: var(--gradient-blue);
     }
 
     to {
-        color: #000
+        color: var(--gradient-black);
     }
 }
 

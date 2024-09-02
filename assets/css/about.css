@@ -33,17 +33,17 @@
 }
 
 .inactive-tab {
-    border-bottom: 1px solid #3232be;
+    border-bottom: 1px solid var(--gradient-blue);
     transition: all .2s
 }
 
 .inactive-tab:hover {
-    color: #fff
+    color: var(--background-color);
 }
 
 .inactive-tab.w--current {
     font-variation-settings: "vrot" 700;
-    border-color: #fff
+    border-color: var(--background-color);
 }
 
 .inactive-tab.w--current div {
