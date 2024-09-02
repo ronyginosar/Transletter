@@ -1,7 +1,9 @@
 :root {
     /* GLOBAL VARIABLES */
     --logoAnimationSpeed: 10000ms;
-    --vrot: 50;
+    --vrot: 100;
+    --min_vrot: 100;
+    --max_vrot: 700;
 }
 
 /* TODO unify wrapper div/class */
@@ -10,6 +12,7 @@
 @font-face {
     font-family: TransletterGX;
     src: url('../font/Transletter_v7VF.ttf')
+    /* min 100, max 700 */
 }
 
 /* * { */
