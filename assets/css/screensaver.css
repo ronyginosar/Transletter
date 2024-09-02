@@ -1,6 +1,13 @@
 
-
+html,body{
+    height: 100%;
+}
 .screensaver {
+    /* display: flex; */
+    /* flex-direction: row;
+    justify-content: space-between; */
+    /* align-items: center; */
+
     /* background-color: #231f20; */
     /* background-color: #fff; */
     font: 50vw TransletterGX;
@@ -14,13 +21,15 @@
     opacity: 0; */
     pointer-events: none;
     transition: all .3s;
+    /* height: 100%; */
     /* z-index: -1 */
+    
 }
 
 .screensaver .wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    /* position: absolute; */
+    /* width: 100%; */
+    /* height: 100%; */
     /* top: 0; */
     /* left: 0; */
     color: #000;
@@ -49,16 +58,18 @@
 
 
 
+.wrapper {
+    height: 100%;
+}
+
+
 .screensaver .otDiv {
-    /* position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    margin: 0;
-    padding: 0; */
-    text-align: center;
-    /* line-height: 60vh; */
     opacity: 0;
     -webkit-animation: otAnim 8s ease-in-out infinite;
     animation: otAnim 8s ease-in-out infinite;
