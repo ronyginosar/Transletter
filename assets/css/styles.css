@@ -23,7 +23,6 @@
     /* min 100, max 700 */
 }
 
-/* * { */
 html,body {
     font-family: TransletterGX;
     font-feature-settings: "kern" on, "liga" on, "calt" on;
@@ -38,21 +37,6 @@ html,body {
     direction: rtl;
     /* cursor: none; */
 }
-
-/* .cursor {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-radius: 50%;
-    top: var(--y, 0);
-    left: var(--x, 0);
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    /* INVERTED COLOR 
-    mix-blend-mode: difference;
-    transition: transform .2s;
-  } */
 
 .home-page-wrapper {
     display: flex;
@@ -107,10 +91,10 @@ body::-webkit-scrollbar {
     height: 0;
 }
 
-/* .scroll_section_wrapper::-webkit-scrollbar {  */
+.scroll_section_wrapper::-webkit-scrollbar {  
     /* remove scroll bar: */
-    /* display: none;  Safari and Chrome */
-/* }  */
+    display: none;  /* Safari and Chrome */
+} 
 
 .waterfall{
     display: flex;
@@ -150,3 +134,19 @@ body::-webkit-scrollbar {
     height: 98vh;
     width: 100%;
 }
+
+
+/* .cursor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    top: var(--y, 0);
+    left: var(--x, 0);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* INVERTED COLOR 
+    mix-blend-mode: difference;
+    transition: transform .2s;
+  } */

@@ -1,5 +1,5 @@
 .letters-page {
-    color: rgb(222, 250, 10);
+    color: var(--background-color);
 }
 
 /* .letters-page-wrapper .letters{
@@ -420,10 +420,11 @@ textarea {
 }
 
 .by-row .text-row:nth-of-type(2) .row-input {
-    font-size: 80px;
+    /* font-size: 80px; */
+    font-size: 4vw;
     font-variation-settings: "vrot" 400;
-    line-height: .4;
-    letter-spacing: 1px;
+    /* line-height: .4; */
+    /* letter-spacing: 1px; */
 }
 
 @media (min-width:1700px) {
