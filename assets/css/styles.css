@@ -71,8 +71,7 @@ html,body {
     justify-content: center;
     align-items: center;
     background-color: var(--element-color);
-    color: rgb(222, 250, 10);
-    height: 98vh;
+    /* color: rgb(222, 250, 10); */
     width: 100%;
 }
 
