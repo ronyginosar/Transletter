@@ -81,7 +81,7 @@ function adjustWidth(e) {
     $(e).children().width(t).off("resize");
 }
 function dealWithWidth() {
-    console.log("dealt!");
+    // console.log("dealt!");
     var t = $(".break-up-font");
     t.children().removeClass("inWidth"),
         t.children().fitText(0.06, { maxFontSize: maxFont }),
@@ -102,7 +102,7 @@ vwChanges(),
     adjustTitleHeight(),
     $(".break-up-font").children().addClass("inWidth"),
     $(window).resize(function () {
-        console.log("resized!"), dealWithWidth();
+        // console.log("resized!"), dealWithWidth();
     }),
     $(".hamburger-btn").click(toggleMenu);
 var startCounting = !0;
@@ -127,7 +127,7 @@ function updateLetterSlider(e) {
     var t = parseInt(e.attr("data-var-val")),
         n = 700 < t ? t + 100 : t,
         i = $(".by-letter .round-slider");
-    i.roundSlider("setValue", n), i.siblings(".range-tooltip").text(t);
+    // i.roundSlider("setValue", n), i.siblings(".range-tooltip").text(t);
 }
 function updateRowSliders(n) {
     $(".by-row .inputs-wrapper input").each(function () {
@@ -140,7 +140,7 @@ function updateRowSliders(n) {
     var e = parseInt(n.attr("data-var-val")),
         t = 699 < e ? e + 100 : e,
         i = $(".by-row .round-slider");
-    i.roundSlider("setValue", t), i.siblings(".range-tooltip").text(e);
+    // i.roundSlider("setValue", t), i.siblings(".range-tooltip").text(e);
 }
 function updateFreeSlider() {
     var e = parseInt($(".selected").eq(1).attr("data-var-val")),
