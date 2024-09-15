@@ -1,5 +1,5 @@
 :root{
-    --vrot: 50;
+    --vrot-letter-range: 50;
 }
 #wrapper{
     position: absolute;
@@ -7,17 +7,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark));
 }
 #rangePara{
-    font-size: 2.5vw;
+    /* font-size: 2.5vw; */
     font-family: TransletterGX;
-    line-height: 125%;
-    font-variation-settings: "vrot" var(--vrot);
+    /* line-height: 125%; */
+    font-variation-settings: "vrot" var(--vrot-letter-range);
 }
 #rangePara nobr{
-    font-variation-settings: "vrot" var(--vrot);
+    font-variation-settings: "vrot" var(--vrot-letter-range);
 }
 
+/* these control the transitions */
 .singleLetter{
     transition: font-variation-settings 2000ms linear 0s;
 }
@@ -26,26 +28,7 @@
     max-width: 1ch;
 }
 
-/* debugging helpers */
-/* 
-.class-first{
-    color: blue;
-    animation: fontVar-1 3000ms linear infinite alternate;
-}
-.class-second{
-    color: red;
-    animation: fontVar-2 3000ms linear infinite alternate;
-}
-.class-third{
-    color: green;
-    animation: fontVar-3 3000ms linear infinite alternate;
-}
-.class-forth{
-    color: purple;
-    animation: fontVar-4 3000ms linear infinite alternate;
-} */
-
-/* not sure yet... */
+/* note: not sure yet if used... */
 /* @keyframes fontVar-1{
     0%{font-variation-settings: "vrot" 50;}
     10%{font-variation-settings: "vrot" 50;}
@@ -75,3 +58,24 @@
         font-size: 5vw;
     }
 }
+
+
+
+/* debugging helpers */
+/* 
+.class-first{
+    color: blue;
+    animation: fontVar-1 3000ms linear infinite alternate;
+}
+.class-second{
+    color: red;
+    animation: fontVar-2 3000ms linear infinite alternate;
+}
+.class-third{
+    color: green;
+    animation: fontVar-3 3000ms linear infinite alternate;
+}
+.class-forth{
+    color: purple;
+    animation: fontVar-4 3000ms linear infinite alternate;
+} */
