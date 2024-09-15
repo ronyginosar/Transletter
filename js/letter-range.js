@@ -41,8 +41,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const fontSizeLabel = document.getElementById('fontSizeLabel');
     const rangePara = document.getElementById('rangePara');
     const colorToggle = document.getElementById('colorToggle');
+    const controls = document.querySelector('.controls');
+
 
     let fontSize = fontSizeSlider.value + 'px';
+
+    // move label with slider thumb
+    function updateSliderLabel() {
+        const sliderRect = fontSizeSlider.getBoundingClientRect();
+        const thumbWidth = 20; // Approximate width of the slider thumb
+        // future add here width for title and correct css
+        const sliderWidth = sliderRect.width - thumbWidth;
+        const sliderMin = fontSizeSlider.min;
+        const sliderMax = fontSizeSlider.max;
+        const sliderValue = fontSizeSlider.value;
+        const sliderPercent = (sliderValue - sliderMin) / (sliderMax - sliderMin);
+        const labelLeft = sliderPercent * sliderWidth + thumbWidth / 2;
+
+        if (getComputedStyle(controls).flexDirection === 'row-reverse') {
+            fontSizeLabel.style.right = `${labelLeft}px`;
+            fontSizeLabel.style.left = 'auto';
+        } else {
+            fontSizeLabel.style.left = `${labelLeft}px`;
+            fontSizeLabel.style.right = 'auto';
+        }
+        fontSizeLabel.textContent = `${sliderValue}`;
+        rangePara.style.fontSize = `${sliderValue}px`;
+    }
+
+    fontSizeSlider.addEventListener('input', updateSliderLabel);
 
     fontSizeSlider.addEventListener('input', function() {
         fontSize = fontSizeSlider.value;
@@ -63,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the color toggle button
     rangePara.style.color = 'black';
     colorToggle.style.backgroundColor = 'white';
+    updateSliderLabel();
 });
 
 

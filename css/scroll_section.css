@@ -14,6 +14,7 @@
     width: 100%;
     /* background-color: rgb(200, 73, 73); */
     background-color: rgb(0, 0, 0);
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
 
     /* remove scroll bar:
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -46,7 +47,8 @@
 @media (max-width:1100px) {
     #scrollPara{
         padding-top: 10%;
-        padding: 12.5% 12.5%;
+        /* padding: 12.5% 12.5%; */
+        padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
         /* font-size: 4.25vw; */
     }
 }
