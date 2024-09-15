@@ -1,0 +1,71 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:var(--element-color);
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    font-size: 16px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px; /* Adjust as needed for spacing between rows */
+}
+
+#contact, #download, #bio, #logos {
+    /* flex: 1; */
+    text-align: right; /* Center the content within each div */
+}
+
+.inline-links a {
+    display: inline;
+    /* links style */
+    color:var(--element-color);
+    text-decoration-color: currentColor; /* Match underline color to text color */
+    text-decoration: underline; /* Ensure the text is underlined */
+}
+
+.inline-links p {
+    display: inline;
+}
+
+#logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Adjust as needed for spacing */
+    align-items: center;
+    width: 50%;
+}
+
+#logos a {
+    margin: 0 10px; /* Adjust as needed for spacing between links */
+}
+
+#logos img {
+    flex: 1;
+    max-width: 100px; /* Adjust as needed for image size */
+    height: auto;
+}
+
+.download-button {
+    background-color: var(--gradient-blue);
+    color:var(--element-color);
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#bio {
+    font-size: 12px;
+    width: 50%;
+}
+
+#contact{
+    width: 70%;
+}

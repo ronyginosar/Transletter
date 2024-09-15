@@ -63,7 +63,7 @@
     </div>
 
 
-    <!-- 5. water fall TODO no animation-->
+    <!-- 5. water fall -->
     <div class="waterfall">
       <iframe src="iframe_subpages/waterfall.html"></iframe>
     </div>
@@ -73,7 +73,6 @@
       <!-- 6.1 "screensaver" INSERT -->
       <div class="screensaver">
         <iframe src="iframe_subpages/screen-saver.html"></iframe>
-        <!-- /Users/rony/Documents/Projects/ShaniIvgi/Transletter/iframe_subpages/animated_transletter_logo.html -->
         <!-- TODO what is missing in screensaver for smooth? -->
       </div>
       <!-- 6.2 technology title todo-->
@@ -89,9 +88,23 @@
     <div class="waterfall">placeholder research</div>
 
     <!-- 9. about (research 2.0) todo-->
-    <div class="footer">placeholder research 2.0</div>
+    <div class="waterfall">placeholder research 2.0</div>
 
     <!-- 10.footer todo -->
-    <div class="footer">placeholder footer</div>
+    <div class="footer_page">
+      <iframe src="iframe_subpages/footer.html" id="footer-iframe"></iframe>
+      <script>
+        // TODO make this function, input id
+        // Selecting the iframe element
+        var frame = document.getElementById("footer-iframe");
+        
+        // Adjusting the iframe height onload event
+        frame.onload = function() {
+            // set the height of the iframe as the height&width of the iframe content
+            frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+            // frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
+        }
+      </script>
+    </div>
   </body>
 </html>

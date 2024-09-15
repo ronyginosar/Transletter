@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: right;
     font-family: TransletterGX;
-    padding: 5% 12.5%;
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
 }
 .info-text {
     font-size: 12px;
