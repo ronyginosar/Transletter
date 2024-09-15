@@ -32,3 +32,64 @@ function randomvrot(){
     setTimeout(function(){ randomvrot(); }, 2500);
 }
 setTimeout(function(){ randomvrot(); }, 500);
+
+
+// Controls:
+
+document.addEventListener('DOMContentLoaded', function() {
+    const fontSizeSlider = document.getElementById('fontSizeSlider');
+    const fontSizeLabel = document.getElementById('fontSizeLabel');
+    const rangePara = document.getElementById('rangePara');
+    const colorToggle = document.getElementById('colorToggle');
+
+    let fontSize = fontSizeSlider.value + 'px';
+
+    fontSizeSlider.addEventListener('input', function() {
+        fontSize = fontSizeSlider.value;
+        fontSizeLabel.textContent = fontSize;
+        rangePara.style.fontSize = fontSize + 'px';
+    });
+
+    colorToggle.addEventListener('click', function() {
+        if (rangePara.style.color === 'black') {
+            rangePara.style.color = 'white';
+            colorToggle.style.backgroundColor = 'black';
+        } else {
+            rangePara.style.color = 'black';
+            colorToggle.style.backgroundColor = 'white';
+        }
+    });
+
+    // Initialize the color toggle button
+    rangePara.style.color = 'black';
+    colorToggle.style.backgroundColor = 'white';
+});
+
+
+// const fontSizeSlider = document.getElementById('fontSizeSlider');
+// const fontSizeLabel = document.getElementById('fontSizeLabel');
+// const rangePara = document.getElementById('rangePara');
+// const colorToggle = document.getElementById('colorToggle');
+
+// let fontSize = fontSizeSlider.value + 'px';
+
+
+// fontSizeSlider.addEventListener('input', function() {
+//     const fontSize = fontSizeSlider.value + 'px';
+//     fontSizeLabel.textContent = fontSize;
+//     rangePara.style.fontSize = fontSize;
+// });
+
+// colorToggle.addEventListener('click', function() {
+//     if (rangePara.style.color === 'black') {
+//         rangePara.style.color = 'white';
+//         colorToggle.style.backgroundColor = 'black';
+//     } else {
+//         rangePara.style.color = 'black';
+//         colorToggle.style.backgroundColor = 'white';
+//     }
+// });
+
+// // Initialize the color toggle button
+// rangePara.style.color = 'black';
+// colorToggle.style.backgroundColor = 'white';
