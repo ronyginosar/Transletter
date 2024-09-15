@@ -107,13 +107,17 @@ body::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
 } 
 
+/* .letter-range_page{
+
+} */
+
 .waterfall{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--footer-gray);
     color: var(--element-color);
-    height: 98vh;
+    /* height: 98vh; */
     width: 100%;
 }
 
@@ -157,6 +161,13 @@ body::-webkit-scrollbar {
     background-color: var(--footer-gray);
 }
 
+
+.research{
+    background-color: var(--background-color);
+    height: 98vh;
+    /* TODO */
+    width: 100%;
+}
 
 /* .cursor {
     position: absolute;
