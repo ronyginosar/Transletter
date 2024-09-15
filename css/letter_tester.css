@@ -3,8 +3,11 @@
     /* flex-direction: row; */
     /* justify-content: flex-start; */
     color: var(--background-color);
+    background-color: black;
+
     /* background-color: rgb(222, 250, 10); */
     height: 100vh;
+    width: 100%;
 }
 
 .letters-page-wrapper{
@@ -504,6 +507,7 @@ textarea {
 
 input[type=range] {
     -webkit-appearance: none;
+    appearance: none;
     /* width: 100px; */
     background: transparent;
     margin: 0 0 10px
@@ -511,6 +515,7 @@ input[type=range] {
 
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
+    appearance: none;
     width: 10px;
     height: 10px;
     border-radius: 100%;
