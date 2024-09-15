@@ -22,6 +22,27 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery.fittext.js"></script>
 
+    <!-- Adjust iframe height according to content by given id -->
+    <script>
+      // Function to adjust the iframe height and width
+      function adjustIframeSize(iframeId) {
+          // Selecting the iframe element
+          var frame = document.getElementById(iframeId);
+          
+          if (frame) {
+              // Adjusting the iframe height onload event
+              frame.onload = function() {
+                  // Set the height of the iframe as the height of the iframe content
+                  frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+                  // Uncomment the line below if you also want to adjust the width
+                  // frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
+              }
+          } else {
+              console.error(`Iframe with ID ${iframeId} not found.`);
+          }
+      }
+    </script>
+
     <!-- circular cursor -->
     <!-- <script src="assets/js/customcursor.js"></script>
     <div class="cursor"></div> -->
@@ -85,7 +106,9 @@
 
     <!-- 7. random state type tester, "letter_range", gradient blue INSERT-->
     <!-- <div class="letter-range_page"> -->
-    <iframe src="iframe_subpages/letter-range.html"></iframe>
+    <iframe src="iframe_subpages/letter-range.html" id="letter-range-iframe"></iframe>
+    <!-- TODO allow to grow beyond iframe? -->
+    <!-- <script>adjustIframeSize("letter-range-iframe")</script> -->
     <!-- </div> -->
 
     <!-- 8. research todo - need to design architecture -->
@@ -97,7 +120,8 @@
     <!-- 10.footer todo -->
     <div class="footer_page">
       <iframe src="iframe_subpages/footer.html" id="footer-iframe"></iframe>
-      <script>
+      <script>adjustIframeSize("footer-iframe")</script>
+      <!-- <script>
         // TODO make this function, input id
         // Selecting the iframe element
         var frame = document.getElementById("footer-iframe");
@@ -108,7 +132,7 @@
             frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
             // frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
         }
-      </script>
+      </script> -->
     </div>
   </body>
 </html>

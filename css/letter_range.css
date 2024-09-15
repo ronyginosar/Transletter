@@ -15,6 +15,7 @@
     font-size: 48px;
     font-family: TransletterGX;
     font-variation-settings: "vrot" var(--vrot-letter-range);
+    line-height: 99%;
     margin: 0;
 }
 #rangePara nobr{

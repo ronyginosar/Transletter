@@ -161,6 +161,11 @@ body::-webkit-scrollbar {
     background-color: var(--footer-gray);
 }
 
+/* #letter-range_page{
+    TODO
+    height: 3px; /*placeholder value to later inject height by script
+} */
+
 
 .research{
     background-color: var(--background-color);
