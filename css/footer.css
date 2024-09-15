@@ -14,6 +14,10 @@
     margin-bottom: 10px; /* Adjust as needed for spacing between rows */
 }
 
+#bottom-row {
+    height: 100px;
+}
+
 #contact, #download, #bio, #logos {
     /* flex: 1; */
     text-align: right; /* Center the content within each div */
@@ -32,11 +36,15 @@
 }
 
 #logos {
+    flex-shrink: 1;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Adjust as needed for spacing */
+    flex-direction: row-reverse;
+    justify-content: space-between; 
     align-items: center;
     width: 50%;
+    /* background-color: red; */
+    /* TODO this ratio can be better */
+    /* height: 50px; */
 }
 
 #logos a {
@@ -44,10 +52,16 @@
 }
 
 #logos img {
-    flex: 1;
-    max-width: 100px; /* Adjust as needed for image size */
-    height: auto;
+    flex-shrink: 1;
+    /* max-height: 50px;  */
+    max-height: 40%;
+    width: auto;
+    /* padding-right: 15%; */
 }
+/* 
+#logos img #bezalel-logo{
+    padding-left: 0;
+} */
 
 .download-button {
     background-color: var(--gradient-blue);
@@ -62,9 +76,24 @@
 }
 
 #bio {
+    
     font-size: 12px;
-    width: 50%;
+    width: 50%; 
+    /* background-color: rgb(244, 207, 19); */
+    /* TODO this ratio can be better */
 }
+
+#bio a {
+    display: inline;
+    /* links style */
+    color:var(--element-color);
+    text-decoration: none; 
+}
+
+#bio p {
+    display: inline;
+}
+
 
 #contact{
     width: 70%;
