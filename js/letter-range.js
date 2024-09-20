@@ -39,7 +39,8 @@ setTimeout(function(){ randomvrot(); }, 500);
 document.addEventListener('DOMContentLoaded', function() {
     const fontSizeSlider = document.getElementById('fontSizeSlider');
     const fontSizeLabel = document.getElementById('fontSizeLabel');
-    const rangePara = document.getElementById('rangePara');
+    // const rangePara = document.getElementById('rangePara');
+    const wrapperDiv = document.getElementById('wrapper');
     const colorToggle = document.getElementById('colorToggle');
     const controls = document.querySelector('.controls');
 
@@ -66,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
             fontSizeLabel.style.right = 'auto';
         }
         fontSizeLabel.textContent = `${sliderValue}`;
-        rangePara.style.fontSize = `${sliderValue}px`;
+        // rangePara.style.fontSize = `${sliderValue}px`;
+        wrapperDiv.style.fontSize = `${sliderValue}px`;
     }
 
     fontSizeSlider.addEventListener('input', updateSliderLabel);
@@ -78,17 +80,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     colorToggle.addEventListener('click', function() {
-        if (rangePara.style.color === 'black') {
-            rangePara.style.color = 'white';
+        // if (rangePara.style.color === 'black') {
+        //     rangePara.style.color = 'white';
+        //     colorToggle.style.backgroundColor = 'black';
+        // } else {
+        //     rangePara.style.color = 'black';
+        //     colorToggle.style.backgroundColor = 'white';
+        // }
+        if (wrapperDiv.style.color === 'black') {
+            wrapperDiv.style.color = 'white';
             colorToggle.style.backgroundColor = 'black';
         } else {
-            rangePara.style.color = 'black';
+            wrapperDiv.style.color = 'black';
             colorToggle.style.backgroundColor = 'white';
         }
+        
     });
 
     // Initialize the color toggle button
-    rangePara.style.color = 'black';
+    // rangePara.style.color = 'black';
+    wrapperDiv.style.color = 'black';
     colorToggle.style.backgroundColor = 'white';
     updateSliderLabel();
 });
@@ -153,89 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const editableSection = document.querySelector('.editable-section');
-//     const minVrot = 100; // Set your minimum vrot value here
-//     const maxVrot = 700; // Set your maximum vrot value here
-//     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
-
-//     let previousLength = 0;
-
-//     // editableSection.addEventListener('input', function(event) {
-//     //     const text = editableSection.innerText;
-//     //     const currentLength = text.length;
-
-//     //     if (currentLength > previousLength) {
-//     //         const newChar = text.slice(previousLength);
-//     //         const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
-//     //         const newSpan = document.createElement('span');
-//     //         newSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
-//     //         newSpan.textContent = newChar;
-
-//     //         // Append the new span with the random vrot value
-//     //         editableSection.appendChild(newSpan);
-
-//     //                     // Remove the last added text node to avoid duplication
-//     //                     const lastTextNode = editableSection.childNodes[editableSection.childNodes.length - 2];
-//     //                     if (lastTextNode && lastTextNode.nodeType === Node.TEXT_NODE) {
-//     //                         editableSection.removeChild(lastTextNode);
-//     //                     }
-            
-
-//     //         // Update previousLength to currentLength
-//     //         previousLength = currentLength;
-//     //     } else if (currentLength < previousLength) {
-//     //         previousLength = currentLength;
-//     //     }
-
-//     //     placeCaretAtEnd(editableSection);
-//     // });
-
-//     editableSection.addEventListener('input', function(event) {
-//         const textNodes = Array.from(editableSection.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
-//         const newChar = textNodes.length > 0 ? textNodes[0].nodeValue : ''; // Get any raw text nodes if present
-//         const currentLength = editableSection.innerText.length;
-
-//         // If new characters are added
-//         if (event.inputType === 'insertText' && newChar.length > 0) {
-//             const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
-//             const newSpan = document.createElement('span');
-//             newSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
-//             newSpan.textContent = newChar;
-
-//             // Append the new span and remove the raw text node
-//             editableSection.appendChild(newSpan);
-//             textNodes[0].remove();
-
-//             // Update the previous length
-//             previousLength = currentLength;
-//         } else if (currentLength < previousLength) {
-//             // If characters are deleted, update previousLength
-//             previousLength = currentLength;
-//         }
-
-//         placeCaretAtEnd(editableSection);
-//     });
-
-//     function placeCaretAtEnd(el) {
-//         el.focus();
-//         if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
-//             const range = document.createRange();
-//             range.selectNodeContents(el);
-//             range.collapse(false);
-//             const sel = window.getSelection();
-//             sel.removeAllRanges();
-//             sel.addRange(range);
-//         }
-//     }
-// });
-
 
 // const fontSizeSlider = document.getElementById('fontSizeSlider');
 // const fontSizeLabel = document.getElementById('fontSizeLabel');
