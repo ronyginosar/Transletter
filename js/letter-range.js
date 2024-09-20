@@ -100,16 +100,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxVrot = 700; // Set your maximum vrot value here
     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
 
+    editableSection.addEventListener('keypress', function(event) {
+        // Prevent default behavior to avoid raw text insertion
+        event.preventDefault();
 
-    editableSection.addEventListener('input', function(event) {
-        const text = editableSection.innerText;
-        const newText = Array.from(text).map(char => {
+        const char = event.key; // Get the key that was pressed
+
+        if (event.keyCode === 32) { // space key
+            // Handle the space key: insert an actual space and move the caret
+            // insertAtCaret(document.createTextNode(' ')); // to avoid browser interp to space
+            insertAtCaret(document.createTextNode('\u00A0')); // Insert non-breaking space
+            return; // Skip further processing for space
+        }
+
+        if (char.length === 1) { // Only process printable characters
             const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
-            return `<span style="font-variation-settings: 'vrot' ${randomVrot};">${char}</span>`;
-        }).join('');
-        editableSection.innerHTML = newText;
-        placeCaretAtEnd(editableSection);
+
+            // Create a new span for the typed character
+            const newSpan = document.createElement('span');
+            newSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
+            newSpan.textContent = char;
+
+            // Insert the new span at the caret position
+            insertAtCaret(newSpan);
+
+            // Place caret at the end after insertion
+            placeCaretAtEnd(editableSection);
+        }
     });
+
+    function insertAtCaret(node) {
+        const sel = window.getSelection();
+        if (sel.rangeCount > 0) {
+            const range = sel.getRangeAt(0);
+            range.deleteContents(); // Remove any selected content
+            range.insertNode(node); // Insert the new span or space at the caret position
+            range.setStartAfter(node); // Move caret to after the inserted node
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    }
 
     function placeCaretAtEnd(el) {
         el.focus();
@@ -123,6 +153,88 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const editableSection = document.querySelector('.editable-section');
+//     const minVrot = 100; // Set your minimum vrot value here
+//     const maxVrot = 700; // Set your maximum vrot value here
+//     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
+
+//     let previousLength = 0;
+
+//     // editableSection.addEventListener('input', function(event) {
+//     //     const text = editableSection.innerText;
+//     //     const currentLength = text.length;
+
+//     //     if (currentLength > previousLength) {
+//     //         const newChar = text.slice(previousLength);
+//     //         const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
+//     //         const newSpan = document.createElement('span');
+//     //         newSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
+//     //         newSpan.textContent = newChar;
+
+//     //         // Append the new span with the random vrot value
+//     //         editableSection.appendChild(newSpan);
+
+//     //                     // Remove the last added text node to avoid duplication
+//     //                     const lastTextNode = editableSection.childNodes[editableSection.childNodes.length - 2];
+//     //                     if (lastTextNode && lastTextNode.nodeType === Node.TEXT_NODE) {
+//     //                         editableSection.removeChild(lastTextNode);
+//     //                     }
+            
+
+//     //         // Update previousLength to currentLength
+//     //         previousLength = currentLength;
+//     //     } else if (currentLength < previousLength) {
+//     //         previousLength = currentLength;
+//     //     }
+
+//     //     placeCaretAtEnd(editableSection);
+//     // });
+
+//     editableSection.addEventListener('input', function(event) {
+//         const textNodes = Array.from(editableSection.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
+//         const newChar = textNodes.length > 0 ? textNodes[0].nodeValue : ''; // Get any raw text nodes if present
+//         const currentLength = editableSection.innerText.length;
+
+//         // If new characters are added
+//         if (event.inputType === 'insertText' && newChar.length > 0) {
+//             const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
+//             const newSpan = document.createElement('span');
+//             newSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
+//             newSpan.textContent = newChar;
+
+//             // Append the new span and remove the raw text node
+//             editableSection.appendChild(newSpan);
+//             textNodes[0].remove();
+
+//             // Update the previous length
+//             previousLength = currentLength;
+//         } else if (currentLength < previousLength) {
+//             // If characters are deleted, update previousLength
+//             previousLength = currentLength;
+//         }
+
+//         placeCaretAtEnd(editableSection);
+//     });
+
+//     function placeCaretAtEnd(el) {
+//         el.focus();
+//         if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+//             const range = document.createRange();
+//             range.selectNodeContents(el);
+//             range.collapse(false);
+//             const sel = window.getSelection();
+//             sel.removeAllRanges();
+//             sel.addRange(range);
+//         }
+//     }
+// });
 
 
 // const fontSizeSlider = document.getElementById('fontSizeSlider');
