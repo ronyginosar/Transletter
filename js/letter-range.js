@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Editable Section randomize vrot axis of font
 document.addEventListener('DOMContentLoaded', function() {
     const editableSection = document.querySelector('.editable-section');
-    const minVrot = 100; // Set your minimum vrot value here
-    const maxVrot = 700; // Set your maximum vrot value here
+    const minVrot = 100;
+    const maxVrot = 700;
     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
 
     editableSection.addEventListener('keypress', function(event) {
@@ -107,10 +107,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const char = event.key; // Get the key that was pressed
 
+        if (event.keyCode === 13) { // enter key
+            // Handle the Enter key to insert a <br> for a new line
+            event.preventDefault(); // Prevent default Enter behavior
+            insertAtCaret(document.createElement('br')); // Insert a <br> at the caret position
+            return; // Skip further processing for Enter
+        }
+
         if (event.keyCode === 32) { // space key
             // Handle the space key: insert an actual space and move the caret
+
             // insertAtCaret(document.createTextNode(' ')); // to avoid browser interp to space
-            insertAtCaret(document.createTextNode('\u00A0')); // Insert non-breaking space
+            // insertAtCaret(document.createTextNode('\u00A0')); // Insert non-breaking space
+
+            // Handle the space key: insert a span containing a non-breaking space (&nbsp;)
+            const spaceSpan = document.createElement('span');
+            spaceSpan.innerHTML = '&nbsp;'; // Use non-breaking space inside the span
+
+            // Optionally, you can also randomize 'vrot' for the space span if desired
+            const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
+            spaceSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
+
+            insertAtCaret(spaceSpan); // Insert the span at the caret position
             return; // Skip further processing for space
         }
 
@@ -124,6 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Insert the new span at the caret position
             insertAtCaret(newSpan);
+
+            // Remove any unwanted <br> tags
+            removeTrailingBR(editableSection);
+
 
             // Place caret at the end after insertion
             placeCaretAtEnd(editableSection);
@@ -152,6 +174,17 @@ document.addEventListener('DOMContentLoaded', function() {
             sel.removeAllRanges();
             sel.addRange(range);
         }
+    }
+
+    // Function to remove any unwanted <br> tags inside the editable section
+    function removeTrailingBR(el) {
+        const brElements = el.querySelectorAll('br');
+        brElements.forEach(br => {
+            // Check if the <br> is the last child or unnecessary
+            if (!br.nextSibling) {
+                br.remove(); // Remove the trailing <br>
+            }
+        });
     }
 });
 
