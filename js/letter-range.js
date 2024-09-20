@@ -108,10 +108,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const char = event.key; // Get the key that was pressed
 
         if (event.keyCode === 13) { // enter key
-            // Handle the Enter key to insert a <br> for a new line
-            event.preventDefault(); // Prevent default Enter behavior
-            insertAtCaret(document.createElement('br')); // Insert a <br> at the caret position
-            return; // Skip further processing for Enter
+            // // Handle the Enter key to insert a <br> for a new line
+            // event.preventDefault(); // Prevent default Enter behavior
+            // insertAtCaret(document.createElement('br')); // Insert a <br> at the caret position
+            // return; // Skip further processing for Enter
+
+             // Handle the Enter key to insert a <br> for a new line
+             event.preventDefault(); // Prevent default Enter behavior
+             const brNode = document.createElement('br'); // Create a <br> element
+             insertAtCaret(brNode); // Insert the <br> at the caret position
+ 
+             // Move the caret after the <br> to give visual feedback of a new line
+            //  const newNode = document.createTextNode(''); // Add a space-like placeholder
+            //  insertAtCaret(newNode); // Insert a space-like character after <br> to avoid caret collapse
+             moveCaretAfterNode(brNode); // Place caret directly after <br>
+ 
+             return; // Skip further processing for Enter
+
         }
 
         if (event.keyCode === 32) { // space key
@@ -162,6 +175,24 @@ document.addEventListener('DOMContentLoaded', function() {
             sel.removeAllRanges();
             sel.addRange(range);
         }
+    }
+
+   function moveCaretAfterNode(node) {
+        const range = document.createRange();
+        const sel = window.getSelection();
+
+        if (node.nextSibling) {
+            range.setStartAfter(node); // If there's a next sibling, place caret after <br>
+        } else {
+            // If <br> is the last node, create an empty text node to position the caret correctly
+            const textNode = document.createTextNode('');
+            node.parentNode.appendChild(textNode);
+            range.setStart(textNode, 0); // Place caret at the start of the empty text node
+        }
+
+        range.collapse(true); // Collapse the range so that it’s a caret position
+        sel.removeAllRanges(); // Clear current selection
+        sel.addRange(range); // Set the new range (caret) after the node
     }
 
     function placeCaretAtEnd(el) {
