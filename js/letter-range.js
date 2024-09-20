@@ -39,7 +39,6 @@ setTimeout(function(){ randomvrot(); }, 500);
 document.addEventListener('DOMContentLoaded', function() {
     const fontSizeSlider = document.getElementById('fontSizeSlider');
     const fontSizeLabel = document.getElementById('fontSizeLabel');
-    // const rangePara = document.getElementById('rangePara');
     const wrapperDiv = document.getElementById('wrapper');
     const colorToggle = document.getElementById('colorToggle');
     const controls = document.querySelector('.controls');
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
             fontSizeLabel.style.right = 'auto';
         }
         fontSizeLabel.textContent = `${sliderValue}`;
-        // rangePara.style.fontSize = `${sliderValue}px`;
         wrapperDiv.style.fontSize = `${sliderValue}px`;
     }
 
@@ -80,13 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     colorToggle.addEventListener('click', function() {
-        // if (rangePara.style.color === 'black') {
-        //     rangePara.style.color = 'white';
-        //     colorToggle.style.backgroundColor = 'black';
-        // } else {
-        //     rangePara.style.color = 'black';
-        //     colorToggle.style.backgroundColor = 'white';
-        // }
         if (wrapperDiv.style.color === 'black') {
             wrapperDiv.style.color = 'white';
             colorToggle.style.backgroundColor = 'black';
@@ -98,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize the color toggle button
-    // rangePara.style.color = 'black';
     wrapperDiv.style.color = 'black';
     colorToggle.style.backgroundColor = 'white';
     updateSliderLabel();
