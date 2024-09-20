@@ -93,6 +93,37 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSliderLabel();
 });
 
+// Editable Section randomize vrot axis of font
+document.addEventListener('DOMContentLoaded', function() {
+    const editableSection = document.querySelector('.editable-section');
+    const minVrot = 100; // Set your minimum vrot value here
+    const maxVrot = 700; // Set your maximum vrot value here
+    /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
+
+
+    editableSection.addEventListener('input', function(event) {
+        const text = editableSection.innerText;
+        const newText = Array.from(text).map(char => {
+            const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
+            return `<span style="font-variation-settings: 'vrot' ${randomVrot};">${char}</span>`;
+        }).join('');
+        editableSection.innerHTML = newText;
+        placeCaretAtEnd(editableSection);
+    });
+
+    function placeCaretAtEnd(el) {
+        el.focus();
+        if (typeof window.getSelection != "undefined" && typeof document.createRange != "undefined") {
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            range.collapse(false);
+            const sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    }
+});
+
 
 // const fontSizeSlider = document.getElementById('fontSizeSlider');
 // const fontSizeLabel = document.getElementById('fontSizeLabel');

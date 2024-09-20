@@ -123,6 +123,22 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 9px;
 }
 
+/* type text section, solution to non editable paragraph */
+.editable-section {
+    border: none;
+    outline: none;
+    /* padding: 10px; */
+    margin-top: 10px;
+    font-size: 48px;
+    width: 100%;
+
+}
+/* .editable-section:focus { */
+    /* outline: none; */
+/* } */
+
+
+
 /* note: not sure yet if used... */
 /* @keyframes fontVar-1{
     0%{font-variation-settings: "vrot" 50;}
