@@ -331,6 +331,7 @@ function your_order(e) {
         : "";
 }
 $(document).on("mousemove keypress keydown keyup scroll", function () {
+// $(document).on("mousemove keypress keydown keyup", function () {
     clearTimeout(mousetimeout),
         screensaver_active && stop_screensaver(),
         (mousetimeout = setTimeout(function () {
@@ -378,7 +379,9 @@ $(document).on("mousemove keypress keydown keyup scroll", function () {
     ),
     (window.charString = "אבגדהוזחטיכלמנסעפצקרשתףםןץ"),
     (window.R = 1),
-    (window.checkChar = 1),
+    (window.checkChar = 1)
+    ,
     setTimeout(function () {
         changeChar();
-    }, 8050);
+    }, 8050)
+    ;

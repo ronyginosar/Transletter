@@ -64,8 +64,16 @@
 
     <!-- 3. animate on scroll -->
     <div class="scroll_section_wrapper">
-      <iframe src="iframe_subpages/scroll-section.html"></iframe>
-      <!-- TODO - make height hidden "out of screen", control the iframe height. fix the top hidding -->
+      <iframe src="iframe_subpages/scroll-section.html" id="scroll-section-iframe"></iframe>
+      <script>
+        // Selecting the iframe element
+        var frame = document.getElementById("scroll-section-iframe");
+        // Adjusting the iframe height onload event
+        frame.onload = function() {
+            // set the height of the iframe as the height&width of the iframe content
+            frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+        }
+      </script>
     </div>
 
     <!-- 4. tester TODO - adapt from old sliders -->
