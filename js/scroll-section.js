@@ -28,20 +28,20 @@ function changevrot(){
     // adjustedVrotScroll = Math.max(minVrotScroll, Math.min(maxVrotScroll, adjustedVrotScroll));
 
     // future make this less stuck at min and max
-// Calculate the ratio of pageWidth to pageHeight
-const ratio = pageWidth / pageHeight;
+    // Calculate the ratio of pageWidth to pageHeight
+    const ratio = pageWidth / pageHeight;
 
-// Scale window.vrotScroll within the range defined by minVrotScroll and maxVrotScroll
-let adjustedVrotScroll = minVrotScroll + (window.vrotScroll - minVrotScroll) * ratio;
+    // Scale window.vrotScroll within the range defined by minVrotScroll and maxVrotScroll
+    let adjustedVrotScroll = minVrotScroll + (window.vrotScroll - minVrotScroll) * ratio;
 
-// Clamp adjustedVrotScroll to be within min and max values
-adjustedVrotScroll = Math.max(minVrotScroll, Math.min(maxVrotScroll, adjustedVrotScroll));
+    // Clamp adjustedVrotScroll to be within min and max values
+    adjustedVrotScroll = Math.max(minVrotScroll, Math.min(maxVrotScroll, adjustedVrotScroll));
 
-
-    
     document.querySelector(':root').style.setProperty('--vrot', adjustedVrotScroll);
     // document.querySelector(':root').style.setProperty('--vrot', window.vrotScroll);
     console.log(pageWidth, pageHeight, adjustedVrotScroll,vrotScroll);
+
 }
+
 window.vrotScroll = 50;
 window.count = 0;
