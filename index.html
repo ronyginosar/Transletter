@@ -24,6 +24,7 @@
 
     <!-- Adjust iframe height according to content by given id -->
     <script>
+
       // Function to adjust the iframe height and width
       function adjustIframeSize(iframeId) {
           // Selecting the iframe element
@@ -65,32 +66,14 @@
     <!-- 3. animate on scroll -->
     <div class="scroll_section_wrapper">
       <iframe src="iframe_subpages/scroll-section.html" id="scroll-section-iframe"></iframe>
-      <script>
-        // Selecting the iframe element
-        var frame = document.getElementById("scroll-section-iframe");
-        // Adjusting the iframe height onload event
-        frame.onload = function() {
-            // set the height of the iframe as the height&width of the iframe content
-            frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
-        }
-      </script>
+      <script>adjustIframeSize("scroll-section-iframe")</script>
+
     </div>
 
     <!-- 4. tester TODO - adapt from old sliders -->
     <div class="tester">
       <!-- TODO Make axis update with slider -->
       <iframe src="iframe_subpages/letter-tester.html" id="tester-iframe"></iframe>
-      <!-- <script>
-        // Selecting the iframe element
-        var frame = document.getElementById("tester-iframe");
-        
-        // Adjusting the iframe height onload event
-        frame.onload = function() {
-            // set the height of the iframe as the height&width of the iframe content
-            frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
-            // frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
-        }
-      </script> -->
     </div>
 
 
@@ -129,18 +112,6 @@
     <div class="footer_page">
       <iframe src="iframe_subpages/footer.html" id="footer-iframe"></iframe>
       <script>adjustIframeSize("footer-iframe")</script>
-      <!-- <script>
-        // TODO make this function, input id
-        // Selecting the iframe element
-        var frame = document.getElementById("footer-iframe");
-        
-        // Adjusting the iframe height onload event
-        frame.onload = function() {
-            // set the height of the iframe as the height&width of the iframe content
-            frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
-            // frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
-        }
-      </script> -->
     </div>
   </body>
 </html>
