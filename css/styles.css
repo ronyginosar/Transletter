@@ -41,6 +41,12 @@ html,body {
     /* cursor: none; */
 }
 
+/* remove scroll bar */
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
 .home-page-wrapper {
     display: flex;
     flex-direction: column;
@@ -82,6 +88,7 @@ html,body {
     /* height: 30%; */
 }
 
+/* remove */
 /* #tester-iframe{
     display: flex;
     justify-content: center;
@@ -94,23 +101,15 @@ html,body {
     background-color: var(--element-color);
     /* background-color: chocolate; */
     /* remove scroll bar: */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    /* -ms-overflow-style: none;  Internet Explorer 10+ 
     scrollbar-width: none;  /* Firefox */
 }
 
-body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-.scroll_section_wrapper::-webkit-scrollbar {  
+/* remove */
+/* .scroll_section_wrapper::-webkit-scrollbar {  
     /* remove scroll bar: */
-    display: none;  /* Safari and Chrome */
-} 
-
-/* .letter-range_page{
-
-} */
+    /* display: none;  /* Safari and Chrome 
+}  */
 
 .waterfall{
     display: flex;

@@ -1,53 +1,38 @@
-/* FIX THIS */
-/* iframe {
-
-    height: 70vh;
-
-} */
-
 #wrapper{
-    /* position: absolute; */
     inset: 0;
-    /* TODO fix */
-    /* height: 150vh; */
     /* background-color: rgb(200, 73, 73); */
     background-color: rgb(0, 0, 0);
-    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
     /* remove scroll bar:
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+    /* scrollbar-width: none;  /* Firefox */
 /* } */
 
+/* remove */
 /* #wrapper::-webkit-scrollbar {  */
     /* remove scroll bar: */
     /* display: none;  Safari and Chrome */
 } 
 
 #scrollPara{
-    /* position: absolute; */
-    /* padding: 12.5% 25%; */
     height: 80%;
     width: 80%;
     margin: 0;
-    padding-top: 10%;
     font-size: 3.5vw;
     font-family: TransletterGX;
     line-height: 125%;
     font-variation-settings: "vrot" var(--vrot);
     background-color: black;
     color: white;
-    /* height: 50vh; */
 }
 
 #scrollPara nobr{
     font-variation-settings: "vrot" var(--vrot);
 }
-@media (max-width:1100px) {
+/* @media (max-width:1100px) {
     #scrollPara{
         padding-top: 10%;
-        /* padding: 12.5% 12.5%; */
         padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
-        /* font-size: 4.25vw; */
+        /* font-size: 4.25vw; 
     }
-}
+} */
