@@ -380,8 +380,10 @@ $(document).on("mousemove keypress keydown keyup scroll", function () {
     (window.charString = "אבגדהוזחטיכלמנסעפצקרשתףםןץ"),
     (window.R = 1),
     (window.checkChar = 1)
-    ,
-    setTimeout(function () {
-        changeChar();
-    }, 8050)
+    // future: what is this for? it caused console log errors
+    // quick fix
+    // ,
+    // setTimeout(function () {
+    //     changeChar();
+    // }, 8050)
     ;
