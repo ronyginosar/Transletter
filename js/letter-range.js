@@ -33,7 +33,6 @@ function randomvrot(){
 }
 setTimeout(function(){ randomvrot(); }, 500);
 
-
 // Controls:
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const wrapperDiv = document.getElementById('wrapper');
     const colorToggle = document.getElementById('colorToggle');
     const controls = document.querySelector('.controls');
-
 
     let fontSize = fontSizeSlider.value + 'px';
 
@@ -108,78 +106,36 @@ document.addEventListener('DOMContentLoaded', function() {
         const char = event.key; // Get the key that was pressed
 
         if (event.keyCode === 13) { // enter key
-            // // Handle the Enter key to insert a <br> for a new line
-            // event.preventDefault(); // Prevent default Enter behavior
-            // insertAtCaret(document.createElement('br')); // Insert a <br> at the caret position
-            // return; // Skip further processing for Enter
-
-             // Handle the Enter key to insert a <br> for a new line
-             event.preventDefault(); // Prevent default Enter behavior
-             const brNode = document.createElement('br'); // Create a <br> element
-             insertAtCaret(brNode); // Insert the <br> at the caret position
- 
-             // Move the caret after the <br> to give visual feedback of a new line
-            //  const newNode = document.createTextNode(''); // Add a space-like placeholder
-            //  insertAtCaret(newNode); // Insert a space-like character after <br> to avoid caret collapse
-             
-            // moveCaretAfterNode(brNode); // Place caret directly after <br>
-            
-            // // Add a temporary space after <br> for visual feedback
-            // const tempSpace = document.createTextNode(' ');
-            // insertAtCaret(tempSpace);
-
-            // // Move the caret after the temporary space
-            // moveCaretAfterNode(tempSpace);
-
-            // // Remove the temporary space after caret placement
-            // setTimeout(() => {
-            //     if (tempSpace.parentNode) {
-            //         tempSpace.parentNode.removeChild(tempSpace);
-            //     }
-            // }, 0); // Remove the space immediately      
-            
-                        // Move the caret to the next line after the <br>
-                        insertAtCaret(document.createTextNode('\u200B')); // Zero-width space to move caret down
-
-
-            
+            // Handle the Enter key to insert a <br> for a new line
+            event.preventDefault(); // Prevent default Enter behavior
+            const brNode = document.createElement('br'); // Create a <br> element
+            insertAtCaret(brNode); // Insert the <br> at the caret position   
+            // Move the caret to the next line after the <br>
+            insertAtCaret(document.createTextNode('\u200B')); // Zero-width space to move caret down
             return; // Skip further processing for Enter
-
         }
 
         if (event.keyCode === 32) { // space key
-            // Handle the space key: insert an actual space and move the caret
-
-            // insertAtCaret(document.createTextNode(' ')); // to avoid browser interp to space
-            // insertAtCaret(document.createTextNode('\u00A0')); // Insert non-breaking space
-
-            // Handle the space key: insert a span containing a non-breaking space (&nbsp;)
+            // Handle the space key: insert a span containing a non-breaking space (&nbsp;) and move the caret
             const spaceSpan = document.createElement('span');
             spaceSpan.innerHTML = '&nbsp;'; // Use non-breaking space inside the span
-
-            // Optionally, you can also randomize 'vrot' for the space span if desired
-            const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
-            spaceSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
-
+            
             insertAtCaret(spaceSpan); // Insert the span at the caret position
             return; // Skip further processing for space
         }
 
         if (char.length === 1) { // Only process printable characters
+            // Randomize 'vrot' for the typed character future: set deviation for this?
             const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
 
             // Create a new span for the typed character
             const newSpan = document.createElement('span');
             newSpan.style.fontVariationSettings = `'vrot' ${randomVrot}`;
             newSpan.textContent = char;
-
             // Insert the new span at the caret position
             insertAtCaret(newSpan);
-
             // Remove any unwanted <br> tags
             removeTrailingBR(editableSection);
-
-
             // Place caret at the end after insertion
             placeCaretAtEnd(editableSection);
         }
