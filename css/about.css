@@ -10,18 +10,18 @@
     position: relative
 }
 
-@media (min-width:1700px) {
+/* @media (min-width:1700px) {
     .w-container {
         max-width: 1220px;
         width: 1220px
     }
-}
+} */
 
-@media (max-width:1100px) {
+/* @media (max-width:1100px) {
     .w-container {
         max-width: 728px
     }
-}
+} */
 
 .container-3 .paragraph {
     font-variation-settings: "vrot" 700;
