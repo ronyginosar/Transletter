@@ -121,9 +121,29 @@ document.addEventListener('DOMContentLoaded', function() {
              // Move the caret after the <br> to give visual feedback of a new line
             //  const newNode = document.createTextNode(''); // Add a space-like placeholder
             //  insertAtCaret(newNode); // Insert a space-like character after <br> to avoid caret collapse
-             moveCaretAfterNode(brNode); // Place caret directly after <br>
- 
-             return; // Skip further processing for Enter
+             
+            // moveCaretAfterNode(brNode); // Place caret directly after <br>
+            
+            // // Add a temporary space after <br> for visual feedback
+            // const tempSpace = document.createTextNode(' ');
+            // insertAtCaret(tempSpace);
+
+            // // Move the caret after the temporary space
+            // moveCaretAfterNode(tempSpace);
+
+            // // Remove the temporary space after caret placement
+            // setTimeout(() => {
+            //     if (tempSpace.parentNode) {
+            //         tempSpace.parentNode.removeChild(tempSpace);
+            //     }
+            // }, 0); // Remove the space immediately      
+            
+                        // Move the caret to the next line after the <br>
+                        insertAtCaret(document.createTextNode('\u200B')); // Zero-width space to move caret down
+
+
+            
+            return; // Skip further processing for Enter
 
         }
 

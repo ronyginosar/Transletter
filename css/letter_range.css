@@ -11,10 +11,10 @@
     justify-content: flex-start;
     background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark));
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    font-family: TransletterGX;
 }
 #rangePara{
     /* font-size: 48px; */
-    font-family: TransletterGX;
     font-variation-settings: "vrot" var(--vrot-letter-range);
     line-height: 99%;
     margin: 0;
@@ -134,6 +134,8 @@ input[type=range]::-webkit-slider-runnable-track {
     margin-top: 10px;
     /* font-size: 48px; */
     width: 100%;
+    line-height: 99%;
+
 
 }
 /* .editable-section:focus { */
