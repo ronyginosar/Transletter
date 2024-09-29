@@ -107,3 +107,61 @@ function injectHandwrittenImages(character) {
 }
 
 
+// P2
+
+// Text content for each title
+const textContent = {
+    text1: "הגופן הגמיש שפיתחתי, מנסה מצד אחד לשמר ולחקות את המסורת הצורנית של הכתיבה הידנית, ומצד שני, לקחת אותה כמה צעדים קדימה אל עבר המרחב הדיגיטלי שבו היא ממילא מתקיימת היום. הגופן אינו מנסה להתחקות אחר תנועת היד האנושית הקליגרפית בשלמותה, אלא מתאים את תכונותיו מחדש בעקבות שינוי הכלי הטכנולוגי. תפקידו הוא לתאר מהלך: התפתחות הנובעת מן העבר, והתקדמות אל עבר השלב הבא. במקביל, הוא מציית לכללי השפה ושומר על צורות מזוהות של אותיות, אם כי אינו מתחייב לבהירות מוחלטת, בייחוד בנקודות המעבר. הוריבאילית היא המדיום שדרכו אני מציגה תהליך, הצעה לתנועה אבולוציונית עדכנית. יתרונותיה הן גמישות ויזואלית, רעיונית ומחשבתית. היא מאפשרת לי לייצר מגוון רחב של צורות בפורמט אחד, לייצר מוביליות ותנועה בין השלבים, ולהגביר את האינטראקציה וחופש הבחירה של המשתמש. ה׳תנואות׳ מוטמעות בקוד, והן יודעות לתפקד ",
+    text2: "אותיות כתב יד אלו אותיות שצורותיהן מתאימות לכתיבה מהירה בדיו על נייר, והן עגולות יותר, חופשיות וזורמות. אותיות אלו מכונות גם ”כתב רהוט” על שום מהירות הכתיבה.",
+    text3: "מוצר הצריכה הוא תופעה תרבותית, המורכבת מחפץ מעוצב שתהליכי ייצורו מעוגנים בחיקוי ומביאים אותו לידי פונקציונליות, תואם למקור עלום או גלוי, חדשנות בתהליכי ההמרה מהחפץ המקורי לחפץ המעוצב החדש, וגיוון הנובע מחיקוי שיש בו ’טעויות’ ותנועה בין הזהה לדומה. בחיקוי באופן פרדוקסלי מסתתרים חדשנות וגיוון, משום שהחיקוי מדמה את המקור, אבל באופן אחראדם סמית׳ 1759על פי ההגדרה של סמית, כאשר אנו מדברים על גופנים כמוצר צריכה, ובפרט על גופנים טכנולוגיים עכשווים, החיקוי מתייחס לצורתן המוכרת והמסורתית של אותיות הא’-ב’ השונות, שמקבלת איפיון מחודש על ידי גיוון, שימוש בטכנולוגיה וטרנדים חזותיים.",
+    text4: "\
+    עלייתה של תרבות דיגיטלית, העלתה את הדרישה לגופנים המותאמים לקריאה דרך מסך. המעבר למסך, הצפת המידע וזמינותו ואורח החיים העמוס, גורמים לנו לדלג מקטע כזה או אחר - אנחנו לא קוראים היום כפי שקראנו פעם, ולא באותה כמות. העושר החזותי והצורך בגיוון ויזואלי, וזמינותה וקלותה של הטכנולוגיה הובילו להפיכתו של הגופן למוצר למוצר צריכה של ממש.\
+\
+עלייתה של תרבות דיגיטלית, העלתה את הדרישה לגופנים המותאמים לקריאה דרך מסך. המעבר למסך, הצפת המידע וזמינותו ואורח החיים העמוס, גורמים לנו לדלג מקטע כזה או אחר - אנחנו לא קוראים היום כפי שקראנו פעם, ולא באותה כמות. העושר החזותי והצורך בגיוון ויזואלי, וזמינותה וקלותה של הטכנולוגיה הובילו להפיכתו של הגופן למוצר למוצר צריכה של ממש.\
+על גופנים וריאביליים‍‍לפני כשלוש שנים השיקו גוגל, אפל, מיקרוסופט ואדובי סוג חדש של גופן: גופן וריאבילי - גמיש. קובץ בודד המכיל צירי תנועה והשתנות של אותיות, בקוד. גופן זה מסוגל להכיל למעשה כמות בלתי מוגבלת של משקלים, כתלות בציר החזותי אותו קובע המעצב (רוחב אות, סריף, נטייה וכד’). מטרתו היא קודם כל להקל במשקל הטעינה של האתר, ולאפשר טיפוגרפיה רספונסיבית המתאימה את עצמה ומשתנה בזמן אמת. במקביל ליתרונות הטכנולוגיים, נוצר כלי עיצובי חזק: אפשרות לייצר מערכת מורכבת יותר של אותיות המוגדרת על ידי גבולות גזרה, הרחבת טווח התנועה וחופש הבחירה של המשתמש, וכניסה של מימדים חדשים של תנועה, אינטראקטיביות ומשחקיות. ",
+    };
+
+const imageContent = {
+    text1: ['../assets/content_images/ashkenazi_sfaradi_1-p-500.jpeg', 
+            '../assets/content_images/ashkenazi_sfaradi_2-p-500.jpeg', 
+            '../assets/content_images/ashkenazi_sfaradi_4-p-500.jpeg'], // Section 1 images
+    text2: ['../assets/content_images/ashkenazi_sfaradi_3-p-500.jpeg'], // Section 2 image
+    text3: ['../assets/content_images/Dfus_1-p-500.jpeg', 
+            '../assets/content_images/israeli_3-p-500.jpeg'], // Section 3 images
+    text4: ['../assets/content_images/history_3-p-500.jpeg'], // Section 4 image
+    text5: ['../assets/content_images/israeli_1-p-500.jpeg', 
+            '../assets/content_images/history_4-p-500.jpeg'] // Section 5 images
+};
+    
+
+// Function to display text and images when a title is clicked
+
+const titles = document.querySelectorAll('#text-selector li');
+const textDisplay = document.getElementById('text-display');
+const imageGallery = document.getElementById('image-gallery');
+
+titles.forEach(title => {
+    title.addEventListener('click', function() {
+        const selectedText = textContent[this.dataset.text]; // Get related text
+        const selectedImages = imageContent[this.dataset.text]; // Get related images
+
+        // Update text
+        textDisplay.textContent = selectedText;
+
+        // Clear existing images in the gallery
+        imageGallery.innerHTML = '';
+
+        // Inject images into the gallery
+        if (selectedImages) {
+            selectedImages.forEach(imageUrl => {
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = `Image for ${this.textContent}`;
+                imageGallery.appendChild(img);
+            });
+        }
+    });
+});
+
+// Set default text and images for the first title on page load
+titles[0].click();
