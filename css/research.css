@@ -1,0 +1,101 @@
+
+
+html,body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
+}
+
+#title_wrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+}
+
+#title_spacer{
+    /* background-color: rgb(196, 20, 20); */
+    width: 15%;
+}
+
+#title{
+    display: flex;
+    /* background-color: rgb(176, 196, 20); */
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title h1{
+    width: 100%;
+    text-align: center;
+    font-family: TransletterGX;
+    font-size: 18vh;
+    margin: 0;
+}
+
+#glyph_selector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+    font-size: 3vh;
+    font-variation-settings: "vrot" 500;
+}
+
+#glyph_selector button{
+    font-family: inherit;
+    background-color: var(--background-color);
+    color: var(--element-color);
+    font-size: inherit;
+    border: none;
+    border-radius:100%;
+    width: 5vh;
+    height: 5vh;
+}
+
+#glyph_selector button:hover{
+    background-color: var(--footer-gray);
+}
+
+#glyph_selector button:focus{
+    background-color: var(--element-color);
+    color: var(--background-color);
+}
+
+#glyph_selector button.selected{
+    background-color: var(--element-color);
+    color: var(--background-color);
+}
+
+#glyph_space{
+    /* background-color: rgb(20, 196, 187); */
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 5vh;
+}
+
+#handwritten_glyph_space{
+    background-color: rgb(26, 20, 196);
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.NOTE{
+    background-color: rgb(196, 20, 181);
+    width: 100%;
+    text-align: center;
+}
+
+
+
+

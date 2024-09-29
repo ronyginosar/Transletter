@@ -147,9 +147,8 @@ body::-webkit-scrollbar {
     background-color: var(--footer-gray);
     /* background-color: pink; */
     color: var(--element-color);
-    /* height: 98vh; */
-    height: 3px; /*placeholder value to later inject height by script*/
-
+    height: 50vh; /*placeholder value to later inject height by script*/
+    /* TODO fix placeholder */
     width: 100%;
 
 }
@@ -169,8 +168,7 @@ body::-webkit-scrollbar {
 
 .research{
     background-color: var(--background-color);
-    height: 98vh;
-    /* TODO */
+    height: 98vh; /*placeholder value to later inject height by script*/
     width: 100%;
 }
 
