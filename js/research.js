@@ -107,7 +107,7 @@ function injectHandwrittenImages(character) {
 }
 
 
-// P2
+// P2 
 
 // Text content for each title
 const textContent = {
@@ -120,6 +120,7 @@ const textContent = {
 עלייתה של תרבות דיגיטלית, העלתה את הדרישה לגופנים המותאמים לקריאה דרך מסך. המעבר למסך, הצפת המידע וזמינותו ואורח החיים העמוס, גורמים לנו לדלג מקטע כזה או אחר - אנחנו לא קוראים היום כפי שקראנו פעם, ולא באותה כמות. העושר החזותי והצורך בגיוון ויזואלי, וזמינותה וקלותה של הטכנולוגיה הובילו להפיכתו של הגופן למוצר למוצר צריכה של ממש.\
 על גופנים וריאביליים‍‍לפני כשלוש שנים השיקו גוגל, אפל, מיקרוסופט ואדובי סוג חדש של גופן: גופן וריאבילי - גמיש. קובץ בודד המכיל צירי תנועה והשתנות של אותיות, בקוד. גופן זה מסוגל להכיל למעשה כמות בלתי מוגבלת של משקלים, כתלות בציר החזותי אותו קובע המעצב (רוחב אות, סריף, נטייה וכד’). מטרתו היא קודם כל להקל במשקל הטעינה של האתר, ולאפשר טיפוגרפיה רספונסיבית המתאימה את עצמה ומשתנה בזמן אמת. במקביל ליתרונות הטכנולוגיים, נוצר כלי עיצובי חזק: אפשרות לייצר מערכת מורכבת יותר של אותיות המוגדרת על ידי גבולות גזרה, הרחבת טווח התנועה וחופש הבחירה של המשתמש, וכניסה של מימדים חדשים של תנועה, אינטראקטיביות ומשחקיות. ",
     };
+
 
 const imageContent = {
     text1: ['../assets/content_images/ashkenazi_sfaradi_1-p-500.jpeg', 
@@ -135,7 +136,6 @@ const imageContent = {
     
 
 // Function to display text and images when a title is clicked
-
 const titles = document.querySelectorAll('#text-selector li');
 const textDisplay = document.getElementById('text-display');
 const imageGallery = document.getElementById('image-gallery');
@@ -160,6 +160,31 @@ titles.forEach(title => {
                 imageGallery.appendChild(img);
             });
         }
+
+        // Center the gallery based on the number of images
+        if (selectedImages.length === 1) {
+            // Center single image
+            imageGallery.style.justifyContent = 'center';
+        } else {
+            // For multiple images, scroll to center the middle image
+            imageGallery.style.justifyContent = 'flex-start'; // Reset to flex-start
+
+            // Scroll to the center image
+            const middleIndex = Math.floor(selectedImages.length / 2);
+            const middleImage = imageGallery.children[middleIndex];
+            
+            // Scroll so that the middle image is centered in the gallery
+            const galleryWidth = imageGallery.offsetWidth;
+            const imageWidth = middleImage.offsetWidth;
+            const scrollPosition = middleImage.offsetLeft - (galleryWidth / 2) + (imageWidth / 2);
+            imageGallery.scrollLeft = scrollPosition;
+        }
+        
+        // Remove .selected from any previously selected item
+        titles.forEach(t => t.classList.remove('selected'));
+
+        // Add .selected to the clicked title
+        this.classList.add('selected');
     });
 });
 

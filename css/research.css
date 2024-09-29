@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 200vh;
+    height: 150vh;
     /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     padding-right: var(--page-side-padding);
@@ -127,7 +127,7 @@
     width: 10%;
     /* margin: 0 10px; */
     /* margin-right: 1%; */
-    margin-top: 3%;
+    /* margin-top: 3%; */
 }
 
 .handwritten-text-label {
@@ -146,33 +146,27 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    min-height: 50vh; /* Minimum height is 50% of viewport height */
+    min-height: 20vh; 
     height: auto; /* Allows height to grow with content */
     max-height: 100vh; /* Optional: Prevents it from exceeding the viewport */
-    /* overflow-y: auto; Adds vertical scrolling if content overflows */
-
     overflow-x: hidden; /* Prevents horizontal scrolling */
-    overflow-y: visible; /* Ensures vertical scrolling is visible if needed */
-
+    overflow-y: auto; /* Ensures vertical scrolling is visible if needed */
 }
 
 /* First Section: Text Selector */
 #text-selector {
     flex: 1; /* 1/3 of the container width */
-    /* padding: 20px; */
 }
 
 #text-selector ul {
     list-style-type: none;
+    margin-block: 0;
     padding: 0;
 }
 
-
 #text-selector li {
-    /* margin: 10px 0; */
     padding: 3% 0;
-    font-size: 18px;
-    /* font-weight: bold; */
+    font-size: 2vh;
     position: relative;
     transition: color 0.3s, text-decoration 0.3s ease-in-out;
     text-decoration: none; /* Ensure no underline by default */
@@ -185,17 +179,21 @@
     text-decoration-thickness: 1px; /* Optional: control underline thickness */
 }
 
+#text-selector li.selected {
+    color: var(--element-color); /* Change text color on hover */
+    text-decoration: underline; /* Apply underline on hover */
+    text-decoration-color: var(--element-color); /* Optional: customize underline color */
+    text-decoration-thickness: 1px; /* Optional: control underline thickness */
+}
+
 /* Second Section: Text Display with Automatic 2 Columns */
 #text-display {
     flex: 2; /* Takes up 2/3 of the container */
-    padding: 20px;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 2vh;
+    /* line-height: 1.5; */
     column-count: 2; /* Automatically splits text into 2 columns */
-    column-gap: 20px; /* Space between the columns */
-
+    column-gap: 10%; /* Space between the columns */
     column-fill: balance; /* Balance the content evenly between the two columns */
-
     max-height: 100%; /* Ensures content height stays within the section */
     overflow: visible; /* Allows content to expand */
 }
@@ -208,12 +206,14 @@
 #image-gallery {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     overflow-x: scroll; /* Allow horizontal scroll */
     overflow-y: hidden; /* Prevent vertical scroll */
     scroll-behavior: smooth; /* Smooth scrolling effect */
-    padding: 10px;
+    /* padding: 5%; */
     width: 100%; /* Full width of the container */
     height: auto;
+    max-height: 50vh;
 }
 
 #image-gallery::-webkit-scrollbar {
@@ -221,8 +221,8 @@
 }
 
 #image-gallery img {
-    height: 150px; /* Adjust image height as needed */
+    height: 100%; /* Adjust image height as needed */
     margin-right: 10px; /* Space between images */
     object-fit: cover; /* Ensure the image covers the container */
-    cursor: pointer; /* Change cursor on hover */
+    max-height: 50vh;
 }
