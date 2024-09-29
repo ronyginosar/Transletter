@@ -1,25 +1,26 @@
-
-
-html,body{
+#research-page{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
+    padding-right: var(--page-side-padding);
+    padding-left: var(--page-side-padding);
+    overflow: hidden;
 }
 
 #title_wrapper{
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 50%;
+    height: 40%;
 }
 
 #title_spacer{
     /* background-color: rgb(196, 20, 20); */
-    width: 15%;
+    width: 10%;
 }
 
 #title{
@@ -81,24 +82,59 @@ html,body{
     font-size: 5vh;
 }
 
-#handwritten_glyph_space{
-    height: 25%;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
+#divider {
+    content: '';
+    height: 1px;
+    background-color: var(--slider-gray);
+    /* flex-grow: 1; */
+    width:100%;
+    display: block;
+    border: none;
+  }
 
 .NOTE{
     background-color: rgb(196, 20, 181);
     width: 100%;
     text-align: center;
+    font-size: 36px;
+}
+
+#handwritten_glyph_space{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#handwritten_glyph_space img {
+    width: 70%;
+    padding: 10%;
 }
 
 #handwritten_glyph_space img:hover {
-    filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(90deg);
+    /* best approx to var(--gradient-blue) */
+    filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(97deg);
+    /* transition saturation rather than hue. */
+    transition: saturate .3s ease .15s;
 }
 
+.handwritten-text-image-container {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    /* margin: 0 10px; */
+    /* margin-right: 1%; */
+    margin-top: 3%;
+}
+
+.handwritten-text-label {
+    font-size: 1.5vh;
+    margin-top: 5px;
+    margin-right: 15%;
+    transition : opacity 0.3s ease; 
+    text-wrap: wrap;
+}
 
 
 

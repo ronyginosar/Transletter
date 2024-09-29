@@ -9,26 +9,27 @@
 
 </head>
 <body lang="heb" dir="rtl">
-    <!-- <div id="flex-container"> -->
+    <div id="research-page">
         <div id="title_wrapper">
             <div id="title_spacer"></div>
             <div id="title">
                 <h1>המחקר</h1>
                 <div id="glyph_selector">מעברים
-                    <button>א</button>
-                    <button>ב</button>
-                    <button>ג</button>
-                    <button>ל</button>
-                    <button id="default_glyph">צ</button>
-                    <button>ש</button>
+                    <button data-character="alef" >א</button>
+                    <button data-character="beit" >ב</button>
+                    <button data-character="gimel">ג</button>
+                    <button data-character="lamed">ל</button>
+                    <button data-character="zadi" id="default_glyph">צ</button>
+                    <button data-character="shin" >ש</button>
                 </div>
             </div>
         </div>
         <div id="glyph_space"></div>
-        <div class="NOTE">חסר: תמונות אותיות בsvg ושקוף</div>
+        <hr id="divider"></hr>
         <div id="handwritten_glyph_space"></div>
-    <!-- </div>     -->
-
+        <div class="NOTE">חסר: תמונות אותיות png ושקוף</div>
+    </div>    
+    <script src="../js/research-handwritten-data.js"></script> 
     <script src="../js/research.js"></script> 
 </body>
 </html>
