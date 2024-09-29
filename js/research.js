@@ -179,7 +179,7 @@ titles.forEach(title => {
             const scrollPosition = middleImage.offsetLeft - (galleryWidth / 2) + (imageWidth / 2);
             imageGallery.scrollLeft = scrollPosition;
         }
-        
+
         // Remove .selected from any previously selected item
         titles.forEach(t => t.classList.remove('selected'));
 
@@ -189,4 +189,5 @@ titles.forEach(title => {
 });
 
 // Set default text and images for the first title on page load
+// TODO also do the image location upon load, not just when clicking
 titles[0].click();
