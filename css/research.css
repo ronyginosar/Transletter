@@ -82,7 +82,6 @@ html,body{
 }
 
 #handwritten_glyph_space{
-    background-color: rgb(26, 20, 196);
     height: 25%;
     width: 100%;
     display: flex;
@@ -94,6 +93,10 @@ html,body{
     background-color: rgb(196, 20, 181);
     width: 100%;
     text-align: center;
+}
+
+#handwritten_glyph_space img:hover {
+    filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(90deg);
 }
 
 

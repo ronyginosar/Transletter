@@ -49,3 +49,67 @@ buttons.forEach(button => {
     });
 });
 
+// Define the image paths and corresponding labels
+const images = {
+    alef: ['alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png'],
+    // alef: ['alef_1.png', 'alef_2.png', 'alef_3.png', 'alef_4.png', 'alef_5.png', 'alef_6.png', 'alef_7.png', 'alef_8.png', 'alef_9.png', 'alef_10.png'],
+    // bet: ['bet_1.png', 'bet_2.png', 'bet_3.png', 'bet_4.png', 'bet_5.png', 'bet_6.png', 'bet_7.png', 'bet_8.png', 'bet_9.png', 'bet_10.png'],
+    // Add more characters as needed
+};
+
+// Corresponding labels for each image
+const labels = {
+    alef: ['Label for Alef 1', 'Label for Alef 2', 'Label for Alef 3', 'Label for Alef 4', 'Label for Alef 5', 'Label for Alef 6', 'Label for Alef 7', 'Label for Alef 8', 'Label for Alef 9', 'Label for Alef 10'],
+    // bet: ['Label for Bet 1', 'Label for Bet 2', 'Label for Bet 3', 'Label for Bet 4', 'Label for Bet 5', 'Label for Bet 6', 'Label for Bet 7', 'Label for Bet 8', 'Label for Bet 9', 'Label for Bet 10'],
+    // Add more labels as needed
+};
+
+// Function to inject handwritten images
+function injectHandwrittenImages(character) {
+    const imageContainer = document.getElementById('handwritten_glyph_space');
+    imageContainer.innerHTML = ''; // Clear existing images
+
+    images[character].forEach((imageName, index) => {
+        // Create an image element
+        const img = document.createElement('img');
+        img.src = `../assets/content_images/research_handwritten_glyphs/${imageName}`;
+        img.alt = `Handwritten version of ${character}`;
+        img.style.width = '50px'; // Set image size (adjust as needed)
+        img.style.margin = '0 10px'; // Spacing between images
+        // img.style.transition = 'filter 0.3s'; // Smooth color transition
+
+        // Hover effect for image
+        img.addEventListener('mouseenter', function() {
+            // img.style.filter = 'brightness(0) invert(1)'; // Change color
+            textElement.textContent = labels[character][index]; // Show corresponding label
+        });
+
+        img.addEventListener('mouseleave', function() {
+            // img.style.filter = 'none'; // Reset color
+            textElement.textContent = ''; // Hide label on mouse out
+        });
+
+        // Append the image to the container
+        imageContainer.appendChild(img);
+
+        // Create text element to show below the image on hover
+        const textElement = document.createElement('small');
+        textElement.className = 'handwritten-text';
+        textElement.style.display = 'block'; // Display it as a block to appear below the image
+        textElement.style.textAlign = 'right';
+        textElement.style.width = '50%'; // Max width to spread till halfway to the previous image
+        imageContainer.appendChild(textElement);
+    });
+}
+
+// Initialize the page with the default character 'alef'
+injectHandwrittenImages('alef');
+
+// Add a separate event listener for the buttons that trigger handwritten glyphs
+const glyphButtons = document.querySelectorAll('#glyph_selector button');
+glyphButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const selectedCharacter = this.textContent;
+        injectHandwrittenImages(selectedCharacter);
+    });
+});
