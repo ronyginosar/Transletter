@@ -146,11 +146,19 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    min-height: 20vh; 
-    height: auto; /* Allows height to grow with content */
-    max-height: 100vh; /* Optional: Prevents it from exceeding the viewport */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    overflow-y: auto; /* Ensures vertical scrolling is visible if needed */
+    /* note use this to allow dynamic growing of the cols to keep just 2 */
+    /* min-height: 20vh;  */
+    /* Allows height to grow with content */
+    /* height: auto; */
+    /* Optional: Prevents it from exceeding the viewport */
+    /* max-height: 100vh;  */
+    /* Prevents horizontal scrolling */
+    /* overflow-x: hidden;  */
+
+    /* note: use this to keep the text in the same height, might expand to 3 cols to the left */
+    height: 30vh;
+    /* allow scroll only of the text, not entire container */
+    overflow-x: hidden;
 }
 
 /* First Section: Text Selector */
@@ -192,10 +200,14 @@
     font-size: 2vh;
     /* line-height: 1.5; */
     column-count: 2; /* Automatically splits text into 2 columns */
-    column-gap: 10%; /* Space between the columns */
+    column-gap: 5%; /* Space between the columns */
     column-fill: balance; /* Balance the content evenly between the two columns */
-    max-height: 100%; /* Ensures content height stays within the section */
-    overflow: visible; /* Allows content to expand */
+    /* Ensures content height stays within the section */
+    /* note use this to allow dynamic growing of the cols to keep just 2 */
+    /* max-height: 100%;  */
+    /* note: use this to keep the text in the same height, might expand to 3 cols to the left */
+    /* height:auto; */
+    overflow-x: auto;
 }
 
 /* Ensure no extra columns are created */
@@ -212,8 +224,13 @@
     scroll-behavior: smooth; /* Smooth scrolling effect */
     /* padding: 5%; */
     width: 100%; /* Full width of the container */
-    height: auto;
-    max-height: 50vh;
+
+    /* note use this to allow dynamic growing of the images */
+    /* height: auto; */
+    /* max-height: 50vh; */
+
+    /* note: use this to keep the images of different sections always in the same height */
+    height: 40vh;
 }
 
 #image-gallery::-webkit-scrollbar {
@@ -222,7 +239,9 @@
 
 #image-gallery img {
     height: 100%; /* Adjust image height as needed */
-    margin-right: 10px; /* Space between images */
+    margin-right: 1%; /* Space between images */
+    margin-left: 1%; /* Space between images */
     object-fit: cover; /* Ensure the image covers the container */
-    max-height: 50vh;
+    /* note use this to allow dynamic growing of the images */
+    /* max-height: 50vh; */
 }

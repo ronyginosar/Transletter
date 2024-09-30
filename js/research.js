@@ -26,8 +26,7 @@ function injectGlyphRow(character) {
     }
 }
 
-// Set the default selected button to be visually indicated (highlight the button for צ)
-// const defaultButton = document.querySelector('#glyph_selector button:nth-child(6)');
+// Set the default selected button to be visually indicated (highlight the button for desired char)
 const defaultButton = document.getElementById('default_glyph');
 defaultButton.classList.add('selected'); // Add a class to visually highlight the button
 // Initialize the page with the default character 
@@ -54,7 +53,7 @@ buttons.forEach(button => {
 // note: data in separate file: js/research-handwritten-data.js
 
 // Initialize the page with the default character 'alef'
-injectHandwrittenImages('alef');
+injectHandwrittenImages('alef'); // TODO update
 
 // Add a separate event listener for the buttons that trigger handwritten glyphs
 const glyphButtons = document.querySelectorAll('#glyph_selector button');
