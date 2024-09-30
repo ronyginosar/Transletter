@@ -139,6 +139,20 @@ const titles = document.querySelectorAll('#text-selector li');
 const textDisplay = document.getElementById('text-display');
 const imageGallery = document.getElementById('image-gallery');
 
+// Helper function to scroll to the center image
+function scrollToCenter() {
+    const selectedImages = imageGallery.children;
+    if (selectedImages.length > 1) {
+        const middleIndex = Math.floor(selectedImages.length / 2);
+        const middleImage = selectedImages[middleIndex];
+
+        const galleryWidth = imageGallery.offsetWidth;
+        const imageWidth = middleImage.offsetWidth;
+        const scrollPosition = middleImage.offsetLeft - (galleryWidth / 2) + (imageWidth / 2);
+        imageGallery.scrollLeft = scrollPosition;
+    }
+}
+
 titles.forEach(title => {
     title.addEventListener('click', function() {
         const selectedText = textContent[this.dataset.text]; // Get related text
@@ -150,6 +164,7 @@ titles.forEach(title => {
         // Clear existing images in the gallery
         imageGallery.innerHTML = '';
 
+        // v1
         // Inject images into the gallery
         if (selectedImages) {
             selectedImages.forEach(imageUrl => {
@@ -167,6 +182,7 @@ titles.forEach(title => {
         } else {
             // For multiple images, scroll to center the middle image
             imageGallery.style.justifyContent = 'flex-start'; // Reset to flex-start
+            // imageGallery.style.justifyContent = 'center'; // cuts off the last image
 
             // Scroll to the center image
             const middleIndex = Math.floor(selectedImages.length / 2);
@@ -179,6 +195,28 @@ titles.forEach(title => {
             imageGallery.scrollLeft = scrollPosition;
         }
 
+        // v2
+        // Inject images into the gallery
+        // if (selectedImages) {
+        //     let imagesLoaded = 0;
+        //     selectedImages.forEach((imageUrl, index) => {
+        //         const img = document.createElement('img');
+        //         img.src = imageUrl;
+        //         img.alt = `Image for ${this.textContent}`;
+        //         img.style.display = 'none'; // Initially hide the image until it's loaded
+        //         img.onload = function() {
+        //             img.style.display = 'block'; // Show the image once loaded
+        //             imagesLoaded += 1;
+        //             // If all images are loaded, scroll to center the middle image
+        //             if (imagesLoaded === selectedImages.length) {
+        //                 scrollToCenter();
+        //             }
+        //         };
+        //         imageGallery.appendChild(img);
+        //     });
+        // }
+        
+
         // Remove .selected from any previously selected item
         titles.forEach(t => t.classList.remove('selected'));
 
@@ -189,4 +227,9 @@ titles.forEach(title => {
 
 // Set default text and images for the first title on page load
 // TODO also do the image location upon load, not just when clicking
-titles[0].click();
+// titles[0].click();
+
+// Set default text and images for the first title on page load
+window.addEventListener('DOMContentLoaded', function() {
+    titles[0].click(); // Automatically select and display the first title
+});
