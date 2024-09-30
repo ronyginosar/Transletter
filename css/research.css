@@ -1,9 +1,18 @@
+html, body {
+    height: 100%;
+    /* overflow: hidden;  */
+}
+
 #research-page{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 150vh;
+    /* height: 150vh; */
+    /* height: 100vh; */
+    /* height: 150%; */
+    height: 150%;
+    flex: 1;
     /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     padding-right: var(--page-side-padding);
@@ -16,13 +25,15 @@
 #title_wrapper{
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
-    /* height: 40%; */
+    height: 20%;
 }
 
 #title_spacer{
     /* background-color: rgb(196, 20, 20); */
     width: 10%;
+    height: auto;
 }
 
 #title{
@@ -30,23 +41,31 @@
     /* background-color: rgb(176, 196, 20); */
     flex-direction: column;
     justify-content: center;
+    width: 50%;
 }
 
 #title h1{
     width: 100%;
     text-align: center;
     font-family: TransletterGX;
-    font-size: 18vh;
+    /* font-size: 18vh; */
+    font-size: 1000%;
     margin: 0;
+    height: auto;
 }
 
 #glyph_selector{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly; 
+    /* justify-content: space-evenly;  */
+    justify-content: space-between; 
     align-items: center;
-    font-size: 3vh;
+    /* font-size: 3vh; */
+    font-size: 150%;
     font-variation-settings: "vrot" 500;
+    height: 80%;
+    /* width: 100%; */
+    width: 80%;
 }
 
 #glyph_selector button{
@@ -56,8 +75,15 @@
     font-size: inherit;
     border: none;
     border-radius:100%;
-    width: 5vh;
-    height: 5vh;
+    /* width: 5vh; */
+    /* width: 5%; */
+    /* height: 5vh; */
+    /* height: 5%; */
+    /* height: 80%; */
+    /* width: 100%; */
+    width: 8%;
+    padding: 0;
+    margin: 0;
 }
 
 #glyph_selector button:hover{
@@ -76,12 +102,13 @@
 
 #glyph_space{
     /* background-color: rgb(20, 196, 187); */
-    /* height: 12%; */
+    /* height: 8%; */
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 5vh;
+    /* font-size: 5vh; */
+    font-size: 300%;
 }
 
 #divider {
@@ -102,7 +129,7 @@
 }
 
 #handwritten_glyph_space{
-    /* height: 25%; */
+    /* height: 9%; */
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -112,6 +139,7 @@
 #handwritten_glyph_space img {
     width: 70%;
     padding: 10%;
+    height: auto;
 }
 
 #handwritten_glyph_space img:hover {
@@ -131,7 +159,8 @@
 }
 
 .handwritten-text-label {
-    font-size: 1.5vh;
+    /* font-size: 1.5vh; */
+    font-size: 60%;
     margin-top: 5px;
     margin-right: 15%;
     transition : opacity 0.3s ease; 
@@ -156,7 +185,8 @@
     /* overflow-x: hidden;  */
 
     /* note: use this to keep the text in the same height, might expand to 3 cols to the left */
-    height: 30vh;
+    /* height: 30vh; */
+    height: 15%;
     /* allow scroll only of the text, not entire container */
     overflow-x: hidden;
 }
@@ -174,7 +204,8 @@
 
 #text-selector li {
     padding: 3% 0;
-    font-size: 2vh;
+    /* font-size: 2vh; */
+    font-size: inherit;
     position: relative;
     transition: color 0.3s, text-decoration 0.3s ease-in-out;
     text-decoration: none; /* Ensure no underline by default */
@@ -197,7 +228,8 @@
 /* Second Section: Text Display with Automatic 2 Columns */
 #text-display {
     flex: 2; /* Takes up 2/3 of the container */
-    font-size: 2vh;
+    /* font-size: 2vh; */
+    font-size: inherit;
     /* line-height: 1.5; */
     column-count: 2; /* Automatically splits text into 2 columns */
     column-gap: 5%; /* Space between the columns */
@@ -230,7 +262,8 @@
     /* max-height: 50vh; */
 
     /* note: use this to keep the images of different sections always in the same height */
-    height: 40vh;
+    /* height: 40vh; */
+    height: 20%;
 }
 
 #image-gallery::-webkit-scrollbar {
