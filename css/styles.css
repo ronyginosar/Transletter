@@ -66,15 +66,14 @@ body::-webkit-scrollbar {
 
 } */
 
-/* temp until iframe */
-.animated_evolution {
+.evolution-animated {
     display: flex;
     justify-content: center;
     align-items: center;
     /* color for debugging */
     background-color: rgb(21, 49, 121);
-    color: rgb(10, 210, 250);
-    height: 98vh;
+    /* color: rgb(10, 210, 250); */
+    /* height: 98vh; */
     width: 100%;
 }
 
@@ -83,9 +82,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     background-color: var(--element-color);
-    /* color: rgb(222, 250, 10); */
     width: 100%;
-    /* height: 30%; */
 }
 
 /* remove */
@@ -154,8 +151,6 @@ body::-webkit-scrollbar {
 }
 
 .footer_page iframe{
-    /* height: 3px; placeholder value to later inject height by script */
-    /* background-color: rgb(196, 20, 178); */
     /* TODO solve the bg of above section */
     background-color: var(--footer-gray);
 }
@@ -168,21 +163,12 @@ body::-webkit-scrollbar {
 
 .research{
     background-color: var(--background-color);
-    /*placeholder value to later inject height by script*/
-    /* height: 10px;  */
-    /* height: 100%; */
+    /*placeholder value to later inject height by script TODO?*/
+    /* height: 50vh; */
     width: 100%; 
-    /* height: 100%; */
-    overflow: hidden;
-    
 }
 
-.research iframe{
-    /* height: 3px; placeholder value to later inject height by script */
-    /* height: 100px; */
-    /* height: 150%; */
-    /* overflow: hidden; Prevent iframe from adding scrollbars */
-}
+
 
 /* .cursor {
     position: absolute;
