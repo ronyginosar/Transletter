@@ -46,10 +46,10 @@ html, body {
 
 #title h1{
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
     font-family: TransletterGX;
     /* font-size: 18vh; */
-    font-size: 1000%;
+    font-size: 800%;
     margin: 0;
     height: auto;
 }
