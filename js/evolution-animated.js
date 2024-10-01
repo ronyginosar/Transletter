@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Loop through each line and split words into spans
     textLines.forEach((line, lineIndex) => {
         const lineDiv = document.createElement('div'); // Create a container for each line
+        lineDiv.classList.add('lineDiv');
         lineDiv.style.display = 'inline-block'; // Keep the word together
 
         line.split('').forEach((char, charIndex) => {
@@ -121,16 +122,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
+        // TODO
         // Apply absolute positioning relative to original positions
-        spans.forEach((span, index) => {
-            const { x, y, width, height } = initialPositions[index];
-            span.style.position = 'absolute';
-            span.style.left = `${x}px`;
-            span.style.top = `${y}px`;
-            span.style.width = `${width}px`;
-            span.style.height = `${height}px`;
-            // console.log(initialPositions[index]);
-        });
+        // spans.forEach((span, index) => {
+        //     const { x, y, width, height } = initialPositions[index];
+        //     span.style.position = 'absolute';
+        //     span.style.left = `${x}px`;
+        //     span.style.top = `${y}px`;
+        //     // span.style.width = `${width}px`;
+        //     // span.style.height = `${height}px`;
+        //     // console.log(initialPositions[index]);
+        // });
 
         console.log(initialPositions)
     });

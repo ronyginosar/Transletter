@@ -5,16 +5,34 @@
     font-family: TransletterGX;
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     font-size: 1000%;
-    line-height: 90%;
+    /* line-height: 70%; */
+    line-height: 0.9em;
     font-variation-settings: "vrot" 200;
     justify-content: center;
+
+    /* negative bottom-margin */
 }
 
 
 span {
     /* position: absolute; Absolute positioning for translation */
     display: inline-block;
-    transition: transform 0.1s ease-out; /* Smooth transformation */
+    /* display: block; */
+    /* transition: transform 0.1s ease-out; Smooth transformation */
+    /* line-height: 14%; */
+
+    /* display:block; */
+    /* font-size:24px; */
+    /* height:80%; */
+    overflow:hidden;
+    background-color: blueviolet;
+    /* top:-2em; */
+    vertical-align: top;
+}
+
+.lineDiv {
+    background-color: cadetblue;
+    /* height: 20%; */
 }
 
 #text-container {
