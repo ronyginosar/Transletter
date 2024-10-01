@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize a virtual scroll position
     let scrollPosition = 0;
+    // HIGH PRIORITY think of better way to maxScrollPosition, or have two seperate?
     const maxScrollPosition = 2000; // Arbitrary max scroll simulation range
     const minScrollPosition = 0;   // Arbitrary min scroll range
     const fallThreshold = maxScrollPosition*0.9;
@@ -39,9 +40,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return Math.floor(Math.random() * 10) - 5; // Random rotation between -15deg and 15deg
     }
 
+
+    // HIGH PRIORITY - ignore initial wheel and look only at last one (for scroll pad & unification of scroll speed?)
+
     // Function to update the span transformations based on the simulated scroll position
-    // todo reverse on opposite scroll
-    // todo - ignore initial wheel and look only at last one (for scroll pad)
     function updateTransformations() {
         // const middleScroll = (maxScrollPosition - minScrollPosition) / 2;
 
@@ -49,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // const translateX = 0; // Ignore horizontal translation
             // const translateY = getRandomTranslation(); // Generate random vertical translation
             // const rotate = getRandomRotation(); // Generate random rotation
-            // // Set transition to smooth out the transformations
-            // span.style.transition = 'transform 0.5s ease'; // Adjust duration and easing as needed
             // // Apply smooth transform with random translation and rotation
             // // span.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`;
             // if (scrollPosition < middleScroll) {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if rect1 and rect2 overlap vertically
         const verticalOverlap = rect1.top < rect2.bottom && rect1.bottom > rect2.top;
         let collisionFree = !horizontalOverlap || !verticalOverlap;
-        // if(!(collisionFree))console.log("rect1" , span1_data, "rect2", span2_data);
+        if(!(collisionFree))console.log("rect1" , span1_data, "rect2", span2_data);
         // if(!(collisionFree))console.log(rect1.right , rect2.left , rect1.left , rect2.right , rect1.bottom , rect2.top , rect1.top , rect2.bottom);
         return !(collisionFree);
     }
@@ -99,27 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
             let spanHasCollisionBelow = false; // Assume no collision below initially
 
             for (let j = i + 1; j < spans.length; j++) {
-                // if (checkCollision(spans[i], spans[j])) {
-                //     // Reverse directions if collision is detected
-                //     let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
-                //     let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
-    
-                //     // Make the span that wasn't moving start moving up on collision
-                //     if (!movingSpansIndexes.includes(j)) {
-                //         movingSpansIndexes.push(j); // Start moving span j
-                //     }
-    
-                //     // Adjust movement and apply the rotation effect
-                //     spans[i].dataset.translateY = translateY1 + 10; // Move down on collision
-                //     spans[j].dataset.translateY = translateY2 - 10; // Move up on collision
-    
-                //     // const rotate1 = getRandomRotation();
-                //     // const rotate2 = getRandomRotation();    
-                //     const rotate1 = 0;
-                //     const rotate2 = 0;
-                //     spans[i].style.transform = `translate(0px, ${translateY1 + 10}px) rotate(${rotate1}deg)`;
-                //     spans[j].style.transform = `translate(0px, ${translateY2 - 10}px) rotate(${rotate2}deg)`;
-                // }
 
                 // Check if the spans collide
                 if (checkCollision(spans[i], spans[j])) 
@@ -138,11 +117,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
                         let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
 
+                        // TODO verify up down here, maybe better everything + and then the values are different
+                        // + is DOWN, - is UP
+
                         // Push the top span (j) further up
                         spans[j].dataset.translateY = translateY2 - 1; // Move span j (top) further up , by 1 is smoother than upwardsMovement
+                        // spans[j].dataset.translateY = translateY2 - upwardsMovement; // Move span j (top) further up , by 1 is smoother than upwardsMovement
 
                         // Apply upward movement and rotate in opposite directions
-                        const rotate1 = getRandomRotation(); // Random rotation for span i
+                        // const rotate1 = getRandomRotation(); // Random rotation for span i TODO
+                        const rotate1 = 0;
                         const rotate2 = -rotate1; // Opposite rotation for span j
 
                         spans[i].style.transform = `translate(0px, ${translateY1}px) rotate(${rotate1}deg)`;
@@ -158,14 +142,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
 
                         // Push the top span (i) further up
-                        spans[i].dataset.translateY = translateY1 - upwardsMovement; // Move span i (top) further up
+                        // spans[i].dataset.translateY = translateY1 - upwardsMovement; // Move span i (top) further up
+                        spans[i].dataset.translateY = translateY1 + downwardsMovement; // Move span i (top) further up
 
                         // Apply upward movement and rotate in opposite directions
-                        // const rotate1 = getRandomRotation();
+                        // const rotate1 = getRandomRotation();TODO
                         const rotate1 = 0;
                         const rotate2 = -rotate1;
 
-                        spans[i].style.transform = `translate(0px, ${translateY1 - upwardsMovement}px) rotate(${rotate1}deg)`;
+                        // spans[i].style.transform = `translate(0px, ${translateY1 - upwardsMovement}px) rotate(${rotate1}deg)`;
+                        spans[i].style.transform = `translate(0px, ${translateY1 + downwardsMovement}px) rotate(${rotate1}deg)`;
                         spans[j].style.transform = `translate(0px, ${translateY2}px) rotate(${rotate2}deg)`;
 
                         // Start moving non-moving spans on collision (if necessary)
@@ -177,15 +163,15 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // If no span below and scrollPosition > threshold, move span down
-            // if (!spanHasCollisionBelow && scrollPosition > fallThreshold && movingSpansIndexes.includes(i)) {
             if (!spanHasCollisionBelow && scrollPosition > fallThreshold) {
-                let translateY = parseFloat(spans[i].dataset.translateY || 0);
-                spans[i].dataset.translateY = translateY + downwardsFall; // Move down by 2px
-                spans[i].style.transform = `translate(0px, ${translateY + downwardsFall}px) rotate(0deg)`; // TODO Keep rotation 0 for now
-            }
+                // if(!movingSpansIndexes.includes(i)){ // TODO decide later
+                    let translateY = parseFloat(spans[i].dataset.translateY || 0);
+                    spans[i].dataset.translateY = translateY + downwardsFall; // Move down by 2px
+                    spans[i].style.transform = `translate(0px, ${translateY + downwardsFall}px) rotate(0deg)`; // TODO Keep rotation 0 for now
+                }
+            // }
         }
     }
-
 
     function resetToInitialPositions() {
         scrollPosition = 0; // Reset the virtual scroll position
@@ -200,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset translation and rotation stored in the dataset
             span.dataset.translateY = 0;
         });
+        // TODO can reset moving images at the end of the reset
     }
 
     // Loop through each line and split words into spans
@@ -213,8 +200,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const randomVrot = getRandomVrot();
             span.style.fontVariationSettings = `'vrot' ${randomVrot}`;
             span.textContent = char;
-            span.style.display = 'inline-block'; // Ensure letters stay inline
-            // span.style.display = 'inline'; // Ensure letters stay inline
+            // span.style.display = 'inline-block'; // Ensure letters stay inline
+            // debug
+            // span.style.border = '1px solid black';
+            // span.style.backgroundColor = 'purple';
+            span.style.display = 'inline'; // Ensure letters stay inline
             spans.push(span);
 
             lineDiv.appendChild(span);
@@ -254,9 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
             span.style.position = 'absolute';
             span.style.left = `${x}px`;
             span.style.top = `${y}px`;
-            // span.style.width = `${width}px`;
-            // span.style.height = `${height}px`;
-            // console.log(initialPositions[index]);
         });
 
         // console.log(initialPositions);
@@ -270,23 +257,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // console.log(deltaY);
         // console.log(event.deltaX);
 
-        // // Only apply transformations if there is vertical scrolling (deltaY)
-        // if (deltaY !== 0) {
-        //     // Update the virtual scroll position based on deltaY
-        //     scrollPosition += deltaY;
-
-        //     // Clamp the scrollPosition between min and max
-        //     scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
-        //     // console.log(scrollPosition);
-        //     // Update transformations based on the virtual scroll position
-        //     updateTransformations();
-        // }
-
-        // // Handle collisions
-        // handleCollisions();
-
-
         // note: negotiable what is up and down with macs...
+        // HIGH PRIORITY think of better way to deltaY, it's too according to speed?
+
         // scrollPosition global param
         if (deltaY > 0) {
             // Scrolling up
@@ -309,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // TODO remove from scrollPosition?
         }
 
-        console.log(scrollPosition);
+        // console.log(scrollPosition);
 
     }, { passive: false }); // Set passive: false to allow preventDefault()
 });

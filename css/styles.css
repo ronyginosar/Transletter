@@ -71,7 +71,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     /* color for debugging */
-    background-color: rgb(21, 49, 121);
+    /* background-color: rgb(21, 49, 121); */
     /* color: rgb(10, 210, 250); */
     /* height: 98vh; */
     width: 100%;

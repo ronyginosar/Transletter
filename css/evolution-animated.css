@@ -1,3 +1,5 @@
+/* TODO clean */
+
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -13,19 +15,17 @@
     /* negative bottom-margin */
 }
 
-
 span {
     /* position: absolute; Absolute positioning for translation */
     display: inline-block;
     /* display: block; */
     /* transition: transform 0.1s ease-out; Smooth transformation */
     /* line-height: 14%; */
-
     /* display:block; */
     /* font-size:24px; */
     /* height:80%; */
     overflow:hidden;
-    background-color: blueviolet;
+    background-color: transparent;
     /* top:-2em; */
     vertical-align: top;
     transition: transform 0.5s ease;
