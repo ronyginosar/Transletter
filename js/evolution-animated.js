@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxVrot = 700;
     const textContainer = document.getElementById('text-container');
     const spans = [];
+    const movingSpansIndexes = [0, 1, 2, 6, 11, 13, 14, 15]; // Only these indexes will start moving up initially
+
 
     // Initialize a virtual scroll position
     let scrollPosition = 0;
@@ -28,30 +30,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getRandomRotation() {
-        return Math.floor(Math.random() * 30) - 15; // Random rotation between -15deg and 15deg
+        return Math.floor(Math.random() * 10) - 5; // Random rotation between -15deg and 15deg
     }
 
     // Function to update the span transformations based on the simulated scroll position
+    // todo reverse on opposite scroll
     function updateTransformations() {
-        const middleScroll = (maxScrollPosition - minScrollPosition) / 2;
+        // const middleScroll = (maxScrollPosition - minScrollPosition) / 2;
 
         spans.forEach((span, index) => {
-            const translateX = 0; // Ignore horizontal translation
-            const translateY = getRandomTranslation(); // Generate random vertical translation
-            const rotate = getRandomRotation(); // Generate random rotation
-
-            // Set transition to smooth out the transformations
-            span.style.transition = 'transform 0.5s ease'; // Adjust duration and easing as needed
-
-            // Apply smooth transform with random translation and rotation
-            // span.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`;
-
-
-            if (scrollPosition < middleScroll) {
-                // Move up and rotate if scrollPosition is in the first half
-                span.style.transform = `translate(${translateX}px, ${-translateY}px) rotate(${rotate}deg)`;
-            } else {
-                // Move down and rotate in the second half
+            // const translateX = 0; // Ignore horizontal translation
+            // const translateY = getRandomTranslation(); // Generate random vertical translation
+            // const rotate = getRandomRotation(); // Generate random rotation
+            // // Set transition to smooth out the transformations
+            // span.style.transition = 'transform 0.5s ease'; // Adjust duration and easing as needed
+            // // Apply smooth transform with random translation and rotation
+            // // span.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`;
+            // if (scrollPosition < middleScroll) {
+            //     // Move up and rotate if scrollPosition is in the first half
+            //     span.style.transform = `translate(${translateX}px, ${-translateY}px) rotate(${rotate}deg)`;
+            // } else {
+            //     // Move down and rotate in the second half
+            //     span.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`;
+            // }
+            
+            // Only apply transformations to spans that are moving
+            if (movingSpansIndexes.includes(index)) {
+                const translateX = 0; // No horizontal translation
+                let translateY = parseFloat(span.dataset.translateY || 0) - 2; // Move up by 2px
+                span.dataset.translateY = translateY; // Store the current translation for future reference
+            
+                // const rotate = getRandomRotation(); // Keep rotation random for now
+                const rotate = 0; // Keep rotation random for now
+                // span.style.transition = 'transform 0.5s ease'; // Smooth movement and rotation
+            
+                // Apply upward movement and random rotation
                 span.style.transform = `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`;
             }
         });
@@ -61,7 +74,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkCollision(span1, span2) {
         const rect1 = span1.getBoundingClientRect();
         const rect2 = span2.getBoundingClientRect();
-        return !(rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom);
+        const span1_data = span1.innerHTML;
+        const span2_data = span2.innerHTML;
+        // let collisionFree = rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom;
+        
+        // Check if rect1 and rect2 overlap horizontally
+        const horizontalOverlap = rect1.left < rect2.right && rect1.right > rect2.left;
+        
+        // Check if rect1 and rect2 overlap vertically
+        const verticalOverlap = rect1.top < rect2.bottom && rect1.bottom > rect2.top;
+
+        let collisionFree = !horizontalOverlap || !verticalOverlap;
+
+        
+        // let collisionFree =    rect1.right > rect2.left || rect1.left < rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom;
+        if(!(collisionFree))console.log("rect1" , span1_data, "rect2", span2_data);
+        if(!(collisionFree))console.log(rect1.right , rect2.left , rect1.left , rect2.right , rect1.bottom , rect2.top , rect1.top , rect2.bottom);
+        return !(collisionFree);
     }
 
     // Function to handle collisions and adjust position
@@ -70,8 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let j = i + 1; j < spans.length; j++) {
                 if (checkCollision(spans[i], spans[j])) {
                     // Reverse directions if collision is detected
-                    spans[i].style.transform = `translate(${getRandomTranslation()}px, ${getRandomTranslation()}px) rotate(${getRandomRotation()}deg)`;
-                    spans[j].style.transform = `translate(${getRandomTranslation()}px, ${getRandomTranslation()}px) rotate(${getRandomRotation()}deg)`;
+                    let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
+                    let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
+    
+                    // Make the span that wasn't moving start moving up on collision
+                    if (!movingSpansIndexes.includes(j)) {
+                        movingSpansIndexes.push(j); // Start moving span j
+                    }
+    
+                    // Adjust movement and apply the rotation effect
+                    spans[i].dataset.translateY = translateY1 + 10; // Move down on collision
+                    spans[j].dataset.translateY = translateY2 - 10; // Move up on collision
+    
+                    // const rotate1 = getRandomRotation();
+                    // const rotate2 = getRandomRotation();    
+                    const rotate1 = 0;
+                    const rotate2 = 0;
+                    spans[i].style.transform = `translate(0px, ${translateY1 + 10}px) rotate(${rotate1}deg)`;
+                    spans[j].style.transform = `translate(0px, ${translateY2 - 10}px) rotate(${rotate2}deg)`;
                 }
             }
         }
@@ -97,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         textContainer.appendChild(lineDiv);
 
+        // <br> if needed
         // if (lineIndex < textLines.length - 1) {
         //     textContainer.appendChild(document.createElement('br'));
         // }
@@ -122,19 +168,18 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // TODO
         // Apply absolute positioning relative to original positions
-        // spans.forEach((span, index) => {
-        //     const { x, y, width, height } = initialPositions[index];
-        //     span.style.position = 'absolute';
-        //     span.style.left = `${x}px`;
-        //     span.style.top = `${y}px`;
-        //     // span.style.width = `${width}px`;
-        //     // span.style.height = `${height}px`;
-        //     // console.log(initialPositions[index]);
-        // });
+        spans.forEach((span, index) => {
+            const { x, y, width, height } = initialPositions[index];
+            span.style.position = 'absolute';
+            span.style.left = `${x}px`;
+            span.style.top = `${y}px`;
+            // span.style.width = `${width}px`;
+            // span.style.height = `${height}px`;
+            // console.log(initialPositions[index]);
+        });
 
-        console.log(initialPositions)
+        // console.log(initialPositions);
     });
 
     // Use the 'wheel' event to detect scroll gestures without moving the page
@@ -152,13 +197,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Clamp the scrollPosition between min and max
             scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
-            console.log(scrollPosition);
+            // console.log(scrollPosition);
             // Update transformations based on the virtual scroll position
             updateTransformations();
         }
 
         // Handle collisions
-        // handleCollisions();
+        handleCollisions();
 
     }, { passive: false }); // Set passive: false to allow preventDefault()
 });
+

@@ -28,6 +28,7 @@ span {
     background-color: blueviolet;
     /* top:-2em; */
     vertical-align: top;
+    transition: transform 0.5s ease;
 }
 
 .lineDiv {
