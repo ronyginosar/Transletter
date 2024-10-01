@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const upwardsMovement = 2;
     const downwardsMovement = -upwardsMovement;
-    const downwardsFall = 20;
+    const downwardsFall = 10;
 
 
     // Initialize a virtual scroll position
@@ -151,33 +151,34 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Start moving non-moving spans on collision (if necessary)
                         if (!movingSpansIndexes.includes(j)) {
                             movingSpansIndexes.push(j); // Span j starts moving
-                        } // TODO return
-                    // } else { // if (rect1.top <= rect2.top) {
-                    //     // Span i is above Span j (same logic but reversed)
-                    //     let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
-                    //     let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
+                        }
+                    } else { // if (rect1.top <= rect2.top) {
+                        // Span i is above Span j (same logic but reversed)
+                        let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
+                        let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
 
-                    //     // Push the top span (i) further up
-                    //     spans[i].dataset.translateY = translateY1 - upwardsMovement; // Move span i (top) further up
+                        // Push the top span (i) further up
+                        spans[i].dataset.translateY = translateY1 - upwardsMovement; // Move span i (top) further up
 
-                    //     // Apply upward movement and rotate in opposite directions
-                    //     // const rotate1 = getRandomRotation();
-                    //     const rotate1 = 0;
-                    //     const rotate2 = -rotate1;
+                        // Apply upward movement and rotate in opposite directions
+                        // const rotate1 = getRandomRotation();
+                        const rotate1 = 0;
+                        const rotate2 = -rotate1;
 
-                    //     spans[i].style.transform = `translate(0px, ${translateY1 - upwardsMovement}px) rotate(${rotate1}deg)`;
-                    //     spans[j].style.transform = `translate(0px, ${translateY2}px) rotate(${rotate2}deg)`;
+                        spans[i].style.transform = `translate(0px, ${translateY1 - upwardsMovement}px) rotate(${rotate1}deg)`;
+                        spans[j].style.transform = `translate(0px, ${translateY2}px) rotate(${rotate2}deg)`;
 
-                    //     // Start moving non-moving spans on collision (if necessary)
-                    //     if (!movingSpansIndexes.includes(i)) {
-                    //         movingSpansIndexes.push(i); // Span i starts moving
-                    //     }
+                        // Start moving non-moving spans on collision (if necessary)
+                        if (!movingSpansIndexes.includes(i)) {
+                            movingSpansIndexes.push(i); // Span i starts moving
+                        }
                     }
                 }
             }
 
             // If no span below and scrollPosition > threshold, move span down
-            if (!spanHasCollisionBelow && scrollPosition > fallThreshold && movingSpansIndexes.includes(i)) {
+            // if (!spanHasCollisionBelow && scrollPosition > fallThreshold && movingSpansIndexes.includes(i)) {
+            if (!spanHasCollisionBelow && scrollPosition > fallThreshold) {
                 let translateY = parseFloat(spans[i].dataset.translateY || 0);
                 spans[i].dataset.translateY = translateY + downwardsFall; // Move down by 2px
                 spans[i].style.transform = `translate(0px, ${translateY + downwardsFall}px) rotate(0deg)`; // TODO Keep rotation 0 for now
@@ -187,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function resetToInitialPositions() {
+        scrollPosition = 0; // Reset the virtual scroll position
         spans.forEach((span, index) => {
             const initialPos = initialPositions[index]; // Retrieve initial position
     
@@ -299,8 +301,8 @@ document.addEventListener('DOMContentLoaded', function() {
             handleCollisions();
         } else if (deltaY < 0) {
             // Scrolling down
-            // scrollPosition -= deltaY;
-            // scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
+            scrollPosition -= deltaY;
+            scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
             // Reset spans to their initial positions (move them back down and reset rotation)
             resetToInitialPositions();
 
