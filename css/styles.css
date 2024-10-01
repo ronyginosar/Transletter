@@ -75,10 +75,16 @@ body::-webkit-scrollbar {
     /* color: rgb(10, 210, 250); */
     /* height: 98vh; */
     width: 100%;
+
+
 }
 
 .evolution-animated iframe{
-    height: 50vh;
+    height: 70vh;
+    z-index: 1;
+    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
+    padding-right: var(--page-side-padding);
+    padding-left: var(--page-side-padding);
 }
 
 .tester{
