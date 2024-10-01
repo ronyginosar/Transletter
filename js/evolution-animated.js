@@ -75,19 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const rect1 = span1.getBoundingClientRect();
         const rect2 = span2.getBoundingClientRect();
         const span1_data = span1.innerHTML;
-        const span2_data = span2.innerHTML;
-        // let collisionFree = rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom;
-        
+        const span2_data = span2.innerHTML;        
         // Check if rect1 and rect2 overlap horizontally
         const horizontalOverlap = rect1.left < rect2.right && rect1.right > rect2.left;
-        
         // Check if rect1 and rect2 overlap vertically
         const verticalOverlap = rect1.top < rect2.bottom && rect1.bottom > rect2.top;
-
         let collisionFree = !horizontalOverlap || !verticalOverlap;
-
-        
-        // let collisionFree =    rect1.right > rect2.left || rect1.left < rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom;
         if(!(collisionFree))console.log("rect1" , span1_data, "rect2", span2_data);
         if(!(collisionFree))console.log(rect1.right , rect2.left , rect1.left , rect2.right , rect1.bottom , rect2.top , rect1.top , rect2.bottom);
         return !(collisionFree);
@@ -97,26 +90,74 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleCollisions() {
         for (let i = 0; i < spans.length; i++) {
             for (let j = i + 1; j < spans.length; j++) {
-                if (checkCollision(spans[i], spans[j])) {
-                    // Reverse directions if collision is detected
-                    let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
-                    let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
+                // if (checkCollision(spans[i], spans[j])) {
+                //     // Reverse directions if collision is detected
+                //     let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
+                //     let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
     
-                    // Make the span that wasn't moving start moving up on collision
-                    if (!movingSpansIndexes.includes(j)) {
-                        movingSpansIndexes.push(j); // Start moving span j
+                //     // Make the span that wasn't moving start moving up on collision
+                //     if (!movingSpansIndexes.includes(j)) {
+                //         movingSpansIndexes.push(j); // Start moving span j
+                //     }
+    
+                //     // Adjust movement and apply the rotation effect
+                //     spans[i].dataset.translateY = translateY1 + 10; // Move down on collision
+                //     spans[j].dataset.translateY = translateY2 - 10; // Move up on collision
+    
+                //     // const rotate1 = getRandomRotation();
+                //     // const rotate2 = getRandomRotation();    
+                //     const rotate1 = 0;
+                //     const rotate2 = 0;
+                //     spans[i].style.transform = `translate(0px, ${translateY1 + 10}px) rotate(${rotate1}deg)`;
+                //     spans[j].style.transform = `translate(0px, ${translateY2 - 10}px) rotate(${rotate2}deg)`;
+                // }
+
+                // Check if the spans collide
+                if (checkCollision(spans[i], spans[j])) 
+                {
+                    const rect1 = spans[i].getBoundingClientRect();
+                    const rect2 = spans[j].getBoundingClientRect();
+                    // Determine which span is on top (rect2) and which is on the bottom (rect1)
+                    if (rect1.top > rect2.top) {
+                        // Span i is below Span j
+                        let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
+                        let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
+
+                        // Push the top span (j) further up
+                        spans[j].dataset.translateY = translateY2 - 2; // Move span j (top) further up
+
+                        // Apply upward movement and rotate in opposite directions
+                        const rotate1 = getRandomRotation(); // Random rotation for span i
+                        const rotate2 = -rotate1; // Opposite rotation for span j
+
+                        spans[i].style.transform = `translate(0px, ${translateY1}px) rotate(${rotate1}deg)`;
+                        spans[j].style.transform = `translate(0px, ${translateY2 - 2}px) rotate(${rotate2}deg)`;
+
+                        // Start moving non-moving spans on collision (if necessary)
+                        if (!movingSpansIndexes.includes(j)) {
+                            movingSpansIndexes.push(j); // Span j starts moving
+                        }
+                    } else { // if (rect1.top <= rect2.top) {
+                        // Span i is above Span j (same logic but reversed)
+                        let translateY1 = parseFloat(spans[i].dataset.translateY || 0);
+                        let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
+
+                        // Push the top span (i) further up
+                        spans[i].dataset.translateY = translateY1 - 2; // Move span i (top) further up
+
+                        // Apply upward movement and rotate in opposite directions
+                        // const rotate1 = getRandomRotation();
+                        const rotate1 = 0;
+                        const rotate2 = -rotate1;
+
+                        spans[i].style.transform = `translate(0px, ${translateY1 - 2}px) rotate(${rotate1}deg)`;
+                        spans[j].style.transform = `translate(0px, ${translateY2}px) rotate(${rotate2}deg)`;
+
+                        // Start moving non-moving spans on collision (if necessary)
+                        if (!movingSpansIndexes.includes(i)) {
+                            movingSpansIndexes.push(i); // Span i starts moving
+                        }
                     }
-    
-                    // Adjust movement and apply the rotation effect
-                    spans[i].dataset.translateY = translateY1 + 10; // Move down on collision
-                    spans[j].dataset.translateY = translateY2 - 10; // Move up on collision
-    
-                    // const rotate1 = getRandomRotation();
-                    // const rotate2 = getRandomRotation();    
-                    const rotate1 = 0;
-                    const rotate2 = 0;
-                    spans[i].style.transform = `translate(0px, ${translateY1 + 10}px) rotate(${rotate1}deg)`;
-                    spans[j].style.transform = `translate(0px, ${translateY2 - 10}px) rotate(${rotate2}deg)`;
                 }
             }
         }
