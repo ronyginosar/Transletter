@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         let translateY2 = parseFloat(spans[j].dataset.translateY || 0);
 
                         // Push the top span (j) further up
-                        spans[j].dataset.translateY = translateY2 - upwardsMovement; // Move span j (top) further up
+                        spans[j].dataset.translateY = translateY2 - 1; // Move span j (top) further up , by 1 is smoother than upwardsMovement
 
                         // Apply upward movement and rotate in opposite directions
                         const rotate1 = getRandomRotation(); // Random rotation for span i
