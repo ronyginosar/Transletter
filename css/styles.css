@@ -14,7 +14,7 @@
     --slider-gray: rgb(148, 148, 148);
     --page-side-padding: 12.5%;
     --iframe-inner-top-bottom-padding: 5%;
-    --title-font-size: 20vw;
+    --title-font-size: 25vw;
 }
 
 /* TODO unify wrapper div/class */
@@ -55,6 +55,21 @@ body::-webkit-scrollbar {
     align-items: center;
 }
 
+.animated-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.animated-logo iframe{
+    /* height: 70vh; */
+    z-index: 1;
+    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
+    padding-right: var(--page-side-padding);
+    padding-left: var(--page-side-padding);
+}
+
 
 /* .wrapper{
     position: absolute;
@@ -76,8 +91,6 @@ body::-webkit-scrollbar {
     /* color: rgb(10, 210, 250); */
     /* height: 98vh; */
     width: 100%;
-
-
 }
 
 .evolution-animated iframe{
@@ -111,6 +124,14 @@ body::-webkit-scrollbar {
     /* remove scroll bar: */
     /* -ms-overflow-style: none;  Internet Explorer 10+ 
     scrollbar-width: none;  /* Firefox */
+}
+
+.scroll_section_wrapper iframe{
+    /* height: 70vh; */
+    /* z-index: 1; */
+    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
+    padding-right: var(--page-side-padding);
+    padding-left: var(--page-side-padding);
 }
 
 /* remove */

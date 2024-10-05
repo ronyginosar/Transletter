@@ -7,8 +7,8 @@ html,body{
     justify-content: center;
     height: 100%;
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    padding-left: var(--page-side-padding);
-    padding-right: var(--page-side-padding);
+    /* padding-left: var(--page-side-padding);
+    padding-right: var(--page-side-padding); */
     flex-direction: column;
 }
 
@@ -18,8 +18,10 @@ html,body{
     justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
-    font-size: 1.2vw;
-    line-height: 2.2em;
+    /* font-size: 1.2vw; */
+    /* based on title size */
+    font-size: 0.09em;
+    line-height: 1.8em;
     margin-right: 1vw;
 }
 
