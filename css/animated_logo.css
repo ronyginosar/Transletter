@@ -1,17 +1,35 @@
-/* future parametrize all this */
+html,body{
+    height: 100%;
+}
 
 #wrapper{
-    /* WARNING for animated logo, causes confusion... */
-    position: absolute;
-    inset: 0;
+    /* position: absolute; */
+    /* inset: 0; */
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
+    /* width: 100%; */
+    height: 100%;
+    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
+    padding-left: var(--page-side-padding);
+    padding-right: var(--page-side-padding);
+    flex-direction: column;
+}
+
+#version_tag{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    font-size: 1vw;
 }
 
 #logoPara{
-    font-size: 20vw;
-    /* transform: translateY(-6vh); */
+    display:flex;
+    /* height: 100%; */
+    font-size: var(--title-font-size);
+    
+
 }
 #logoPara nobr{
     font-family: TransletterGX;
@@ -44,18 +62,18 @@
 }
 
 @keyframes charAnim-1 {
-    0%{font-variation-settings: 'vrot' 100; color: var(--gradient-blue);}
-    45%{font-variation-settings: 'vrot' 700; color: var(--gradient-black);}
-    55%{font-variation-settings: 'vrot' 700; color: var(--gradient-black);}
-    90%{font-variation-settings: 'vrot' 100; color: var(--gradient-blue);}
-    100%{font-variation-settings: 'vrot' 100; color: var(--gradient-blue);}
+    0%{font-variation-settings:     'vrot' 100; color: var(--gradient-blue);}
+    45%{font-variation-settings:    'vrot' 700; color: var(--gradient-black);}
+    55%{font-variation-settings:    'vrot' 700; color: var(--gradient-black);}
+    90%{font-variation-settings:    'vrot' 100; color: var(--gradient-blue);}
+    100%{font-variation-settings:   'vrot' 100; color: var(--gradient-blue);}
 }
 @keyframes charAnim-2 {
-    0%{font-variation-settings: 'vrot' 200; color: var(--gradient-blue);}
-    45%{font-variation-settings: 'vrot' 700; color: var(--gradient-black);}
-    55%{font-variation-settings: 'vrot' 700; color: var(--gradient-black);}
-    90%{font-variation-settings: 'vrot' 200; color: var(--gradient-blue);}
-    100%{font-variation-settings: 'vrot' 200; color: var(--gradient-blue);}
+    0%{font-variation-settings:     'vrot' 200; color: var(--gradient-blue);}
+    45%{font-variation-settings:    'vrot' 700; color: var(--gradient-black);}
+    55%{font-variation-settings:    'vrot' 700; color: var(--gradient-black);}
+    90%{font-variation-settings:    'vrot' 200; color: var(--gradient-blue);}
+    100%{font-variation-settings:   'vrot' 200; color: var(--gradient-blue);}
 }
 @keyframes charAnim-3 {
     0%{font-variation-settings: 'vrot' 300; color: var(--gradient-blue);}
@@ -89,7 +107,7 @@
 
 /* TODO */
 
-
+/* 
 .home-page .container {
     width: 640px;
     height: calc(100vh - 190px);
@@ -157,4 +175,4 @@
     letter-spacing: 2px;
     position: relative;
     margin-top: 120px
-}
+} */
