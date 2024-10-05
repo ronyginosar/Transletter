@@ -3,10 +3,7 @@ html,body{
 }
 
 #wrapper{
-    /* position: absolute; */
-    /* inset: 0; */
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     /* width: 100%; */
     height: 100%;
@@ -18,24 +15,30 @@ html,body{
 
 #version_tag{
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
-    font-size: 1vw;
+    font-size: 1.2vw;
+    line-height: 2.2em;
+    margin-right: 1vw;
 }
 
 #logoPara{
     display:flex;
     /* height: 100%; */
     font-size: var(--title-font-size);
-    
-
+    line-height: 0.7em;
+    align-items: flex-end;
 }
+
 #logoPara nobr{
     font-family: TransletterGX;
     font-variation-settings: 'vrot' 50;
     user-select: none;
+    vertical-align: text-bottom;
 }
+
 #logoPara nobr span{
     animation: charAnim-1 var(--logoAnimationSpeed) linear infinite;
     animation-delay: -2500ms;
