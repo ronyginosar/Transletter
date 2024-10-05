@@ -86,10 +86,6 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* color for debugging */
-    /* background-color: rgb(21, 49, 121); */
-    /* color: rgb(10, 210, 250); */
-    /* height: 98vh; */
     width: 100%;
 }
 
@@ -118,6 +114,9 @@ body::-webkit-scrollbar {
 } */
 
 .scroll_section_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     background-color: var(--element-color);
     /* background-color: chocolate; */
@@ -129,9 +128,10 @@ body::-webkit-scrollbar {
 .scroll_section_wrapper iframe{
     /* height: 70vh; */
     /* z-index: 1; */
-    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    padding-right: var(--page-side-padding);
-    padding-left: var(--page-side-padding);
+    /* note - to allow scroll from section top - move to padding inside html rather than iframe */
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    /* padding-right: var(--page-side-padding); */
+    /* padding-left: var(--page-side-padding); */
 }
 
 /* remove */
