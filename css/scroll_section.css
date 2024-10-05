@@ -8,6 +8,7 @@
     /* remove scroll bar:
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     /* scrollbar-width: none;  /* Firefox */
+    font-size: var(--title-font-size); 
 /* } */
 
 /* remove */
@@ -23,7 +24,8 @@
     /* width: 80%; */
     width: 100%;
     margin: 0;
-    font-size: 3.5vw;
+    /* font-size: 3.5vw; */
+    font-size: 0.2em;
     font-family: TransletterGX;
     /* line-height: 120%; */
     font-variation-settings: "vrot" var(--vrot);

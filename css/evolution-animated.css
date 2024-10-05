@@ -6,9 +6,10 @@
     /* align-items: right; */
     font-family: TransletterGX;
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    font-size: 1000%;
+    /* font-size: 1000%; */
+    font-size: var(--title-font-size);
     /* line-height: 70%; */
-    line-height: 0.9em;
+    line-height: 0.8em;
     font-variation-settings: "vrot" 200;
     justify-content: center;
 
