@@ -84,32 +84,46 @@
 
     <header>
     <!-- 0. menu & top logo TODO-->
-      <!-- <div>placeholder menu & logo</div> -->
       <nav>
         <!-- TODO - links to ancor points, not links -->
-          <a href="index.html" class="gradient-text nav-title">
-            <!-- <p class="gradient-text dynamic-font-600 nav-title"> -->
-            <!-- <p class="gradient-text nav-title">
-              תנואות
-            </p> -->
+        <!-- TODO - actuve on current -->
+        <!-- TODO place correct nav names and targets -->
+          <!-- <a href="index.html" class="gradient-text nav-title"> -->
+          <a href="#animated-logo-iframe" class="gradient-text nav-title" >
             תנואות
           </a>
         </div>
         <ul>
-          <a href="about.html">
-            <!-- <li class="active"> -->
-            <li>
+          <!-- <a href="about.html"> -->
+          <a href="#scroll-section">
+            <li class="active">
+            <!-- <li> -->
               על הפרוייקט
             </li>
           </a>
-          <a href="letters.html">
+          <a href="#tester-iframe">
+            <li>
+              הקלדה חופשית
+            </li>
+          </a>
+          <a href="#waterfall-iframe">
             <li>
               האותיות
             </li>
           </a>
-          <a href="free.html">
+          <a href="#technology-section">
             <li>
-              הקלדה חופשית
+              הטכנולוגיה
+            </li>
+          </a>
+          <a href="#research-iframe">
+            <li>
+              המחקר
+            </li>
+          </a>
+          <a href="#footer-iframe">
+            <li>
+              צור קשר
             </li>
           </a>
         </ul>
@@ -118,7 +132,7 @@
 
     <!-- 1. Animated logo -->
     <div class="animated-logo">
-      <iframe src="iframe_subpages/animated_transletter_logo.html"></iframe>
+      <iframe src="iframe_subpages/animated_transletter_logo.html" id="animated-logo-iframe"></iframe>
     </div>
 
     <!-- 2. animated evolution TODO raxo -->
@@ -128,7 +142,7 @@
     </div>
 
     <!-- 3. animate on scroll -->
-    <div class="scroll_section_wrapper">
+    <div class="scroll_section_wrapper" id="scroll-section">
       <iframe src="iframe_subpages/scroll-section.html" id="scroll-section-iframe"></iframe>
       <script>adjustIframeSize("scroll-section-iframe")</script>
 <!-- optional: scroll section iframe padding like in evolution -->
@@ -146,13 +160,13 @@
            <!-- TODO unify prev format -->
 
     <div class="waterfall">
-      <iframe src="iframe_subpages/waterfall.html"></iframe>
+      <iframe src="iframe_subpages/waterfall.html" id="waterfall-iframe"></iframe>
     </div>
 
     <!-- 6. horizontal container todo -->
            <!-- TODO unify prev format -->
 
-    <div class="horizontal_screensaver_tech">
+    <div class="horizontal_screensaver_tech" id="technology-section">
       <!-- 6.1 "screensaver" INSERT -->
       <div class="screensaver">
         <iframe src="iframe_subpages/screen-saver.html"></iframe>
