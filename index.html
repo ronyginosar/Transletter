@@ -34,9 +34,9 @@
               // Adjusting the iframe height onload event
               frame.onload = function() {
                   // Set the height of the iframe as the height of the iframe content
-                  console.log(`Iframe with ID ${iframeId} height ${frame.contentWindow.document.body.scrollHeight}.`);
+                  // console.log(`Iframe with ID ${iframeId} height ${frame.contentWindow.document.body.scrollHeight}.`);
                   frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
-                  console.log(`Iframe with ID ${iframeId} height adjusted to ${frame.style.height}.`);
+                  // console.log(`Iframe with ID ${iframeId} height adjusted to ${frame.style.height}.`);
                   // Uncomment the line below if you also want to adjust the width
                   // frame.style.width = frame.contentWindow.document.body.scrollWidth + 'px';
               }
@@ -70,6 +70,23 @@
   // }
 
 
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('nav li');
+        console.log(navLinks); // Check if it logs correctly now
+
+        // Add the event listeners to each nav link
+        navLinks.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove 'active' class from all <li> elements
+                navLinks.forEach(item => item.classList.remove('active'));
+                
+                // Add 'active' class to the clicked <li>
+                this.classList.add('active');
+            });
+        });
+    });
+
     </script>
 
 
@@ -83,12 +100,9 @@
     <!-- PAGE ORDER -->
 
     <header>
-    <!-- 0. menu & top logo TODO-->
+    <!-- 0. menu & top logo -->
       <nav>
-        <!-- TODO - links to ancor points, not links -->
-        <!-- TODO - actuve on current -->
         <!-- TODO place correct nav names and targets -->
-          <!-- <a href="index.html" class="gradient-text nav-title"> -->
           <a href="#animated-logo-iframe" class="gradient-text nav-title" >
             תנואות
           </a>
@@ -96,8 +110,7 @@
         <ul>
           <!-- <a href="about.html"> -->
           <a href="#scroll-section">
-            <li class="active">
-            <!-- <li> -->
+            <li>
               על הפרוייקט
             </li>
           </a>
