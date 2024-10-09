@@ -225,8 +225,13 @@ body::-webkit-scrollbar {
 
 header{
     width: 100%;
+    /* make fixed to the top */
     position: fixed;
     top: 0;
+    /* make on top of content */
+    z-index: 100;
+/* TODO more options? */
+    mix-blend-mode: difference; /* Invert the colors based on the background */
 }
 
 nav {
