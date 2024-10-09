@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Wait for layout to be applied before capturing initial positions
     window.addEventListener('load', function() {
-        console.log('loaded');
+        // console.log('loaded');
         spans.forEach(span => {
             const rect = span.getBoundingClientRect();
             // console.log(rect);
