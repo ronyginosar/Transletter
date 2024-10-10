@@ -148,7 +148,8 @@ input[type=range]::-webkit-slider-runnable-track {
     display: inline-block;
     width: 1px;
     height: 1em; /* Adjust to font size */
-    background: var(--element-color);
+    /* background: var(--element-color); */
+    background: var(--caret-color, black);
     /* position: absolute; */
     /* top: 10px; */
     /* left: 10px; */

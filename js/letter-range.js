@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const wrapperDiv = document.getElementById('wrapper');
     const colorToggle = document.getElementById('colorToggle');
     const controls = document.querySelector('.controls');
-    // const fauxCaret = document.querySelector('.editable-section::after');
+    const editableSection = document.querySelector('.editable-section'); // for caret color toggle
 
     let fontSize = fontSizeSlider.value + 'px';
 
@@ -79,20 +79,19 @@ document.addEventListener('DOMContentLoaded', function() {
     colorToggle.addEventListener('click', function() {
         if (wrapperDiv.style.color === 'black') {
             wrapperDiv.style.color = 'white';
-            // fauxCaret.style.backgroundColor = 'white';
             colorToggle.style.backgroundColor = 'black';
-
+            // Change the content of the ::after pseudo-element via a CSS variable
+            editableSection.style.setProperty('--caret-color', 'white');
         } else {
             wrapperDiv.style.color = 'black';
-            // fauxCaret.style.backgroundColor = 'black';
             colorToggle.style.backgroundColor = 'white';
+            editableSection.style.setProperty('--caret-color', 'black');
         }
         
     });
 
     // Initialize the color toggle button
     wrapperDiv.style.color = 'black';
-    // fauxCaret.style.backgroundColor = 'black';
     colorToggle.style.backgroundColor = 'white';
 
     // param version:
