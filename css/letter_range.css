@@ -146,7 +146,7 @@ input[type=range]::-webkit-slider-runnable-track {
 .editable-section::after {
     content: '';
     display: inline-block;
-    width: 1.5px;
+    width: 1px;
     height: 1em; /* Adjust to font size */
     background: black;
     /* position: absolute; */
