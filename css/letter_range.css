@@ -142,6 +142,31 @@ input[type=range]::-webkit-slider-runnable-track {
     /* outline: none; */
 /* } */
 
+/* Create a blinking caret when the section is empty and unfocused */
+.editable-section::after {
+    content: '';
+    display: inline-block;
+    width: 1.5px;
+    height: 1em; /* Adjust to font size */
+    background: black;
+    /* position: absolute; */
+    /* top: 10px; */
+    /* left: 10px; */
+    animation: blink 1s step-start infinite;
+}
+
+/* Remove the caret when the user focuses on the editable section */
+.editable-section:focus::after {
+    content: none;
+}
+
+/* Blinking animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 
 
 /* note: not sure yet if used... */
