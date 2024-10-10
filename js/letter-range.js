@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const wrapperDiv = document.getElementById('wrapper');
     const colorToggle = document.getElementById('colorToggle');
     const controls = document.querySelector('.controls');
+    // const fauxCaret = document.querySelector('.editable-section::after');
 
     let fontSize = fontSizeSlider.value + 'px';
 
@@ -78,9 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
     colorToggle.addEventListener('click', function() {
         if (wrapperDiv.style.color === 'black') {
             wrapperDiv.style.color = 'white';
+            // fauxCaret.style.backgroundColor = 'white';
             colorToggle.style.backgroundColor = 'black';
+
         } else {
             wrapperDiv.style.color = 'black';
+            // fauxCaret.style.backgroundColor = 'black';
             colorToggle.style.backgroundColor = 'white';
         }
         
@@ -88,7 +92,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the color toggle button
     wrapperDiv.style.color = 'black';
+    // fauxCaret.style.backgroundColor = 'black';
     colorToggle.style.backgroundColor = 'white';
+
+    // param version:
+    // Function to get CSS variable values
+    // function getCSSVariableValue(variable) {
+    //     return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+    // }
+
+    // // Function to set CSS variable values
+    // function setCSSVariableValue(variable, value) {
+    //     document.documentElement.style.setProperty(variable, value);
+    // }
+
+    // Color toggle functionality using CSS variables
+    // if (getCSSVariableValue('--background-color') === 'black') {
+    //     setCSSVariableValue('--background-color', 'white');
+    //     setCSSVariableValue('--element-color', 'black');
+    // } else {
+    //     setCSSVariableValue('--background-color', 'black');
+    //     setCSSVariableValue('--element-color', 'white');
+    // }
+
+    // Apply the color change to elements
+    // wrapperDiv.style.color = setCSSVariableValue('--element-color');
+    // colorToggle.style.backgroundColor = setCSSVariableValue('--background-color');
+
     updateSliderLabel();
 });
 

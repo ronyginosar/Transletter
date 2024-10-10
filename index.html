@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         item_href = item.parentElement.getAttribute('href');
         item.classList.remove('active');
         if (item_href === `#${currentSection}`) {
-          console.log(`Current section from href: ${item_href}`);
+          // console.log(`Current section from href: ${item_href}`);
           item.classList.add('active');
         }
       });
@@ -117,8 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <header>
     <!-- 0. menu & top logo -->
+    <!-- TODO place correct nav names and targets -->
       <nav>
-        <!-- TODO place correct nav names and targets -->
           <a href="#animated-logo-section" class="gradient-text nav-title" >
             תנואות
           </a>
@@ -212,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- <section class="letter-range_page"> -->
     <!-- <section> TODO -->
+      <!-- TODO background color toggle on faux caret -->
       <iframe src="iframe_subpages/letter-range.html" id="letter-range-iframe"></iframe>
     <!-- TODO allow to grow beyond iframe? -->
     <!-- <script>adjustIframeSize("letter-range-iframe")</script> -->
