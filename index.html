@@ -45,89 +45,47 @@
           }
       }
 
-  // function adjustIframeSize(iframeId) {
-  //   var frame = document.getElementById(iframeId);
-
-  //   if (frame) {
-  //       function resizeIframe() {
-  //           try {
-  //               const contentHeight = frame.contentWindow.document.documentElement.scrollHeight;
-  //               frame.style.height = contentHeight + 'px';
-  //           } catch (error) {
-  //               console.error(`Unable to access iframe content: ${error}`);
-  //           }
-  //       }
-
-  //       frame.onload = function() {
-  //           setTimeout(resizeIframe, 100);  // Allow content to fully render before resizing
-  //       };
-
-  //       // Add an interval to recheck the height in case content changes dynamically
-  //       // setInterval(resizeIframe, 100);  // Recheck every 500ms to handle dynamic content changes
-  //   } else {
-  //       console.error(`Iframe with ID ${iframeId} not found.`);
-  //   }
-  // }
-
-
-    // Add 'active' class to the clicked nav link
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     const navLinks = document.querySelectorAll('nav li');
-        
-    //     // console.log(navLinks);
-
-    //     // Add the event listeners to each nav link
-    //     navLinks.forEach(item => {
-    //         item.addEventListener('click', function() {
-    //             // Remove 'active' class from all <li> elements
-    //             navLinks.forEach(item => item.classList.remove('active'));
-                
-    //             // Add 'active' class to the clicked <li>
-    //             this.classList.add('active');
-    //         });
-    //     });
-    // });
-
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav li');
 
-    // Function to remove 'active' class from all nav links
-    function removeActiveClasses() {
-        navLinks.forEach(link => {
-            link.classList.remove('active');
+    // Click event listener to manually activate the clicked nav item
+    navLinks.forEach(item => {
+        item.addEventListener('click', function() {
+            navLinks.forEach(
+              item => item.classList.remove('active')
+            );
+            this.classList.add('active');
         });
-    }
-
-    // Function to add 'active' class to the correct nav link
-    function addActiveClass(link) {
-        link.classList.add('active');
-    }
+    });
 
     // Function to determine the active section on scroll
     function setActiveSection() {
-        let currentSection = '';
+      let currentSection = '';
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                currentSection = section.getAttribute('id');
-            }
-        });
+      // detect current section
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop - sectionHeight / 3) {
+              currentSection = section.getAttribute('id');
+          }
+      });
 
-        navLinks.forEach(link => {
-            removeActiveClasses();
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                addActiveClass(link);
-            }
-        });
+      // remove active class from all nav links and add it to the correct one
+      navLinks.forEach(item => {
+        item_href = item.parentElement.getAttribute('href');
+        item.classList.remove('active');
+        if (item_href === `#${currentSection}`) {
+          console.log(`Current section from href: ${item_href}`);
+          item.classList.add('active');
+        }
+      });
     }
 
     // Add a scroll event listener
     window.addEventListener('scroll', setActiveSection);
 });
-
 
     
 
