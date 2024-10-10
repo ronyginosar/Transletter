@@ -70,22 +70,66 @@
   // }
 
 
+    // Add 'active' class to the clicked nav link
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const navLinks = document.querySelectorAll('nav li');
+        
+    //     // console.log(navLinks);
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const navLinks = document.querySelectorAll('nav li');
-        // console.log(navLinks);
-
-        // Add the event listeners to each nav link
-        navLinks.forEach(item => {
-            item.addEventListener('click', function() {
-                // Remove 'active' class from all <li> elements
-                navLinks.forEach(item => item.classList.remove('active'));
+    //     // Add the event listeners to each nav link
+    //     navLinks.forEach(item => {
+    //         item.addEventListener('click', function() {
+    //             // Remove 'active' class from all <li> elements
+    //             navLinks.forEach(item => item.classList.remove('active'));
                 
-                // Add 'active' class to the clicked <li>
-                this.classList.add('active');
-            });
+    //             // Add 'active' class to the clicked <li>
+    //             this.classList.add('active');
+    //         });
+    //     });
+    // });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav li');
+
+    // Function to remove 'active' class from all nav links
+    function removeActiveClasses() {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
         });
-    });
+    }
+
+    // Function to add 'active' class to the correct nav link
+    function addActiveClass(link) {
+        link.classList.add('active');
+    }
+
+    // Function to determine the active section on scroll
+    function setActiveSection() {
+        let currentSection = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            removeActiveClasses();
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                addActiveClass(link);
+            }
+        });
+    }
+
+    // Add a scroll event listener
+    window.addEventListener('scroll', setActiveSection);
+});
+
+
+    
 
     // Load at top of page
     document.addEventListener('DOMContentLoaded', function() {
@@ -117,7 +161,7 @@
     <!-- 0. menu & top logo -->
       <nav>
         <!-- TODO place correct nav names and targets -->
-          <a href="#animated-logo-iframe" class="gradient-text nav-title" >
+          <a href="#animated-logo-section" class="gradient-text nav-title" >
             תנואות
           </a>
         </div>
@@ -128,12 +172,12 @@
               על הפרוייקט
             </li>
           </a>
-          <a href="#tester-iframe">
+          <a href="#tester-section">
             <li>
               הקלדה חופשית
             </li>
           </a>
-          <a href="#waterfall-iframe">
+          <a href="#waterfall-section">
             <li>
               האותיות
             </li>
@@ -143,12 +187,12 @@
               הטכנולוגיה
             </li>
           </a>
-          <a href="#research-iframe">
+          <a href="#research-section">
             <li>
               המחקר
             </li>
           </a>
-          <a href="#footer-iframe">
+          <a href="#footer-section">
             <li>
               צור קשר
             </li>
@@ -158,42 +202,42 @@
     </header>
 
     <!-- 1. Animated logo -->
-    <div class="animated-logo">
+    <section class="animated-logo" id="animated-logo-section">
       <iframe src="iframe_subpages/animated_transletter_logo.html" id="animated-logo-iframe"></iframe>
-    </div>
+    </section>
 
     <!-- 2. animated evolution TODO raxo -->
-    <div class="evolution-animated">
+    <section class="evolution-animated" id="evolution-section">
       <iframe src="iframe_subpages/evolution-animated.html" id="evolution-iframe"></iframe>
       <!-- <script>adjustIframeSize("evolution-iframe")</script> -->
-    </div>
+    </section>
 
     <!-- 3. animate on scroll -->
-    <div class="scroll_section_wrapper" id="scroll-section">
+    <section class="scroll_section_wrapper" id="scroll-section">
       <iframe src="iframe_subpages/scroll-section.html" id="scroll-section-iframe"></iframe>
       <script>adjustIframeSize("scroll-section-iframe")</script>
 <!-- optional: scroll section iframe padding like in evolution -->
-    </div>
+    </section>
 
     <!-- 4. tester TODO - adapt from old sliders -->
-    <div class="tester">
+    <section class="tester" id="tester-section">
       <!-- TODO Make axis update with slider -->
       <!-- TODO unify prev format -->
       <iframe src="iframe_subpages/letter-tester.html" id="tester-iframe"></iframe>
-    </div>
+    </section>
 
 
     <!-- 5. water fall -->
            <!-- TODO unify prev format -->
 
-    <div class="waterfall">
+    <section class="waterfall" id="waterfall-section">
       <iframe src="iframe_subpages/waterfall.html" id="waterfall-iframe"></iframe>
-    </div>
+    </section>
 
     <!-- 6. horizontal container todo -->
            <!-- TODO unify prev format -->
 
-    <div class="horizontal_screensaver_tech" id="technology-section">
+    <section class="horizontal_screensaver_tech" id="technology-section">
       <!-- 6.1 "screensaver" INSERT -->
       <div class="screensaver">
         <iframe src="iframe_subpages/screen-saver.html"></iframe>
@@ -203,32 +247,33 @@
       <div class="technology_title">placeholder technology title</div>
       <!-- 6.3 technology text & image, 3 columns todo-->
       <div class="technology">placeholder technology text and image</div>
-    </div>
+    </section>
 
     <!-- 7. random state type tester, "letter_range", gradient blue -->
            <!-- TODO unify prev format -->
 
-    <!-- <div class="letter-range_page"> -->
-    <iframe src="iframe_subpages/letter-range.html" id="letter-range-iframe"></iframe>
+    <!-- <section class="letter-range_page"> -->
+    <!-- <section> TODO -->
+      <iframe src="iframe_subpages/letter-range.html" id="letter-range-iframe"></iframe>
     <!-- TODO allow to grow beyond iframe? -->
     <!-- <script>adjustIframeSize("letter-range-iframe")</script> -->
-    <!-- </div> -->
+    <!-- </section> -->
 
     <!-- 8&9. research -->
-    <div class="research">
+    <section class="research" id="research-section">
             <!-- TODO unify prev format -->
 
       <!-- TODO split into 2 frames? this 150 is not working and eating up time -->
       <iframe src="iframe_subpages/research.html" id="research-iframe"></iframe>
       <script>adjustIframeSize("research-iframe")</script>
-    </div>
+    </section>
 
     <!-- 10.footer -->
-    <div class="footer_page">
+    <section class="footer_page" id="footer-section">
             <!-- TODO unify prev format -->
 
       <iframe src="iframe_subpages/footer.html" id="footer-iframe"></iframe>
       <script>adjustIframeSize("footer-iframe")</script>
-    </div>
+    </section>
   </body>
 </html>
