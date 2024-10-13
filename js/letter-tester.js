@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         fontSizeLabel.textContent = `${sliderValue}`;
         text_block.style.fontSize = `${sliderValue}px`;
+
+        adjustHeight();  // Recalculate the height to fit the new font size
     }
 
     fontSizeSlider.addEventListener('input', updateSliderLabel);
@@ -48,5 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     updateSliderLabel();
+
+    // Function to adjust the height of the textarea
+    function adjustHeight() {
+        text_block.style.height = 'auto';  // Reset the height
+        text_block.style.height = text_block.scrollHeight + 'px';  // Set the height based on scrollHeight
+    }
+
+    // Adjust the height when the content changes
+    text_block.addEventListener('input', adjustHeight);
+
+    // Adjust the height initially in case there is pre-filled content
+    adjustHeight();
 });
 

@@ -36,11 +36,14 @@ textarea {
     overflow-wrap: break-word; /* Break words if they are too long */
     word-wrap: break-word;  /* Ensure word-breaking works in all browsers */
     box-sizing: border-box; /* Include padding and borders in the element's width */
+
+    overflow-y: hidden;     /* Prevent overflow with scrollbar */
+    height: auto;           /* Allow the height to be adjusted automatically */
 }
 
 textarea#text_byBlock{
     font-size: 0.3em;
-    line-height: 90%;
+    line-height: 95%;
     width: 70%;
     /* white-space: nowrap; */
 }
@@ -51,6 +54,8 @@ input[type=range] {
     /* width: 100px; */
     background: transparent;
     /* margin: 0 0 10px; */
+    width: 90%;
+    margin-left: 10%;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -68,7 +73,6 @@ input[type=range]:focus {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
     height: 1px;
     cursor: pointer;
     background: var(--slider-gray);
@@ -78,8 +82,10 @@ input[type=range]::-webkit-slider-runnable-track {
 .controls {
     display: flex;
     align-items: center;
-    width: 30%;
-    font-size: 0.1em;
+    justify-content: space-between;
+    width: 40%;
+    font-size: 0.05em;
+    /* padding-left: 10%; */
 }
 
 .slider-container {
@@ -88,7 +94,7 @@ input[type=range]::-webkit-slider-runnable-track {
     align-items: center;
     /* note: The .slider-container is set to position: relative to position the label absolutely within it. */
     position: relative;
-    width: 80%; 
+    /* width: 100%;  */
     background-color: pink;
 }
 
