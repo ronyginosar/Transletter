@@ -178,10 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- 4. tester TODO - adapt from old sliders -->
-    <section class="tester" id="tester-section">
+    <section class="tester_wrapper" id="tester-section">
       <!-- TODO Make axis update with slider -->
-      <!-- TODO unify prev format -->
+      <!-- TODO scroll vs height -->
+      <!-- TODO update sizes on main page -->
       <iframe src="iframe_subpages/letter-tester.html" id="tester-iframe"></iframe>
+      <script>adjustIframeSize("tester-iframe")</script>
     </section>
 
 

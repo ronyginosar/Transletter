@@ -1,3 +1,4 @@
+
 #wrapper{
     font-size: var(--title-font-size);
     display: flex;
@@ -6,10 +7,12 @@
     justify-content: flex-start;
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     font-family: TransletterGX;
-    height: 100vh;
+    /* TODO look into this */
+    /* height: 100vh; */
     width: 100%;
     /* TEMP */
     padding-top: 50px; 
+    overflow: hidden;
 }
 
 .container{
@@ -29,6 +32,8 @@ textarea {
     box-shadow: none;
     font-size: inherit;
     line-height: 50%;
+    /* TODO cut bottom */
+    vertical-align: top;
 
     width: 90%;            /* Fill 100% of the container's width */
     resize: none;           /* Disable corner resize functionality */
@@ -45,15 +50,12 @@ textarea#text_byBlock{
     font-size: 0.3em;
     line-height: 95%;
     width: 70%;
-    /* white-space: nowrap; */
 }
 
 input[type=range] {
     -webkit-appearance: none;
     appearance: none;
-    /* width: 100px; */
     background: transparent;
-    /* margin: 0 0 10px; */
     width: 90%;
     margin-left: 10%;
 }

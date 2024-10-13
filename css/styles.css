@@ -89,21 +89,20 @@ body::-webkit-scrollbar {
     padding-left: var(--page-side-padding);
 }
 
-.tester{
+.tester_wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--element-color);
     width: 100%;
+
+    height: 98vh;
 }
 
-/* remove */
-/* #tester-iframe{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100%; 
-} */
+
+#tester-iframe{
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+}
 
 .scroll_section_wrapper{
     display: flex;
