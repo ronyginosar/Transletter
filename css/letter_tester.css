@@ -1,4 +1,6 @@
-
+:root{
+    --vrot-letter-tester: 500;
+}
 #wrapper{
     font-size: var(--title-font-size);
     display: flex;
@@ -13,13 +15,17 @@
     /* TEMP */
     padding-top: 50px; 
     overflow: hidden;
+    /* background-color: transparent; */
+    background-color: black;
 }
 
 .container{
-    background-color: var(--element-color);
+    /* background-color: var(--element-color); */
     width: 100%;            /* Fill 100% of the container's width */
     font-size: inherit;
 }
+
+
 
 textarea {
     border: none;
@@ -34,10 +40,13 @@ textarea {
     line-height: 50%;
     /* TODO cut bottom */
     vertical-align: top;
+    caret-color: var(--background-color); /* Blinking caret */
+
 
     width: 90%;            /* Fill 100% of the container's width */
     resize: none;           /* Disable corner resize functionality */
-    white-space: normal;    /* Allow text to break into lines */
+    /* white-space: normal;    /* Allow text to break into lines */
+    white-space: pre-wrap; /* Preserve spaces and new lines */
     overflow-wrap: break-word; /* Break words if they are too long */
     word-wrap: break-word;  /* Ensure word-breaking works in all browsers */
     box-sizing: border-box; /* Include padding and borders in the element's width */
@@ -50,6 +59,37 @@ textarea#text_byBlock{
     font-size: 0.3em;
     line-height: 95%;
     width: 70%;
+}
+
+/* TODO unite class?? */
+#text_byLetter{
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    font-family: inherit;
+    background-color: transparent;
+    color: var(--background-color);
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-size: inherit;
+    /* line-height: 50%; */
+    /* TODO cut bottom */
+    vertical-align: top;
+    caret-color: var(--background-color); /* Blinking caret */
+
+
+    width: 90%;            /* Fill 100% of the container's width */
+    resize: none;           /* Disable corner resize functionality */
+    /* white-space: normal;    /* Allow text to break into lines */
+    white-space: pre-wrap; /* Preserve spaces and new lines */
+    overflow-wrap: break-word; /* Break words if they are too long */
+    word-wrap: break-word;  /* Ensure word-breaking works in all browsers */
+    box-sizing: border-box; /* Include padding and borders in the element's width */
+
+    overflow-y: hidden;     /* Prevent overflow with scrollbar */
+    height: auto;           /* Allow the height to be adjusted automatically */
 }
 
 input[type=range] {
@@ -97,7 +137,7 @@ input[type=range]::-webkit-slider-runnable-track {
     /* note: The .slider-container is set to position: relative to position the label absolutely within it. */
     position: relative;
     /* width: 100%;  */
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .slider-label {
@@ -111,7 +151,7 @@ input[type=range]::-webkit-slider-runnable-track {
     padding: 2px 5px;
     border: 1px solid var(--slider-gray);
     /* background-color: transparent; */
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     color: var(--slider-gray);
 
     white-space: nowrap;
@@ -129,3 +169,16 @@ input[type=range]::-webkit-slider-runnable-track {
     white-space: nowrap;
     color: var(--gradient-blue);
 }
+
+/* Styles for selectable letters */
+.letter {
+    font-family: inherit;
+    font-variation-settings: 'vrot' var(--vrot-letter-tester);
+    display: inline-block; /* Inline so letters are treated individually */
+    cursor: pointer; /* Indicate the letter is clickable */
+}
+
+.selected-letter {
+    color: var(--gradient-blue);
+}
+
