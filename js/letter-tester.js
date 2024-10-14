@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Add focus management for the blinking caret
-            maintainCaretFocus(element);
+            // maintainCaretFocus(element);
 
         }
     });

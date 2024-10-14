@@ -27,8 +27,6 @@
     font-size: inherit;
 }
 
-
-
 textarea {
     border: none;
     font-family: inherit;
@@ -45,7 +43,7 @@ textarea {
     caret-color: var(--background-color); /* Blinking caret */
 
 
-    width: 90%;            /* Fill 100% of the container's width */
+    width: 90%;
     resize: none;           /* Disable corner resize functionality */
     /* white-space: normal;    /* Allow text to break into lines */
     white-space: pre-wrap; /* Preserve spaces and new lines */
@@ -60,7 +58,7 @@ textarea {
 textarea#text_byBlock{
     font-size: 0.3em;
     line-height: 95%;
-    width: 70%;
+    /* width: 70%; */
     font-variation-settings: "vrot" var(--vrot-letter-tester-text);
 }
 
