@@ -96,15 +96,16 @@ body::-webkit-scrollbar {
     background-color: var(--element-color);
     width: 100%;
 
-    height: 98vh;
+    /* height: 98vh; */
+    height: 100%;
 }
 
 
 #tester-iframe{
-    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    
-    padding-right: var(--page-side-padding);
-    padding-left: var(--page-side-padding);
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    padding-top: 10%;
+    /* padding-right: var(--page-side-padding); */
+    /* padding-left: var(--page-side-padding); */
 }
 
 .scroll_section_wrapper{
