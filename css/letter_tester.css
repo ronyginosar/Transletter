@@ -1,5 +1,6 @@
 :root{
-    --vrot-letter-tester: 500;
+    --vrot-letter-tester-title: 500;
+    --vrot-letter-tester-text: 400;
 }
 #wrapper{
     font-size: var(--title-font-size);
@@ -13,13 +14,14 @@
     /* height: 100vh; */
     width: 100%;
     /* TEMP */
-    padding-top: 50px; 
+
     overflow: hidden;
     /* background-color: transparent; */
     background-color: black;
 }
 
 .container{
+    padding-top: 50px; 
     /* background-color: var(--element-color); */
     width: 100%;            /* Fill 100% of the container's width */
     font-size: inherit;
@@ -59,6 +61,7 @@ textarea#text_byBlock{
     font-size: 0.3em;
     line-height: 95%;
     width: 70%;
+    font-variation-settings: "vrot" var(--vrot-letter-tester-text);
 }
 
 /* TODO unite class?? */
@@ -78,6 +81,8 @@ textarea#text_byBlock{
     /* TODO cut bottom */
     vertical-align: top;
     caret-color: var(--background-color); /* Blinking caret */
+    font-variation-settings: "vrot" var(--vrot-letter-tester-title);
+
 
 
     width: 90%;            /* Fill 100% of the container's width */

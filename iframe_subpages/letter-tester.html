@@ -18,12 +18,13 @@
               <div class="slider-container">
                   <div class="slider-title">גודל</div>
                   <div class="slider-label" id="fontSizeLabel_byLetter">160</div>
-                  <input type="range" id="fontSizeSlider_byLetter" min="10" max="300" value="160">
+                  <input type="range" id="fontSizeSlider_byLetter" min="70" max="300" value="160">
               </div>          
               <div class="slider-container">
                   <div class="slider-title">רהיטות</div>
-                  <div class="slider-label" id="fontVrotLabel_byLetter">400</div>
-                  <input type="range" id="fontVrotSlider_byLetter" min="100" max="700" value="400">
+                  <!-- note: vrot slider does not dynamically update on pageload -->
+                  <div class="slider-label" id="fontVrotLabel_byLetter">500</div>
+                  <input type="range" id="fontVrotSlider_byLetter" min="100" max="700" value="500">
               </div>
               <p>אות אות</p>
           </div>
@@ -42,8 +43,8 @@
             </div>          
             <div class="slider-container">
                 <div class="slider-title">רהיטות</div>
+                <!-- note: vrot slider does not dynamically update on pageload -->
                 <div class="slider-label" id="fontVrotLabel_byBlock">400</div>
-                <!-- todo relative to thumb, not slider -->
                 <input type="range" id="fontVrotSlider_byBlock" min="100" max="700" value="400">
             </div>
             <p>פסקה</p>

@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to get CSS variable values
     // function getCSSVariableValue(variable) {
     //     return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+    // or element.style.caretColor = 'var(--background-color)'; from letter tester -> cant use here the global params, o.w. only 1 toggle works.
     // }
 
     // // Function to set CSS variable values
