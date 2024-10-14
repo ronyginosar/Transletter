@@ -84,7 +84,7 @@ textarea#text_byBlock{
 
 
 
-    width: 90%;            /* Fill 100% of the container's width */
+    /* width: 90%;             */
     resize: none;           /* Disable corner resize functionality */
     /* white-space: normal;    /* Allow text to break into lines */
     white-space: pre-wrap; /* Preserve spaces and new lines */
