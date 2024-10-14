@@ -1,3 +1,142 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to adjust the height of a textarea or contenteditable div
+    function adjustHeight(element) {
+        if (element.tagName.toLowerCase() === 'textarea') {
+            element.style.height = 'auto';
+            element.style.height = element.scrollHeight + 'px';
+        }
+    }
+
+    // Function to update the slider label's position based on the thumb's location
+    function updateSliderLabelPosition(slider, label) {
+        const sliderRect = slider.getBoundingClientRect();
+        const thumbWidth = 20; // Approximate width of the slider thumb
+        const sliderWidth = sliderRect.width - thumbWidth;
+        const sliderMin = slider.min;
+        const sliderMax = slider.max;
+        const sliderValue = slider.value;
+        const sliderPercent = (sliderValue - sliderMin) / (sliderMax - sliderMin); // Calculate percentage of slider
+
+        // Calculate label position
+        // const labelLeft = sliderPercent * sliderWidth + thumbWidth / 2;
+        // label.style.left = `${labelLeft}px`; // Update the label's position
+        // label.textContent = sliderValue; // Update the label's content
+
+        // Fix: Invert the direction of label movement
+        const labelLeft = (1 - sliderPercent) * sliderWidth + thumbWidth / 2;
+        label.style.left = `${labelLeft}px`; // Update the label's position
+        label.textContent = sliderValue; // Update the label's content
+    }
+
+    // General slider handling function for font size and vrot control
+    function handleSlider(event) {
+        const slider = event.target;
+        const sliderContainer = slider.closest('.slider-container');
+        const sliderLabel = sliderContainer.querySelector('.slider-label');
+        const container = slider.closest('.container'); // Find the container that holds both the controls and the target element
+        const targetElement = container.querySelector('textarea, div[contenteditable="true"]'); // Query the textarea or contenteditable div inside the container
+
+        // Update the slider label's position
+        updateSliderLabelPosition(slider, sliderLabel);
+
+        // Check which slider is being controlled (font size or vrot)
+        if (slider.id.includes('fontSizeSlider')) {
+            if (targetElement.tagName.toLowerCase() === 'textarea') {
+                // For textareas, apply font size directly
+                targetElement.style.fontSize = `${slider.value}px`;
+                adjustHeight(targetElement);
+            } else if (targetElement.tagName.toLowerCase() === 'div') {
+                // For contenteditable divs, apply inline font size to each child node
+                applyFontSizeToContentEditable(targetElement, slider.value);
+            }
+        } else if (slider.id.includes('fontVrotSlider')) {
+            const vrotValue = slider.value;
+
+            // Handle for the byLetter contenteditable div
+            if (targetElement.id === 'text_byLetter') {
+                handleLetterVrot(targetElement, vrotValue);
+            } else if (targetElement.id === 'text_byBlock') {
+                // Apply vrot for the entire block (textarea or contenteditable)
+                targetElement.style.fontVariationSettings = `'vrot' ${vrotValue}`;
+            }
+        }
+    }
+
+    // Function to apply font size to each child element in a contenteditable div
+    function applyFontSizeToContentEditable(contentEditableDiv, fontSize) {
+        contentEditableDiv.querySelectorAll('.letter').forEach(letter => {
+            letter.style.fontSize = `${fontSize}px`;
+        });
+    }
+
+    // Handle vrot value for individual letter in contenteditable div
+    function handleLetterVrot(contentEditableDiv, vrotValue) {
+        const selectedLetter = contentEditableDiv.querySelector('.selected-letter');
+
+        if (selectedLetter) {
+            selectedLetter.style.fontVariationSettings = `'vrot' ${vrotValue}`;
+        }
+    }
+
+    // Add the input event listener to the sliders dynamically
+    const sliders = document.querySelectorAll('input[type=range]');
+    sliders.forEach(slider => {
+        const sliderContainer = slider.closest('.slider-container');
+        const sliderLabel = sliderContainer.querySelector('.slider-label');
+
+        // Initialize the label position on page load
+        updateSliderLabelPosition(slider, sliderLabel);
+
+        // Update the label position when the slider is used
+        slider.addEventListener('input', handleSlider);
+    });
+
+    // Enable caret visibility and height adjustment for textareas
+    const elements = document.querySelectorAll('textarea, div[contenteditable="true"]');
+    elements.forEach(element => {
+        if (element.tagName.toLowerCase() === 'textarea') {
+            element.style.caretColor = 'black'; // Show the blinking caret in textarea
+            adjustHeight(element); // Adjust height on load
+            element.addEventListener('input', () => adjustHeight(element));
+        } else if (element.tagName.toLowerCase() === 'div') {
+            element.style.caretColor = 'black'; // For contenteditable divs, ensure caret visibility
+        }
+    });
+
+    // Handle letter selection for byLetter contenteditable div
+    const byLetterDiv = document.getElementById('text_byLetter');
+    byLetterDiv.addEventListener('click', function(event) {
+        const clickedElement = event.target;
+        if (clickedElement.classList.contains('letter')) {
+            // Remove 'selected-letter' class from all letters
+            byLetterDiv.querySelectorAll('.letter').forEach(letter => letter.classList.remove('selected-letter'));
+
+            // Add 'selected-letter' class to the clicked letter
+            clickedElement.classList.add('selected-letter');
+
+            // Move the caret after the clicked letter
+            placeCaretAfterSelectedLetter(clickedElement);
+        }
+    });
+
+    // Function to place the caret after the selected letter in contenteditable div
+    function placeCaretAfterSelectedLetter(selectedElement) {
+        const range = document.createRange();
+        const sel = window.getSelection();
+
+        if (selectedElement) {
+            range.setStartAfter(selectedElement); // Place the caret after the selected element
+            range.collapse(true); // Collapse the range to move the caret
+            sel.removeAllRanges();
+            sel.addRange(range);
+        }
+    }
+});
+
+
+
+
+
 // for div etitable
 document.addEventListener('DOMContentLoaded', function() {
     const text_byLetter = document.getElementById('text_byLetter');
@@ -317,119 +456,119 @@ document.addEventListener('DOMContentLoaded', function() {
 //     });
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Function to adjust the height of a textarea or contenteditable div
-    function adjustHeight(element) {
-        if (element.tagName.toLowerCase() === 'textarea') {
-            element.style.height = 'auto';
-            element.style.height = element.scrollHeight + 'px';
-        }
-    }
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Function to adjust the height of a textarea or contenteditable div
+//     function adjustHeight(element) {
+//         if (element.tagName.toLowerCase() === 'textarea') {
+//             element.style.height = 'auto';
+//             element.style.height = element.scrollHeight + 'px';
+//         }
+//     }
 
-    // General slider handling function for font size and vrot control
-    function handleSlider(event) {
-        const slider = event.target;
-        const sliderContainer = slider.closest('.slider-container');
-        const sliderLabel = sliderContainer.querySelector('.slider-label');
-        const container = slider.closest('.container'); // Find the container that holds both the controls and the target element
-        const targetElement = container.querySelector('textarea, div[contenteditable="true"]'); // Query the textarea or contenteditable div inside the container
+//     // General slider handling function for font size and vrot control
+//     function handleSlider(event) {
+//         const slider = event.target;
+//         const sliderContainer = slider.closest('.slider-container');
+//         const sliderLabel = sliderContainer.querySelector('.slider-label');
+//         const container = slider.closest('.container'); // Find the container that holds both the controls and the target element
+//         const targetElement = container.querySelector('textarea, div[contenteditable="true"]'); // Query the textarea or contenteditable div inside the container
 
-        // console.log(slider);
-        // console.log(sliderContainer);
-        // console.log(sliderLabel);
-        // console.log(container);
-        // console.log(targetElement);
+//         // console.log(slider);
+//         // console.log(sliderContainer);
+//         // console.log(sliderLabel);
+//         // console.log(container);
+//         // console.log(targetElement);
 
-        // Update the label with the slider value
-        sliderLabel.textContent = slider.value;
+//         // Update the label with the slider value
+//         sliderLabel.textContent = slider.value;
 
-        // Check which slider is being controlled (font size or vrot)
-        if (slider.id.includes('fontSizeSlider')) {
+//         // Check which slider is being controlled (font size or vrot)
+//         if (slider.id.includes('fontSizeSlider')) {
             
-            if (targetElement.tagName.toLowerCase() === 'textarea') {
-                // For textareas, apply font size directly
-                targetElement.style.fontSize = `${slider.value}px`;
-                adjustHeight(targetElement);
-            } else if (targetElement.tagName.toLowerCase() === 'div') {
-                // For contenteditable divs, apply inline font size to each child node
-                applyFontSizeToContentEditable(targetElement, slider.value);
-            }
-        } else if (slider.id.includes('fontVrotSlider')) {
-            const vrotValue = slider.value;
+//             if (targetElement.tagName.toLowerCase() === 'textarea') {
+//                 // For textareas, apply font size directly
+//                 targetElement.style.fontSize = `${slider.value}px`;
+//                 adjustHeight(targetElement);
+//             } else if (targetElement.tagName.toLowerCase() === 'div') {
+//                 // For contenteditable divs, apply inline font size to each child node
+//                 applyFontSizeToContentEditable(targetElement, slider.value);
+//             }
+//         } else if (slider.id.includes('fontVrotSlider')) {
+//             const vrotValue = slider.value;
 
-            // Handle for the byLetter contenteditable div
-            if (targetElement.id === 'text_byLetter') {
-                handleLetterVrot(targetElement, vrotValue);
-            } else if (targetElement.id === 'text_byBlock') {
-                // Apply vrot for the entire block (textarea or contenteditable)
-                targetElement.style.fontVariationSettings = `'vrot' ${vrotValue}`;
-            }
-        }
-    }
+//             // Handle for the byLetter contenteditable div
+//             if (targetElement.id === 'text_byLetter') {
+//                 handleLetterVrot(targetElement, vrotValue);
+//             } else if (targetElement.id === 'text_byBlock') {
+//                 // Apply vrot for the entire block (textarea or contenteditable)
+//                 targetElement.style.fontVariationSettings = `'vrot' ${vrotValue}`;
+//             }
+//         }
+//     }
 
-    // Function to apply font size to each child element in a contenteditable div
-    function applyFontSizeToContentEditable(contentEditableDiv, fontSize) {
-        contentEditableDiv.querySelectorAll('.letter').forEach(letter => {
-            letter.style.fontSize = `${fontSize}px`;
-        });
-    }
+//     // Function to apply font size to each child element in a contenteditable div
+//     function applyFontSizeToContentEditable(contentEditableDiv, fontSize) {
+//         contentEditableDiv.querySelectorAll('.letter').forEach(letter => {
+//             letter.style.fontSize = `${fontSize}px`;
+//         });
+//     }
 
-    // Handle vrot value for individual letter in contenteditable div
-    function handleLetterVrot(contentEditableDiv, vrotValue) {
-        const selectedLetter = contentEditableDiv.querySelector('.selected-letter');
+//     // Handle vrot value for individual letter in contenteditable div
+//     function handleLetterVrot(contentEditableDiv, vrotValue) {
+//         const selectedLetter = contentEditableDiv.querySelector('.selected-letter');
 
-        if (selectedLetter) {
-            selectedLetter.style.fontVariationSettings = `'vrot' ${vrotValue}`;
-        }
-    }
+//         if (selectedLetter) {
+//             selectedLetter.style.fontVariationSettings = `'vrot' ${vrotValue}`;
+//         }
+//     }
 
-    // Add the input event listener to the sliders dynamically
-    const sliders = document.querySelectorAll('input[type=range]');
-    sliders.forEach(slider => {
-        slider.addEventListener('input', handleSlider);
-    });
+//     // Add the input event listener to the sliders dynamically
+//     const sliders = document.querySelectorAll('input[type=range]');
+//     sliders.forEach(slider => {
+//         slider.addEventListener('input', handleSlider);
+//     });
 
-    // Enable caret visibility and height adjustment for textareas
-    const elements = document.querySelectorAll('textarea, div[contenteditable="true"]');
-    elements.forEach(element => {
-        if (element.tagName.toLowerCase() === 'textarea') {
-            element.style.caretColor = 'black'; // Show the blinking caret in textarea
-            adjustHeight(element); // Adjust height on load
-            element.addEventListener('input', () => adjustHeight(element));
-        } else if (element.tagName.toLowerCase() === 'div') {
-            element.style.caretColor = 'black'; // For contenteditable divs, ensure caret visibility
-        }
-    });
+//     // Enable caret visibility and height adjustment for textareas
+//     const elements = document.querySelectorAll('textarea, div[contenteditable="true"]');
+//     elements.forEach(element => {
+//         if (element.tagName.toLowerCase() === 'textarea') {
+//             element.style.caretColor = 'black'; // Show the blinking caret in textarea
+//             adjustHeight(element); // Adjust height on load
+//             element.addEventListener('input', () => adjustHeight(element));
+//         } else if (element.tagName.toLowerCase() === 'div') {
+//             element.style.caretColor = 'black'; // For contenteditable divs, ensure caret visibility
+//         }
+//     });
 
-    // Handle letter selection for byLetter contenteditable div
-    const byLetterDiv = document.getElementById('text_byLetter');
-    byLetterDiv.addEventListener('click', function(event) {
-        const clickedElement = event.target;
-        if (clickedElement.classList.contains('letter')) {
-            // Remove 'selected-letter' class from all letters
-            byLetterDiv.querySelectorAll('.letter').forEach(letter => letter.classList.remove('selected-letter'));
+//     // Handle letter selection for byLetter contenteditable div
+//     const byLetterDiv = document.getElementById('text_byLetter');
+//     byLetterDiv.addEventListener('click', function(event) {
+//         const clickedElement = event.target;
+//         if (clickedElement.classList.contains('letter')) {
+//             // Remove 'selected-letter' class from all letters
+//             byLetterDiv.querySelectorAll('.letter').forEach(letter => letter.classList.remove('selected-letter'));
 
-            // Add 'selected-letter' class to the clicked letter
-            clickedElement.classList.add('selected-letter');
+//             // Add 'selected-letter' class to the clicked letter
+//             clickedElement.classList.add('selected-letter');
 
-            // Move the caret after the clicked letter
-            placeCaretAfterSelectedLetter(clickedElement);
-        }
-    });
+//             // Move the caret after the clicked letter
+//             placeCaretAfterSelectedLetter(clickedElement);
+//         }
+//     });
 
-    // Function to place the caret after the selected letter in contenteditable div
-    function placeCaretAfterSelectedLetter(selectedElement) {
-        const range = document.createRange();
-        const sel = window.getSelection();
+//     // Function to place the caret after the selected letter in contenteditable div
+//     function placeCaretAfterSelectedLetter(selectedElement) {
+//         const range = document.createRange();
+//         const sel = window.getSelection();
 
-        if (selectedElement) {
-            range.setStartAfter(selectedElement); // Place the caret after the selected element
-            range.collapse(true); // Collapse the range to move the caret
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
-    }
-});
+//         if (selectedElement) {
+//             range.setStartAfter(selectedElement); // Place the caret after the selected element
+//             range.collapse(true); // Collapse the range to move the caret
+//             sel.removeAllRanges();
+//             sel.addRange(range);
+//         }
+//     }
+// });
 
 
 

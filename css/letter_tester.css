@@ -90,6 +90,8 @@ textarea#text_byBlock{
 
     overflow-y: hidden;     /* Prevent overflow with scrollbar */
     height: auto;           /* Allow the height to be adjusted automatically */
+
+    overflow-x: hidden;
 }
 
 input[type=range] {
@@ -146,8 +148,8 @@ input[type=range]::-webkit-slider-runnable-track {
     position: absolute;
     top: -35px; /* Adjust as needed */
     /* left: 50%; */
-    /* transform: translateX(50%); */
-    transform: translateX(-100%);
+    transform: translateX(15%);
+    /* transform: translateX(-100%); */
     padding: 2px 5px;
     border: 1px solid var(--slider-gray);
     /* background-color: transparent; */
