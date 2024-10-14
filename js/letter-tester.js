@@ -93,6 +93,23 @@ document.addEventListener('DOMContentLoaded', function() {
     //     }
     // });
 
+    // Function to refocus the element to keep the caret blinking
+    function maintainCaretFocus(element) {
+        // element.addEventListener('blur', function() {
+            // Refocus the element after losing focus unless it's clicked inside
+            // setTimeout(() => {
+                // if (!document.activeElement || document.activeElement.tagName !== 'IFRAME') {
+                    element.focus(); // Refocus to keep caret blinking
+                // }
+            // }, 0);
+        // });
+
+        // element.addEventListener('click', function() {
+            // If the element is clicked, allow it to handle focus naturally
+            // element.focus();
+        // });
+    }
+    
     elements.forEach(element => {
         if (element.tagName.toLowerCase() === 'textarea') {
             // Adjust height and set caret color
@@ -105,6 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (fontSizeSlider) {
                 syncSliderWithFontSize(fontSizeSlider, element); // Sync slider value with computed font size
             }
+
+            // Add focus management for the blinking caret
+            // maintainCaretFocus(element);
     
         } else if (element.tagName.toLowerCase() === 'div') {
             // Set caret color for contenteditable divs
@@ -115,6 +135,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (fontSizeSlider) {
                 syncSliderWithFontSize(fontSizeSlider, element); // Sync slider value with computed font size
             }
+
+            // Add focus management for the blinking caret
+            maintainCaretFocus(element);
+
         }
     });
 
