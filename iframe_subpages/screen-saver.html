@@ -21,15 +21,21 @@
     <!-- <script src="assets/js/scripts.js"></script> -->
     <script>
       let changeSpeed = 8000;
+      const letters = ["מ","ג"]; // TEMP
+      // const letters = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ך", "ל", "מ", "ם", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ץ", "ק", "ר", "ש", "ת"];
       function correctLetter(){
         window.whatLetter += 1;
-        if(window.whatLetter == 28){
+        // if(window.whatLetter == 28){
+        // what happens when it reaches the end of the array - go to 1st
+        if(window.whatLetter == letters.length){
           window.whatLetter = 0;
         }
+        // console.log(window.whatLetter);
+        // console.log(letters.length);
         document.getElementById('charDiv_1').innerText = letters[window.whatLetter];
       }
       window.whatLetter = 0;
-      const letters = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ך", "ל", "מ", "ם", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ץ", "ק", "ר", "ש", "ת"];
+      
       setInterval(function(){ correctLetter(); }, changeSpeed);
     </script>
   </body>

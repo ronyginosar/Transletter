@@ -200,14 +200,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <section class="horizontal_screensaver_tech" id="technology-section">
       <!-- 6.1 "screensaver" INSERT -->
-      <div class="screensaver">
+      <div class="screensaver_wrapper">
         <iframe src="iframe_subpages/screen-saver.html"></iframe>
         <!-- TODO what is missing in screensaver for smooth? -->
       </div>
       <!-- 6.2 technology title todo-->
-      <div class="technology_title">placeholder technology title</div>
-      <!-- 6.3 technology text & image, 3 columns todo-->
-      <div class="technology">placeholder technology text and image</div>
+      <div class="technology_title">על הטכנולוגיה</div>
+      
+      <!-- 6.3 technology text from file -->
+      <!-- <div class="technology_text_flex_container"> -->
+        <div class="technology_text" id="technology_text">Placeholder for text
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const textContainer = document.getElementById('technology_text');
+            fetch('assets/content_text/technology.txt')
+                .then(response => response.text())
+                .then(text => {
+                    // textContainer.textContent = text; // Insert the text into the container
+                  // Replace newlines with <br> tags
+                  const formattedText = text.replace(/\n/g, '<br>');
+                  
+                  // Use innerHTML to correctly interpret <br> as line breaks
+                  textContainer.innerHTML = formattedText;
+                })
+                .catch(err => console.error('Error loading text file:', err));
+            });
+          </script>
+        </div>
+      <!-- </div> -->
+
+      <!-- 6.4Image to fit same height as text columns -->
+      <div class="technology_image">
+        <img src="assets/content_images/technology.png" alt="Technology Image">
+      </div>
     </section>
 
     <!-- 7. random state type tester, "letter_range", gradient blue -->
