@@ -286,15 +286,15 @@ nav a {
     width: 100%;
     overflow-x: auto; /* Enable horizontal scrolling */
 
-    /* remove scroll bar: */
-    /* -ms-overflow-style: none;  Internet Explorer 10+ */
-    /* scrollbar-width: none;  Firefox */
+    /* remove scroll bar: Internet Explorer 10+ & Firefox*/
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 
-/* .horizontal_screensaver_tech::-webkit-scrollbar {  */
-    /* remove scroll bar: */
-    /* display: none;  Safari and Chrome */
-/* } */
+.horizontal_screensaver_tech::-webkit-scrollbar { 
+    /* remove scroll bar Safari and Chrome*/
+    display: none;  
+}
   
 .screensaver_wrapper {
     display: flex;
