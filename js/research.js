@@ -50,10 +50,10 @@ buttons.forEach(button => {
 
 
 // Handwritten glyphs section
-// note: data in separate file: js/research-handwritten-data.js
+// note: data in separate file: assets/content_text/research-handwritten-data.js
 
 // Initialize the page with the default character 'alef'
-injectHandwrittenImages('alef'); // TODO update
+injectHandwrittenImages('zadi'); // TODO update
 
 // Add a separate event listener for the buttons that trigger handwritten glyphs
 const glyphButtons = document.querySelectorAll('#glyph_selector button');

@@ -195,20 +195,19 @@ document.addEventListener('DOMContentLoaded', function() {
       <iframe src="iframe_subpages/waterfall.html" id="waterfall-iframe"></iframe>
     </section>
 
-    <!-- 6. horizontal container todo -->
+    <!-- 6. horizontal container -->
            <!-- TODO unify prev format -->
-
+           <!-- TODO a bit patchy, can do cleaner / iframe -->
     <section class="horizontal_screensaver_tech" id="technology-section">
-      <!-- 6.1 "screensaver" INSERT -->
+      <!-- 6.1 "screensaver" -->
       <div class="screensaver_wrapper">
         <iframe src="iframe_subpages/screen-saver.html"></iframe>
         <!-- TODO what is missing in screensaver for smooth? -->
       </div>
-      <!-- 6.2 technology title todo-->
+      <!-- 6.2 technology title -->
       <div class="technology_title">על הטכנולוגיה</div>
       
       <!-- 6.3 technology text from file -->
-      <!-- <div class="technology_text_flex_container"> -->
         <div class="technology_text" id="technology_text">Placeholder for text
           <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -216,10 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch('assets/content_text/technology.txt')
                 .then(response => response.text())
                 .then(text => {
-                    // textContainer.textContent = text; // Insert the text into the container
                   // Replace newlines with <br> tags
                   const formattedText = text.replace(/\n/g, '<br>');
-                  
                   // Use innerHTML to correctly interpret <br> as line breaks
                   textContainer.innerHTML = formattedText;
                 })
@@ -227,9 +224,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
           </script>
         </div>
-      <!-- </div> -->
-
-      <!-- 6.4Image to fit same height as text columns -->
+      <!-- 6.4 Image to fit same height as text columns -->
+       <!-- todo not perfect -->
       <div class="technology_image">
         <img src="assets/content_images/technology.png" alt="Technology Image">
       </div>
