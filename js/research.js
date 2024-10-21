@@ -84,7 +84,7 @@ function injectHandwrittenImages(character) {
         // Create text element, initially hidden
         const textElement = document.createElement('small');
         textElement.className = 'handwritten-text-label';
-        textElement.textContent = labels[character][index]; // Set text immediately
+        textElement.innerHTML = labels[character][index].replace(/\n/g, '<br>'); // Set text immediately
         textElement.style.opacity = '0'; // Hidden initially
 
         // Hover effect for image to show/hide the label
