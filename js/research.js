@@ -78,7 +78,7 @@ function injectHandwrittenImages(character) {
 
         // Create an image element
         const img = document.createElement('img');
-        img.src = `../assets/content_images/research_handwritten_glyphs/${imageName}`;
+        img.src = `../assets/content_images/research_handwritten_glyphs/${character}/${imageName}`;
         img.alt = `Handwritten version of ${character}`;
 
         // Create text element, initially hidden
