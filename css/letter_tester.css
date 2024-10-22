@@ -16,9 +16,9 @@
     width: 100%;
     /* TEMP */
 
-    overflow: hidden;
+    /* overflow: hidden; */
     /* background-color: transparent; */
-    background-color: black;
+    /* background-color: black; */
 }
 
 .container{
@@ -132,7 +132,7 @@ input[type=range]::-webkit-slider-runnable-track {
     align-items: center;
     justify-content: space-between;
     width: 40%;
-    font-size: 0.05em;
+    font-size: 0.06em;
     /* padding-left: 10%; */
 }
 
