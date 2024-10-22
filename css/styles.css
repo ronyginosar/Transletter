@@ -125,7 +125,7 @@ body::-webkit-scrollbar {
     /* height: 70vh; */
     /* z-index: 1; */
     /* note - to allow scroll from section top - move to padding inside html rather than iframe */
-    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     /* padding-right: var(--page-side-padding); */
     /* padding-left: var(--page-side-padding); */
 }
