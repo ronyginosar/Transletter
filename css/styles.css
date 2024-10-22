@@ -39,7 +39,7 @@ html,body {
     padding: 0;
     margin: 0;
     direction: rtl;
-    font-size: 16px;
+    /* font-size: 16px; */
     /* cursor: none; */
     scroll-behavior: smooth;
 }
@@ -121,14 +121,14 @@ body::-webkit-scrollbar {
     scrollbar-width: none;  /* Firefox */
 }
 
-.scroll_section_wrapper iframe{
+/* .scroll_section_wrapper iframe{ */
     /* height: 70vh; */
     /* z-index: 1; */
     /* note - to allow scroll from section top - move to padding inside html rather than iframe */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     /* padding-right: var(--page-side-padding); */
     /* padding-left: var(--page-side-padding); */
-}
+/* } */
 
 /* remove */
 /* .scroll_section_wrapper::-webkit-scrollbar {  
@@ -172,10 +172,21 @@ body::-webkit-scrollbar {
 
 
 .research{
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     /*placeholder value to later inject height by script TODO?*/
     /* height: 50vh; */
     width: 100%; 
+    height: auto;
+    /* scrollbar-color: red; */
+    /* background-color: green; */
+    /* overflow: visible; */
+}
+
+.research iframe{
+    /* background-color: pink; */
+    /* overflow: hidden; */
+    /* scrollbar-color: red; */
+    height: 150vh;
 }
 
 
