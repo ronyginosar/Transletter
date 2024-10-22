@@ -44,11 +44,15 @@ function changevrot(isScrollingDown) {
 
 // Attach the scroll event
 window.addEventListener('wheel', function(event) {
-    // Detect the scroll direction
-    const isScrollingDown = event.deltaY > 0;
+// window.addEventListener('scroll', function(event) {
+    if (Math.abs(event.deltaY) > 1) {
+        console.log('wheel event', event.deltaY);
+        // Detect the scroll direction
+        const isScrollingDown = event.deltaY > 0;
 
-    // Call the changevrot function with the direction
-    changevrot(isScrollingDown);
+        // Call the changevrot function with the direction
+        changevrot(isScrollingDown);
+    }
 });
 
 
