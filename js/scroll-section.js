@@ -6,7 +6,7 @@ const minVrotScroll = 100;
 const maxVrotScroll = 700;
 
 function changevrot(isScrollingDown) {
-    
+
     // Adjust vrotScroll based on the current direction
     if (isScrollingDown) {
         if (isIncreasing) {
@@ -46,7 +46,7 @@ function changevrot(isScrollingDown) {
 // Attach the scroll event
 window.addEventListener('wheel', function(event) {
     if (Math.abs(event.deltaY) > epsilonScroll) { // Ignore small scroll events
-        console.log('wheel event', event.deltaY);
+        // console.log('wheel event', event.deltaY);
         // Detect the scroll direction
         const isScrollingDown = event.deltaY > 0;
 
