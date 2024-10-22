@@ -1,11 +1,11 @@
 // Define the image paths and corresponding labels
 const images = {
-    alef:  ['alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png'],
-    beit:  ['alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png'],
-    gimel: ['alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png'],
-    lamed: ['alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png'],
-    zadi:  ['alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png'],
-    shin:  ['alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png', 'alef_demo.png'],
+    alef:  ['alef_01.png' , 'alef_02.png' , 'alef_03.png' , 'alef_04.png' , 'alef_05.png' , 'alef_06.png' , 'alef_07.png' , 'alef_08.png' , 'alef_09.png' , 'alef_10.png'],
+    beit:  ['beit_01.png' , 'beit_02.png' , 'beit_03.png' , 'beit_04.png' , 'beit_05.png' , 'beit_06.png' , 'beit_07.png' , 'beit_08.png' , 'beit_09.png' , 'beit_10.png'],
+    gimel: ['gimel_01.png', 'gimel_02.png', 'gimel_03.png', 'gimel_04.png', 'gimel_05.png', 'gimel_06.png', 'gimel_07.png', 'gimel_08.png', 'gimel_09.png', 'gimel_10.png'],
+    lamed: ['lamed_01.png', 'lamed_02.png', 'lamed_03.png', 'lamed_04.png', 'lamed_05.png', 'lamed_06.png', 'lamed_07.png', 'lamed_08.png', 'lamed_09.png', 'lamed_10.png'],
+    zadi:  ['zadi_01.png' , 'zadi_02.png' , 'zadi_03.png' , 'zadi_04.png' , 'zadi_05.png' , 'zadi_06.png' , 'zadi_07.png' , 'zadi_08.png' , 'zadi_09.png' , 'zadi_10.png'],
+    shin:  ['alef_01.png' , 'alef_02.png' , 'alef_03.png' , 'alef_04.png' , 'alef_05.png' , 'alef_06.png' , 'alef_07.png' , 'alef_08.png' , 'alef_09.png' , 'alef_10.png'],
     // TODO change the image paths to the actual images
     // alef: ['alef_1.png', 'alef_2.png', 'alef_3.png', 'alef_4.png', 'alef_5.png', 'alef_6.png', 'alef_7.png', 'alef_8.png', 'alef_9.png', 'alef_10.png'],
 };
