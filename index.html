@@ -119,9 +119,42 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- 0. menu & top logo -->
     <!-- TODO place correct nav names and targets -->
       <nav>
-          <a href="#animated-logo-section" class="gradient-text nav-title" >
-            תנואות
-          </a>
+          <a href="#animated-logo-section" class="gradient-text nav-title" id="nav-title-text" >תנואות</a>
+          <!-- todo move to js file, patchy but working -->
+           <!-- note: this script is also instead of hover css due to conflict-->
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const titleElement = document.getElementById('nav-title-text');
+              // console.log(titleElement);
+              const text = titleElement.innerHTML;
+              // console.log(text);
+              let newHTML = '';
+            
+              // Loop through each letter and assign a random or incremental vrot value
+              for (let i = 0; i < text.length; i++) {
+                const letter = text[i];
+                const vrotValue = 100 + (i * 100); // Change this calculation as needed
+                newHTML += `<span style="font-variation-settings: 'vrot' ${vrotValue}; transition: font-variation-settings .8s;">${letter}</span>`;
+              }
+            
+              // Replace the text content with the new spans
+              titleElement.innerHTML = newHTML;
+
+              // Add a hover listener to the parent element to override the inline styles
+              titleElement.addEventListener('mouseenter', function() {
+                titleElement.querySelectorAll('span').forEach(span => {
+                  span.style.fontVariationSettings = '"vrot" 500'; // Change all letters to hover value
+                });
+              });
+
+              titleElement.addEventListener('mouseleave', function() {
+                titleElement.querySelectorAll('span').forEach((span, i) => {
+                  const initialVrot = 100 + (i * 100); // Reset to original values
+                  span.style.fontVariationSettings = `"vrot" ${initialVrot}`;
+                });
+              });
+            });
+            </script>
         </div>
         <ul>
           <!-- <a href="about.html"> -->

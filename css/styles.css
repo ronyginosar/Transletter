@@ -205,7 +205,9 @@ header{
     top: 0;
     /* make on top of content */
     z-index: 100;
-    mix-blend-mode: difference; /* Invert the colors based on the background , luminosity is also nice */
+    background-color: var(--background-color);
+    /* Invert the colors based on the background , luminosity is also nice */
+    /* mix-blend-mode: difference; */
 }
 
 nav {
@@ -224,24 +226,27 @@ nav {
     -webkit-text-fill-color: transparent;
  }
 
-.gradient-text-bottom {
+/* .gradient-text-bottom {
     background: linear-gradient(to top, var(--gradient-blue), var(--gradient-dark));
     background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
- }
+ } */
 
-.nav-title:hover{
-    font-variation-settings: "vrot" 500;
+
+/* note: dealt with in js */
+/* .nav-title:hover{ */
+    /* font-variation-settings: 'vrot' 500; */
     /* hover in */
-    transition: all .8s;
-}
+    /* transition: all .8s; */
+/* } */
   
 .nav-title{
      font-size: 35px;
-     font-variation-settings: "vrot" 700;
+     /* note: dealt with in js */
+     /* font-variation-settings: "vrot" 700; */
      /* hover out */
-     transition: all .8s;
+     /* transition: all .8s; */
 }
 
 nav ul {
