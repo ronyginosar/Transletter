@@ -220,19 +220,11 @@ nav {
 }
 
 .gradient-text {
-    background: linear-gradient(to right, var(--gradient-blue), var(--gradient-dark));
+    background: linear-gradient(to right, var(--gradient-blue), var(--gradient-black));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
  }
-
-/* .gradient-text-bottom {
-    background: linear-gradient(to top, var(--gradient-blue), var(--gradient-dark));
-    background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
- } */
-
 
 /* note: dealt with in js */
 /* .nav-title:hover{ */
@@ -272,10 +264,8 @@ nav li:hover {
  
 nav a {
     text-decoration:none;
-    color: var(--gradient-dark);
+    color: var(--gradient-black);
 }
-
-
 
 /* Technology TODO cleanup */
 
