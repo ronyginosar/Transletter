@@ -190,6 +190,26 @@ document.addEventListener('DOMContentLoaded', function() {
           </a>
         </ul>
       </nav>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let lastScrollTop = 0;
+        const nav = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+          if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            nav.classList.add('hidden'); // Add the hidden class
+          } else {
+            // Scrolling up
+            nav.classList.remove('hidden'); // Remove the hidden class
+          }
+
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+        });
+      });
+    </script>
     </header>
 
     <!-- 1. Animated logo -->

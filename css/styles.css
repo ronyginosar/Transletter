@@ -208,6 +208,13 @@ header{
     background-color: var(--background-color);
     /* Invert the colors based on the background , luminosity is also nice */
     /* mix-blend-mode: difference; */
+    /* appear & disappear on scroll */
+    transition: transform 0.3s ease-in-out;
+}
+
+header.hidden{
+    /* Move the nav out of view */
+    transform: translateY(-100%); 
 }
 
 nav {
