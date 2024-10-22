@@ -1,5 +1,5 @@
 window.vrotScroll = 100; // Initial value
-let vrotScroll_Speed = 10; // Scroll speed
+let vrotScroll_Speed = 5; // Scroll speed
 let isIncreasing = true; // Track whether we're increasing or decreasing
 
 function changevrot(isScrollingDown) {
