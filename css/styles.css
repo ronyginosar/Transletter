@@ -172,23 +172,12 @@ body::-webkit-scrollbar {
 
 
 .research{
-    /* background-color: var(--background-color); */
-    /*placeholder value to later inject height by script TODO?*/
-    /* height: 50vh; */
     width: 100%; 
-    height: auto;
-    /* scrollbar-color: red; */
-    /* background-color: green; */
-    /* overflow: visible; */
 }
 
 .research iframe{
-    /* background-color: pink; */
-    /* overflow: hidden; */
-    /* scrollbar-color: red; */
     height: 150vh;
 }
-
 
 
 /* .cursor {

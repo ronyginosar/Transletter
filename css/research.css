@@ -1,8 +1,5 @@
 html, body {
     height: 100%;
-    /* overflow: hidden;  */
-    /* background-color: rgb(219, 81, 104); */
-    /* overflow: visible */
 }
 
 #research-page{
@@ -10,18 +7,11 @@ html, body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* height: 150vh; */
     height: 100vh;
-    /* height: 100%; */
-    /* height: 150%; */
-    flex: 1;
     /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     padding-right: var(--page-side-padding);
     padding-left: var(--page-side-padding);
-    /* background-color: rgb(113, 81, 219); */
-    /* overflow: visible */
-    /* overflow: hidden; */
 }
 
 /* P1 */
