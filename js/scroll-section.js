@@ -27,7 +27,9 @@ window.addEventListener('wheel', function(event) {
 
     // Call the changevrot function with the direction
     changevrot(isScrollingDown);
-}, { passive: false }); // Use passive: false to allow event.preventDefault()
+}, 
+// { passive: false }
+); // Use passive: false to allow event.preventDefault()
 
 
 
