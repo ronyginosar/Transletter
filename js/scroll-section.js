@@ -1,4 +1,5 @@
 window.vrotScroll = 100;
+vrotScroll_Speed = 5;
 
 function changevrot(isScrollingDown) {
     const minVrotScroll = 100;
@@ -6,9 +7,9 @@ function changevrot(isScrollingDown) {
 
     // Adjust vrotScroll based on scroll direction
     if (isScrollingDown) {
-        window.vrotScroll += 3; // Increase vrot when scrolling down
+        window.vrotScroll += vrotScroll_Speed; // Increase vrot when scrolling down
     } else {
-        window.vrotScroll -= 3; // Decrease vrot when scrolling up
+        window.vrotScroll -= vrotScroll_Speed; // Decrease vrot when scrolling up
     }
 
     // Ensure the vrot value stays within bounds
@@ -20,7 +21,7 @@ function changevrot(isScrollingDown) {
 
 // Prevent the default scroll and call changevrot
 window.addEventListener('wheel', function(event) {
-    event.preventDefault(); // Prevent the page from scrolling
+    // event.preventDefault(); // Prevent the page from scrolling
 
     // Detect the scroll direction
     const isScrollingDown = event.deltaY > 0;
@@ -28,8 +29,8 @@ window.addEventListener('wheel', function(event) {
     // Call the changevrot function with the direction
     changevrot(isScrollingDown);
 }, 
-// { passive: false }
-); // Use passive: false to allow event.preventDefault()
+// { passive: false } // Use passive: false to allow event.preventDefault(), this prevents main page from scrolling, not the intention...
+); 
 
 
 
