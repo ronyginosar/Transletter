@@ -74,3 +74,58 @@ document.addEventListener('DOMContentLoaded', function() {
     // Alternatively, scroll to a specific element by ID
     // document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
 });
+
+// Hide the navigation bar on scroll down and show it on scroll up
+document.addEventListener('DOMContentLoaded', function() {
+    let lastScrollTop = 0;
+    const nav = document.querySelector('header');
+
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        nav.classList.add('hidden'); // Add the hidden class
+      } else {
+        // Scrolling up
+        nav.classList.remove('hidden'); // Remove the hidden class
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+    });
+  });
+
+
+  // nav title vrot and hover
+//   note: script instead of hover css due to conflict
+  document.addEventListener('DOMContentLoaded', function() {
+    const titleElement = document.getElementById('nav-title-text');
+    // console.log(titleElement);
+    const text = titleElement.innerHTML;
+    // console.log(text);
+    let newHTML = '';
+  
+    // Loop through each letter and assign a random or incremental vrot value
+    for (let i = 0; i < text.length; i++) {
+      const letter = text[i];
+      const vrotValue = 100 + (i * 100); // Change this calculation as needed
+      newHTML += `<span style="font-variation-settings: 'vrot' ${vrotValue}; transition: font-variation-settings .8s;">${letter}</span>`;
+    }
+  
+    // Replace the text content with the new spans
+    titleElement.innerHTML = newHTML;
+
+    // Add a hover listener to the parent element to override the inline styles
+    titleElement.addEventListener('mouseenter', function() {
+      titleElement.querySelectorAll('span').forEach(span => {
+        span.style.fontVariationSettings = '"vrot" 500'; // Change all letters to hover value
+      });
+    });
+
+    titleElement.addEventListener('mouseleave', function() {
+      titleElement.querySelectorAll('span').forEach((span, i) => {
+        const initialVrot = 100 + (i * 100); // Reset to original values
+        span.style.fontVariationSettings = `"vrot" ${initialVrot}`;
+      });
+    });
+  });
