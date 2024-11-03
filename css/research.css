@@ -69,13 +69,8 @@ html, body {
     font-size: inherit;
     border: none;
     border-radius:100%;
-    /* width: 5vh; */
-    /* width: 5%; */
-    /* height: 5vh; */
-    /* height: 5%; */
-    /* height: 80%; */
-    /* width: 100%; */
-    width: 8%;
+    width: 1.2em;
+    height: 1.2em;
     padding: 0;
     margin: 0;
 }
