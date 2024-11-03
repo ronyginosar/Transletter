@@ -62,14 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // can implement random seed function...
 
         // fully random
-        return Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot; 
+        // return Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot; 
 
         // // Random vrot based on a step size
         // if used - change line height to 1.5em
-        // const stepSize = 100; // Define the jump size
-        // const numSteps = Math.floor((maxVrot - minVrot) / stepSize) + 1; // Calculate the number of steps
-        // const randomStep = Math.floor(Math.random() * numSteps); // Pick a random step
-        // return minVrot + randomStep * stepSize; // Calculate the vrot value based on the step
+        const stepSize = 100; // Define the jump size
+        const numSteps = Math.floor((maxVrot - minVrot) / stepSize) + 1; // Calculate the number of steps
+        const randomStep = Math.floor(Math.random() * numSteps); // Pick a random step
+        return minVrot + randomStep * stepSize; // Calculate the vrot value based on the step
 
     }
 
@@ -359,6 +359,8 @@ document.addEventListener('DOMContentLoaded', function() {
         //     imageContainer.style.backgroundColor = 'pink'; // TEMP
         //     imageContainer.style.opacity = '1';
         // }
+
+        // console.log('hover', span.style.fontVariationSettings);
     
         const action = hoverActions[index];
         if (!action) return; // Exit if there's no action for this index
