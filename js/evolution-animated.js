@@ -5,6 +5,40 @@ document.addEventListener('DOMContentLoaded', function() {
         'אותיות'
     ]; // The original lines of text
 
+    const hoverActions = {
+        0: { vrot: 700 }, // 
+        1: { image: '../assets/content_images/evolution_hover/AlefBeit.jpg' },
+        3: { image: '../assets/content_images/evolution_hover/Lamed.jpg' },
+        5: { vrot: 300 }, // 
+        8: { image: '../assets/content_images/evolution_hover/Shin.png' },
+        9: { vrot:100 }, 
+        10:{ image: '../assets/content_images/evolution_hover/AlefBeit.jpg' }, 
+        12:{ vrot: 700 },
+        15:{ image: '../assets/content_images/evolution_hover/Lamed.jpg' }, 
+    };
+
+// א 0
+// ב 1
+// ו 2
+// ל 3
+// ו 4
+// צ 5
+// י 6
+// ה 7
+
+// ש 8
+// ל 9
+
+// א 10
+// ו 11
+// ת 12
+// י 13
+// ו 14
+// ת 15
+
+    // Initialize cumulative index offset
+    let charIndexOffset = 0;
+
     const minVrot = 100;
     const maxVrot = 700;
     const textContainer = document.getElementById('text-container');
@@ -39,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // TODO MAGIC NUMBERS
         return Math.floor(Math.random() * 10) - 5; // Random rotation between -15deg and 15deg
     }
-
 
     // HIGH PRIORITY - ignore initial wheel and look only at last one (for scroll pad & unification of scroll speed?)
 
@@ -208,9 +241,26 @@ document.addEventListener('DOMContentLoaded', function() {
             spans.push(span);
 
             lineDiv.appendChild(span);
+
+            // const globalCharIndex = lineIndex * line.length + charIndex;
+            // Calculate globalCharIndex based on the cumulative offset
+            const globalCharIndex = charIndexOffset + charIndex;
+
+            // Hover effect
+            span.addEventListener('mouseenter', () => {
+                console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
+                handleHoverEffect(span, globalCharIndex);
+            });
+
+            span.addEventListener('mouseleave', () => {
+                resetHoverEffect(span, randomVrot);
+            });
         });
 
         textContainer.appendChild(lineDiv);
+
+        // Update charIndexOffset by adding the current line's length
+        charIndexOffset += line.length;
 
         // <br> if needed
         // if (lineIndex < textLines.length - 1) {
@@ -285,5 +335,48 @@ document.addEventListener('DOMContentLoaded', function() {
         // console.log(scrollPosition);
 
     }, { passive: false }); // Set passive: false to allow preventDefault()
-});
+
+
+    function handleHoverEffect(span, index) {
+        span.style.transition = 'font-variation-settings 0.3s ease';
+    
+        // if (index % 2 === 0) {
+        //     span.style.fontVariationSettings = `'vrot' 700`;
+        // } else {
+        //     const imageContainer = document.getElementById('image-container');
+        //     // imageContainer.style.backgroundImage = `url(../images/image${index}.png)`; TODO
+        //     imageContainer.style.backgroundColor = 'pink'; // TEMP
+        //     imageContainer.style.opacity = '1';
+        // }
+    
+        const action = hoverActions[index];
+        if (!action) return; // Exit if there's no action for this index
+    
+        if (action.vrot !== undefined) {
+            // Apply the specified vrot value
+            span.style.fontVariationSettings = `'vrot' ${action.vrot}`;
+        }
+    
+        if (action.image) {
+            // Display the specified image in the image container
+            const imageContainer = document.getElementById('image-container');
+            imageContainer.style.backgroundImage = `url(${action.image})`;
+            imageContainer.style.opacity = '1';
+        }
+    
+    }
+    
+    function resetHoverEffect(span, originalVrot) {
+        span.style.fontVariationSettings = `'vrot' ${originalVrot}`;
+        const imageContainer = document.getElementById('image-container');
+        imageContainer.style.opacity = '0';
+    }
+
+
+
+
+
+
+
+}); // end of DOMContentLoaded
 
