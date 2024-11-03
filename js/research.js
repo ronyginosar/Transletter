@@ -121,15 +121,22 @@ const textContent = {
 
 
 const imageContent = {
-    text1: ['../assets/content_images/ashkenazi_sfaradi_1-p-500.jpeg', 
-            '../assets/content_images/ashkenazi_sfaradi_2-p-500.jpeg', 
-            '../assets/content_images/ashkenazi_sfaradi_4-p-500.jpeg'], // Section 1 images
-    text2: ['../assets/content_images/ashkenazi_sfaradi_3-p-500.jpeg'], // Section 2 image
-    text3: ['../assets/content_images/Dfus_1-p-500.jpeg', 
-            '../assets/content_images/israeli_3-p-500.jpeg'], // Section 3 images
-    text4: ['../assets/content_images/history_3-p-500.jpeg'], // Section 4 image
-    text5: ['../assets/content_images/israeli_1-p-500.jpeg', 
-            '../assets/content_images/history_4-p-500.jpeg'] // Section 5 images
+    text1: ['../assets/content_images/research_textimages/p1_starting_point/How_it_all_started.jpg', 
+            // '../assets/content_images/ashkenazi_sfaradi_2-p-500.jpeg', 
+            // '../assets/content_images/ashkenazi_sfaradi_4-p-500.jpeg'], // Section 1 images
+    ],
+    text2: ['../assets/content_images/ashkenazi_sfaradi_3-p-500.jpeg'
+
+    ], // Section 2 image
+    // text3: ['../assets/content_images/Dfus_1-p-500.jpeg', 
+    //         '../assets/content_images/israeli_3-p-500.jpeg'
+    //     ], // Section 3 images
+    text4: ['../assets/content_images/research_textimages/p4_sketches/sketches_banner copy.jpg',
+        '../assets/content_images/research_textimages/p4_sketches/sketches_banner_1.jpg',
+        '../assets/content_images/research_textimages/p4_sketches/sketches_banner_2.jpg',
+    ], // Section 4 image
+    // text5: ['../assets/content_images/israeli_1-p-500.jpeg', 
+    //         '../assets/content_images/history_4-p-500.jpeg'] // Section 5 images
 };
     
 
