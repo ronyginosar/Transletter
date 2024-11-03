@@ -175,8 +175,9 @@ body::-webkit-scrollbar {
     width: 100%; 
 }
 
+/* NOTE: this is where to extend height on reseach, not anywhere else. o.w. scrolling */
 .research iframe{
-    height: 150vh;
+    height: 200vh;
 }
 
 
