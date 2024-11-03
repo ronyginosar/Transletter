@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         3: { image: '../assets/content_images/evolution_hover/Lamed.jpg' },
         5: { vrot: 300 }, // 
         8: { image: '../assets/content_images/evolution_hover/Shin.png' },
-        9: { vrot:100 }, 
+        9: { vrot: 100 }, 
         10:{ image: '../assets/content_images/evolution_hover/AlefBeit.jpg' }, 
         12:{ vrot: 700 },
         15:{ image: '../assets/content_images/evolution_hover/Lamed.jpg' }, 
@@ -59,7 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to create a random vrot value
     function getRandomVrot() {
-        return Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
+        // can implement random seed function...
+
+        // fully random
+        return Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot; 
+
+        // // Random vrot based on a step size
+        // if used - change line height to 1.5em
+        // const stepSize = 100; // Define the jump size
+        // const numSteps = Math.floor((maxVrot - minVrot) / stepSize) + 1; // Calculate the number of steps
+        // const randomStep = Math.floor(Math.random() * numSteps); // Pick a random step
+        // return minVrot + randomStep * stepSize; // Calculate the vrot value based on the step
+
     }
 
     // Function to generate random numbers for translation and rotation
@@ -248,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Hover effect
             span.addEventListener('mouseenter', () => {
-                console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
+                // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
                 handleHoverEffect(span, globalCharIndex);
             });
 
