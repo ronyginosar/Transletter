@@ -21,7 +21,7 @@ html, body {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 20%;
+    height: 40%;
 }
 
 #title_spacer{
@@ -46,6 +46,7 @@ html, body {
     font-size: 800%;
     margin: 0;
     height: auto;
+    margin-bottom: 10%;
 }
 
 #glyph_selector{
