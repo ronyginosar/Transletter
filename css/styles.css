@@ -103,7 +103,7 @@ body::-webkit-scrollbar {
 
 #tester-iframe{
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
-    padding-top: 10%;
+    /* padding-top: 10%; */
     /* padding-right: var(--page-side-padding); */
     /* padding-left: var(--page-side-padding); */
 }

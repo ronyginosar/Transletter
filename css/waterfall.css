@@ -4,6 +4,7 @@
     align-items: right;
     font-family: TransletterGX;
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    opacity: 0;
 }
 .info-text {
     font-size: 12px;
@@ -13,4 +14,24 @@ p{
     margin-top: 0;
     margin-bottom: 0;
     font-size: 36px;
+}
+
+#toggle-section{
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    background-color: var(--element-color);
+}
+
+#toggle-section button{
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 2px 5px;
+    border: 1px solid var(--slider-gray);
+    color: var(--slider-gray);
+    background-color: transparent;
+    white-space: nowrap;
+}
+
+#toggle-section button:hover{
+    background-color: rgb(148, 148, 148, 0.6);
+    /* var(--slider-gray) with opacity; */
 }
