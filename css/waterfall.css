@@ -17,7 +17,9 @@ p{
 }
 
 #toggle-section{
-    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    padding-bottom: var(--iframe-inner-top-bottom-padding);
+    padding-left: var(--page-side-padding);
+    padding-right: var(--page-side-padding);
     background-color: var(--element-color);
 }
 
