@@ -191,7 +191,7 @@ titles.forEach(title => {
             imageGallery.style.justifyContent = 'flex-start'; // Reset to flex-start
             // imageGallery.style.justifyContent = 'center'; // cuts off the last image
 
-            // Scroll to the center image
+            // Scroll to the center image // TODO not working in "sketches"
             const middleIndex = Math.floor(selectedImages.length / 2);
             const middleImage = imageGallery.children[middleIndex];
             
@@ -201,29 +201,7 @@ titles.forEach(title => {
             const scrollPosition = middleImage.offsetLeft - (galleryWidth / 2) + (imageWidth / 2);
             imageGallery.scrollLeft = scrollPosition;
         }
-
-        // v2
-        // Inject images into the gallery
-        // if (selectedImages) {
-        //     let imagesLoaded = 0;
-        //     selectedImages.forEach((imageUrl, index) => {
-        //         const img = document.createElement('img');
-        //         img.src = imageUrl;
-        //         img.alt = `Image for ${this.textContent}`;
-        //         img.style.display = 'none'; // Initially hide the image until it's loaded
-        //         img.onload = function() {
-        //             img.style.display = 'block'; // Show the image once loaded
-        //             imagesLoaded += 1;
-        //             // If all images are loaded, scroll to center the middle image
-        //             if (imagesLoaded === selectedImages.length) {
-        //                 scrollToCenter();
-        //             }
-        //         };
-        //         imageGallery.appendChild(img);
-        //     });
-        // }
         
-
         // Remove .selected from any previously selected item
         titles.forEach(t => t.classList.remove('selected'));
 
@@ -239,4 +217,22 @@ titles.forEach(title => {
 // Set default text and images for the first title on page load
 window.addEventListener('DOMContentLoaded', function() {
     titles[0].click(); // Automatically select and display the first title
+
+    // const flexContainer = document.getElementById('research-flex-container');
+
+    // function isInView(element) {
+    //     const rect = element.getBoundingClientRect();
+    //     return rect.top < window.innerHeight && rect.bottom > 0;
+    // }
+
+    // function handleWheel(event) {
+    //     if (isInView(flexContainer) || flexContainer.matches(':hover')) {
+    //         event.preventDefault(); // Prevent vertical scroll on this element
+    //         flexContainer.scrollLeft += event.deltaY; // Convert vertical scroll to horizontal scroll
+    //     }
+    // }
+
+    // // Attach wheel event to handle scroll direction only in flexContainer
+    // window.addEventListener('wheel', handleWheel, { passive: false });
+
 });

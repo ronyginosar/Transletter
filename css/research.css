@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    overflow-y: auto;
 }
 
 #research-page{
@@ -159,7 +160,7 @@ html, body {
 /* P2 - names not indicative, future rename */
 
 /* Container setup */
-#flex-container {
+#research-flex-container {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -228,6 +229,9 @@ html, body {
     /* note: use this to keep the text in the same height, might expand to 3 cols to the left */
     /* height:auto; */
     overflow-x: auto;
+    /* overflow-x: scroll; */
+
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Ensure no extra columns are created */
@@ -266,3 +270,12 @@ html, body {
     /* note use this to allow dynamic growing of the images */
     /* max-height: 50vh; */
 }
+
+
+/* .horizontal-scroll-section { */
+    /* display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling 
+    scroll-behavior: smooth; /* Smooth scrolling 
+    white-space: nowrap; /* Prevent line breaks 
+    /* width: 100vw; */
+/* } */
