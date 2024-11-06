@@ -44,10 +44,11 @@ html, body {
     /* text-align: center; */
     font-family: TransletterGX;
     /* font-size: 18vh; */
-    font-size: 800%;
+    font-size: 8em;
     margin: 0;
     height: auto;
     margin-bottom: 15%;
+    text-indent: -2%;
 }
 
 #glyph_selector{
