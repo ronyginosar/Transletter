@@ -41,14 +41,13 @@ html, body {
 
 #title h1{
     width: 100%;
-    /* text-align: center; */
     font-family: TransletterGX;
-    /* font-size: 18vh; */
     font-size: 8em;
     margin: 0;
     height: auto;
     margin-bottom: 15%;
-    text-indent: -2%;
+    margin-right: -0.07em;
+    text-align: right;
 }
 
 #glyph_selector{

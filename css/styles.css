@@ -229,7 +229,6 @@ body::-webkit-scrollbar {
 }
   
   .screensaver_wrapper iframe {
-    /* TODO remove? */
     width: 100%;
     height: 100%;
     border: none;
