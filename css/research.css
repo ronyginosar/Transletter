@@ -230,8 +230,13 @@ html, body {
     /* height:auto; */
     overflow-x: auto;
     /* overflow-x: scroll; */
+    
 
     -webkit-overflow-scrolling: touch;
+}
+
+#text-display::-webkit-scrollbar{
+    display: auto;
 }
 
 /* Ensure no extra columns are created */
@@ -259,7 +264,8 @@ html, body {
 }
 
 #image-gallery::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for WebKit browsers */
+    /* Hide scrollbar for WebKit browsers */
+    display: none; 
 }
 
 #image-gallery img {
