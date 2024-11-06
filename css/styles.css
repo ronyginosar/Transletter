@@ -18,6 +18,12 @@
     --title-font-size: 20vw;
 }
 
+iframe{
+    height: 98vh;
+    border: none;
+    width: 100%;   
+}
+
 /* TODO unify wrapper div/class */
 
 
@@ -103,6 +109,7 @@ body::-webkit-scrollbar {
 
 #tester-iframe{
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    height: 80vh;
     /* padding-top: 10%; */
     /* padding-right: var(--page-side-padding); */
     /* padding-left: var(--page-side-padding); */
@@ -144,6 +151,32 @@ body::-webkit-scrollbar {
     color: var(--element-color);
     /* height: 98vh; */
     width: 100%;
+}
+
+.waterfall iframe{
+    height: 0px;
+}
+
+#waterfall-toggle-section{
+    padding-bottom: var(--iframe-inner-top-bottom-padding);
+    padding-right: calc(var(--page-side-padding)*2);
+    background-color: var(--element-color);
+    width: 100%;
+}
+
+#waterfall-toggle-section button{
+    font-family: inherit;
+    font-size: 1.2em;
+    padding: 2px 5px;
+    border: 1px solid var(--slider-gray);
+    color: var(--slider-gray);
+    background-color: transparent;
+    white-space: nowrap;
+}
+
+#waterfall-toggle-section button:hover{
+    background-color: rgb(148, 148, 148, 0.6);
+    /* var(--slider-gray) with opacity; */
 }
 
 

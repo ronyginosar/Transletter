@@ -129,3 +129,20 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+
+  function toggleWaterfall() {
+    // const textContainer = document.getElementById('text-container');
+    const toggleButton = document.getElementById('waterfall-toggle-button');        
+    const iframe = document.getElementById('waterfall-iframe');
+    
+    if (iframe.style.height === '0px' || iframe.style.height === '') {
+        iframe.style.height = '98vh'; // Expand iframe
+        toggleButton.innerHTML = 'משקלים'; // Update button text
+        // iframe.classList.remove('hidden-iframe'); // Remove class to show section inside iframe
+    } else {
+        iframe.style.height = '0'; // Collapse iframe
+        toggleButton.innerHTML = 'משקלים ←'; // Update button text
+        // iframe.classList.add('hidden-iframe'); // Add class to hide section inside iframe
+    }
+    }
