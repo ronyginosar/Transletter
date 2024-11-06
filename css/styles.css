@@ -110,9 +110,6 @@ body::-webkit-scrollbar {
 #tester-iframe{
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
     height: 80vh;
-    /* padding-top: 10%; */
-    /* padding-right: var(--page-side-padding); */
-    /* padding-left: var(--page-side-padding); */
 }
 
 .scroll_section_wrapper{
@@ -127,21 +124,6 @@ body::-webkit-scrollbar {
     /* -ms-overflow-style: none;  Internet Explorer 10+ 
     scrollbar-width: none;  /* Firefox */
 }
-
-/* .scroll_section_wrapper iframe{ */
-    /* height: 70vh; */
-    /* z-index: 1; */
-    /* note - to allow scroll from section top - move to padding inside html rather than iframe */
-    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    /* padding-right: var(--page-side-padding); */
-    /* padding-left: var(--page-side-padding); */
-/* } */
-
-/* remove */
-/* .scroll_section_wrapper::-webkit-scrollbar {  
-    /* remove scroll bar: */
-    /* display: none;  /* Safari and Chrome 
-}  */
 
 .waterfall{
     display: flex;
@@ -198,12 +180,6 @@ body::-webkit-scrollbar {
     background-color: var(--footer-gray);
 }
 
-/* #letter-range_page{
-    TODO
-    height: 3px; /*placeholder value to later inject height by script
-} */
-
-
 .research{
     width: 100%; 
 }
@@ -212,6 +188,137 @@ body::-webkit-scrollbar {
 .research iframe{
     height: 200vh;
 }
+
+
+
+/* Technology TODO cleanup */
+
+.horizontal_screensaver_tech{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    height: 98vh;
+    font-size: var(--title-font-size);
+    /* TODO */
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+
+    /* remove scroll bar: Internet Explorer 10+ & Firefox*/
+    /* -ms-overflow-style: none;   */
+    /* scrollbar-width: none;   */
+}
+
+.horizontal_screensaver_tech:hover {
+    cursor: url('../assets/technology_cursor.svg') 25 25, auto;
+}
+
+.horizontal_screensaver_tech::-webkit-scrollbar { 
+    /* remove scroll bar Safari and Chrome*/
+    /* display: none;   */
+}
+  
+.screensaver_wrapper {
+    display: flex;
+    /* justify-content: center; */
+    height: 100%;
+    flex: 1 0 40%;
+    /* width: 100%; */
+    /* padding: 0 5%; */
+}
+  
+  .screensaver_wrapper iframe {
+    /* TODO remove? */
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .technology_title {
+    flex: 0 0 57%; /* Prevent title from shrinking */
+    font-size: 0.1em;
+    display: flex;
+    align-items: center; /* Center title vertically */
+    padding: 0 1%;
+    font-size: 0.3em;
+    font-weight: 500;
+    justify-content: center;
+  }
+
+/* .technology_title:hover {
+    cursor: url('../assets/technology_cursor.svg') 25 25, auto;
+} */
+
+  .technology_text_flex_container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 98vh;
+    background-color: chocolate;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .technology_text {
+    padding: 0 5%;
+    font-size: 0.06em;
+    /* flex: 2; */
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
+    /* column-count: 2; */
+    /* column-gap: 20px; */
+
+    /* minimum width suggestion */
+    /* column-width: 300px; */
+    /* column-width: 60rem; */
+
+    /* column-count: 2; Automatically splits text into 2 columns */
+    column-gap: 5%; 
+    /* Balance the content evenly between the two columns */
+    column-fill: balance; 
+    /* background: aqua; */
+
+    /* Ensure text area matches section height */
+    /* height: 50%;  */
+    /* height: 70vh;  */
+    /* TODO vertical align */
+    /* overflow-y: auto; Enable vertical scrolling for text columns if needed */
+    /* width: 100%; */
+    /* overflow-x: auto; */
+    /* overflow: hidden; */
+    /* overflow-y: auto; */
+    flex: 1 0 70%;
+    column-count: 2;
+
+    /* display: inline-block; */
+  /* vertical-align: middle; */
+
+  }
+  
+  .technology_image {
+    padding: 0 5%;
+    /* flex: 0 0 auto; Prevent image from shrinking */
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center; /* Align image vertically */
+    font-size: 0.1em;
+    /* max-height: 70%;  */
+    /* max-height: 70%;  */
+    height: 50%; 
+  }
+  
+  .technology_image img {
+     /* Match image height to section height */
+    height: 100%;
+    /* Cover the available space without distortion */
+    object-fit: cover; 
+    flex: 1 1 50%;
+  }
+
+
+
+
 
 
 /* .cursor {
@@ -310,123 +417,3 @@ nav a {
     color: var(--gradient-black);
 }
 
-/* Technology TODO cleanup */
-
-.horizontal_screensaver_tech{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #000000;
-    height: 98vh;
-    font-size: var(--title-font-size);
-    /* TODO */
-    width: 100%;
-    overflow-x: auto; /* Enable horizontal scrolling */
-
-    /* remove scroll bar: Internet Explorer 10+ & Firefox*/
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-}
-
-.horizontal_screensaver_tech::-webkit-scrollbar { 
-    /* remove scroll bar Safari and Chrome*/
-    display: none;  
-}
-  
-.screensaver_wrapper {
-    display: flex;
-    /* justify-content: center; */
-    height: 100%;
-    flex: 1 0 40%;
-    /* width: 100%; */
-    /* padding: 0 5%; */
-}
-  
-  .screensaver_wrapper iframe {
-    /* TODO remove? */
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  
-  .technology_title {
-    flex: 0 0 57%; /* Prevent title from shrinking */
-    font-size: 0.1em;
-    display: flex;
-    align-items: center; /* Center title vertically */
-    padding: 0 1%;
-    font-size: 0.3em;
-    font-weight: 500;
-    justify-content: center;
-  }
-
-.technology_title:hover {
-    cursor: url('../assets/technology_cursor.svg') 25 25, auto;
-}
-
-  .technology_text_flex_container{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 98vh;
-    background-color: chocolate;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .technology_text {
-    padding: 0 5%;
-    font-size: 0.06em;
-    /* flex: 2; */
-    /* display: flex; */
-    /* flex-wrap: nowrap; */
-    /* column-count: 2; */
-    /* column-gap: 20px; */
-
-    /* minimum width suggestion */
-    /* column-width: 300px; */
-    /* column-width: 60rem; */
-
-    /* column-count: 2; Automatically splits text into 2 columns */
-    column-gap: 5%; 
-    /* Balance the content evenly between the two columns */
-    column-fill: balance; 
-    /* background: aqua; */
-
-    /* Ensure text area matches section height */
-    /* height: 50%;  */
-    /* height: 70vh;  */
-    /* TODO vertical align */
-    /* overflow-y: auto; Enable vertical scrolling for text columns if needed */
-    /* width: 100%; */
-    /* overflow-x: auto; */
-    /* overflow: hidden; */
-    /* overflow-y: auto; */
-    flex: 1 0 70%;
-    column-count: 2;
-
-    /* display: inline-block; */
-  /* vertical-align: middle; */
-
-  }
-  
-  .technology_image {
-    padding: 0 5%;
-    /* flex: 0 0 auto; Prevent image from shrinking */
-    flex: 1 1 50%;
-    display: flex;
-    align-items: center; /* Align image vertically */
-    font-size: 0.1em;
-    /* max-height: 70%;  */
-    /* max-height: 70%;  */
-    height: 50%; 
-  }
-  
-  .technology_image img {
-     /* Match image height to section height */
-    height: 100%;
-    /* Cover the available space without distortion */
-    object-fit: cover; 
-    flex: 1 1 50%;
-  }
