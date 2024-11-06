@@ -244,11 +244,15 @@ body::-webkit-scrollbar {
     font-size: 0.3em;
     font-weight: 500;
     justify-content: center;
+    transition: all 0.5s ease;
   }
 
-/* .technology_title:hover {
-    cursor: url('../assets/technology_cursor.svg') 25 25, auto;
-} */
+.technology_title:hover {
+    /* cursor: url('../assets/technology_cursor.svg') 25 25, auto; */
+    font-variation-settings: "vrot" 700;
+    transition: all 0.5s ease;    
+}
+
 
   .technology_text_flex_container{
     display: flex;
