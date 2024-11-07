@@ -71,8 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll to the top of the page
     window.scrollTo(0, 0);
 
+
     // Alternatively, scroll to a specific element by ID
     // document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
+
+    // Remove any hash from the URL
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+    }
 });
 
 // Hide the navigation bar on scroll down and show it on scroll up

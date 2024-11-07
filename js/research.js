@@ -188,10 +188,11 @@ titles.forEach(title => {
             imageGallery.style.justifyContent = 'center';
         } else {
             // For multiple images, scroll to center the middle image
+            // TODO -is this working properly?
+            // TODO also - animate?
             imageGallery.style.justifyContent = 'flex-start'; // Reset to flex-start
             // imageGallery.style.justifyContent = 'center'; // cuts off the last image
 
-            // Scroll to the center image // TODO not working in "sketches"
             const middleIndex = Math.floor(selectedImages.length / 2);
             const middleImage = imageGallery.children[middleIndex];
             
@@ -210,9 +211,9 @@ titles.forEach(title => {
     });
 });
 
-// Set default text and images for the first title on page load
+
 // TODO also do the image location upon load, not just when clicking
-// titles[0].click();
+
 
 // Set default text and images for the first title on page load
 window.addEventListener('DOMContentLoaded', function() {

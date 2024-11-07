@@ -109,7 +109,8 @@ body::-webkit-scrollbar {
 
 #tester-iframe{
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
-    height: 80vh;
+    /* TODO rethink this. o.w need both here and in wrapper */
+    /* height: 80vh; */
 }
 
 .scroll_section_wrapper{
