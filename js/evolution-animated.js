@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const downwardsMovement = -upwardsMovement;
     const downwardsFall = 10;
 
+    const maxRandomImageContainerPosition = 33; // Arbitrary max right position for the image container
 
     // Initialize a virtual scroll position
     let scrollPosition = 0;
@@ -378,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const imageContainer = document.getElementById('image-container');
             imageContainer.style.backgroundImage = `url(${action.image})`;
             imageContainer.style.opacity = '1';
+            imageContainer.style.right = Math.floor(Math.random() * maxRandomImageContainerPosition) + '%';
         }
     
     }

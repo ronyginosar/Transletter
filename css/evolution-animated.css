@@ -59,11 +59,13 @@ body {
 #image-container {
     position: absolute;
     top: 33%;
+    /* 'right' will be somewhat random in js */
     right: 10%;
     width:  15em;
     height: 15em;
     background-size: cover;
     /* background-color: brown; */
+    /* initial opacity, mainly controlled by js */
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1; /* Place it behind text */
