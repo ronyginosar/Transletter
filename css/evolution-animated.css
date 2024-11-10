@@ -9,7 +9,7 @@
     /* font-size: 1000%; */
     font-size: var(--title-font-size);
     /* line-height: 70%; */
-    line-height: 0.8em;
+    line-height: 0.9em;
     font-variation-settings: "vrot" 200;
     justify-content: center;
 
@@ -30,10 +30,12 @@ span {
     /* top:-2em; */
     vertical-align: top;
     transition: transform 0.5s ease;
+    letter-spacing: 0;
+    font-kerning: none;
 }
 
 .lineDiv {
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     /* height: 20%; */
 }
 
@@ -58,7 +60,7 @@ body {
 
 #image-container {
     position: absolute;
-    top: 33%;
+    top: 34%;
     /* 'right' will be somewhat random in js */
     right: 10%;
     width:  15em;

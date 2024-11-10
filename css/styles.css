@@ -85,6 +85,7 @@ body::-webkit-scrollbar {
     align-items: center;
     width: 100%;
     height: 98vh;
+    background-color: var(--footer-gray);
 }
 
 .evolution-animated iframe{

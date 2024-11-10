@@ -17,6 +17,26 @@ document.addEventListener('DOMContentLoaded', function() {
         15:{ image: '../assets/content_images/evolution_hover/Lamed.jpg' }, 
     };
 
+    // note, this requires overriding the font kerning by 'letter-spacing: 0' in the css
+    const vrotOriginValues = {
+        0: 200,
+        1: 200,
+        2: 600,
+        3: 300,
+        4: 100,
+        5: 300,
+        6: 200,
+        7: 600,
+        8: 300,
+        9: 600,
+        10: 400,
+        11: 200,
+        12: 100,
+        13: 500,
+        14: 700,
+        15: 600,
+    }
+
 // א 0
 // ב 1
 // ו 2
@@ -243,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
         line.split('').forEach((char, charIndex) => {
             const span = document.createElement('span');
             const randomVrot = getRandomVrot();
-            span.style.fontVariationSettings = `'vrot' ${randomVrot}`;
+            span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // HIGH PRIORITY
             span.textContent = char;
             // span.style.display = 'inline-block'; // Ensure letters stay inline
             // debug
@@ -306,6 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
             span.style.position = 'absolute';
             span.style.left = `${x}px`;
             span.style.top = `${y}px`;
+            // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // HIGH PRIORITY
         });
 
         // console.log(initialPositions);
