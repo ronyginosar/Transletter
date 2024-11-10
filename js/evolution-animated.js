@@ -310,44 +310,47 @@ document.addEventListener('DOMContentLoaded', function() {
         // console.log(initialPositions);
     });
 
-    // Use the 'wheel' event to detect scroll gestures without moving the page
-    window.addEventListener('wheel', function(event) {
-        event.preventDefault(); // Prevent default scrolling behavior
+    ////////////////////////////////// SCROLL ANIMATION //////////////////////////////////////
 
-        const deltaY = event.deltaY; // Only vertical scrolling (ignore deltaX)
-        // console.log(deltaY);
-        // console.log(event.deltaX);
+    // // Use the 'wheel' event to detect scroll gestures without moving the page
+    // window.addEventListener('wheel', function(event) {
+    //     event.preventDefault(); // Prevent default scrolling behavior
 
-        // note: negotiable what is up and down with macs...
-        // HIGH PRIORITY think of better way to deltaY, it's too according to speed?
+    //     const deltaY = event.deltaY; // Only vertical scrolling (ignore deltaX)
+    //     // console.log(deltaY);
+    //     // console.log(event.deltaX);
 
-        // scrollPosition global param
-        if (deltaY > 0) {
-            // Scrolling up
-            // Continue the current behavior (move spans upwards and handle collisions)
-            scrollPosition += deltaY;
-            scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
+    //     // note: negotiable what is up and down with macs...
+    //     // HIGH PRIORITY think of better way to deltaY, it's too according to speed?
+
+    //     // scrollPosition global param
+    //     if (deltaY > 0) {
+    //         // Scrolling up
+    //         // Continue the current behavior (move spans upwards and handle collisions)
+    //         scrollPosition += deltaY;
+    //         scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
     
-            // Update transformations based on the virtual scroll position
-            updateTransformations();
+    //         // Update transformations based on the virtual scroll position
+    //         updateTransformations();
     
-            // Handle collisions
-            handleCollisions();
-        } else if (deltaY < 0) {
-            // Scrolling down
-            scrollPosition -= deltaY;
-            scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
-            // Reset spans to their initial positions (move them back down and reset rotation)
-            resetToInitialPositions();
+    //         // Handle collisions
+    //         handleCollisions();
+    //     } else if (deltaY < 0) {
+    //         // Scrolling down
+    //         scrollPosition -= deltaY;
+    //         scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
+    //         // Reset spans to their initial positions (move them back down and reset rotation)
+    //         resetToInitialPositions();
 
-            // TODO remove from scrollPosition?
-        }
+    //         // TODO remove from scrollPosition?
+    //     }
 
-        // console.log(scrollPosition);
+    //     // console.log(scrollPosition);
 
-    }, { passive: false }); // Set passive: false to allow preventDefault()
+    // }, { passive: false }); // Set passive: false to allow preventDefault()
 
 
+    ////////////////////////////////// HOVER EFFECTS //////////////////////////////////////
     function handleHoverEffect(span, index) {
         span.style.transition = 'font-variation-settings 0.3s ease';
     
@@ -384,12 +387,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const imageContainer = document.getElementById('image-container');
         imageContainer.style.opacity = '0';
     }
-
-
-
-
-
-
 
 }); // end of DOMContentLoaded
 

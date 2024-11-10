@@ -58,12 +58,13 @@ body {
 
 #image-container {
     position: absolute;
-    top: 30%;
-    right: 5%;
-    /* width: 10em; */
-    /* height: 30em; */
+    top: 33%;
+    right: 10%;
+    width:  15em;
+    height: 15em;
     background-size: cover;
-    /* opacity: 0; */
+    /* background-color: brown; */
+    opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1; /* Place it behind text */
 }
