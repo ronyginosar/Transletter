@@ -1,5 +1,9 @@
 /* TODO clean */
 
+:root {
+    --imagecontainerdims: 18em;
+}
+
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -58,12 +62,12 @@ body {
 
 #image-container {
     position: absolute;
-    top: 24%;
+    top:33%;
     /* 'right' will be somewhat random in js */
     right: 10%;
     /* HIGH PRIORITY make better for changing screen size */
-    width:  25em;
-    height: 25em;
+    width:  var(--imagecontainerdims);
+    height: var(--imagecontainerdims);
     background-size: cover;
     /* background-color: brown; */
     /* initial opacity, mainly controlled by js */
