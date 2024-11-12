@@ -119,7 +119,8 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 70vh;
+    /* height: 70vh; */
+    height: 98vh;
     background-color: var(--element-color);
     /* background-color: chocolate; */
     /* remove scroll bar: */

@@ -36,7 +36,7 @@ html,body{
     margin: 0;
     /* font-size: 3.5vw; */
     /* font-size: 0.2em; */
-    font-size: 0.15em;
+    font-size: 0.2em;
     font-family: TransletterGX;
     /* line-height: 120%; */
     font-variation-settings: "vrot" var(--vrot);
