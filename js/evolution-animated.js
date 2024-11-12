@@ -35,7 +35,26 @@ document.addEventListener('DOMContentLoaded', function() {
         13: 500,
         14: 700,
         15: 600,
-    }
+    };
+
+    const vrotTargetValues = {
+        0: 200,
+        1: 200,
+        2: 600,
+        3: 300,
+        4: 100,
+        5: 300,
+        6: 200,
+        7: 600,
+        8: 300,
+        9: 600,
+        10: 400,
+        11: 200,
+        12: 100,
+        13: 500,
+        14: 700,
+        15: 600,
+    };
 
 // א 0
 // ב 1
@@ -73,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize a virtual scroll position
     let scrollPosition = 0;
-    // HIGH PRIORITY think of better way to maxScrollPosition, or have two seperate?
+    // TODO think of better way to maxScrollPosition, or have two seperate?
     const maxScrollPosition = 2000; // Arbitrary max scroll simulation range
     const minScrollPosition = 0;   // Arbitrary min scroll range
     const fallThreshold = maxScrollPosition*0.9;
@@ -106,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return Math.floor(Math.random() * 10) - 5; // Random rotation between -15deg and 15deg
     }
 
-    // HIGH PRIORITY - ignore initial wheel and look only at last one (for scroll pad & unification of scroll speed?)
+    // TODO - ignore initial wheel and look only at last one (for scroll pad & unification of scroll speed?)
 
     // Function to update the span transformations based on the simulated scroll position
     function updateTransformations() {
@@ -261,22 +280,26 @@ document.addEventListener('DOMContentLoaded', function() {
         lineDiv.style.display = 'inline-block'; // Keep the word together
 
         line.split('').forEach((char, charIndex) => {
-            const span = document.createElement('span');
-            const randomVrot = getRandomVrot();
-            span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // HIGH PRIORITY
-            span.textContent = char;
-            // span.style.display = 'inline-block'; // Ensure letters stay inline
-            // debug
-            // span.style.border = '1px solid black';
-            // span.style.backgroundColor = 'purple';
-            span.style.display = 'inline'; // Ensure letters stay inline
-            spans.push(span);
-
-            lineDiv.appendChild(span);
 
             // const globalCharIndex = lineIndex * line.length + charIndex;
             // Calculate globalCharIndex based on the cumulative offset
             const globalCharIndex = charIndexOffset + charIndex;
+
+            const span = document.createElement('span');
+            const randomVrot = getRandomVrot();
+            // const randomVrot = vrotOriginValues[globalCharIndex]; // HIGH PRIORITY
+            span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // HIGH PRIORITY
+            span.textContent = char;
+            // span.style.display = 'inline-block'; // Ensure letters stay inline
+            
+            // debug
+            // span.style.border = '1px solid black';
+            // span.style.backgroundColor = 'purple';
+
+            span.style.display = 'inline'; // Ensure letters stay inline
+            spans.push(span);
+
+            lineDiv.appendChild(span);
 
             // Hover effect
             span.addEventListener('mouseenter', () => {
@@ -301,35 +324,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Store initial positions of spans after they are naturally laid out
-    const initialPositions = [];
+    // const initialPositions = [];
 
     ////////////////////////////////// ACTION SECTION//////////////////////////////////////
 
     // Wait for layout to be applied before capturing initial positions
     window.addEventListener('load', function() {
-        // console.log('loaded');
-        spans.forEach(span => {
-            const rect = span.getBoundingClientRect();
-            // console.log(rect);
-            initialPositions.push({
-                x: rect.left,
-                y: rect.top,
-                width: rect.width,
-                height: rect.height,
-                data: span.textContent
-            });
-        });
+    //     // console.log('loaded');
+    //     spans.forEach(span => {
+    //         const rect = span.getBoundingClientRect();
+    //         // console.log(rect);
+    //         initialPositions.push({
+    //             x: rect.left,
+    //             y: rect.top,
+    //             width: rect.width,
+    //             height: rect.height,
+    //             data: span.textContent
+    //         });
+    //     });
 
-        // Apply absolute positioning relative to original positions
+    //     // Apply absolute positioning relative to original positions
         spans.forEach((span, index) => {
-            const { x, y, width, height } = initialPositions[index];
-            span.style.position = 'absolute';
-            span.style.left = `${x}px`;
-            span.style.top = `${y}px`;
+    //         const { x, y, width, height } = initialPositions[index];
+    //         span.style.position = 'absolute';
+    //         span.style.left = `${x}px`;
+    //         span.style.top = `${y}px`;
+            const randomVrot = getRandomVrot();
+            // span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // HIGH PRIORITY
+
             // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // HIGH PRIORITY
         });
 
-        // console.log(initialPositions);
+    //     // console.log(initialPositions);
     });
 
     ////////////////////////////////// SCROLL ANIMATION //////////////////////////////////////
@@ -392,7 +418,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
         if (action.vrot !== undefined) {
             // Apply the specified vrot value
-            span.style.fontVariationSettings = `'vrot' ${action.vrot}`;
+            // span.style.fontVariationSettings = `'vrot' ${action.vrot}`; // HIGH PRIORITY
+            const randomVrot = getRandomVrot();
+            span.style.fontVariationSettings = `'vrot' ${randomVrot}`;
+            
         }
     
         if (action.image) {

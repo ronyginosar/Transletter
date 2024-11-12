@@ -3,17 +3,15 @@
 .flex-container {
     display: flex;
     flex-direction: column;
-    /* align-items: right; */
     font-family: TransletterGX;
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    /* font-size: 1000%; */
     font-size: var(--title-font-size);
-    /* line-height: 70%; */
-    line-height: 0.9em;
+    /* needs to be here rather than in span: */
+    line-height: 0.83em;
+    font-size:10em;
+
     font-variation-settings: "vrot" 200;
     justify-content: center;
-
-    /* negative bottom-margin */
 }
 
 span {
@@ -23,15 +21,15 @@ span {
     /* transition: transform 0.1s ease-out; Smooth transformation */
     /* line-height: 14%; */
     /* display:block; */
-    /* font-size:24px; */
+    
     /* height:80%; */
     overflow:hidden;
     background-color: transparent;
     /* top:-2em; */
     vertical-align: top;
     transition: transform 0.5s ease;
-    letter-spacing: 0;
-    font-kerning: none;
+
+
 }
 
 .lineDiv {
@@ -60,11 +58,12 @@ body {
 
 #image-container {
     position: absolute;
-    top: 34%;
+    top: 24%;
     /* 'right' will be somewhat random in js */
     right: 10%;
-    width:  15em;
-    height: 15em;
+    /* HIGH PRIORITY make better for changing screen size */
+    width:  25em;
+    height: 25em;
     background-size: cover;
     /* background-color: brown; */
     /* initial opacity, mainly controlled by js */
