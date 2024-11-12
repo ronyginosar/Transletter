@@ -286,8 +286,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const globalCharIndex = charIndexOffset + charIndex;
 
             const span = document.createElement('span');
-            const randomVrot = getRandomVrot();
-            // const randomVrot = vrotOriginValues[globalCharIndex]; // HIGH PRIORITY
+            // const randomVrot = getRandomVrot();
+            const randomVrot = vrotOriginValues[globalCharIndex]; // HIGH PRIORITY
             span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // HIGH PRIORITY
             span.textContent = char;
             // span.style.display = 'inline-block'; // Ensure letters stay inline
