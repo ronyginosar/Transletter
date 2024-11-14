@@ -13,46 +13,54 @@
 
   <body>
     <div id="wrapper">
-        <div class="container" id="byLetter">
-          <div class="controls">
-              <div class="slider-container">
-                  <div class="slider-title">גודל</div>
-                  <div class="slider-label" id="fontSizeLabel_byLetter">160</div>
-                  <input type="range" id="fontSizeSlider_byLetter" min="70" max="300" value="160">
-              </div>          
-              <div class="slider-container">
-                  <div class="slider-title">רהיטות</div>
-                  <!-- note: vrot slider does not dynamically update on pageload -->
-                  <div class="slider-label" id="fontVrotLabel_byLetter">500</div>
-                  <input type="range" id="fontVrotSlider_byLetter" min="100" max="700" value="500">
-              </div>
-              <p>אות אות</p>
-          </div>
-          <!-- <div>
-            <textarea class="text-row-input" id="text_byLetter">צבע שחור</textarea>
-          </div> -->
-          <div class="text-row-input" id="text_byLetter" contenteditable="true">צבע שחור</div>
-        </div> <!-- byLetter -->
-        <!-- entire text block -->
-        <div class="container" id="byBlock"> 
-          <div class="controls">
+      <div id="infotext">
+        <b>
+        איך זה עובד?
+        </b>
+        <p>
+        המשקלים בגופן תנואות נעים על ציר הרהיטות. לכל אחת מהאותיות וריאציות צורניות שונות, כך שניתן לשלב את המשקלים השונים ביחד, או להשתמש בכל משקל בנפרד. נסו בעצמכם -
+        </p>
+      </div>
+      <div class="container" id="byLetter">
+        <div class="controls">
             <div class="slider-container">
                 <div class="slider-title">גודל</div>
-                <div class="slider-label" id="fontSizeLabel_byBlock">68</div>
-                <input type="range" id="fontSizeSlider_byBlock" min="10" max="100" value="68">
+                <div class="slider-label" id="fontSizeLabel_byLetter">160</div>
+                <input type="range" id="fontSizeSlider_byLetter" min="70" max="300" value="160">
             </div>          
             <div class="slider-container">
                 <div class="slider-title">רהיטות</div>
                 <!-- note: vrot slider does not dynamically update on pageload -->
-                <div class="slider-label" id="fontVrotLabel_byBlock">400</div>
-                <input type="range" id="fontVrotSlider_byBlock" min="100" max="700" value="400">
+                <div class="slider-label" id="fontVrotLabel_byLetter">500</div>
+                <input type="range" id="fontVrotSlider_byLetter" min="100" max="700" value="500">
             </div>
-            <p>פסקה</p>
+            <p>אות אות</p>
+        </div>
+        <!-- <div>
+          <textarea class="text-row-input" id="text_byLetter">צבע שחור</textarea>
+        </div> -->
+        <div class="text-row-input" id="text_byLetter" contenteditable="true">צבע שחור</div>
+      </div> <!-- byLetter -->
+      <!-- entire text block -->
+      <div class="container" id="byBlock"> 
+        <div class="controls">
+          <div class="slider-container">
+              <div class="slider-title">גודל</div>
+              <div class="slider-label" id="fontSizeLabel_byBlock">68</div>
+              <input type="range" id="fontSizeSlider_byBlock" min="10" max="100" value="68">
+          </div>          
+          <div class="slider-container">
+              <div class="slider-title">רהיטות</div>
+              <!-- note: vrot slider does not dynamically update on pageload -->
+              <div class="slider-label" id="fontVrotLabel_byBlock">400</div>
+              <input type="range" id="fontVrotSlider_byBlock" min="100" max="700" value="400">
           </div>
-          <div>
-            <textarea class="text-row-input" id="text_byBlock">האותיות העבריות המרובעות שאנו קוראים וכותבים היום הן התגלגלותה של כתיבה רהוטה</textarea>
-          </div>
-        </div> <!-- byBlock -->
+          <p>פסקה</p>
+        </div>
+        <div>
+          <textarea class="text-row-input" id="text_byBlock">האותיות העבריות המרובעות שאנו קוראים וכותבים היום הן התגלגלותה של כתיבה רהוטה</textarea>
+        </div>
+      </div> <!-- byBlock -->
     </div> <!-- wrapper -->
     <script src="../js/jquery.min.js" type="text/javascript"></script>
     <script src="../js/letter-tester.js" type="text/javascript"></script>

@@ -1,6 +1,7 @@
 :root{
     --vrot-letter-tester-title: 500;
     --vrot-letter-tester-text: 400;
+    --infotext-font-size: 0.09em;
 }
 #wrapper{
     font-size: var(--title-font-size);
@@ -19,6 +20,21 @@
     /* overflow: hidden; */
     /* background-color: transparent; */
     /* background-color: black; */
+}
+
+#infotext{
+    width:100%;
+    font-size: var(--infotext-font-size);
+    color: var(--background-color);
+}
+
+b{  
+    font-variation-settings: 'vrot' 700;
+    font-weight: 900;
+}
+
+p{
+    width: 70%;
 }
 
 .container{
