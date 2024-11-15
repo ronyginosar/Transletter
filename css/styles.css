@@ -192,7 +192,7 @@ section .tester_wrapper{
     width: 100%; 
 }
 
-/* NOTE: this is where to extend height on reseach, not anywhere else. o.w. scrolling */
+/* NOTE: this is where to extend height on research, not anywhere else. o.w. scrolling */
 .research iframe{
     height: 200vh;
 }
@@ -222,10 +222,10 @@ section .tester_wrapper{
     cursor: url('../assets/technology_cursor.svg') 25 25, auto;
 }
 
-.horizontal_screensaver_tech::-webkit-scrollbar { 
+/* .horizontal_screensaver_tech::-webkit-scrollbar {  */
     /* remove scroll bar Safari and Chrome*/
     /* display: none;   */
-}
+/* } */
   
 .screensaver_wrapper {
     display: flex;
