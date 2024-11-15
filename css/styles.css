@@ -68,6 +68,11 @@ body::-webkit-scrollbar {
     align-items: center;
     width: 100%;
     height: 98vh;
+
+    /* new: sticky */
+    position: sticky;
+    top: 0px;
+    z-index: -100;
 }
 
 .animated-logo iframe{
@@ -191,6 +196,7 @@ section .tester_wrapper{
 
 .research{
     width: 100%; 
+    background-color: var(--background-color);
 }
 
 /* NOTE: this is where to extend height on research, not anywhere else. o.w. scrolling */
@@ -203,6 +209,7 @@ section .tester_wrapper{
 /* Technology TODO cleanup */
 
 .horizontal_screensaver_tech{
+    background-color: var(--background-color);
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         2: 600,
         3: 300,
         4: 100,
-        5: 300,
+        5: 700,
         6: 200,
         7: 600,
         8: 300,
@@ -37,24 +37,24 @@ document.addEventListener('DOMContentLoaded', function() {
         15: 600,
     };
 
-    const vrotTargetValues = {
-        0: 200,
-        1: 200,
-        2: 600,
-        3: 300,
-        4: 100,
-        5: 300,
-        6: 200,
-        7: 600,
-        8: 300,
-        9: 600,
-        10: 400,
-        11: 200,
-        12: 100,
-        13: 500,
-        14: 700,
-        15: 600,
-    };
+    // const vrotTargetValues = {
+    //     0: 200,
+    //     1: 200,
+    //     2: 600,
+    //     3: 300,
+    //     4: 100,
+    //     5: 300,
+    //     6: 200,
+    //     7: 600,
+    //     8: 300,
+    //     9: 600,
+    //     10: 400,
+    //     11: 200,
+    //     12: 100,
+    //     13: 500,
+    //     14: 700,
+    //     15: 600,
+    // };
 
 // א 0
 // ב 1
@@ -287,8 +287,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const span = document.createElement('span');
             // const randomVrot = getRandomVrot();
-            const randomVrot = vrotOriginValues[globalCharIndex]; // HIGH PRIORITY
-            span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // HIGH PRIORITY
+            const initialVrot = vrotOriginValues[globalCharIndex]; // #vrot
+            span.style.fontVariationSettings = `'vrot' ${initialVrot}`; // #vrot
             span.textContent = char;
             // span.style.display = 'inline-block'; // Ensure letters stay inline
             
@@ -306,9 +306,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
                 handleHoverEffect(span, globalCharIndex);
             });
-
+            
             span.addEventListener('mouseleave', () => {
-                resetHoverEffect(span, randomVrot);
+                // resetHoverEffect(span, randomVrot);
+                resetHoverEffect(span); // stay with new vrot #vrot
             });
         });
 
@@ -349,10 +350,10 @@ document.addEventListener('DOMContentLoaded', function() {
     //         span.style.position = 'absolute';
     //         span.style.left = `${x}px`;
     //         span.style.top = `${y}px`;
-            const randomVrot = getRandomVrot();
-            // span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // HIGH PRIORITY
+            const randomVrot = getRandomVrot(); // #vrot
+            // span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // #vrot
 
-            // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // HIGH PRIORITY
+            // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // #vrot
         });
 
     //     // console.log(initialPositions);
@@ -414,17 +415,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // console.log('hover', span.style.fontVariationSettings);
     
         const action = hoverActions[index];
-        if (!action) return; // Exit if there's no action for this index
+        // if (!action) return; // Exit if there's no action for this index
     
-        if (action.vrot !== undefined) {
+        // if (action.vrot !== undefined) { --> anyway change vrot #vrot
             // Apply the specified vrot value
-            // span.style.fontVariationSettings = `'vrot' ${action.vrot}`; // HIGH PRIORITY
-            const randomVrot = getRandomVrot();
-            span.style.fontVariationSettings = `'vrot' ${randomVrot}`;
-            
-        }
+            // span.style.fontVariationSettings = `'vrot' ${action.vrot}`; // #vrot
+            let randomVrot = getRandomVrot(); // #vrot const to let
+            // verify it's not the same #vrot
+            if (span.style.fontVariationSettings === `'vrot' ${randomVrot}`) {
+                randomVrot = getRandomVrot();
+            }
+            span.style.fontVariationSettings = `'vrot' ${randomVrot}`;   
+        // }
     
-        if (action.image) {
+        // if (action.image !== undefined) {
+        if (action && action.image !== undefined) {
             // Display the specified image in the image container
             const imageContainer = document.getElementById('image-container');
             imageContainer.style.backgroundImage = `url(${action.image})`;
@@ -434,11 +439,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     }
     
-    function resetHoverEffect(span, originalVrot) {
-        span.style.fontVariationSettings = `'vrot' ${originalVrot}`;
+    // function resetHoverEffect(span, originalVrot) {
+    //     span.style.fontVariationSettings = `'vrot' ${originalVrot}`;
+    //     const imageContainer = document.getElementById('image-container');
+    //     imageContainer.style.opacity = '0';
+    // }
+
+    function resetHoverEffect(span) {
         const imageContainer = document.getElementById('image-container');
         imageContainer.style.opacity = '0';
     }
+
+
 
 }); // end of DOMContentLoaded
 
