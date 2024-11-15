@@ -60,6 +60,7 @@
     /* TODO  this better */
     align-items: flex-start;
     width: 45%;
+    max-width: 25em;
     /* padding-right: 3%; */
     /* flex-wrap: wrap; */
     /* TODO - how to wrap, or different rule for narrow media */
@@ -79,7 +80,8 @@
 
 #bio {
     font-size: 12px;
-    width: 52%; 
+    width: 50%; 
+    max-width: 40em;
 }
 
 #bio a {
