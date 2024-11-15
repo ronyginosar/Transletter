@@ -437,3 +437,47 @@ nav a {
     color: var(--gradient-black);
 }
 
+
+@media screen and (max-width: 768px) {
+    html,body{
+        /* margin: 5%; */
+        margin: 0%;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .home-page-wrapper{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    header{
+        display: block;
+    }
+    nav {
+        display: block; /* Show dropdown-style navigation */
+        text-align: center;
+        padding-right: 5%;
+        padding-left: 5%;
+
+    }
+
+    .nav-title{
+        padding-bottom: 0;
+    }
+
+
+    nav a{
+        padding: 2%;
+        font-size: 0.6em;
+    }
+
+    nav ul{
+        padding: 0;
+        width: 100%;
+        justify-content: space-around;
+        margin: 0;
+    }
+}

@@ -32,6 +32,13 @@ html,body{
     align-items: flex-end;
 }
 
+@media screen and (max-width: 768px) {
+    #logoPara {
+        font-size: 6em;
+        justify-content: center;
+    }
+}
+
 #logoPara nobr{
     font-family: TransletterGX;
     font-variation-settings: 'vrot' 50;
