@@ -18,6 +18,12 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+    .flex-container {
+        font-size: 4em;
+    }
+}
+
 span {
     /* position: absolute; Absolute positioning for translation */
     display: inline-block;
