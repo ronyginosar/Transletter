@@ -3,6 +3,9 @@
     --vrot-letter-tester-text: 400;
     --infotext-font-size: 0.09em;
 }
+html{
+    overflow-y: hidden;
+}
 #wrapper{
     font-size: var(--title-font-size);
     display: flex;
@@ -16,8 +19,6 @@
     /* height: 100%; */
     width: 100%;
     /* TEMP */
-
-    /* overflow: hidden; */
     /* background-color: transparent; */
     /* background-color: black; */
 }
