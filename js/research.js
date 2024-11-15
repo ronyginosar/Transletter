@@ -105,8 +105,11 @@ function injectHandwrittenImages(character) {
     });
 }
 
+ 
+// note P2 new&simplified does not need js
 
-// P2 
+
+// P2 - original
 
 // Text content for each title
 const textContent = {
@@ -132,8 +135,8 @@ const imageContent = {
     //         '../assets/content_images/israeli_3-p-500.jpeg'
     //     ], // Section 3 images
     text4: ['../assets/content_images/research_textimages/p4_sketches/sketches_banner copy.jpg',
-        '../assets/content_images/research_textimages/p4_sketches/sketches_banner_1.jpg',
-        '../assets/content_images/research_textimages/p4_sketches/sketches_banner_2.jpg',
+            '../assets/content_images/research_textimages/p4_sketches/sketches_banner_1.jpg',
+            '../assets/content_images/research_textimages/p4_sketches/sketches_banner_2.jpg',
     ], // Section 4 image
     // text5: ['../assets/content_images/israeli_1-p-500.jpeg', 
     //         '../assets/content_images/history_4-p-500.jpeg'] // Section 5 images
@@ -159,81 +162,82 @@ function scrollToCenter() {
     }
 }
 
-titles.forEach(title => {
-    title.addEventListener('click', function() {
-        const selectedText = textContent[this.dataset.text]; // Get related text
-        const selectedImages = imageContent[this.dataset.text]; // Get related images
+// note: allow this part for original:
+// titles.forEach(title => {
+//     title.addEventListener('click', function() {
+//         const selectedText = textContent[this.dataset.text]; // Get related text
+//         const selectedImages = imageContent[this.dataset.text]; // Get related images
 
-        // Update text
-        // textDisplay.textContent = selectedText;
-        textDisplay.innerHTML = selectedText;
+//         // Update text
+//         // textDisplay.textContent = selectedText;
+//         textDisplay.innerHTML = selectedText;
 
-        // Clear existing images in the gallery
-        imageGallery.innerHTML = '';
+//         // Clear existing images in the gallery
+//         imageGallery.innerHTML = '';
 
-        // v1
-        // Inject images into the gallery
-        if (selectedImages) {
-            selectedImages.forEach(imageUrl => {
-                const img = document.createElement('img');
-                img.src = imageUrl;
-                img.alt = `Image for ${this.textContent}`;
-                imageGallery.appendChild(img);
-            });
-        }
+//         // v1
+//         // Inject images into the gallery
+//         if (selectedImages) {
+//             selectedImages.forEach(imageUrl => {
+//                 const img = document.createElement('img');
+//                 img.src = imageUrl;
+//                 img.alt = `Image for ${this.textContent}`;
+//                 imageGallery.appendChild(img);
+//             });
+//         }
 
-        // Center the gallery based on the number of images
-        if (selectedImages.length === 1) {
-            // Center single image
-            imageGallery.style.justifyContent = 'center';
-        } else {
-            // For multiple images, scroll to center the middle image
-            // TODO -is this working properly?
-            // TODO also - animate?
-            imageGallery.style.justifyContent = 'flex-start'; // Reset to flex-start
-            // imageGallery.style.justifyContent = 'center'; // cuts off the last image
+//         // Center the gallery based on the number of images
+//         if (selectedImages.length === 1) {
+//             // Center single image
+//             imageGallery.style.justifyContent = 'center';
+//         } else {
+//             // For multiple images, scroll to center the middle image
+//             // TODO -is this working properly?
+//             // TODO also - animate?
+//             imageGallery.style.justifyContent = 'flex-start'; // Reset to flex-start
+//             // imageGallery.style.justifyContent = 'center'; // cuts off the last image
 
-            const middleIndex = Math.floor(selectedImages.length / 2);
-            const middleImage = imageGallery.children[middleIndex];
+//             const middleIndex = Math.floor(selectedImages.length / 2);
+//             const middleImage = imageGallery.children[middleIndex];
             
-            // Scroll so that the middle image is centered in the gallery
-            const galleryWidth = imageGallery.offsetWidth;
-            const imageWidth = middleImage.offsetWidth;
-            const scrollPosition = middleImage.offsetLeft - (galleryWidth / 2) + (imageWidth / 2);
-            imageGallery.scrollLeft = scrollPosition;
-        }
+//             // Scroll so that the middle image is centered in the gallery
+//             const galleryWidth = imageGallery.offsetWidth;
+//             const imageWidth = middleImage.offsetWidth;
+//             const scrollPosition = middleImage.offsetLeft - (galleryWidth / 2) + (imageWidth / 2);
+//             imageGallery.scrollLeft = scrollPosition;
+//         }
         
-        // Remove .selected from any previously selected item
-        titles.forEach(t => t.classList.remove('selected'));
+//         // Remove .selected from any previously selected item
+//         titles.forEach(t => t.classList.remove('selected'));
 
-        // Add .selected to the clicked title
-        this.classList.add('selected');
-    });
-});
-
-
-// TODO also do the image location upon load, not just when clicking
+//         // Add .selected to the clicked title
+//         this.classList.add('selected');
+//     });
+// });
 
 
-// Set default text and images for the first title on page load
-window.addEventListener('DOMContentLoaded', function() {
-    titles[0].click(); // Automatically select and display the first title
+// // TODO also do the image location upon load, not just when clicking
 
-    // const flexContainer = document.getElementById('research-flex-container');
+// note: allow this part for original:
+// // Set default text and images for the first title on page load
+// window.addEventListener('DOMContentLoaded', function() {
+//     titles[0].click(); // Automatically select and display the first title
 
-    // function isInView(element) {
-    //     const rect = element.getBoundingClientRect();
-    //     return rect.top < window.innerHeight && rect.bottom > 0;
-    // }
+//     // const flexContainer = document.getElementById('research-flex-container');
 
-    // function handleWheel(event) {
-    //     if (isInView(flexContainer) || flexContainer.matches(':hover')) {
-    //         event.preventDefault(); // Prevent vertical scroll on this element
-    //         flexContainer.scrollLeft += event.deltaY; // Convert vertical scroll to horizontal scroll
-    //     }
-    // }
+//     // function isInView(element) {
+//     //     const rect = element.getBoundingClientRect();
+//     //     return rect.top < window.innerHeight && rect.bottom > 0;
+//     // }
 
-    // // Attach wheel event to handle scroll direction only in flexContainer
-    // window.addEventListener('wheel', handleWheel, { passive: false });
+//     // function handleWheel(event) {
+//     //     if (isInView(flexContainer) || flexContainer.matches(':hover')) {
+//     //         event.preventDefault(); // Prevent vertical scroll on this element
+//     //         flexContainer.scrollLeft += event.deltaY; // Convert vertical scroll to horizontal scroll
+//     //     }
+//     // }
 
-});
+//     // // Attach wheel event to handle scroll direction only in flexContainer
+//     // window.addEventListener('wheel', handleWheel, { passive: false });
+
+// });
