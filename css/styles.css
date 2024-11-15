@@ -149,7 +149,7 @@ section .tester_wrapper{
 #waterfall-toggle-section{
     padding-top: var(--iframe-inner-top-bottom-padding);
     padding-bottom: var(--iframe-inner-top-bottom-padding);
-    padding-right: calc(var(--page-side-padding)*2);
+    /* padding-right: calc(var(--page-side-padding)*2); */
     background-color: var(--element-color);
     width: 100%;
 }
@@ -162,6 +162,7 @@ section .tester_wrapper{
     color: var(--slider-gray);
     background-color: transparent;
     white-space: nowrap;
+    margin-right: var(--page-side-padding);
 }
 
 #waterfall-toggle-section button:hover{
