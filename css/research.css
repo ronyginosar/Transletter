@@ -167,8 +167,6 @@ html, body {
 #content_wrapper {
     width: 100%; 
     /* height: 15%; */
-    /* display: flex; */
-    /* flex-direction: column; */
     padding-right: var(--page-side-padding);
     padding-left: var(--page-side-padding);
 }
@@ -183,12 +181,14 @@ html, body {
     column-count: 2; /* Automatically splits text into 2 columns */
     column-gap: 5%; /* Space between the columns */
     column-fill: balance; /* Balance the content evenly between the two columns */
+    /* future define max width for column */
     font-size: 0.9em;
     padding-bottom: 5%;
 }
 
 
 /* P2 - names not indicative, future rename */
+/* original, currently unused */
 
 /* Container setup */
 #research-flex-container {
@@ -275,6 +275,8 @@ html, body {
     content: none; /* Prevents any additional columns */
 }
 
+/* end section - original, currently unused */
+
 #image-gallery {
     display: flex;
     flex-direction: row;
@@ -294,9 +296,9 @@ html, body {
     /* height: 40vh; */
     /* height: 20%; */
 
+    /* new&simplified */
     height: 70%;
     max-height: 30vh;
-
 }
 
 #image-gallery::-webkit-scrollbar {
@@ -310,7 +312,7 @@ html, body {
     margin-left: 1%; /* Space between images */
     object-fit: cover; /* Ensure the image covers the container */
     /* note use this to allow dynamic growing of the images */
-    /* max-height: 50vh; */
+    max-height: 30vh;
 }
 
 
