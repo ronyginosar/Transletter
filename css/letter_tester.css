@@ -30,7 +30,7 @@ html{
 }
 
 b{  
-    font-variation-settings: 'vrot' 700;
+    font-variation-settings: var(--max_vrot);
     font-weight: 900;
 }
 

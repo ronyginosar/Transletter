@@ -2,7 +2,6 @@
     --vrot-letter-range: 50;
 }
 #wrapper{
-    font-size: 48px;
     position: absolute;
     inset: 0;
     display: flex;
@@ -12,6 +11,7 @@
     background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark));
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
     font-family: TransletterGX;
+    overflow: hidden;
 }
 #rangePara{
     /* font-size: 48px; */
@@ -176,5 +176,15 @@ input[type=range]::-webkit-slider-runnable-track {
     content: attr(placeholder);
     pointer-events: none;
     display: block; /* For Firefox */
+    font-size: 1em;
+    opacity: 0.5;
+}
+
+#infotext{
+    width:50%;
+    font-size: 0.44em;
+    font-variation-settings: 'vrot' 700;
+    color: var(--gradient-blue);
+    font-weight: 100;
 }
 
