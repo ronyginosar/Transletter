@@ -4,7 +4,7 @@
     align-items: center;
     color:var(--element-color);
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .footer-row {
@@ -43,7 +43,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
 }
 
@@ -79,7 +79,7 @@
 }
 
 #bio {
-    font-size: 12px;
+    font-size: 0.7em;
     width: 50%; 
     max-width: 40em;
 }
@@ -93,4 +93,32 @@
 
 #bio p {
     display: inline;
+}
+
+
+@media screen and (max-width: 768px) {
+    #logos {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #logos img {
+        max-height: 30%;
+        /* margin-bottom: 5%; */
+    }
+
+    #bottom-row {
+        margin: 0;
+        height: 120px;
+    }
+
+    p{
+        font-size: 0.8em;
+    }
+
+
+    a {
+        font-size: 0.8em;
+        line-height: 0.9em;
+    }
 }
