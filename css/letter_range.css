@@ -165,7 +165,6 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     line-height: 99%;
     font-variation-settings: 'vrot' 700;
-
 }
 /* .editable-section:focus { */
     /* outline: none; */
@@ -216,3 +215,16 @@ input[type=range]::-webkit-slider-runnable-track {
     font-weight: 100;
 }
 
+@media screen and (max-width: 768px) {
+    #infotext{
+        width:100%;
+    }
+
+    [contenteditable=true]:empty:before{
+        font-size: 0.7em;
+    }
+/* 
+    .editable-section {
+        margin-top: 0px;
+    } */
+}

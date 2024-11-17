@@ -30,6 +30,16 @@ iframe{
     }
 }
 
+@media screen and (max-width: 768px) {
+    .scroll_section_wrapper{
+        height: 65vh;
+    }
+
+    .horizontal_screensaver_tech{
+        height: 65vh;
+    }
+}
+
 /* TODO unify wrapper div/class */
 
 
@@ -142,12 +152,6 @@ section .tester_wrapper{
     /* -ms-overflow-style: none;  Internet Explorer 10+ 
     scrollbar-width: none;  /* Firefox */
     border: none;
-}
-
-@media screen and (max-width: 768px) {
-    .scroll_section_wrapper{
-        height: 65vh;
-    }
 }
 
 .waterfall{

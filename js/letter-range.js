@@ -86,6 +86,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (mediaQuery.matches) {
             // Logic for narrow screens
             fontSize /= fontSizeDownscale;
+
+            // let placeholder = document.querySelector('[contenteditable=true]:empty:before');
+            // placeholder.style.fontSize = fontSize/2 + 'px';
+            
         }
         fontSizeLabel.textContent = fontSize;
         rangePara.style.fontSize = fontSize + 'px';
