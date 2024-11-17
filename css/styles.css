@@ -182,6 +182,12 @@ section .tester_wrapper{
     /* var(--slider-gray) with opacity; */
 }
 
+@media screen and (max-width: 768px) {
+    #waterfall-toggle-section button{
+        font-size: 0.8em;
+    }
+}
+
 
 .footer_page{
     display: flex;

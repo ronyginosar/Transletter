@@ -144,6 +144,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (iframe.style.height === '0px' || iframe.style.height === '') {
         iframe.style.height = '98vh'; // Expand iframe
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        if (mediaQuery.matches) {
+            // Logic for narrow screens
+            // console.log('Screen is 768px or narrower');
+            iframe.style.height = '50vh'; // Expand iframe
+          }
         toggleButton.innerHTML = 'משקלים'; // Update button text
         // iframe.classList.remove('hidden-iframe'); // Remove class to show section inside iframe
     } else {
