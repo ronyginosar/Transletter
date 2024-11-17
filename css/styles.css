@@ -40,6 +40,8 @@ iframe{
     /* #letter-range-iframe{
         height: 75vh;
     } */
+
+
 }
 /* TODO unify wrapper div/class */
 
@@ -229,7 +231,8 @@ section .tester_wrapper{
 
 /* NOTE: this is where to extend height on research, not anywhere else. o.w. scrolling */
 .research iframe{
-    height: 200vh;
+    /* height: 200vh; */
+    height: 180vh;
 }
 
 

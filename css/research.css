@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 
 #research-page{
@@ -8,7 +8,9 @@ html, body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100vh;
+    /* TEST */
+    /* height: 100vh; */ 
+
     /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     padding-right: var(--page-side-padding);
@@ -359,8 +361,12 @@ html, body {
     /* height: 20%; */
 
     /* new&simplified */
-    height: 70%;
-    max-height: 30vh;
+    /* height: 70%; */
+    /* max-height: 30vh; */
+
+        /* new&simplified */
+        height: 50%;
+        max-height: 20vh;
 }
 
 #image-gallery::-webkit-scrollbar {
