@@ -55,6 +55,39 @@ window.addEventListener('wheel', function(event) {
     }
 });
 
+function applyResponsiveText() {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const textElement = document.getElementById('scrollPara'); // Replace with your element's ID
+
+    if (mediaQuery.matches) {
+        console.log('Screen is 768px or narrower');
+        // Add <br> tags for narrow screens
+        textElement.innerHTML = `
+            \'תנואות\' הוא פרויקט טיפוגרפי ניסיוני, \
+            החוקר את תולדותיו \
+            <br> \
+            וסגנונותיו של כתב \
+            היד העברי, בתוך סביבה טכנולוגית \
+            עכשווית. המדיום הוא גופן וריאבלי, \
+            המוצג דרך ממשק דיגיטלי אינטרקטיבי. \
+        `;
+    } else {
+        // Change to default text for wider screens
+        textElement.innerHTML = " \
+            'תנואות' הוא פרויקט טיפוגרפי ניסיוני, \
+            החוקר את תולדותיו וסגנונותיו של כתב \
+            היד העברי, בתוך סביבה טכנולוגית \
+            עכשווית. המדיום הוא גופן וריאבלי, \
+            המוצג דרך ממשק דיגיטלי אינטרקטיבי. \
+        ";
+    }
+}
+
+// Run the function on page load
+document.addEventListener('DOMContentLoaded', function() {
+    applyResponsiveText();
+});
+
 
 // note: not looping option & discussion on preverntDefault scroll
 // window.vrotScroll = 100;

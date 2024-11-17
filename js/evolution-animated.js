@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     if (mediaQuery.matches) {
         // Logic for narrow screens
-        console.log('Screen is 768px or narrower');
+        // console.log('Screen is 768px or narrower');
         maxRandomImageContainerPosition = 0; // Example: Adjust random value for narrow screens
     }
 

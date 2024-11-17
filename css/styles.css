@@ -135,6 +135,7 @@ section .tester_wrapper{
     /* remove scroll bar: */
     /* -ms-overflow-style: none;  Internet Explorer 10+ 
     scrollbar-width: none;  /* Firefox */
+    border: none;
 }
 
 .waterfall{
