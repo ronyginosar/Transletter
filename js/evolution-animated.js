@@ -88,7 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const downwardsMovement = -upwardsMovement;
     const downwardsFall = 10;
 
-    const maxRandomImageContainerPosition = 33; // Arbitrary max right position for the image container
+    let maxRandomImageContainerPosition = 33; // Arbitrary max right position for the image container
+    // for narrow screens
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    if (mediaQuery.matches) {
+        // Logic for narrow screens
+        console.log('Screen is 768px or narrower');
+        maxRandomImageContainerPosition = 0; // Example: Adjust random value for narrow screens
+    }
 
     // Initialize a virtual scroll position
     let scrollPosition = 0;
