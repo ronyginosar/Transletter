@@ -222,10 +222,16 @@ input[type=range]::-webkit-slider-runnable-track {
 @media screen and (max-width: 768px) {
     #infotext{
         width:100%;
+        font-size: 1em;
     }
 
     [contenteditable=true]:empty:before{
-        font-size: 0.7em;
+        /* font-size: 0.6em; */
+    }
+
+    .editable-section{
+        margin-top: 0;
+        font-size: 1.5em;
     }
 /* 
     .editable-section {
