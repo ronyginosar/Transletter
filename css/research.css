@@ -40,6 +40,8 @@ html, body {
     width: 50%;
 }
 
+
+
 #title h1{
     width: 100%;
     font-family: TransletterGX;
@@ -101,10 +103,10 @@ html, body {
     /* height: 8%; */
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: space-between;
     align-items: center;
-    /* font-size: 5vh; */
-    font-size: 300%;
+    font-size: 3.5em;
 }
 
 #divider {
@@ -127,7 +129,7 @@ html, body {
 }
 
 #handwritten_glyph_space img {
-    width: 70%;
+    width: 3.7em;
     padding: 10%;
     height: auto;
 }
@@ -139,6 +141,42 @@ html, body {
     transition: saturate .3s ease .15s;
 }
 
+@media screen and (max-width: 768px) {
+    #title{
+        width: 100%;
+    }
+    #title h1{
+        font-size: 6em;
+    }
+
+    #glyph_selector{
+        width: 100%;
+    }
+
+    p{
+        width: 100%;
+    }
+
+    #title p{
+        width: 100%;
+    }
+
+    #glyph_space{
+        width: 100%;
+        font-size: 1.4em;
+    }
+
+    #handwritten_glyph_space{
+        width: 100%;
+        font-size: 1em;
+    }
+
+    #research-page{
+        padding-right: 0;
+        /* padding-left: var(--page-side-padding); */
+    }
+}
+
 .handwritten-text-image-container {
     display: flex;
     flex-direction: column;
@@ -147,10 +185,10 @@ html, body {
     /* margin-right: 1%; */
     /* margin-top: 3%; */
 }
+/* TODO think of align-items here...  */
 
 .handwritten-text-label {
-    /* font-size: 1.5vh; */
-    font-size: 60%;
+    font-size: 0.6em;
     margin-top: 5px;
     margin-right: 15%;
     transition : opacity 0.3s ease; 

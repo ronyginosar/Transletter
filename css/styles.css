@@ -28,9 +28,7 @@ iframe{
     iframe{
         height: 65vh;
     }
-}
 
-@media screen and (max-width: 768px) {
     .scroll_section_wrapper{
         height: 65vh;
     }
@@ -39,7 +37,6 @@ iframe{
         height: 65vh;
     }
 }
-
 /* TODO unify wrapper div/class */
 
 
