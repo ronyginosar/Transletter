@@ -171,9 +171,8 @@ html, body {
         font-size: 1em;
     }
 
-    #research-page{
-        padding-right: 0;
-        /* padding-left: var(--page-side-padding); */
+    #handwritten_glyph_space img {
+        width: 1.7em;
     }
 }
 
