@@ -23,6 +23,7 @@ html, body {
     flex-direction: row;
     align-items: center;
     width: 100%;
+    /* note: this effects the spacing of glyphs. to control them independently, they need a separate container */
     height: 30%;
 }
 
@@ -58,6 +59,33 @@ html, body {
     padding-top: 5%;
     width: 85%;
 }
+
+
+@media screen and (max-width: 768px) {
+    #title{
+        width: 100%;
+    }
+    #title h1{
+        font-size: 6em;
+    }
+
+    #title_spacer{
+        width: 0;
+    }
+
+    p{
+        width: 100%;
+    }
+
+    #title p{
+        width: 100%;
+    }
+
+    /* #title_wrapper{ */
+        /* height: auto; */
+    /* } */
+}
+
 
 #glyph_selector{
     display: flex;
@@ -142,28 +170,19 @@ html, body {
 }
 
 @media screen and (max-width: 768px) {
-    #title{
-        width: 100%;
-    }
-    #title h1{
-        font-size: 6em;
-    }
 
     #glyph_selector{
-        width: 100%;
-    }
-
-    p{
-        width: 100%;
-    }
-
-    #title p{
         width: 100%;
     }
 
     #glyph_space{
         width: 100%;
         font-size: 1.4em;
+    }
+
+    #divider {
+        border: 0.1px solid var(--slider-gray);
+
     }
 
     #handwritten_glyph_space{
@@ -186,6 +205,7 @@ html, body {
 }
 /* TODO think of align-items here...  */
 
+/* TODO in narrow maybe 1 container for text? */
 .handwritten-text-label {
     font-size: 0.6em;
     margin-top: 5px;
@@ -216,6 +236,16 @@ html, body {
     /* future define max width for column */
     font-size: 0.9em;
     padding-bottom: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    #content_wrapper p{
+        column-count: 1;
+    }
+
+    #content_wrapper b {
+        font-size: 1.5em;
+    }
 }
 
 
@@ -347,6 +377,12 @@ html, body {
     max-height: 30vh;
 }
 
+@media screen and (max-width: 768px) {
+    #image-gallery{
+        height: 19%;
+        max-height: 12vh;
+    }
+}
 
 /* .horizontal-scroll-section { */
     /* display: flex;
