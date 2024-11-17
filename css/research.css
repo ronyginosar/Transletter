@@ -10,6 +10,7 @@ html, body {
     align-items: center;
     /* TEST */
     /* height: 100vh; */ 
+    height: 80%; 
 
     /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
@@ -26,7 +27,7 @@ html, body {
     align-items: center;
     width: 100%;
     /* note: this effects the spacing of glyphs. to control them independently, they need a separate container */
-    height: 30%;
+    /* height: 30%; */
 }
 
 #title_spacer{
@@ -81,6 +82,7 @@ html, body {
 
     #title p{
         width: 100%;
+        font-size: 0.8em;
     }
 
     /* #title_wrapper{ */
@@ -237,12 +239,14 @@ html, body {
     column-fill: balance; /* Balance the content evenly between the two columns */
     /* future define max width for column */
     font-size: 0.9em;
-    padding-bottom: 5%;
+    /* padding-bottom: 5%; */
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
     #content_wrapper p{
         column-count: 1;
+        font-size: 0.8em;
     }
 
     #content_wrapper b {
@@ -364,9 +368,9 @@ html, body {
     /* height: 70%; */
     /* max-height: 30vh; */
 
-        /* new&simplified */
-        height: 50%;
-        max-height: 20vh;
+    /* new&simplified */
+    height: 19%;
+    max-height: 20vh;
 }
 
 #image-gallery::-webkit-scrollbar {
@@ -386,7 +390,7 @@ html, body {
 @media screen and (max-width: 768px) {
     #image-gallery{
         height: 19%;
-        max-height: 12vh;
+        /* max-height: 13vh; */
     }
 }
 
