@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fontSizeSlider = document.getElementById('fontSizeSlider');
     const fontSizeLabel = document.getElementById('fontSizeLabel');
     const wrapperDiv = document.getElementById('wrapper');
+    const rangeParaDiv = document.getElementById('rangePara');
     const colorToggle = document.getElementById('colorToggle');
     const controls = document.querySelector('.controls');
     const editableSection = document.querySelector('.editable-section'); // for caret color toggle
@@ -76,7 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
             fontSizeLabel.style.right = 'auto';
         }
         fontSizeLabel.textContent = `${sliderValue}`;
-        wrapperDiv.style.fontSize = `${sliderValue}px`;
+        // wrapperDiv.style.fontSize = `${sliderValue}px`;
+        rangeParaDiv.style.fontSize = `${sliderValue}px`;
     }
 
     fontSizeSlider.addEventListener('input', updateSliderLabel);

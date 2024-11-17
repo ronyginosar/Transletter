@@ -4,6 +4,8 @@
 #wrapper{
     position: absolute;
     inset: 0;
+    /* TODO what do these do? */
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -165,6 +167,7 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     line-height: 99%;
     font-variation-settings: 'vrot' 700;
+    font-size: 2.5em;
 }
 /* .editable-section:focus { */
     /* outline: none; */
@@ -203,13 +206,14 @@ input[type=range]::-webkit-slider-runnable-track {
     content: attr(placeholder);
     pointer-events: none;
     display: block; /* For Firefox */
-    font-size: 1em;
+    font-size: inherit;
     opacity: 0.5;
 }
 
 #infotext{
-    width:50%;
-    font-size: 0.44em;
+    /* width:50%; */
+    width:70%;
+    font-size: 1.2em;
     font-variation-settings: 'vrot' 700;
     color: var(--gradient-blue);
     font-weight: 100;
