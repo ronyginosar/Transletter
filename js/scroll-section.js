@@ -60,7 +60,7 @@ function applyResponsiveText() {
     const textElement = document.getElementById('scrollPara'); // Replace with your element's ID
 
     if (mediaQuery.matches) {
-        console.log('Screen is 768px or narrower');
+        // console.log('Screen is 768px or narrower');
         // Add <br> tags for narrow screens
         textElement.innerHTML = `
             \'תנואות\' הוא פרויקט טיפוגרפי ניסיוני, \

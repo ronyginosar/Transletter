@@ -1,11 +1,12 @@
 :root{
     --vrot-letter-tester-title: 500;
     --vrot-letter-tester-text: 400;
-    --infotext-font-size: 0.09em;
 }
 html{
     overflow-y: hidden;
 }
+
+
 #wrapper{
     font-size: var(--title-font-size);
     display: flex;
@@ -25,8 +26,14 @@ html{
 
 #infotext{
     width:100%;
-    font-size: var(--infotext-font-size);
+    font-size: 0.09em;
     color: var(--background-color);
+}
+
+@media screen and (max-width: 768px) {
+    #infotext{
+        font-size: 0.15em;
+    }
 }
 
 b{  
@@ -115,6 +122,16 @@ textarea#text_byBlock{
     overflow-x: hidden;
 }
 
+@media screen and (max-width: 768px) {
+    #text_byLetter{
+        font-size: 1em;
+        /* TODO can we add break here? */
+    }
+    #text_byBlock{
+        font-size: 0.5em;
+    }
+}
+
 input[type=range] {
     -webkit-appearance: none;
     appearance: none;
@@ -151,6 +168,19 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 70%;
     font-size: 0.06em;
     /* padding-left: 10%; */
+}
+
+@media screen and (max-width: 768px) {
+    .controls{
+        font-size: 0.15em;
+        width: 90%;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        width: 10px;
+        height: 10px;
+        margin-top: -5px;
+    }
 }
 
 .slider-container {
