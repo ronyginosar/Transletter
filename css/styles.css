@@ -36,6 +36,10 @@ iframe{
     .horizontal_screensaver_tech{
         height: 65vh;
     }
+
+    #letter-range-iframe{
+        height: 75vh;
+    }
 }
 /* TODO unify wrapper div/class */
 

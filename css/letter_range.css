@@ -222,7 +222,7 @@ input[type=range]::-webkit-slider-runnable-track {
 @media screen and (max-width: 768px) {
     #infotext{
         width:100%;
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     [contenteditable=true]:empty:before{
