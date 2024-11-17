@@ -97,6 +97,18 @@
 
 
 @media screen and (max-width: 768px) {
+    .footer {
+        /* line-height: 0.99em; */
+        font-size: 0.8em;
+    }
+    #bio{
+        font-size: 0.9em;
+    }
+
+    #contact{
+        width: 100%;
+    }
+
     #logos {
         flex-direction: column-reverse;
         align-items: center;
@@ -110,15 +122,17 @@
     #bottom-row {
         margin: 0;
         height: 120px;
+        /* line-height: 0.99em; */
     }
 
-    p{
+    /* p{
         font-size: 0.8em;
+        line-height: 0.9em;
     }
 
 
     a {
         font-size: 0.8em;
         line-height: 0.9em;
-    }
+    } */
 }
