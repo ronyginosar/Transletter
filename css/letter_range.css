@@ -13,6 +13,7 @@
     font-family: TransletterGX;
     overflow: hidden;
 }
+
 #rangePara{
     /* font-size: 48px; */
     font-variation-settings: "vrot" var(--vrot-letter-range);
@@ -23,6 +24,12 @@
 #rangePara nobr{
     font-variation-settings: "vrot" var(--vrot-letter-range);
 }
+
+/* @media screen and (max-width: 768px) {
+    #rangePara{
+        font-size: 0.1em important!;
+    }
+} */
 
 /* these control the transitions */
 .singleLetter{
@@ -113,6 +120,27 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 50%;
     background: var(--background-color);
     margin-top: -10px;
+}
+
+@media screen and (max-width: 768px) {
+    .controls {
+        width: 70%;
+    }
+
+    input[type=range]::-webkit-slider-thumb{
+        width: 10px;
+        height: 10px;
+        margin-top: -5px;
+    }
+
+    .color-toggle {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slider-label {
+        opacity: 0;
+    }
 }
 
 input[type=range]:focus {

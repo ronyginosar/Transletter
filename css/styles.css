@@ -144,6 +144,12 @@ section .tester_wrapper{
     border: none;
 }
 
+@media screen and (max-width: 768px) {
+    .scroll_section_wrapper{
+        height: 65vh;
+    }
+}
+
 .waterfall{
     display: flex;
     justify-content: center;

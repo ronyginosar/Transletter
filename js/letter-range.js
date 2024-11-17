@@ -34,6 +34,8 @@ function randomvrot(){
 setTimeout(function(){ randomvrot(); }, 500);
 
 // Controls:
+// narrow screens: 
+const fontSizeDownscale = 1.5;
 
 document.addEventListener('DOMContentLoaded', function() {
     const fontSizeSlider = document.getElementById('fontSizeSlider');
@@ -44,6 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const editableSection = document.querySelector('.editable-section'); // for caret color toggle
 
     let fontSize = fontSizeSlider.value + 'px';
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    if (mediaQuery.matches) {
+        // Logic for narrow screens
+        fontSize /= fontSizeDownscale;
+    }
 
     // move label with slider thumb
     function updateSliderLabel() {
@@ -53,7 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const sliderWidth = sliderRect.width - thumbWidth;
         const sliderMin = fontSizeSlider.min;
         const sliderMax = fontSizeSlider.max;
-        const sliderValue = fontSizeSlider.value;
+        let sliderValue = fontSizeSlider.value;
+        if (mediaQuery.matches) {
+            // Logic for narrow screens
+            sliderValue /= fontSizeDownscale;
+        }
         const sliderPercent = (sliderValue - sliderMin) / (sliderMax - sliderMin);
         const labelLeft = sliderPercent * sliderWidth + thumbWidth / 2;
 
@@ -72,6 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fontSizeSlider.addEventListener('input', function() {
         fontSize = fontSizeSlider.value;
+        if (mediaQuery.matches) {
+            // Logic for narrow screens
+            fontSize /= fontSizeDownscale;
+        }
         fontSizeLabel.textContent = fontSize;
         rangePara.style.fontSize = fontSize + 'px';
     });
