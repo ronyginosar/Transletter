@@ -300,19 +300,30 @@ section .tester_wrapper{
     transition: all 0.5s ease;    
 }
 
+#technology_subtitle{
+    font-size: 0.13em;
+    font-variation-settings: 'vrot' 700;
+    padding-bottom: 5%;
+}
 
-  .technology_text_flex_container{
+.technology_text_flex_container{
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 98vh;
-    background-color: chocolate;
-    align-items: center;
+    /* flex: 1 0 70%; */
+    flex: 1 0 40%;
+    /* justify-content: space-around; */
+    /* width: 100%; */
+    /* height: 98vh; */
+
+    height: 50%;
+
+    /* background-color: chocolate; */
+    align-items: flex-start;
     flex-direction: column;
   }
   
   .technology_text {
-    padding: 0 5%;
+    /* padding: 0 5%; */
+    padding: 0;
     font-size: 0.06em;
     /* flex: 2; */
     /* display: flex; */
@@ -340,7 +351,7 @@ section .tester_wrapper{
     /* overflow: hidden; */
     /* overflow-y: auto; */
     flex: 1 0 70%;
-    column-count: 2;
+    /* column-count: 2; */
 
     /* display: inline-block; */
   /* vertical-align: middle; */

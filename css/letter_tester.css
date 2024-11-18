@@ -61,12 +61,15 @@ textarea {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+
+    /* fallback, this is handled in html&js for sliders */
     font-size: inherit;
+
     line-height: 50%;
-    /* TODO cut bottom */
+
+    /* cut bottom overspace */
     vertical-align: top;
     caret-color: var(--background-color); /* Blinking caret */
-
 
     width: 90%;
     resize: none;           /* Disable corner resize functionality */
@@ -81,7 +84,9 @@ textarea {
 }
 
 textarea#text_byBlock{
-    font-size: 0.3em;
+    /* fallback, this is handled in html&js for sliders */
+    font-size: 0.2em;
+    
     line-height: 95%;
     height: 3em;
     /* width: 70%; */
