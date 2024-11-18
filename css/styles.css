@@ -273,6 +273,8 @@ section .tester_wrapper{
     flex: 1 0 40%;
     /* width: 100%; */
     /* padding: 0 5%; */
+    padding-right: 5%;
+    padding-left: 9%;
 }
   
   .screensaver_wrapper iframe {
@@ -282,16 +284,16 @@ section .tester_wrapper{
   }
   
   .technology_title {
-    flex: 0 0 57%; /* Prevent title from shrinking */
-    font-size: 0.1em;
+    flex: 0 0 50%; /* Prevent title from shrinking */
+    /* font-size: 0.1em; */
     display: flex;
     align-items: center; /* Center title vertically */
-    padding: 0 1%;
-    font-size: 0.3em;
+    /* padding: 0 1%; */
+    font-size: 0.2em;
     font-weight: 900;
-    justify-content: center;
     transition: all 0.5s ease;
     font-variation-settings: "vrot" 100;
+    justify-content: flex-start;
   }
 
 .technology_title:hover {
