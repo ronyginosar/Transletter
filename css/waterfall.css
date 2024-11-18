@@ -3,8 +3,13 @@
     flex-direction: column;
     align-items: right;
     font-family: TransletterGX;
-    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
+    padding-top: 0;
+    padding-left: var(--page-side-padding);
+    padding-right: var(--page-side-padding);
+    padding-bottom: var(--iframe-inner-top-bottom-padding);
     /* opacity: 0; */
+    background-color: var(--element-color);
 }
 .info-text {
     font-size: 12px;
@@ -14,6 +19,7 @@ p{
     margin-top: 0;
     margin-bottom: 0;
     font-size: 2.5em;
+    color: gray;
 }
 
 @media screen and (max-width: 768px) {
