@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to adjust the height of a textarea
     function adjustHeight(element) {
         if (element.tagName.toLowerCase() === 'textarea') {
-            element.style.height = 'auto';
-            element.style.height = element.scrollHeight + 'px';
+            // element.style.height = 'auto';
+            // element.style.height = element.scrollHeight + 'px'; // HIGH PRIORITY ???
+            // console.log(element.scrollHeight, element.scrollHeight > element.clientHeight);
+            // element.style.height = element.scrollHeight*1 + 'px'; // HIGH PRIORITY ???
         }
     }
 

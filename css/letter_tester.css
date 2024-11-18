@@ -83,6 +83,7 @@ textarea {
 textarea#text_byBlock{
     font-size: 0.3em;
     line-height: 95%;
+    height: 3em;
     /* width: 70%; */
     font-variation-settings: "vrot" var(--vrot-letter-tester-text);
 }
