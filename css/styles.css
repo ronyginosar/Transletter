@@ -213,8 +213,7 @@ section .tester_wrapper{
     background-color: var(--footer-gray);
     /* background-color: pink; */
     color: var(--element-color);
-    height: 50vh; /*placeholder value to later inject height by script*/
-    /* TODO fix placeholder */
+    height: 40vh; /*placeholder value to later inject height by script*/
     width: 100%;
 
 }

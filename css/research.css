@@ -61,6 +61,7 @@ html, body {
 #title p{
     padding-top: 5%;
     width: 85%;
+    font-size: 0.9em;
 }
 
 
@@ -98,7 +99,9 @@ html, body {
     align-items: center;
     /* font-size: 3vh; */
     font-size: 150%;
-    font-variation-settings: "vrot" 500;
+    /* font-variation-settings: "vrot" 500; */
+    font-size: 2em;
+    font-weight: bold;
     height: 80%;
     width: 80%;
 }
