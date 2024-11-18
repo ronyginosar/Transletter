@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // Function to adjust the height of a textarea
+    // note: left here as a reference for future, disabled for now
     function adjustHeight(element) {
-        if (element.tagName.toLowerCase() === 'textarea') {
+        // if (element.tagName.toLowerCase() === 'textarea') {
             // element.style.height = 'auto';
-            // element.style.height = element.scrollHeight + 'px'; // HIGH PRIORITY ???
+            // element.style.height = element.scrollHeight + 'px'; 
             // console.log(element.scrollHeight, element.scrollHeight > element.clientHeight);
-            // element.style.height = element.scrollHeight*1 + 'px'; // HIGH PRIORITY ???
-        }
+        // }
     }
 
     // Function to update the slider label's position based on the thumb's location
