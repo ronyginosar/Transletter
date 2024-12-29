@@ -67,6 +67,7 @@ body {
 
 
 #image-container {
+    /* note: later controlled by js in evolution file */
     position: absolute;
     top:33%;
     /* 'right' will be somewhat random in js */

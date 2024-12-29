@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         1: { image: '../assets/content_images/evolution_hover/AlefBeit.jpg' },
         3: { image: '../assets/content_images/evolution_hover/Lamed.jpg' },
         5: { vrot: 300 }, // 
+        5: { image: '../assets/content_images/evolution_hover/Zadi.jpg' }, // 
         8: { image: '../assets/content_images/evolution_hover/Shin.png' },
         9: { vrot: 100 }, 
         10:{ image: '../assets/content_images/evolution_hover/AlefBeit.jpg' }, 
@@ -438,10 +439,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // if (action.image !== undefined) {
         if (action && action.image !== undefined) {
             // Display the specified image in the image container
+            // console.log(span)
             const imageContainer = document.getElementById('image-container');
             imageContainer.style.backgroundImage = `url(${action.image})`;
             imageContainer.style.opacity = '1';
             imageContainer.style.right = Math.floor(Math.random() * maxRandomImageContainerPosition) + '%';
+            if (span.innerHTML === 'צ') {
+                imageContainer.style.right = '0';
+                imageContainer.style.top = '0';
+                imageContainer.style.width = '100%';
+                imageContainer.style.height = '100%';
+            }
+            else
+            {
+                imageContainer.style.width = 'var(--imagecontainerdims)';
+                imageContainer.style.height = 'var(--imagecontainerdims)';
+                imageContainer.style.top = '33%';
+                // imageContainer.style.right = '10%';
+            }
         }
     
     }
