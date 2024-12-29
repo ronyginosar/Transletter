@@ -95,7 +95,6 @@ body::-webkit-scrollbar {
 }
 
 .animated-logo iframe{
-    z-index: 1;
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     padding-right: var(--page-side-padding);
     padding-left: var(--page-side-padding);
@@ -250,7 +249,7 @@ section .tester_wrapper{
     /* TODO */
     width: 100%;
     overflow-x: auto; /* Enable horizontal scrolling */
-    /* z-index: 1; */
+    /* z-index: -10; */
 
     /* remove scroll bar: Internet Explorer 10+ & Firefox*/
     /* -ms-overflow-style: none;   */
@@ -259,7 +258,9 @@ section .tester_wrapper{
 
 .horizontal_screensaver_tech:hover {
     cursor: url('../assets/technology_cursor.svg') 25 25, auto;
+    /* z-index: 100; */
 }
+
 
 /* .horizontal_screensaver_tech::-webkit-scrollbar {  */
     /* remove scroll bar Safari and Chrome*/
@@ -275,9 +276,9 @@ section .tester_wrapper{
     /* padding: 0 5%; */
     padding-right: 5%;
     padding-left: 9%;
-    z-index: -100;
+    z-index: -10;
     /* background-color: transparent; */
-     /* background-color: var(--background-color); */
+     background-color: var(--background-color);
 }
   
   .screensaver_wrapper iframe {
@@ -297,6 +298,10 @@ section .tester_wrapper{
     transition: all 0.5s ease;
     font-variation-settings: "vrot" 100;
     justify-content: flex-start;
+
+    /* for cursor & back animated icon */
+    height: 100%;
+    background-color: var(--background-color);
   }
 
 .technology_title:hover {
@@ -324,6 +329,10 @@ section .tester_wrapper{
     /* background-color: chocolate; */
     align-items: flex-start;
     flex-direction: column;
+
+    /* for cursor & back animated icon */
+    /* height: 100%; */
+    background-color: var(--background-color);
   }
   
   .technology_text {
