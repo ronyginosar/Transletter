@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if(rangeParaDiv !== null) rangeParaDiv.style.fontSize = `${sliderValue}px`;
     }
 
+    updateSliderLabel();
+
     fontSizeSlider.addEventListener('input', updateSliderLabel);
 
     fontSizeSlider.addEventListener('input', function() {
