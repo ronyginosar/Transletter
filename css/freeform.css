@@ -229,6 +229,7 @@ input[type=range]::-webkit-slider-runnable-track {
 #infotext{
     /* width:50%; */
     width:70%;
+    
     font-size: 1.7em;
     font-variation-settings: 'vrot' 700;
     /* color: var(--gradient-blue); */
