@@ -113,8 +113,10 @@ body::-webkit-scrollbar {
     /* height: 70vh; */
     z-index: 1;
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    padding-right: var(--page-side-padding);
-    padding-left: var(--page-side-padding);
+    
+    /* TEST: */
+    /* padding-right: var(--page-side-padding); */
+    /* padding-left: var(--page-side-padding); */
 }
 
 .tester_wrapper{

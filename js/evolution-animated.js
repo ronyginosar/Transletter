@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const downwardsFall = 10;
 
     let maxRandomImageContainerPosition = 33; // Arbitrary max right position for the image container
+    let minRandomImageContainerPosition = 10;
     // for narrow screens
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     if (mediaQuery.matches) {
@@ -443,7 +444,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const imageContainer = document.getElementById('image-container');
             imageContainer.style.backgroundImage = `url(${action.image})`;
             imageContainer.style.opacity = '1';
-            imageContainer.style.right = Math.floor(Math.random() * maxRandomImageContainerPosition) + '%';
+            // imageContainer.style.right = Math.floor(Math.random() * maxRandomImageContainerPosition) + '%';
+            // add min: 
+            // imageContainer.style.right = Math.floor(Math.random() * (max - min) + min) + '%';
+            imageContainer.style.right = Math.floor(Math.random() * (maxRandomImageContainerPosition - minRandomImageContainerPosition) + minRandomImageContainerPosition) + '%';
             if (span.innerHTML === 'צ') {
                 imageContainer.style.right = '0';
                 imageContainer.style.top = '0';
