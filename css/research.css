@@ -61,7 +61,7 @@ html, body {
 #title p{
     padding-top: 5%;
     width: 85%;
-    font-size: 0.9em;
+    /* font-size: 0.9em; REMOVED */
 }
 
 
@@ -241,7 +241,7 @@ html, body {
     column-gap: 5%; /* Space between the columns */
     column-fill: balance; /* Balance the content evenly between the two columns */
     /* future define max width for column */
-    font-size: 0.9em;
+    /* font-size: 0.9em; REMOVED */
     /* padding-bottom: 5%; */
     margin-bottom: 0;
 }

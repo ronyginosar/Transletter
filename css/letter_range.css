@@ -225,9 +225,9 @@ input[type=range]::-webkit-slider-runnable-track {
         font-size: 0.9em;
     }
 
-    [contenteditable=true]:empty:before{
+    /* [contenteditable=true]:empty:before{ */
         /* font-size: 0.6em; */
-    }
+    /* } */
 
     .editable-section{
         margin-top: 0;
