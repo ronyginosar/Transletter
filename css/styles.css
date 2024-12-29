@@ -325,7 +325,8 @@ section .tester_wrapper{
   .technology_text {
     /* padding: 0 5%; */
     padding: 0;
-    font-size: 0.06em;
+    /* font-size: 0.06em; */
+    font-size: 0.067em;
     /* flex: 2; */
     /* display: flex; */
     /* flex-wrap: nowrap; */
