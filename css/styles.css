@@ -383,6 +383,9 @@ section .tester_wrapper{
     /* max-height: 70%;  */
     /* max-height: 70%;  */
     height: 50%; 
+    /* for cursor & back animated icon */
+    /* height: 100%; */
+    background-color: var(--background-color);
   }
   
   .technology_image img {
