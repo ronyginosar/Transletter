@@ -239,7 +239,7 @@ section .tester_wrapper{
 /* Technology TODO cleanup */
 
 .horizontal_screensaver_tech{
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -250,6 +250,7 @@ section .tester_wrapper{
     /* TODO */
     width: 100%;
     overflow-x: auto; /* Enable horizontal scrolling */
+    /* z-index: 1; */
 
     /* remove scroll bar: Internet Explorer 10+ & Firefox*/
     /* -ms-overflow-style: none;   */
@@ -274,6 +275,9 @@ section .tester_wrapper{
     /* padding: 0 5%; */
     padding-right: 5%;
     padding-left: 9%;
+    z-index: -100;
+    /* background-color: transparent; */
+     /* background-color: var(--background-color); */
 }
   
   .screensaver_wrapper iframe {
