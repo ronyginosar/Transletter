@@ -1,5 +1,5 @@
 window.vrotScroll = 100; // Initial value
-let vrotScroll_Speed = 5; // Scroll speed
+let vrotScroll_Speed = 5; // ** Scroll speed --> can be adjusted **
 let isIncreasing = true; // Track whether we're increasing or decreasing
 const epsilonScroll = 1; // Ignore small scroll events
 const minVrotScroll = 100;
