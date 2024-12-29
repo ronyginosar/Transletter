@@ -97,51 +97,32 @@ document.addEventListener('DOMContentLoaded', function() {
             
         }
         fontSizeLabel.textContent = fontSize;
-        rangePara.style.fontSize = fontSize + 'px';
+        // rangePara.style.fontSize = fontSize + 'px';
+        editableSection.style.fontSize = fontSize + 'px';
     });
 
-    colorToggle.addEventListener('click', function() {
-        if (wrapperDiv.style.color === 'black') {
-            wrapperDiv.style.color = 'white';
-            colorToggle.style.backgroundColor = 'black';
-            // Change the content of the ::after pseudo-element via a CSS variable
-            editableSection.style.setProperty('--caret-color', 'white');
-        } else {
-            wrapperDiv.style.color = 'black';
-            colorToggle.style.backgroundColor = 'white';
-            editableSection.style.setProperty('--caret-color', 'black');
-        }
-        
-    });
+    if(colorToggle !== null){
+        colorToggle.addEventListener('click', function() {
+            if (wrapperDiv.style.color === 'black') {
+                wrapperDiv.style.color = 'white';
+                colorToggle.style.backgroundColor = 'black';
+                // Change the content of the ::after pseudo-element via a CSS variable
+                editableSection.style.setProperty('--caret-color', 'white');
+            } else {
+                wrapperDiv.style.color = 'black';
+                colorToggle.style.backgroundColor = 'white';
+                editableSection.style.setProperty('--caret-color', 'black');
+            }
+            
+        });
+    }
 
-    // Initialize the color toggle button
-    wrapperDiv.style.color = 'black';
-    colorToggle.style.backgroundColor = 'white';
 
-    // param version:
-    // Function to get CSS variable values
-    // function getCSSVariableValue(variable) {
-    //     return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
-    // or element.style.caretColor = 'var(--background-color)'; from letter tester -> cant use here the global params, o.w. only 1 toggle works.
-    // }
-
-    // // Function to set CSS variable values
-    // function setCSSVariableValue(variable, value) {
-    //     document.documentElement.style.setProperty(variable, value);
-    // }
-
-    // Color toggle functionality using CSS variables
-    // if (getCSSVariableValue('--background-color') === 'black') {
-    //     setCSSVariableValue('--background-color', 'white');
-    //     setCSSVariableValue('--element-color', 'black');
-    // } else {
-    //     setCSSVariableValue('--background-color', 'black');
-    //     setCSSVariableValue('--element-color', 'white');
-    // }
-
-    // Apply the color change to elements
-    // wrapperDiv.style.color = setCSSVariableValue('--element-color');
-    // colorToggle.style.backgroundColor = setCSSVariableValue('--background-color');
+    if(colorToggle !== null){
+        // Initialize the color toggle button
+        wrapperDiv.style.color = 'black';
+        colorToggle.style.backgroundColor = 'white';
+    }
 
     updateSliderLabel();
 });
@@ -249,30 +230,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// const fontSizeSlider = document.getElementById('fontSizeSlider');
-// const fontSizeLabel = document.getElementById('fontSizeLabel');
-// const rangePara = document.getElementById('rangePara');
-// const colorToggle = document.getElementById('colorToggle');
-
-// let fontSize = fontSizeSlider.value + 'px';
-
-
-// fontSizeSlider.addEventListener('input', function() {
-//     const fontSize = fontSizeSlider.value + 'px';
-//     fontSizeLabel.textContent = fontSize;
-//     rangePara.style.fontSize = fontSize;
-// });
-
-// colorToggle.addEventListener('click', function() {
-//     if (rangePara.style.color === 'black') {
-//         rangePara.style.color = 'white';
-//         colorToggle.style.backgroundColor = 'black';
-//     } else {
-//         rangePara.style.color = 'black';
-//         colorToggle.style.backgroundColor = 'white';
-//     }
-// });
-
-// // Initialize the color toggle button
-// rangePara.style.color = 'black';
-// colorToggle.style.backgroundColor = 'white';

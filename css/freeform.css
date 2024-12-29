@@ -13,7 +13,7 @@ html,body{
     /* TODO what do these do? */
 
     /* quick fix */
-    height: 85%;
+    height: 80%;
 
 
     display: flex;
@@ -76,10 +76,7 @@ html,body{
     /* margin-right: 10px; */
     position: absolute;
     top: -35px; /* Adjust as needed */
-    /* left: 50%; */
-    /* transform: translateX(50%); */
-    transform: translateX(-120%);
-    /* TODO  */
+    transform: translateX(-110%);
     padding: 2px 5px;
     border: 1px solid var(--slider-gray);
     background-color: transparent;
@@ -231,7 +228,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
 #infotext{
     /* width:50%; */
-    width:75%;
+    width:70%;
     font-size: 1.7em;
     font-variation-settings: 'vrot' 700;
     /* color: var(--gradient-blue); */
