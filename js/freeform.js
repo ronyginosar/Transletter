@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const controls = document.querySelector('.controls');
     const editableSection = document.querySelector('.editable-section'); // for caret color toggle
 
-
     let fontSize = fontSizeSlider.value + 'px';
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     if (mediaQuery.matches) {
@@ -59,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const sliderRect = fontSizeSlider.getBoundingClientRect();
         const thumbWidth = 20; // Approximate width of the slider thumb
         // future add here width for title and correct css
+        // TODO
         const sliderWidth = sliderRect.width - thumbWidth;
         const sliderMin = fontSizeSlider.min;
         const sliderMax = fontSizeSlider.max;
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         fontSizeLabel.textContent = `${sliderValue}`;
         // wrapperDiv.style.fontSize = `${sliderValue}px`;
-        rangeParaDiv.style.fontSize = `${sliderValue}px`;
+        if(rangeParaDiv !== null) rangeParaDiv.style.fontSize = `${sliderValue}px`;
     }
 
     fontSizeSlider.addEventListener('input', updateSliderLabel);
@@ -103,12 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
             wrapperDiv.style.color = 'white';
             colorToggle.style.backgroundColor = 'black';
             // Change the content of the ::after pseudo-element via a CSS variable
-            
-            if (editableSection !== null) editableSection.style.setProperty('--caret-color', 'white');
+            editableSection.style.setProperty('--caret-color', 'white');
         } else {
             wrapperDiv.style.color = 'black';
             colorToggle.style.backgroundColor = 'white';
-            if (editableSection !== null) editableSection.style.setProperty('--caret-color', 'black');
+            editableSection.style.setProperty('--caret-color', 'black');
         }
         
     });
@@ -152,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxVrot = 700;
     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
 
-    if (editableSection !== null) editableSection.addEventListener('keypress', function(event) {
+    editableSection.addEventListener('keypress', function(event) {
         // Prevent default behavior to avoid raw text insertion
         event.preventDefault();
 

@@ -1,0 +1,253 @@
+:root{
+    --vrot-letter-range: 50;
+}
+
+html,body{
+    height: 100%;
+}
+
+
+#wrapper_{
+    /* position: absolute; */
+    /* inset: 0; */
+    /* TODO what do these do? */
+
+    /* quick fix */
+    height: 85%;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark)); */
+    background: var(--footer-gray);
+    padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
+    font-family: TransletterGX;
+    overflow: hidden;
+}
+
+#rangePara{
+    /* font-size: 48px; */
+    font-variation-settings: "vrot" var(--vrot-letter-range);
+    line-height: 99%;
+    margin: 0;
+
+}
+#rangePara nobr{
+    font-variation-settings: "vrot" var(--vrot-letter-range);
+}
+
+/* @media screen and (max-width: 768px) {
+    #rangePara{
+        font-size: 0.1em important!;
+    }
+} */
+
+/* these control the transitions */
+.singleLetter{
+    transition: font-variation-settings 2000ms linear 0s;
+}
+.class-first, .class-second, .class-third, .class-forth{
+    min-width: 1ch;
+    max-width: 1ch;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    width: 30%;
+    margin-top: 30px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    /* note: The .slider-container is set to position: relative to position the label absolutely within it. */
+    position: relative;
+    /* future solve width nicely */
+    width: 80%; 
+}
+
+.slider-label {
+    /* margin-right: 10px; */
+    position: absolute;
+    top: -35px; /* Adjust as needed */
+    /* left: 50%; */
+    /* transform: translateX(50%); */
+    transform: translateX(-120%);
+    padding: 2px 5px;
+    border: 1px solid var(--slider-gray);
+    background-color: transparent;
+    color: var(--slider-gray);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.slider-title{
+    margin-left: 10px;
+    color: var(--slider-gray);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.color-toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.color-toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* border: 0; */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.color-label {
+    margin-right: 10px;
+    color: var(--slider-gray);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    /* width: 100px; */
+    background: transparent;
+    /* future solve width nicely */
+    width: 70%;
+
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--slider-gray);
+    margin-top: -10px;
+}
+
+@media screen and (max-width: 768px) {
+    .controls {
+        width: 70%;
+    }
+
+    input[type=range]::-webkit-slider-thumb{
+        width: 10px;
+        height: 10px;
+        margin-top: -5px;
+    }
+
+    .color-toggle {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slider-label {
+        opacity: 0;
+    }
+}
+
+input[type=range]:focus {
+    outline: none
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    cursor: pointer;
+    background: var(--slider-gray);
+    border-radius: 9px;
+}
+
+/* type text section, solution to non editable paragraph */
+.editable-section {
+    border: none;
+    outline: none;
+    /* padding: 10px; */
+    margin-top: 10px;
+    /* font-size: 48px; */
+    width: 100%;
+    line-height: 99%;
+    font-variation-settings: 'vrot' 700;
+    font-size: 7em;
+    /* note: opacity before typing is under "before" */
+}
+/* .editable-section:focus { */
+    /* outline: none; */
+/* } */
+
+/* Create a blinking caret when the section is empty and unfocused */
+/* note: not needed now that there is text... */
+/* .editable-section::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 1em; /* Adjust to font size */
+    /* background: var(--element-color); 
+    background: var(--caret-color, black);
+    /* position: absolute; */
+    /* top: 10px; */
+    /* left: 10px; 
+    animation: blink 1s step-start infinite;
+} */
+
+/* Remove the caret when the user focuses on the editable section */
+/* note: not needed now that there is text... */
+/* .editable-section:focus::after {
+    content: none;
+} */
+
+/* Blinking animation */
+/* note: not needed now that there is text... */
+/* @keyframes blink {
+    50% {
+        opacity: 0;
+    }
+} */
+
+[contenteditable=true]:empty:before{
+    content: attr(placeholder);
+    pointer-events: none;
+    display: block; /* For Firefox */
+    font-size: inherit;
+    opacity: 0.7;
+}
+
+#infotext{
+    /* width:50%; */
+    width:75%;
+    font-size: 1.7em;
+    font-variation-settings: 'vrot' 700;
+    /* color: var(--gradient-blue); */
+    font-weight: 100;
+}
+
+@media screen and (max-width: 768px) {
+    #infotext{
+        width:100%;
+        font-size: 0.9em;
+    }
+
+    /* [contenteditable=true]:empty:before{ */
+        /* font-size: 0.6em; */
+    /* } */
+
+    .editable-section{
+        margin-top: 0;
+        font-size: 1.5em;
+    }
+/* 
+    .editable-section {
+        margin-top: 0px;
+    } */
+}
