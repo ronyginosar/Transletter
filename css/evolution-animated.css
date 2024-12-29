@@ -17,7 +17,7 @@
     font-variation-settings: "vrot" 200;
     justify-content: center;
 
-    
+
     padding-right: var(--page-side-padding);
     padding-left: var(--page-side-padding);
 }
@@ -85,3 +85,23 @@ body {
     transition: opacity 0.3s ease;
     z-index: -1; /* Place it behind text */
 }
+
+.span_infotext{
+    margin-right: 1em;
+    /* font-size: 0.1em; */
+    vertical-align: bottom;
+    /* transform: translateY(-15px); */
+    transform: translateY(-1.5em);
+    color: var(--slider-gray);
+    /* width: 10%; */
+
+    font-size: 0.07em;
+    /* line-height: 2.3em; */
+    width: 10%;
+    line-height: normal;
+}
+
+/* TODO */
+/* .span_infotext:lang(en) {
+    font-family: 'Helvetica', sans-serif; 
+} */

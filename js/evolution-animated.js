@@ -57,6 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
     //     15: 600,
     // };
 
+    const infotext = {
+        1: "דרשה מאת ר׳ אריה ליב ב״ר אשר גינצבורג, אוסף יהודה לואיס לוין. המאה ה-18 והמאה ה-19, כתיבה אשכנזית.",
+        3: "פפירוס ידין, 134 לספירה, התקופה הרומית, כתב יהודי עברי.",
+        5: "​​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט \n \n From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.", // 
+        8: "מורה נבוכים, משה בן מימון, 1138-1204 (בתרגום: אבן תבון, שמואל בן יהודה), סגנון ספרדי בינוני \n \n From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.",
+        10:"דרשה מאת ר׳ אריה ליב ב״ר אשר גינצבורג, אוסף יהודה לואיס לוין. המאה ה-18 והמאה ה-19, כתיבה אשכנזית.", 
+        15:"פפירוס ידין, 134 לספירה, התקופה הרומית, כתב יהודי עברי.", 
+
+    };
+
 // א 0
 // ב 1
 // ו 2
@@ -320,6 +330,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 // resetHoverEffect(span, randomVrot);
                 resetHoverEffect(span); // stay with new vrot #vrot
             });
+
+            if (globalCharIndex === 15){ // TODO magic number, last letter
+                const span_infotext = document.createElement('span');
+                span_infotext.id = 'infotext-container';
+                // document.getElementById('infotext-container')
+                // span_infotext.textContent = "טסט";
+                // span_infotext.innerHTML = "​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט  \n\n   From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.";
+                // span_infotext.innerHTML = "​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט ";
+                span_infotext.innerHTML = "​ ";
+                span_infotext.classList.add('span_infotext');
+                lineDiv.appendChild(span_infotext);
+            }
         });
 
         textContainer.appendChild(lineDiv);
@@ -448,6 +470,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // add min: 
             // imageContainer.style.right = Math.floor(Math.random() * (max - min) + min) + '%';
             imageContainer.style.right = Math.floor(Math.random() * (maxRandomImageContainerPosition - minRandomImageContainerPosition) + minRandomImageContainerPosition) + '%';
+            
+            const infotextContainer = document.getElementById('infotext-container');
+            infotextContainer.innerHTML = infotext[index].replace(/\n/g, '<br>');
+            // infotextContainer.innerHTML = labels[character][index].replace(/\n/g, '<br>'); // Set text immediately
+
+            
             if (span.innerHTML === 'צ') {
                 imageContainer.style.right = '0';
                 imageContainer.style.top = '0';
@@ -474,6 +502,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetHoverEffect(span) {
         const imageContainer = document.getElementById('image-container');
         imageContainer.style.opacity = '0';
+
+        const infotextContainer = document.getElementById('infotext-container');
+        infotextContainer.textContent = " ";
     }
 
 
