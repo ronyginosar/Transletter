@@ -73,6 +73,11 @@
     color: var(--background-color);
     font-size: 12px;
     white-space: nowrap;
+    opacity: 0;
+}
+
+.slider-container:hover .slider-label {
+    opacity: 1;
 }
 
 .slider-title{

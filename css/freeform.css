@@ -79,12 +79,18 @@ html,body{
     /* left: 50%; */
     /* transform: translateX(50%); */
     transform: translateX(-120%);
+    /* TODO  */
     padding: 2px 5px;
     border: 1px solid var(--slider-gray);
     background-color: transparent;
     color: var(--slider-gray);
     font-size: 12px;
     white-space: nowrap;
+    opacity: 0;
+}
+
+.slider-container:hover .slider-label {
+    opacity: 1;
 }
 
 .slider-title{
