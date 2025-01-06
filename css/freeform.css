@@ -184,6 +184,8 @@ input[type=range]::-webkit-slider-runnable-track {
     font-variation-settings: 'vrot' 700;
     font-size: 7em;
     /* note: opacity before typing is under "before" */
+
+    overflow: auto;
 }
 /* .editable-section:focus { */
     /* outline: none; */
@@ -230,7 +232,7 @@ input[type=range]::-webkit-slider-runnable-track {
     /* width:50%; */
     width:70%;
     
-    font-size: 1.7em;
+    font-size: 1.1em;
     font-variation-settings: 'vrot' 700;
     /* color: var(--gradient-blue); */
     font-weight: 100;

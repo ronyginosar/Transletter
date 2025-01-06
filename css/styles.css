@@ -189,6 +189,8 @@ section .tester_wrapper{
     background-color: transparent;
     white-space: nowrap;
     margin-right: var(--page-side-padding);
+    /* padding-bottom: 4px; */
+    padding-bottom: 0.3%;
 }
 
 #waterfall-toggle-section button:hover{
@@ -342,7 +344,7 @@ section .tester_wrapper{
     /* padding: 0 5%; */
     padding: 0;
     /* font-size: 0.06em; */
-    font-size: 0.067em;
+    font-size: 0.063em;
     /* flex: 2; */
     /* display: flex; */
     /* flex-wrap: nowrap; */
