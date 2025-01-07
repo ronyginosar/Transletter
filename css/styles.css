@@ -33,9 +33,9 @@ iframe{
         height: 50vh;
     } */
 
-    /* .horizontal_screensaver_tech{
+    #technology-section.horizontal_screensaver_tech{
         height: 50vh;
-    } */
+    }
 
     /* #letter-range-iframe{
         height: 75vh;
@@ -414,7 +414,17 @@ section .tester_wrapper{
     flex: 1 1 50%;
   }
 
-
+  
+  @media screen and (max-width: 768px) {
+    .technology_text{
+        font-size: 0.15em;
+        
+    }
+    .technology_text_flex_container{
+        flex: 1 0 80vw;
+        height: auto;
+    }
+}
 
 
 
