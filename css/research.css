@@ -10,7 +10,8 @@ html, body {
     align-items: center;
     /* TEST */
     /* height: 100vh; */ 
-    height: 80%; 
+    /* height: 80%;  */
+    height: 76%; 
 
     /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
@@ -374,6 +375,9 @@ html, body {
     /* new&simplified */
     height: 19%;
     max-height: 20vh;
+
+    margin-bottom: 1%;
+    margin-top: 2%;
 }
 
 #image-gallery::-webkit-scrollbar {

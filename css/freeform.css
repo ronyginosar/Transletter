@@ -21,7 +21,7 @@ html,body{
     align-items: flex-start;
     justify-content: flex-start;
     /* background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark)); */
-    background: var(--footer-gray);
+    /* background: var(--footer-gray); */
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
     font-family: TransletterGX;
     overflow: hidden;

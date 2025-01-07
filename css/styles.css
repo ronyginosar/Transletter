@@ -553,6 +553,7 @@ nav a {
     /* border: none; */
     width: 100%;
     overflow: hidden;
+    background-color: var(--footer-gray);
 }
 
 #freeform-iframe{
