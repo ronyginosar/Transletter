@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const infotext = {
         1: "דרשה מאת ר׳ אריה ליב ב״ר אשר גינצבורג, אוסף יהודה לואיס לוין. המאה ה-18 והמאה ה-19, כתיבה אשכנזית.",
         3: "פפירוס ידין, 134 לספירה, התקופה הרומית, כתב יהודי עברי.",
-        5: "​​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט \n \n From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.", // 
-        8: "מורה נבוכים, משה בן מימון, 1138-1204 (בתרגום: אבן תבון, שמואל בן יהודה), סגנון ספרדי בינוני \n \n From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.",
+        5: "​​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט \n \n {{en: From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.}}", // 
+        8: "מורה נבוכים, משה בן מימון, 1138-1204 (בתרגום: אבן תבון, שמואל בן יהודה), סגנון ספרדי בינוני \n \n {{en: From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.}}",
         10:"דרשה מאת ר׳ אריה ליב ב״ר אשר גינצבורג, אוסף יהודה לואיס לוין. המאה ה-18 והמאה ה-19, כתיבה אשכנזית.", 
         15:"פפירוס ידין, 134 לספירה, התקופה הרומית, כתב יהודי עברי.", 
 
@@ -472,8 +472,9 @@ document.addEventListener('DOMContentLoaded', function() {
             imageContainer.style.right = Math.floor(Math.random() * (maxRandomImageContainerPosition - minRandomImageContainerPosition) + minRandomImageContainerPosition) + '%';
             
             const infotextContainer = document.getElementById('infotext-container');
-            infotextContainer.innerHTML = infotext[index].replace(/\n/g, '<br>');
-            // infotextContainer.innerHTML = labels[character][index].replace(/\n/g, '<br>'); // Set text immediately
+            infotextContainer.innerHTML = infotext[index]
+            .replace(/\n/g, '<br>') // Replace line breaks with <br>
+            .replace(/{{en:(.*?)}}/g, '<span lang="en">$1</span>'); // Wrap English text in <span lang="en">
 
             
             if (span.innerHTML === 'צ') {

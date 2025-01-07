@@ -101,7 +101,9 @@ body {
     line-height: normal;
 }
 
-/* TODO */
-/* .span_infotext:lang(en) {
+
+.span_infotext span {
     font-family: 'Helvetica', sans-serif; 
-} */
+    font-size: 0.1em;
+
+}
