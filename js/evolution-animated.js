@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // ו 14
 // ת 15
 
+    const LASTLETTER = 15;
+
     // Initialize cumulative index offset
     let charIndexOffset = 0;
 
@@ -101,12 +103,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let maxRandomImageContainerPosition = 33; // Arbitrary max right position for the image container
     let minRandomImageContainerPosition = 10;
+
+    let imageContainerTop = '33%';
+
     // for narrow screens
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     if (mediaQuery.matches) {
         // Logic for narrow screens
         // console.log('Screen is 768px or narrower');
-        maxRandomImageContainerPosition = 0; // Example: Adjust random value for narrow screens
+        maxRandomImageContainerPosition = 20;
+        minRandomImageContainerPosition = 5;
+        imageContainerTop = '15%';
     }
 
     // Initialize a virtual scroll position
@@ -326,12 +333,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 handleHoverEffect(span, globalCharIndex);
             });
             
-            span.addEventListener('mouseleave', () => {
-                // resetHoverEffect(span, randomVrot);
-                resetHoverEffect(span); // stay with new vrot #vrot
-            });
+            // Hover effect solution for touch devices
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            if (isTouchDevice) {
 
-            if (globalCharIndex === 15){ // TODO magic number, last letter
+                // span.addEventListener('touchstart', () => {
+                //     handleHoverEffect(span, globalCharIndex);
+                // });
+                span.addEventListener('touchend', () => {
+                    resetHoverEffect(span); 
+                });
+            } else {
+                span.addEventListener('mouseleave', () => {
+                    // resetHoverEffect(span, randomVrot);
+                    resetHoverEffect(span); 
+                });
+            }
+
+
+            if (globalCharIndex === LASTLETTER){ 
                 const span_infotext = document.createElement('span');
                 span_infotext.id = 'infotext-container';
                 // document.getElementById('infotext-container')
@@ -433,16 +453,6 @@ document.addEventListener('DOMContentLoaded', function() {
     ////////////////////////////////// HOVER EFFECTS //////////////////////////////////////
     function handleHoverEffect(span, index) {
         span.style.transition = 'font-variation-settings 0.3s ease';
-    
-        // if (index % 2 === 0) {
-        //     span.style.fontVariationSettings = `'vrot' 700`;
-        // } else {
-        //     const imageContainer = document.getElementById('image-container');
-        //     // imageContainer.style.backgroundImage = `url(../images/image${index}.png)`; TODO
-        //     imageContainer.style.backgroundColor = 'pink'; // TEMP
-        //     imageContainer.style.opacity = '1';
-        // }
-
         // console.log('hover', span.style.fontVariationSettings);
     
         const action = hoverActions[index];
@@ -460,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // }
     
         // if (action.image !== undefined) {
-        if (action && action.image !== undefined) {
+        if (action !== undefined && action.image !== undefined) {
             // Display the specified image in the image container
             // console.log(span)
             const imageContainer = document.getElementById('image-container');
@@ -487,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 imageContainer.style.width = 'var(--imagecontainerdims)';
                 imageContainer.style.height = 'var(--imagecontainerdims)';
-                imageContainer.style.top = '33%';
+                imageContainer.style.top = imageContainerTop;
                 // imageContainer.style.right = '10%';
             }
         }

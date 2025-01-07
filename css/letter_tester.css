@@ -30,12 +30,6 @@ html{
     color: var(--background-color);
 }
 
-@media screen and (max-width: 768px) {
-    #infotext{
-        font-size: 0.15em;
-    }
-}
-
 b{  
     font-variation-settings: var(--max_vrot);
     font-weight: 900;
@@ -45,12 +39,29 @@ p{
     width: 70%;
 }
 
+@media screen and (max-width: 768px) {
+    #infotext{
+        font-size: 0.2em;
+        line-height: 1.7em;
+    }
+    p{
+        width: 90%;
+    }
+}
+
 .container{
     padding-top: 50px; 
     /* background-color: var(--element-color); */
     width: 100%;            /* Fill 100% of the container's width */
     font-size: inherit;
 }
+
+@media screen and (max-width: 768px) {
+    .container{
+        padding-top: 0;
+    }
+}
+
 
 textarea {
     border: none;
@@ -81,6 +92,12 @@ textarea {
 
     overflow-y: hidden;     /* Prevent overflow with scrollbar */
     height: auto;           /* Allow the height to be adjusted automatically */
+}
+
+@media screen and (max-width: 768px) {
+    textarea{
+        margin-top: 10%;
+    }
 }
 
 textarea#text_byBlock{
@@ -130,11 +147,18 @@ textarea#text_byBlock{
 
 @media screen and (max-width: 768px) {
     #text_byLetter{
-        font-size: 1em;
+        font-size: 2em;
+
         /* TODO can we add break here? */
+
+        white-space: normal;    /* Allow text to break into lines */
+        overflow-wrap: normal; /* Break words if they are too long */
+        word-wrap: normal;  /* Ensure word-breaking works in all browsers */
     }
-    #text_byBlock{
+    textarea#text_byBlock {
         font-size: 0.5em;
+        height: 9em;
+        line-height: 1.1em;
     }
 }
 
@@ -180,13 +204,26 @@ input[type=range]::-webkit-slider-runnable-track {
     .controls{
         font-size: 0.15em;
         width: 90%;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        height: 17vh;
     }
 
     input[type=range]::-webkit-slider-thumb {
-        width: 10px;
-        height: 10px;
-        margin-top: -5px;
+        width:  18px;
+        height: 18px;
+        margin-top: -9px;
     }
+
+    .controls p{
+        font-size: 1.7em;
+        line-height: 1em;
+        margin-bottom: 0;
+    }
+
+    .slider-title{
+        font-size: 1.5em;
+    }   
 }
 
 .slider-container {

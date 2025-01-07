@@ -26,20 +26,24 @@ iframe{
 
 @media screen and (max-width: 768px) {
     iframe{
-        height: 65vh;
+        height: 60vh;
     }
 
-    .scroll_section_wrapper{
-        height: 65vh;
-    }
+    /* .scroll_section_wrapper{
+        height: 50vh;
+    } */
 
-    .horizontal_screensaver_tech{
-        height: 65vh;
-    }
+    /* .horizontal_screensaver_tech{
+        height: 50vh;
+    } */
 
     /* #letter-range-iframe{
         height: 75vh;
     } */
+
+    #tester-iframe{
+        height: 98vh;
+    }
 
 
 }
@@ -109,6 +113,15 @@ body::-webkit-scrollbar {
     background-color: var(--footer-gray);
 }
 
+@media screen and (max-width: 768px) {
+    .evolution-animated {
+        height: 50vh;
+    }
+    .evolution-animated iframe{
+        height: 50vh;
+    }
+}
+
 .evolution-animated iframe{
     /* height: 70vh; */
     z-index: 1;
@@ -149,7 +162,7 @@ section .tester_wrapper{
     align-items: center;
     width: 100%;
     /* height: 70vh; */
-    height: 98vh;
+    /* height: 98vh; */
     background-color: var(--element-color);
     /* background-color: chocolate; */
     /* remove scroll bar: */
