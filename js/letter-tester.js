@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+
     // Function to adjust the height of a textarea
     // note: left here as a reference for future, disabled for now
     function adjustHeight(element) {
@@ -153,6 +156,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const fullText = textArea.textContent;
         const wrappedHTML = Array.from(fullText).map((char, index) => {
             const isSelected = index === selectedLetterIndex ? 'selected-letter' : '';
+            // Replace space with <br> if small screen
+            if (char === ' ' && mediaQuery.matches) {
+                return '<br>';
+            }
             return `<span class="letter ${isSelected}" data-index="${index}">${char}</span>`;
         }).join('');
 

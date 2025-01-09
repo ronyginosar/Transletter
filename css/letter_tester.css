@@ -6,6 +6,20 @@ html{
     overflow-y: hidden;
 }
 
+@media screen and (max-width: 768px) {
+    html, body{
+        height: 100%;
+    }
+
+    #wrapper{
+        height: 100%;
+    }
+
+    #byBlock{
+        height: 100%;
+    }
+}
+
 
 #wrapper{
     font-size: var(--title-font-size);
@@ -149,15 +163,17 @@ textarea#text_byBlock{
     #text_byLetter{
         font-size: 2em;
 
-        /* TODO can we add break here? */
-
-        white-space: normal;    /* Allow text to break into lines */
-        overflow-wrap: normal; /* Break words if they are too long */
-        word-wrap: normal;  /* Ensure word-breaking works in all browsers */
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        display: block;
+        line-height: normal;
     }
     textarea#text_byBlock {
         font-size: 0.5em;
         height: 9em;
+        /* TODO fix height */
+        /* height: 100%; */
         line-height: 1.1em;
         overflow: auto;
     }
@@ -210,7 +226,18 @@ input[type=range]::-webkit-slider-runnable-track {
         height: 17vh;
     }
 
-    .slider-label{
+    .slider-container:hover .slider-label {
+        opacity: 0;
+    }    
+    .slider-container .slider-label {
+        opacity: 0;
+    }
+
+    #fontVrotLabel_byBlock{
+        opacity: 0;
+    }
+
+    #fontSizeLabel_byBlock{
         opacity: 0;
     }
 
