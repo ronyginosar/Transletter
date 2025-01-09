@@ -158,6 +158,10 @@ input[type=range]::-webkit-slider-thumb {
     .slider-label {
         opacity: 0;
     }
+
+    .slider-container:hover .slider-label {
+        opacity: 0;
+    }
 }
 
 input[type=range]:focus {
@@ -250,7 +254,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
     .editable-section{
         margin-top: 0;
-        font-size: 1.5em;
+        font-size: 3.5em;
     }
 /* 
     .editable-section {

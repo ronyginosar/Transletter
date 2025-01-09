@@ -47,6 +47,8 @@ iframe{
     }
 
 
+
+
 }
 /* TODO unify wrapper div/class */
 
@@ -585,4 +587,15 @@ nav a {
     /* border: none; */
     /* width: 100%; */
     overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    #freeform-section{
+        height: 50vh;
+    }
+
+    #freeform-iframe{
+        height: 50vh;
+    }
+    
 }

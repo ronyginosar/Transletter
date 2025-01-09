@@ -35,7 +35,7 @@ setTimeout(function(){ randomvrot(); }, 500);
 
 // Controls:
 // narrow screens: 
-const fontSizeDownscale = 1.5;
+const fontSizeDownscale = 1.8;
 
 // todo in narrow screen, the size slider gives not ints. 
 
