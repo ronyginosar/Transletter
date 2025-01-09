@@ -7,9 +7,10 @@ html{
 }
 
 @media screen and (max-width: 768px) {
-    html, body{
+    /* html, body{
         height: 100%;
-    }
+    } */
+     /* causes scroll issue */
 
     #wrapper{
         height: 100%;
