@@ -20,6 +20,12 @@ html, body {
     /* background-color: rgb(196, 20, 20); */
 }
 
+@media screen and (max-width: 768px) {
+    #research-page{
+        height: 100%;
+    }
+}
+
 /* P1 */
 
 #title_wrapper{
@@ -196,11 +202,25 @@ html, body {
     #handwritten_glyph_space{
         width: 100%;
         font-size: 1em;
+        flex-wrap: wrap;
     }
 
     #handwritten_glyph_space img {
-        width: 1.7em;
+        /* width: 1.7em; */
+        /* width: 1.7em; */
+        padding: 2%;
     }
+
+    div.handwritten-text-image-container{
+        width: 20%;
+        flex-wrap: wrap;
+    }
+
+    .handwritten-text-label{
+        max-height: 110px;
+    }
+    
+
 }
 
 .handwritten-text-image-container {
@@ -397,7 +417,8 @@ html, body {
 @media screen and (max-width: 768px) {
     #image-gallery{
         height: 19%;
-        /* max-height: 13vh; */
+        max-height: 13vh;
+        margin-bottom: 5%;
     }
 }
 
