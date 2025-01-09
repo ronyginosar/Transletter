@@ -148,6 +148,10 @@ input[type=range]::-webkit-slider-thumb {
     .slider-label {
         opacity: 0;
     }
+
+    .slider-container:hover .slider-label {
+        opacity: 0;
+    }
 }
 
 input[type=range]:focus {
