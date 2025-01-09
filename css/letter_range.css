@@ -8,7 +8,10 @@
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
+    /* TEMP */
+    /* align-items: flex-start; */
+    
     justify-content: flex-start;
     background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark));
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
@@ -21,6 +24,9 @@
     font-variation-settings: "vrot" var(--vrot-letter-range);
     line-height: 99%;
     margin: 0;
+
+    /* TEMP */
+    text-align: center;
 
 }
 #rangePara nobr{
