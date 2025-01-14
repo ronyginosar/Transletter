@@ -351,13 +351,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
 
-            if (globalCharIndex === LASTLETTER){ 
+            if ((globalCharIndex === LASTLETTER) && !mediaQuery.matches){ 
                 const span_infotext = document.createElement('span');
                 span_infotext.id = 'infotext-container';
-                // document.getElementById('infotext-container')
-                // span_infotext.textContent = "טסט";
-                // span_infotext.innerHTML = "​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט  \n\n   From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.";
-                // span_infotext.innerHTML = "​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט ";
                 span_infotext.innerHTML = "​ ";
                 span_infotext.classList.add('span_infotext');
                 lineDiv.appendChild(span_infotext);
@@ -481,11 +477,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // imageContainer.style.right = Math.floor(Math.random() * (max - min) + min) + '%';
             imageContainer.style.right = Math.floor(Math.random() * (maxRandomImageContainerPosition - minRandomImageContainerPosition) + minRandomImageContainerPosition) + '%';
             
-            const infotextContainer = document.getElementById('infotext-container');
-            infotextContainer.innerHTML = infotext[index]
-            .replace(/\n/g, '<br>') // Replace line breaks with <br>
-            .replace(/{{en:(.*?)}}/g, '<span lang="en">$1</span>'); // Wrap English text in <span lang="en">
-
+            if(!mediaQuery.matches){
+                const infotextContainer = document.getElementById('infotext-container');
+                infotextContainer.innerHTML = infotext[index]
+                .replace(/\n/g, '<br>') // Replace line breaks with <br>
+                .replace(/{{en:(.*?)}}/g, '<span lang="en">$1</span>'); // Wrap English text in <span lang="en">
+            }
             
             if (span.innerHTML === 'צ') {
                 imageContainer.style.right = '0';
@@ -515,7 +512,9 @@ document.addEventListener('DOMContentLoaded', function() {
         imageContainer.style.opacity = '0';
 
         const infotextContainer = document.getElementById('infotext-container');
-        infotextContainer.textContent = " ";
+        if(!mediaQuery.matches){
+            infotextContainer.textContent = " ";
+        }
     }
 
 
