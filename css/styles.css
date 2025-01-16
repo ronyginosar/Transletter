@@ -532,6 +532,41 @@ nav a {
     color: var(--gradient-black);
 }
 
+/* Hamburger icon */
+.hamburger {
+    display: none; /* Default: hidden on larger screens */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 25px;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: var(--gradient-black);
+    border-radius: 5px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hamburger transition to "X" */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(12px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+}
+
+.hamburger.open {
+    transition: transform 0.3s ease;
+}
+
 
 @media screen and (max-width: 768px) {
     html,body{
@@ -540,6 +575,10 @@ nav a {
         padding: 0;
         width: 100%;
         overflow-x: hidden;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon */
     }
 
     .home-page-wrapper{
@@ -551,31 +590,57 @@ nav a {
     header{
         display: block;
     }
-    nav {
-        display: block; /* Show dropdown-style navigation */
+    /* nav {
+        display: block;
         text-align: center;
         padding-right: 5%;
         padding-left: 5%;
 
-    }
+    } */
 
     .nav-title{
         padding-bottom: 0;
+        width: auto;
     }
 
-
+/* 
     nav a{
         padding: 2%;
         font-size: 0.6em;
-    }
+    } */
 
     nav ul{
-        padding: 0;
+        /* padding: 0;
         width: 100%;
         justify-content: space-around;
-        margin: 0;
+        margin: 0; */
+        /* TEST */
+        display: none; /* Hide menu items */
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        position: absolute;
+        top: 100%; /* Place just below the nav */
+        /* right: 0; */
+        background: var(--background-color);
+        width: 80%; /* Adjust menu width */
+        /* padding: 10px; */
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    nav a {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 100%;
     }
 }
+
+
+
 
 
 #freeform-section{

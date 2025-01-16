@@ -58,6 +58,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add a scroll event listener
     window.addEventListener('scroll', setActiveSection);
+
+    // mobile handler
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    if (mediaQuery.matches) {
+      const hamburger = document.getElementById('hamburger-menu');
+      const menuItems = document.getElementById('menu-items');
+  
+      // hamburger.addEventListener('click', function () {
+      //     menuItems.classList.toggle('show'); // Toggle the `show` class
+      // });
+      hamburger.addEventListener('click', function () {
+        menuItems.classList.toggle('show'); // Toggle the `show` class
+        hamburger.classList.toggle('open'); // Toggle the `open` class
+    });
+
+      // Close menu when a link is clicked
+      menuItems.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function () {
+            menuItems.classList.remove('show'); // Hide the menu
+            hamburger.classList.remove('open'); // Reset hamburger icon
+        });
+    });
+    }
 });
 
 
