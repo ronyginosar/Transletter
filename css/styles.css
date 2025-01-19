@@ -47,7 +47,7 @@ iframe{
     }
 
     #research-section{
-        height: 180vh;
+        /* height: fit-content; */
     }
 
 
@@ -246,15 +246,21 @@ section .tester_wrapper{
     background-color: var(--footer-gray);
 }
 
-.research{
+section.research{
     width: 100%; 
     background-color: var(--background-color);
+    height: 170vh;
+    /* overflow: hidden;  */
 }
 
 /* NOTE: this is where to extend height on research, not anywhere else. o.w. scrolling */
 .research iframe{
     /* height: 200vh; */
-    height: 180vh;
+    /* height: 180vh; */
+    height: 100%;
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
 }
 
 
@@ -670,4 +676,61 @@ nav a {
         height: 50vh;
     }
     
+}
+
+/* research gallery */
+
+#research-image-gallery-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 40vh; 
+    margin: 4vh 0;
+    justify-content: center; /* Center align the gallery */
+    align-items: center; /* Vertically align the gallery */
+}
+
+#research-image-gallery {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    justify-content: flex-start;
+    overflow-x: scroll; /* Allow horizontal scroll */
+    overflow-y: hidden; /* Prevent vertical scroll */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    /* padding: 5%; */
+    width: 100%; 
+    /* Full width of the container */
+    height: 100%;
+}
+
+#research-image-gallery::-webkit-scrollbar {
+    /* Hide scrollbar for WebKit browsers */
+    display: none; 
+}
+
+#research-image-gallery img {
+    /* height: 100%;  */
+    
+    /* Adjust image height as needed */
+    margin-right: 1%; /* Space between images */
+    margin-left: 1%; /* Space between images */
+    object-fit: cover; 
+    /* Ensure the image covers the container */
+    /* note use this to allow dynamic growing of the images */
+    /* max-height: 30vh; */
+    max-height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    #research-image-gallery{
+        /* height: 19%;
+        max-height: 13vh;
+        margin-bottom: 5%;
+        margin-top: 5%; */
+    }
+
+    #research-image-gallery img {
+        /* height: 100%;
+        max-height: 13vh; */
+    }
 }

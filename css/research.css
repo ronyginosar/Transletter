@@ -1,6 +1,17 @@
-html, body {
-    /* height: 100%; */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
     /* overflow-y: auto; */
+    /* height: 200vh; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* font-size: small; */
+    /* for debug inside iframe use: */
+    font-size: xx-small;
 }
 
 #research-page{
@@ -9,9 +20,11 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     /* TEST */
-    /* height: 100vh; */ 
+    /* height: 130vh;  */
+    height: 70vh; 
     /* height: 80%;  */
-    height: 76%; 
+    /* height: 70%;  */
+    /* flex: 0 0 70%; */
 
     /* not using top padding here, it's already not using the entire 100% height */
     /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
@@ -36,7 +49,7 @@ html, body {
     align-items: center;
     width: 100%;
     /* note: this effects the spacing of glyphs. to control them independently, they need a separate container */
-    /* height: 30%; */
+    height: 40%;
 }
 
 #title_spacer{
@@ -80,6 +93,7 @@ html, body {
     }
     #title h1{
         font-size: 6em;
+        margin-bottom: 5%;
     }
 
     #title_spacer{
@@ -178,7 +192,7 @@ html, body {
 }
 
 #handwritten_glyph_space img {
-    width: 3.7em;
+    width: 5.7em;
     padding: 10%;
     height: auto;
 }
@@ -222,6 +236,7 @@ html, body {
         /* width: 1.7em; */
         /* width: 1.7em; */
         padding: 2%;
+        font-size: 0.7em;
     }
 
     div.handwritten-text-image-container{
@@ -391,6 +406,26 @@ html, body {
 
 /* end section - original, currently unused */
 
+#image-gallery-wrapper{
+    display: flex;
+    flex-direction: column;
+    /* height: 20%; */
+    /* flex: 0 0 20%; */
+    height: 22vh; 
+    /* max-height: 20vh; */
+/* 
+    margin-bottom: 4%;
+    margin-top: 4%; */
+    margin: 4vh 0;
+
+    justify-content: center; /* Center align the gallery */
+    align-items: center; /* Vertically align the gallery */
+    /* height: auto; Allow height to adjust dynamically */
+    /* max-height: 20vh; Constrain max height */
+    overflow: hidden; /* Prevent overflow issues */
+    /* border: 2px solid red; */
+}
+
 #image-gallery {
     display: flex;
     flex-direction: row;
@@ -400,7 +435,8 @@ html, body {
     overflow-y: hidden; /* Prevent vertical scroll */
     scroll-behavior: smooth; /* Smooth scrolling effect */
     /* padding: 5%; */
-    width: 100%; /* Full width of the container */
+    width: 100%; 
+    /* Full width of the container */
 
     /* note use this to allow dynamic growing of the images */
     /* height: auto; */
@@ -415,11 +451,11 @@ html, body {
     /* max-height: 30vh; */
 
     /* new&simplified */
-    height: 19%;
-    max-height: 30vh;
+    /* height: 20%; */
+    /* max-height: 20vh; */
 
-    margin-bottom: 1%;
-    margin-top: 2%;
+    /* margin-bottom: 5%; */
+    /* margin-top: 5%; */
 }
 
 #image-gallery::-webkit-scrollbar {
@@ -428,25 +464,29 @@ html, body {
 }
 
 #image-gallery img {
-    height: 100%; /* Adjust image height as needed */
+    /* height: 100%;  */
+    
+    /* Adjust image height as needed */
     margin-right: 1%; /* Space between images */
     margin-left: 1%; /* Space between images */
-    object-fit: cover; /* Ensure the image covers the container */
+    object-fit: cover; 
+    /* Ensure the image covers the container */
     /* note use this to allow dynamic growing of the images */
-    max-height: 30vh;
+    /* max-height: 30vh; */
+    max-height: 100%;
 }
 
 @media screen and (max-width: 768px) {
     #image-gallery{
-        height: 19%;
+        /* height: 19%;
         max-height: 13vh;
         margin-bottom: 5%;
-        margin-top: 5%;
+        margin-top: 5%; */
     }
 
     #image-gallery img {
-        height: 100%;
-        max-height: 13vh;
+        /* height: 100%;
+        max-height: 13vh; */
     }
 }
 
