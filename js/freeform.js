@@ -1,3 +1,5 @@
+const mediaQuery = window.matchMedia('(max-width: 768px)');
+
 function randomvrot(){
     randomVar_1 = Math.ceil(Math.random() * 700);
     randomVar_2 = Math.ceil(Math.random() * 700);
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const editableSection = document.querySelector('.editable-section'); // for caret color toggle
 
     let fontSize = fontSizeSlider.value + 'px';
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    // const mediaQuery = window.matchMedia('(max-width: 768px)');
     if (mediaQuery.matches) {
         // Logic for narrow screens
         fontSize /= fontSizeDownscale;
@@ -136,6 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const minVrot = 100;
     const maxVrot = 700;
     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
+
+    if(mediaQuery.matches){
+        editableSection.setAttribute('contenteditable', 'true');
+        editableSection.setAttribute('tabindex', '0'); // Make it focusable
+        // editableSection.focus();
+    }
 
     editableSection.addEventListener('keydown', function(event) {
         // Prevent default behavior to avoid raw text insertion
