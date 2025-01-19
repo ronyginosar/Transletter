@@ -7,9 +7,9 @@ html{
 }
 
 @media screen and (max-width: 768px) {
-    /* html, body{
+    html, body{
         height: 100%;
-    } */
+    }
      /* causes scroll issue */
 
     #wrapper{
@@ -224,13 +224,21 @@ input[type=range]::-webkit-slider-runnable-track {
         width: 90%;
         flex-direction: column-reverse;
         align-items: flex-start;
-        height: 17vh;
+        height: 12vh;
     }
 
     .slider-container:hover .slider-label {
         opacity: 0;
     }    
     .slider-container .slider-label {
+        opacity: 0;
+    }
+
+    #fontVrotLabel_byLetter{
+        opacity: 0;
+    }
+
+    #fontSizeLabel_byLetter{
         opacity: 0;
     }
 
