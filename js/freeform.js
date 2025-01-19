@@ -139,15 +139,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxVrot = 700;
     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
 
-    if(mediaQuery.matches){
-        editableSection.setAttribute('contenteditable', 'true');
-        editableSection.setAttribute('tabindex', '0'); // Make it focusable
+    // if(mediaQuery.matches){
+        // editableSection.setAttribute('contenteditable', 'true');
+        // editableSection.setAttribute('tabindex', '0'); // Make it focusable
         // editableSection.focus();
-    }
+    // }
 
     editableSection.addEventListener('keydown', function(event) {
         // Prevent default behavior to avoid raw text insertion
         event.preventDefault();
+
+        if(mediaQuery.matches){
+        editableSection.setAttribute('contenteditable', 'true');
+        editableSection.setAttribute('tabindex', '0'); // Make it focusable
+        editableSection.focus();
+        }
 
         const char = event.key; // Get the key that was pressed
 
