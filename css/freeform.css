@@ -255,6 +255,7 @@ input[type=range]::-webkit-slider-runnable-track {
     .editable-section{
         margin-top: 0;
         font-size: 3.5em;
+        height: 100%;
     }
 /* 
     .editable-section {
