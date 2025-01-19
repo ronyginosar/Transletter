@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxVrot = 700;
     /* for ('../assets/font/Transletter_v7VF.ttf') : min 100, max 700 */
 
-    editableSection.addEventListener('keypress', function(event) {
+    editableSection.addEventListener('keydown', function(event) {
         // Prevent default behavior to avoid raw text insertion
         event.preventDefault();
 
