@@ -340,6 +340,12 @@ section.research{
     transition: all 0.5s ease;    
 }
 
+@media screen and (max-width: 768px) {
+    .technology_title{
+        font-size: 0.3em;
+    }
+}
+
 #technology_subtitle{
     font-size: 0.13em;
     font-variation-settings: 'vrot' 700;

@@ -119,6 +119,25 @@
       <!-- <div id=technology_content> -->
       <!-- 6.2 technology title -->
       <div class="technology_title">על הטכנולוגיה</div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const mediaQuery = window.matchMedia('(max-width: 768px)');
+          if (mediaQuery.matches) {
+            const technologyTitle = document.querySelector('.technology_title');
+            
+            // Create the image element
+            const svgImage = document.createElement('img');
+            svgImage.src = 'assets/technology_cursor.svg';
+            svgImage.alt = 'ArrowSVG';
+            svgImage.style.marginLeft = '10%'; // Add spacing between the text and the image
+            svgImage.style.marginRight = '10%'; // Add spacing between the text and the image
+            svgImage.style.verticalAlign = 'middle'; // Align the SVG with the text
+      
+            // Append the image at the end of the div
+            technologyTitle.appendChild(svgImage);
+          }
+        });
+      </script>
       <div class="technology_text_flex_container">
         <b id="technology_subtitle">מהו גופן וריאבילי?</b>
         <!-- 6.3 technology text from file -->
@@ -140,7 +159,6 @@
         </div>
       </div>
       <!-- 6.4 Image to fit same height as text columns -->
-       <!-- todo not perfect -->
       <div class="technology_image">
         <img src="assets/content_images/technology.png" alt="Technology Image">
       </div> 
