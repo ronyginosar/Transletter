@@ -37,6 +37,7 @@ body {
     #research-page{
         /* height: 100%; */
         justify-content: flex-start;
+        font-size: xx-small; 
     }
     
 }
