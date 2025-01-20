@@ -13,9 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         5: { image: '../assets/content_images/evolution_hover/Zadi.jpg' }, // 
         8: { image: '../assets/content_images/evolution_hover/Shin.png' },
         9: { vrot: 100 }, 
-        10:{ image: '../assets/content_images/evolution_hover/AlefBeit.jpg' }, 
+        10:{ image: '../assets/content_images/evolution_hover/hover_New1.jpg' }, 
         12:{ vrot: 700 },
-        15:{ image: '../assets/content_images/evolution_hover/Lamed.jpg' }, 
+        12:{ image: '../assets/content_images/evolution_hover/hover_New3.jpg' },
+        15:{ image: '../assets/content_images/evolution_hover/hover_New4.jpg' }, 
     };
 
     // note, this requires overriding the font kerning by 'letter-spacing: 0' in the css
@@ -62,8 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         3: "פפירוס ידין, 134 לספירה, התקופה הרומית, כתב יהודי עברי.",
         5: "​​​‘דרשה’, מאה טז-יז, עברית, סגנון כתיבה: אשכנזית-איטלקית, בינוני-רהוט ורהוט \n \n {{en: From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.}}", // 
         8: "מורה נבוכים, משה בן מימון, 1138-1204 (בתרגום: אבן תבון, שמואל בן יהודה), סגנון ספרדי בינוני \n \n {{en: From the collections of: THE BRITISH LIBRARY, The National Library of Israel. ‘Ktiv’ Project, The National Library of Israel.}}",
-        10:"דרשה מאת ר׳ אריה ליב ב״ר אשר גינצבורג, אוסף יהודה לואיס לוין. המאה ה-18 והמאה ה-19, כתיבה אשכנזית.", 
-        15:"פפירוס ידין, 134 לספירה, התקופה הרומית, כתב יהודי עברי.", 
+        10:"מורה נבוכים מאת משה בן מימון בערבית יהודית, דרום ספרד, ספרדי רהוט, 1479", 
+        12:" ",
+        15:"שירה האחרון של רחל המשוררת בכתב ידה, 1931, הספריה הלאומית", 
 
     };
 
