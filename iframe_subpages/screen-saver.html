@@ -22,20 +22,33 @@
     <script>
       let changeSpeed = 8000;
       const letters = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ך", "ל", "מ", "ם", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ץ", "ק", "ר", "ש", "ת"];
-      function correctLetter(){
+      function correctLetter() {
         window.whatLetter += 1;
-        // if(window.whatLetter == 28){
-        // what happens when it reaches the end of the array - go to 1st
-        if(window.whatLetter == letters.length){
-          window.whatLetter = 0;
+
+        // Loop back to the start of the array if at the end
+        if (window.whatLetter == letters.length) {
+            window.whatLetter = 0;
         }
-        // console.log(window.whatLetter);
-        // console.log(letters.length);
-        document.getElementById('charDiv_1').innerText = letters[window.whatLetter];
+
+        // Update the letter
+        charDiv = document.getElementById('charDiv_1');
+        charDiv.innerText = letters[window.whatLetter];
+
+        // Restart the animation 
+        // the animation is called from here instead of css - helps with sync of animation and letter change
+        charDiv.style.animation = 'none'; // Reset animation
+        void charDiv.offsetWidth; // Trigger reflow to restart animation
+        charDiv.style.animation = 'otAnim 8s ease-in-out infinite, fontColor 8s ease-in-out infinite';
       }
-      window.whatLetter = 0;
+      window.whatLetter = -1;
+
+      // Display the first letter immediately on page load
+      document.addEventListener('DOMContentLoaded', () => {
+          correctLetter(); // Display the first letter
+          setInterval(correctLetter, changeSpeed); // Start the interval for subsequent changes
+      });
+
       
-      setInterval(function(){ correctLetter(); }, changeSpeed);
     </script>
   </body>
 </html>

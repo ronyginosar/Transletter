@@ -73,15 +73,15 @@ html,body{
     width: 100%;
     height: 100%;
     opacity: 0;
-/* 
-    font-size: 50vw;
+
+    /* font-size: 50vw;
     line-height: 60vh; */
     
     /* Enable 'left' property to work */
     position: relative; 
     /* animation: fontColor 8s linear; */
-    -webkit-animation: otAnim 8s ease-in-out infinite, fontColor 8s ease-in-out infinite;
-    animation: otAnim 8s ease-in-out infinite, fontColor 8s ease-in-out infinite;
+    /* -webkit-animation: otAnim 8s ease-in-out infinite, fontColor 8s ease-in-out infinite;
+    animation: otAnim 8s ease-in-out infinite, fontColor 8s ease-in-out infinite; */
     /* run once - use this: */
     /* -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards; */
