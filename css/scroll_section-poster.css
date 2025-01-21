@@ -1,0 +1,138 @@
+html,body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#scroll-section-wrapper{
+    width: calc(100vh * (9 / 16));
+    height: 100%;
+    background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark));;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    align-items: flex-start;
+    flex-direction: column;
+    
+
+} 
+
+#scrollPara{
+    margin: 0;
+    font-size: calc(80 / 1920 * 100vh) ;
+    font-family: TransletterGX;
+    font-variation-settings: "vrot" var(--vrot);
+    color: black;
+    margin-right: 13%;
+    
+
+    height: 83vh;
+    align-content: center;
+}
+
+p{
+    /* note: custom breaks instead */
+    /* width: 80%; */
+    animation: vrotAnimation 8s ease-in-out infinite;
+}
+
+
+@keyframes vrotAnimation {
+    0% {
+        font-variation-settings: 'vrot' 100;
+    }
+    50% {
+        font-variation-settings: 'vrot' 700; /* Peak value */
+    }
+    100% {
+        font-variation-settings: 'vrot' 100; /* Return to the starting value */
+    }
+}
+
+#logoPara{
+    width: calc(100vh * (9 / 16));
+    display:flex;
+    font-size: calc(50 / 1920 * 100vh) ;
+    align-items: flex-end;
+}
+
+#logoPara nobr{
+    font-family: TransletterGX;
+    font-variation-settings: 'vrot' 50;
+    user-select: none;
+    vertical-align: text-bottom;
+    color: black;
+    margin-right: 13%;
+    /* margin-right: 20%; */
+}
+
+#logoPara nobr span{
+    animation: charAnim-1 var(--logoAnimationSpeed) linear infinite;
+    animation-delay: -2500ms;
+}
+#logoPara nobr span:nth-of-type(2){
+    animation-name: charAnim-2;
+    animation-delay: -2000ms;
+}
+#logoPara nobr span:nth-of-type(3){
+    animation-name: charAnim-3;
+    animation-delay: -1500ms;
+}
+#logoPara nobr span:nth-of-type(4){
+    animation-name: charAnim-4;
+    animation-delay: -1000ms;
+}
+#logoPara nobr span:nth-of-type(5){
+    animation-name: charAnim-5;
+    animation-delay: -500ms;
+}
+#logoPara nobr span:nth-of-type(6){
+    animation-name: charAnim-6;
+    animation-delay: 0ms;
+}
+
+@keyframes charAnim-1 {
+    0%{font-variation-settings:     'vrot' 100;}
+    45%{font-variation-settings:    'vrot' 700;}
+    55%{font-variation-settings:    'vrot' 700;}
+    90%{font-variation-settings:    'vrot' 100;}
+    100%{font-variation-settings:   'vrot' 100;}
+}
+@keyframes charAnim-2 {
+    0%{font-variation-settings:     'vrot' 200;}
+    45%{font-variation-settings:    'vrot' 700;}
+    55%{font-variation-settings:    'vrot' 700;}
+    90%{font-variation-settings:    'vrot' 200;}
+    100%{font-variation-settings:   'vrot' 200;}
+}
+@keyframes charAnim-3 {
+    0%{font-variation-settings: 'vrot' 300;  }
+    45%{font-variation-settings: 'vrot' 700; }
+    55%{font-variation-settings: 'vrot' 700; }
+    90%{font-variation-settings: 'vrot' 300; }
+    100%{font-variation-settings: 'vrot' 300;}
+}
+@keyframes charAnim-4 {
+    0%{font-variation-settings: 'vrot' 400; }
+    45%{font-variation-settings: 'vrot' 700;}
+    55%{font-variation-settings: 'vrot' 700;}
+    90%{font-variation-settings: 'vrot' 400;}
+    100%{font-variation-settings: 'vrot' 400;}
+}
+@keyframes charAnim-5 {
+    0%{font-variation-settings: 'vrot' 500; }
+    45%{font-variation-settings: 'vrot' 700;}
+    55%{font-variation-settings: 'vrot' 700;}
+    90%{font-variation-settings: 'vrot' 500;}
+    100%{font-variation-settings:'vrot' 500;}
+}
+@keyframes charAnim-6 {
+    0%{font-variation-settings: 'vrot' 600;  }
+    45%{font-variation-settings: 'vrot' 700; }
+    55%{font-variation-settings: 'vrot' 700; }
+    90%{font-variation-settings: 'vrot' 600; }
+    100%{font-variation-settings: 'vrot' 600;}
+}
