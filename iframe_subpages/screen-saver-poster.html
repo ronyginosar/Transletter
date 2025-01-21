@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Saver Poster</title>
+    <!-- inject:css -->
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/screensaver-poster.css">
+    <!-- <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!-- endinject -->
+  </head>
+<body class="screensaver">
+    <div class="wrapper">
+        <div class="otDiv" id="charDiv_1">א</div>
+        <div id="logoPara">
+          <nobr>
+          <span>ת</span><span>נ</span><span>ו</span><span>א</span><span>ו</span><span>ת</span>
+          </nobr>
+        </div>
+    </div>
+    
+
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <!-- <script src="assets/js/roundslider.min.js" type="text/javascript"></script> -->
+    <!-- <script src="assets/js/jquery.fittext.js"></script> -->
+    <!-- <script src="assets/js/scripts.js"></script> -->
+    <script>
+      let changeSpeed = 8000;
+      const letters = ["א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ך", "ל", "מ", "ם", "נ", "ן", "ס", "ע", "פ", "ף", "צ", "ץ", "ק", "ר", "ש", "ת"];
+      function correctLetter() {
+        window.whatLetter += 1;
+
+        // Loop back to the start of the array if at the end
+        if (window.whatLetter == letters.length) {
+            window.whatLetter = 0;
+        }
+
+        // Update the letter
+        charDiv = document.getElementById('charDiv_1');
+        charDiv.innerText = letters[window.whatLetter];
+
+        // Restart the animation 
+        // the animation is called from here instead of css - helps with sync of animation and letter change
+        charDiv.style.animation = 'none'; // Reset animation
+        void charDiv.offsetWidth; // Trigger reflow to restart animation
+        charDiv.style.animation = 'otAnim 8s ease-in-out infinite, fontColor 8s ease-in-out infinite';
+      }
+      window.whatLetter = -1;
+
+      // Display the first letter immediately on page load
+      document.addEventListener('DOMContentLoaded', () => {
+          correctLetter(); // Display the first letter
+          setInterval(correctLetter, changeSpeed); // Start the interval for subsequent changes
+      });
+
+      
+    </script>
+  </body>
+</html>

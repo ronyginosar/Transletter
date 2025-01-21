@@ -1,69 +1,36 @@
 
 html,body{
     height: 100%;
-    font-size: var(--title-font-size);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between;  */
+    align-items: center;
 }
-.screensaver {
-    /* display: flex; */
-    /* flex-direction: row;
-    justify-content: space-between; */
-    /* align-items: center; */
 
-    /* background-color: #231f20; */
-    /* background-color: #fff; */
+.screensaver {
     font-family: TransletterGX;
-    font-size: 5em;
+
+    /* font-size = (desired font size / screen height) * 100vh */
+    font-size: calc(1200 / 1920 * 100vh) ;
     overflow: hidden;
-    /* height: 100vh;
-    width: 100vw;
-    position: fixed;
-    z-index: 100000;
-    top: 0;
-    left: 0;
-    opacity: 0; */
+
     pointer-events: none;
     transition: all .3s;
-    /* height: 100%; */
-    /* z-index: -1 */
+
+    width: calc(100vh * (9 / 16));
     
 }
 
 .screensaver .wrapper {
-    /* position: absolute; */
-    width: 100%;
-    /* height: 100%; */
-    /* top: 0; */
-    /* left: 0; */
-    /* color: var() */
-    -webkit-animation: fontColor 8s linear;
-    animation: fontColor 8s linear;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: none
+    height: 100vh; /* Set height to the full viewport height */
+    width: calc(100vh * (9 / 16)); /* Calculate width based on 9:16 aspect ratio */
+    margin: 0 auto; /* Center horizontally */
+    background-color: black; /* Optional: for visualization */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-/* .wrapper{
-    position: absolute;
-    bottom: 2.5vh;
-    width: 100%;
-    color: #91aedb;
-    text-align: center;
-    font-size: 3.5vh;
-    font-variation-settings: "vrot" 100;
-/* BAD NAME! 
-} */
-
-
-
-.wrapper {
-    height: 100%;
-}
-
 
 .screensaver .otDiv {
     display: flex;
@@ -71,11 +38,9 @@ html,body{
     justify-content: center;
     text-align: center;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     opacity: 0;
-
-    /* font-size: 50vw;
-    line-height: 60vh; */
+    height: 90vh;
     
     /* Enable 'left' property to work */
     position: relative; 
@@ -90,12 +55,6 @@ html,body{
     animation-fill-mode: forwards; */
 }
 
-
-/* .screensaver .otDiv:nth-of-type(2) {
-    left: -30%
-} */
-
-/* This is original screensaver? */
 
 
 .screensaver.active {
@@ -349,7 +308,7 @@ html,body{
 
 @-webkit-keyframes fontColor {
     0% {
-        color: var(--gradient-black);
+        color: white;
     }
 
     45% {
@@ -361,13 +320,13 @@ html,body{
     }
 
     to {
-        color: var(--gradient-black);
+        color: white;
     }
 }
 
 @keyframes fontColor {
     0% {
-        color: var(--gradient-black);
+        color: white;
     }
 
     45% {
@@ -379,66 +338,135 @@ html,body{
     }
 
     to {
-        color: var(--gradient-black);
+        color: white;
     }
 }
 
-/* body.screensaver {
-    pointer-events: all;
-    opacity: 1
+#logoPara{
+    width: calc(100vh * (9 / 16));
+    display:flex;
+    font-size: calc(50 / 1920 * 100vh) ;
+    align-items: flex-end;
+    /* background-color: red; */
 }
 
-body.screensaver .wrapper {
-    cursor: default
+#logoPara nobr{
+    font-family: TransletterGX;
+    font-variation-settings: 'vrot' 50;
+    user-select: none;
+    vertical-align: text-bottom;
+    color: white;
+    background-color: black;
+    margin-right: 20%;
 }
 
-body.screensaver nav {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1000
-} */
-
-/* .wrapper{
-    position: absolute;
-    bottom: 2.5vh;
-    width: 100%;
-    color: #91aedb;
-    text-align: center;
-    font-size: 3.5vh;
-    font-variation-settings: "vrot" 100;
-
-} */
-/* 
-.screensaver .logoDiv {
-    position: absolute;
-    bottom: 2.5vh;
-    width: 100%;
-    color: #91aedb;
-    text-align: center;
-    /* font-size: 3.5vh; 
-    font-size: 30vh;
-    font-variation-settings: "vrot" 100
-} */
-
-
-/* .screensaver .wrapper .logoDiv span:nth-of-type(2) {
-    font-variation-settings: "vrot" 200
+#logoPara nobr span{
+    animation: charAnim-1 var(--logoAnimationSpeed) linear infinite;
+    animation-delay: -2500ms;
+}
+#logoPara nobr span:nth-of-type(2){
+    animation-name: charAnim-2;
+    animation-delay: -2000ms;
+}
+#logoPara nobr span:nth-of-type(3){
+    animation-name: charAnim-3;
+    animation-delay: -1500ms;
+}
+#logoPara nobr span:nth-of-type(4){
+    animation-name: charAnim-4;
+    animation-delay: -1000ms;
+}
+#logoPara nobr span:nth-of-type(5){
+    animation-name: charAnim-5;
+    animation-delay: -500ms;
+}
+#logoPara nobr span:nth-of-type(6){
+    animation-name: charAnim-6;
+    animation-delay: 0ms;
 }
 
-.screensaver .wrapper .logoDiv span:nth-of-type(3) {
-    font-variation-settings: "vrot" 300
+@keyframes charAnim-1 {
+    0%{font-variation-settings:     'vrot' 100;}
+    45%{font-variation-settings:    'vrot' 700;}
+    55%{font-variation-settings:    'vrot' 700;}
+    90%{font-variation-settings:    'vrot' 100;}
+    100%{font-variation-settings:   'vrot' 100;}
+}
+@keyframes charAnim-2 {
+    0%{font-variation-settings:     'vrot' 200;}
+    45%{font-variation-settings:    'vrot' 700;}
+    55%{font-variation-settings:    'vrot' 700;}
+    90%{font-variation-settings:    'vrot' 200;}
+    100%{font-variation-settings:   'vrot' 200;}
+}
+@keyframes charAnim-3 {
+    0%{font-variation-settings: 'vrot' 300;  }
+    45%{font-variation-settings: 'vrot' 700; }
+    55%{font-variation-settings: 'vrot' 700; }
+    90%{font-variation-settings: 'vrot' 300; }
+    100%{font-variation-settings: 'vrot' 300;}
+}
+@keyframes charAnim-4 {
+    0%{font-variation-settings: 'vrot' 400; }
+    45%{font-variation-settings: 'vrot' 700;}
+    55%{font-variation-settings: 'vrot' 700;}
+    90%{font-variation-settings: 'vrot' 400;}
+    100%{font-variation-settings: 'vrot' 400;}
+}
+@keyframes charAnim-5 {
+    0%{font-variation-settings: 'vrot' 500; }
+    45%{font-variation-settings: 'vrot' 700;}
+    55%{font-variation-settings: 'vrot' 700;}
+    90%{font-variation-settings: 'vrot' 500;}
+    100%{font-variation-settings:'vrot' 500;}
+}
+@keyframes charAnim-6 {
+    0%{font-variation-settings: 'vrot' 600;  }
+    45%{font-variation-settings: 'vrot' 700; }
+    55%{font-variation-settings: 'vrot' 700; }
+    90%{font-variation-settings: 'vrot' 600; }
+    100%{font-variation-settings: 'vrot' 600;}
 }
 
-.screensaver .wrapper .logoDiv span:nth-of-type(4) {
-    font-variation-settings: "vrot" 400
+@keyframes charAnim-1 {
+    0%{font-variation-settings:     'vrot' 100;}
+    45%{font-variation-settings:    'vrot' 700;}
+    55%{font-variation-settings:    'vrot' 700;}
+    90%{font-variation-settings:    'vrot' 100;}
+    100%{font-variation-settings:   'vrot' 100;}
 }
-
-.screensaver .wrapper .logoDiv span:nth-of-type(5) {
-    font-variation-settings: "vrot" 500
+@keyframes charAnim-2 {
+    0%{font-variation-settings:     'vrot' 200;}
+    45%{font-variation-settings:    'vrot' 700;}
+    55%{font-variation-settings:    'vrot' 700;}
+    90%{font-variation-settings:    'vrot' 200;}
+    100%{font-variation-settings:   'vrot' 200;}
 }
-
-.screensaver .wrapper .logoDiv span:nth-of-type(6) {
-    font-variation-settings: "vrot" 600
-} */
+@keyframes charAnim-3 {
+    0%{font-variation-settings:  'vrot' 300; }
+    45%{font-variation-settings: 'vrot' 700; }
+    55%{font-variation-settings: 'vrot' 700; }
+    90%{font-variation-settings: 'vrot' 300; }
+    100%{font-variation-settings: 'vrot' 300;}
+}
+@keyframes charAnim-4 {
+    0%{font-variation-settings:  'vrot' 400; }
+    45%{font-variation-settings: 'vrot' 700; }
+    55%{font-variation-settings: 'vrot' 700; }
+    90%{font-variation-settings: 'vrot' 400; }
+    100%{font-variation-settings:'vrot' 400;}
+}
+@keyframes charAnim-5 {
+    0%{font-variation-settings: 'vrot' 500; }
+    45%{font-variation-settings: 'vrot' 700;}
+    55%{font-variation-settings: 'vrot' 700;}
+    90%{font-variation-settings: 'vrot' 500;}
+    100%{font-variation-settings:'vrot' 500;}
+}
+@keyframes charAnim-6 {
+    0%{font-variation-settings: 'vrot' 600;  }
+    45%{font-variation-settings: 'vrot' 700; }
+    55%{font-variation-settings: 'vrot' 700; }
+    90%{font-variation-settings: 'vrot' 600; }
+    100%{font-variation-settings: 'vrot' 600;}
+}
