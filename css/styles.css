@@ -60,6 +60,7 @@ iframe{
 @font-face {
     font-family: TransletterGX;
     src: url('../assets/font/Transletter_v7VF.ttf')
+    /* src: url('../assets/font/TransletterGX.ttf') TEST*/
     /* min 100, max 700 */
 }
 
