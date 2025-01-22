@@ -12,7 +12,10 @@
     /* TEMP */
     /* align-items: flex-start; */
     
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    /* note without controls - center */
+    justify-content: center;
+    
     background: linear-gradient(to bottom, var(--gradient-blue), var(--gradient-dark));
     padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding);
     font-family: TransletterGX;
@@ -20,7 +23,7 @@
 }
 
 #rangePara{
-    /* font-size: 48px; */
+    font-size: 4em;
     font-variation-settings: "vrot" var(--vrot-letter-range);
     line-height: 99%;
     margin: 0;
@@ -157,6 +160,10 @@ input[type=range]::-webkit-slider-thumb {
 
     .slider-container:hover .slider-label {
         opacity: 0;
+    }
+
+    #rangePara{
+        font-size: 8vw;
     }
 }
 
