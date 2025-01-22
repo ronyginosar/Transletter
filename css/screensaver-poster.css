@@ -308,37 +308,37 @@ html,body{
 
 @-webkit-keyframes fontColor {
     0% {
-        color: white;
+        color: var(--gradient-blue);
     }
 
     45% {
-        color: var(--gradient-blue);
+        color: white;
     }
 
     52% {
-        color: var(--gradient-blue);
+        color: white;
     }
 
     to {
-        color: white;
+        color: var(--gradient-blue);
     }
 }
 
 @keyframes fontColor {
     0% {
-        color: white;
+        color: var(--gradient-blue);
     }
 
     45% {
-        color: var(--gradient-blue);
+        color: white;
     }
 
     52% {
-        color: var(--gradient-blue);
+        color: white;
     }
 
     to {
-        color: white;
+        color: var(--gradient-blue);
     }
 }
 
