@@ -181,3 +181,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // iframe.classList.add('hidden-iframe'); // Add class to hide section inside iframe
     }
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Detect if the browser is not Chrome
+      const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  
+      // if (!isChrome) {
+      if (!isChrome) {
+          const banner = document.getElementById('browser-warning-banner');
+          banner.style.display = 'flex'; // Show the banner if not Chrome
+      }
+  
+      // Handle close button click
+      const closeButton = document.getElementById('close-banner-button');
+      closeButton.addEventListener('click', function () {
+          const banner = document.getElementById('browser-warning-banner');
+          banner.style.display = 'none'; // Hide the banner
+      });
+  });
+  

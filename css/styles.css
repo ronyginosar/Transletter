@@ -752,3 +752,40 @@ nav a {
         max-height: 13vh; */
     }
 }
+
+#browser-warning-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 10vh; /* Adjust height as desired */
+    background-color: var(--gradient-blue); 
+    color: var(--gradient-black);
+    display: none;
+    justify-content: space-evenly; /* Space between text and button */
+    align-items: center;
+    /* padding: 0 1rem;  */
+    /* Padding for text */
+    font-size: 1.1em;
+    z-index: 1000; /* Ensure it’s on top */
+}
+
+#browser-warning-message > :lang(en) {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 0.9em;
+}
+
+
+#close-banner-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    outline: none;
+    padding: 0.5rem;
+}
+
+#close-banner-button:hover {
+    color: var(--gradient-dark); /* Lighter red on hover */
+}
