@@ -26,6 +26,10 @@ iframe{
     width: 100%;   
 }
 
+#footer-iframe{
+    height: 34vh;
+}
+
 @media screen and (max-width: 768px) {
     iframe{
         height: 60vh;
@@ -52,6 +56,11 @@ iframe{
         /* height: fit-content; */
     }
 
+    #footer-iframe{
+        height: 40vh;
+    }
+
+    
 
 
 
@@ -238,7 +247,8 @@ section .tester_wrapper{
     background-color: var(--footer-gray);
     /* background-color: pink; */
     color: var(--element-color);
-    height: 40vh; /*placeholder value to later inject height by script*/
+    /* height: 40vh;  */
+    /*placeholder value to later inject height by script*/
     width: 100%;
 
 }
