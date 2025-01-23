@@ -49,14 +49,15 @@
 }
 
 #bottom-row {
-    height: 100px;
+    height: 50%;
     opacity: 0.5;
 }
 
 #logos {
     flex-shrink: 1;
     display: flex;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
+    flex-direction: column;
     justify-content: space-between; 
     /* TODO  this better */
     align-items: flex-start;
