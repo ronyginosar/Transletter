@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     editableSection.addEventListener('keydown', function(event) {
         // Prevent default behavior to avoid raw text insertion
-        // event.preventDefault();
+        event.preventDefault();
 
         if(mediaQuery.matches){
         editableSection.setAttribute('contenteditable', 'true');
