@@ -28,9 +28,12 @@ function injectGlyphRow(character) {
 
 // Set the default selected button to be visually indicated (highlight the button for desired char)
 const defaultButton = document.getElementById('default_glyph');
-defaultButton.classList.add('selected'); // Add a class to visually highlight the button
-// Initialize the page with the default character 
-injectGlyphRow(defaultButton.textContent);
+if (defaultButton){
+    defaultButton.classList.add('selected'); // Add a class to visually highlight the button
+    // Initialize the page with the default character 
+    injectGlyphRow(defaultButton.textContent);
+}
+
 
 // Add an event listener to all buttons inside glyph_selector
 const buttons = document.querySelectorAll('#glyph_selector button');
@@ -69,6 +72,7 @@ glyphButtons.forEach(button => {
 // Function to inject handwritten images
 function injectHandwrittenImages(character) {
     const imageContainer = document.getElementById('handwritten_glyph_space');
+    if (!imageContainer) return; // Exit if the container is not found
     imageContainer.innerHTML = ''; // Clear existing images
 
     images[character].forEach((imageName, index) => {

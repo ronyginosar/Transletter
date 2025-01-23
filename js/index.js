@@ -185,8 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('DOMContentLoaded', function () {
       // Detect if the browser is not Chrome
       const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-  
-      // if (!isChrome) {
       if (!isChrome) {
           const banner = document.getElementById('browser-warning-banner');
           banner.style.display = 'flex'; // Show the banner if not Chrome

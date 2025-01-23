@@ -52,15 +52,17 @@ iframe{
         height: 120vh;
     }
 
-    #research-section{
+    /* #research-section{ */
         /* height: fit-content; */
-    }
+    /* } */
 
     #footer-iframe{
         height: 40vh;
     }
 
-    
+    .research > iframe{
+        height: 98vh;
+    }
 
 
 
@@ -258,22 +260,22 @@ section .tester_wrapper{
     background-color: var(--footer-gray);
 }
 
-section.research{
+.research{
     width: 100%; 
     background-color: var(--background-color);
-    height: 170vh;
+    /* height: 170vh; */
     /* overflow: hidden;  */
 }
 
 /* NOTE: this is where to extend height on research, not anywhere else. o.w. scrolling */
-.research iframe{
+/* .research iframe{ */
     /* height: 200vh; */
     /* height: 180vh; */
-    height: 100%;
+    /* height: 100%; */
     /* position: absolute; */
     /* top: 0; */
     /* left: 0; */
-}
+/* } */
 
 
 
@@ -754,6 +756,9 @@ nav a {
 }
 
 #browser-warning-banner {
+    /* only if not chrome */
+    display: none;
+
     position: fixed;
     bottom: 0;
     left: 0;
@@ -761,7 +766,6 @@ nav a {
     height: 10vh; /* Adjust height as desired */
     background-color: var(--gradient-blue); 
     color: var(--gradient-black);
-    display: none;
     justify-content: space-evenly; /* Space between text and button */
     align-items: center;
     /* padding: 0 1rem;  */
@@ -769,6 +773,13 @@ nav a {
     font-size: 1.1em;
     z-index: 1000; /* Ensure it’s on top */
 }
+
+/* @media screen and (max-width: 768px) {
+    #browser-warning-banner {
+        height: 15vh;
+    }
+    
+} */
 
 #browser-warning-message > :lang(en) {
     font-family: 'Helvetica', sans-serif;
