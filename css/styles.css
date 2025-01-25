@@ -741,19 +741,19 @@ nav a {
     max-height: 100%;
 }
 
-@media screen and (max-width: 768px) {
-    #research-image-gallery{
+/* @media screen and (max-width: 768px) { */
+    /* #research-image-gallery{ */
         /* height: 19%;
         max-height: 13vh;
         margin-bottom: 5%;
         margin-top: 5%; */
-    }
+    /* } */
 
-    #research-image-gallery img {
+    /* #research-image-gallery img { */
         /* height: 100%;
         max-height: 13vh; */
-    }
-}
+    /* } */
+/* } */
 
 #browser-warning-banner {
     /* only if not chrome */

@@ -74,6 +74,7 @@ body {
 #image-container {
     /* note: later controlled by js in evolution file */
     position: absolute;
+    /* set in js */
     top:33%;
     /* 'right' will be somewhat random in js */
     right: 10%;
@@ -89,8 +90,9 @@ body {
 
 @media screen and (max-width: 768px) {
     #image-container{
-        top:25%;
-        /* right in js */
+        /* set in js */
+        top:15%;
+        
     }
 }
 
