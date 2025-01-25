@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     editableSection.addEventListener('keydown', function(event) {
         // Prevent default behavior to avoid raw text insertion
-        // event.preventDefault();
+        event.preventDefault();
 
         if(mediaQuery.matches){
         editableSection.setAttribute('contenteditable', 'true');
@@ -177,6 +177,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (char.length === 1) { // Only process printable characters
+
+            // Prevent default character insertion, allowing to use 'preventDefault'
+            event.preventDefault();
+
             // Randomize 'vrot' for the typed character future: set deviation for this?
             const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
 
