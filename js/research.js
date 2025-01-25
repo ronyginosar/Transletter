@@ -13,7 +13,7 @@ function injectGlyphRow(character) {
         const span = document.createElement('span');
         span.textContent = character;
         span.style.fontVariationSettings = `"vrot" ${vrotValues[i]}`;
-        span.style.margin = '0 5px';  // Add some spacing between the characters
+        // span.style.margin = '0 5px';  // Add some spacing between the characters
 
         // Apply color based on index (even or odd)
         if (i % 2 === 0) {
