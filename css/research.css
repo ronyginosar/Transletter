@@ -114,7 +114,8 @@ body {
     }
     #title h1{
         font-size: 5em;
-        margin-bottom: 4%;
+        /* margin-bottom: 4%; */
+        margin-bottom: 0;
     }
 
     #title_spacer{
@@ -128,6 +129,7 @@ body {
     #title p{
         width: 100%;
         font-size: 0.6em;
+        padding-top: 0;
     }
 
     /* #title_wrapper{ */
@@ -250,7 +252,10 @@ body {
     #handwritten_glyph_space{
         width: 100%;
         font-size: 1em;
+        display: flex;
         flex-wrap: wrap;
+        height: auto; 
+        flex-shrink: 1;
     }
 
     #handwritten_glyph_space img {
@@ -258,15 +263,23 @@ body {
         /* width: 1.7em; */
         padding: 2%;
         font-size: 0.7em;
+        /* flex-shrink: 1; */
     }
 
     div.handwritten-text-image-container{
         width: 20%;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
+        /* flex-shrink: 1; */
     }
 
-    .handwritten-text-label{
-        max-height: 110px;
+    small.handwritten-text-label {
+        /* max-height: 110px; */
+        margin-top: 0px;
+        margin-right: 0;
+        /* flex-shrink: 1; */
+        background-color: red;
+        left: -15%;
+        position: relative;
     }
     
     #button_title{
@@ -511,7 +524,7 @@ body {
 
     #image-gallery img {
         height: 100%;
-        /* max-height: 13vh; */ */
+        /* max-height: 13vh; */ 
     }
 }
 
