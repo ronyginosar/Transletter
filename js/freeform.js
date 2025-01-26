@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (char.length === 1) { // Only process printable characters
 
             // Prevent default character insertion, allowing to use 'preventDefault'
-            // event.preventDefault();
+            event.preventDefault();
 
             // Randomize 'vrot' for the typed character future: set deviation for this?
             const randomVrot = Math.floor(Math.random() * (maxVrot - minVrot + 1)) + minVrot;
