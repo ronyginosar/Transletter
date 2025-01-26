@@ -1,8 +1,8 @@
 /* TODO clean */
 
 :root {
-    /* --imagecontainerdims: 18em; */
-    --imagecontainerdims: 70%;
+    --imagecontainerdims: 18em;
+    /* --imagecontainerdims: 70%; */
 }
 
 .flex-container {
