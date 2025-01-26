@@ -182,19 +182,87 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      // Detect if the browser is not Chrome
-      const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-      if (!isChrome) {
-          const banner = document.getElementById('browser-warning-banner');
+  //   document.addEventListener('DOMContentLoaded', function () {
+  //     // Detect if the browser is not Chrome
+  //     const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  //     if (!isChrome) {
+  //         const banner = document.getElementById('browser-warning-banner');
+  //         banner.style.display = 'flex'; // Show the banner if not Chrome
+  //     }
+  
+  //     // Handle close button click
+  //     const closeButton = document.getElementById('close-banner-button');
+  //     closeButton.addEventListener('click', function () {
+  //         const banner = document.getElementById('browser-warning-banner');
+  //         banner.style.display = 'none'; // Hide the banner
+  //     });
+  // });
+//   document.addEventListener('DOMContentLoaded', function () {
+//     // Detect if the browser is Chrome
+//     const userAgent = navigator.userAgent;
+//     const vendor = navigator.vendor;
+
+
+//     console.log('User Agent:', navigator.userAgent);
+//     console.log('Is Chrome:', isChrome);
+//     console.log('Is Chrome on iOS:', /CriOS/.test(userAgent));
+//     console.log('Has window.chrome:', !!window.chrome);
+
+//     const isChrome =
+//         (/Chrome/.test(userAgent) && /Google Inc/.test(vendor) && window.chrome !== null) || // Chrome on desktop
+//         /CriOS/.test(userAgent); // Chrome on iOS
+
+//     if (!isChrome) {
+//         const banner = document.getElementById('browser-warning-banner');
+//         if (banner) {
+//             banner.style.display = 'flex'; // Show the banner if not Chrome
+//         }
+//     }
+
+//     // Handle close button click
+//     const closeButton = document.getElementById('close-banner-button');
+//     if (closeButton) {
+//         closeButton.addEventListener('click', function () {
+//             const banner = document.getElementById('browser-warning-banner');
+//             if (banner) {
+//                 banner.style.display = 'none'; // Hide the banner
+//             }
+//         });
+//     }
+// });
+document.addEventListener('DOMContentLoaded', function () {
+  const userAgent = navigator.userAgent;
+  const isChrome = (() => {
+      if (/CriOS/.test(userAgent)) {
+          // Chrome on iOS
+          return true;
+      }
+      if (/Chrome/.test(userAgent) && typeof window.chrome !== 'undefined') {
+          // Chrome on desktop or Android
+          return true;
+      }
+      return false; // All other browsers
+  })();
+
+  console.log('User Agent:', userAgent);
+  console.log('Is Chrome:', isChrome);
+
+  if (!isChrome) {
+      const banner = document.getElementById('browser-warning-banner');
+      if (banner) {
           banner.style.display = 'flex'; // Show the banner if not Chrome
       }
-  
-      // Handle close button click
-      const closeButton = document.getElementById('close-banner-button');
+  }
+
+  const closeButton = document.getElementById('close-banner-button');
+  if (closeButton) {
       closeButton.addEventListener('click', function () {
           const banner = document.getElementById('browser-warning-banner');
-          banner.style.display = 'none'; // Hide the banner
+          if (banner) {
+              banner.style.display = 'none'; // Hide the banner
+          }
       });
-  });
-  
+  }
+});
+
+

@@ -220,13 +220,15 @@ body {
 
 #handwritten_glyph_space img {
     width: 5.7em;
-    padding: 10%;
+    /* padding: 10%; */
     height: auto;
 }
 
 #handwritten_glyph_space img:hover {
     /* best approx to var(--gradient-blue) */
     filter: brightness(0) invert(1) sepia(1) saturate(1000%) hue-rotate(97deg);
+    /* filter: brightness(1.5) sepia(1) saturate(500%) hue-rotate(176deg); */
+
     /* transition saturation rather than hue. */
     transition: saturate .3s ease .15s;
 }
