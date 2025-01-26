@@ -55,7 +55,7 @@ p{
 #logoPara{
     width: calc(100vh * (9 / 16));
     display:flex;
-    font-size: calc(50 / 1920 * 100vh) ;
+    font-size: calc(40 / 1920 * 100vh) ;
     align-items: flex-end;
 }
 

@@ -265,4 +265,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   // Feature detection for Chrome
+//   const isChrome = (() => {
+//       // Check for specific Chrome features
+//       const hasChromeSpecificFeatures =
+//           !!window.chrome && !!window.chrome.webstore; // Unique to Chrome
+//       const isNotEdge = !/Edg/.test(navigator.userAgent); // Exclude Edge (also Chromium-based)
+//       const isNotOpera = !/OPR/.test(navigator.userAgent); // Exclude Opera (also Chromium-based)
+//       return hasChromeSpecificFeatures && isNotEdge && isNotOpera;
+//   })();
+
+//   console.log('User Agent:', navigator.userAgent);
+//   console.log('Is Chrome:', isChrome);
+
+//   if (!isChrome) {
+//       const banner = document.getElementById('browser-warning-banner');
+//       if (banner) {
+//           banner.style.display = 'flex'; // Show the banner if not Chrome
+//       }
+//   }
+
+//   const closeButton = document.getElementById('close-banner-button');
+//   if (closeButton) {
+//       closeButton.addEventListener('click', function () {
+//           const banner = document.getElementById('browser-warning-banner');
+//           if (banner) {
+//               banner.style.display = 'none'; // Hide the banner
+//           }
+//       });
+//   }
+// });
+
 
