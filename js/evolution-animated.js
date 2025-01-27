@@ -486,23 +486,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 .replace(/{{en:(.*?)}}/g, '<span lang="en">$1</span>'); // Wrap English text in <span lang="en">
             }
             
-            // if (span.innerHTML === 'צ') {
+            if (span.innerHTML === 'צ') {
                 imageContainer.style.right = '0';
                 imageContainer.style.top = '0';
                 imageContainer.style.width = '100%';
                 imageContainer.style.height = '100%';
-            // }
-            // else
-            // {
-                // imageContainer.style.width = 'var(--imagecontainerdims)';
-                // imageContainer.style.height = 'var(--imagecontainerdims)';
-                // imageContainer.style.top = imageContainerTop;
-                // imageContainer.style.right = '0';
-                // imageContainer.style.top = '0';
-                // imageContainer.style.width = '100%';
-                // imageContainer.style.height = '100%';
+            }
+            else
+            {
+                imageContainer.style.width = 'var(--imagecontainerdims)';
+                imageContainer.style.height = 'var(--imagecontainerdims)';
+                imageContainer.style.top = imageContainerTop;
                 // imageContainer.style.right = '10%';
-            // }
+            }
+
+            if(mediaQuery.matches){
+                imageContainer.style.right = '0';
+                imageContainer.style.top = '0';
+                imageContainer.style.width = '100%';
+                imageContainer.style.height = '100%';
+            }
         }
     
     }
