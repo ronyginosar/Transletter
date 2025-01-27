@@ -213,6 +213,13 @@ section .tester_wrapper{
     width: 100%;
 }
 
+@media screen and (max-width: 768px) {
+    #waterfall-toggle-section{
+        padding-bottom: 10%;
+    }
+    
+}
+
 #waterfall-toggle-section button{
     font-family: inherit;
     font-size: 1.2em;

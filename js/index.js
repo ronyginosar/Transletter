@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (mediaQuery.matches) {
             // Logic for narrow screens
             // console.log('Screen is 768px or narrower');
-            iframe.style.height = '50vh'; // Expand iframe
+            iframe.style.height = '56vh'; // Expand iframe
           }
         toggleButton.innerHTML = 'משקלים'; // Update button text
         // iframe.classList.remove('hidden-iframe'); // Remove class to show section inside iframe
