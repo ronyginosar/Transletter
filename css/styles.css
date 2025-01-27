@@ -774,12 +774,14 @@ nav a {
     z-index: 1000; /* Ensure it’s on top */
 }
 
-/* @media screen and (max-width: 768px) {
-    #browser-warning-banner {
-        height: 15vh;
+@media screen and (max-width: 768px) {
+    #browser-warning-message{
+        justify-content: space-evenly;
+        width: 80%;
+        font-size: 0.8em;
     }
     
-} */
+}
 
 #browser-warning-message > :lang(en) {
     font-family: 'Helvetica', sans-serif;
