@@ -330,12 +330,12 @@ document.addEventListener('DOMContentLoaded', function() {
             lineDiv.appendChild(span);
 
             // Hover effect
-            span.addEventListener('mouseenter', () => {
+            span.addEventListener('mouseenter', () => { /// HIGH PRIORITY
                 // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
                 handleHoverEffect(span, globalCharIndex);
             });
             
-            // Hover effect solution for touch devices
+            // Hover-end effect solution for touch devices HIGH PRIORITY
             const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
             if (isTouchDevice) {
 
