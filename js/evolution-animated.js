@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //     return Math.floor(Math.random() * 10) - 5; // Random rotation between -15deg and 15deg
     // }
 
-    // // TODO - ignore initial wheel and look only at last one (for scroll pad & unification of scroll speed?)
+    // TODO - ignore initial wheel and look only at last one (for scroll pad & unification of scroll speed?)
 
     // // Function to update the span transformations based on the simulated scroll position
     // function updateTransformations() {
@@ -301,112 +301,112 @@ document.addEventListener('DOMContentLoaded', function() {
     //     // TODO can reset moving images at the end of the reset
     // }
 
-    // // Loop through each line and split words into spans
-    // textLines.forEach((line, lineIndex) => {
-    //     const lineDiv = document.createElement('div'); // Create a container for each line
-    //     lineDiv.classList.add('lineDiv');
-    //     lineDiv.style.display = 'inline-block'; // Keep the word together
+    // Loop through each line and split words into spans
+    textLines.forEach((line, lineIndex) => {
+        const lineDiv = document.createElement('div'); // Create a container for each line
+        lineDiv.classList.add('lineDiv');
+        lineDiv.style.display = 'inline-block'; // Keep the word together
 
-    //     line.split('').forEach((char, charIndex) => {
+        line.split('').forEach((char, charIndex) => {
 
-    //         // const globalCharIndex = lineIndex * line.length + charIndex;
-    //         // Calculate globalCharIndex based on the cumulative offset
-    //         const globalCharIndex = charIndexOffset + charIndex;
+            // const globalCharIndex = lineIndex * line.length + charIndex;
+            // Calculate globalCharIndex based on the cumulative offset
+            const globalCharIndex = charIndexOffset + charIndex;
 
-    //         const span = document.createElement('span');
-    //         // const randomVrot = getRandomVrot();
-    //         const initialVrot = vrotOriginValues[globalCharIndex]; // #vrot
-    //         span.style.fontVariationSettings = `'vrot' ${initialVrot}`; // #vrot
-    //         span.textContent = char;
-    //         // span.style.display = 'inline-block'; // Ensure letters stay inline
+            const span = document.createElement('span');
+            // const randomVrot = getRandomVrot();
+            const initialVrot = vrotOriginValues[globalCharIndex]; // #vrot
+            span.style.fontVariationSettings = `'vrot' ${initialVrot}`; // #vrot
+            span.textContent = char;
+            // span.style.display = 'inline-block'; // Ensure letters stay inline
             
-    //         // debug
-    //         // span.style.border = '1px solid black';
-    //         // span.style.backgroundColor = 'purple';
+            // debug
+            // span.style.border = '1px solid black';
+            // span.style.backgroundColor = 'purple';
 
-    //         span.style.display = 'inline'; // Ensure letters stay inline
-    //         spans.push(span);
+            span.style.display = 'inline'; // Ensure letters stay inline
+            spans.push(span);
 
-    //         lineDiv.appendChild(span);
+            lineDiv.appendChild(span);
 
-    //         // Hover effect
-    //         span.addEventListener('mouseenter', () => {
-    //             // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
-    //             handleHoverEffect(span, globalCharIndex);
+            // Hover effect
+            span.addEventListener('mouseenter', () => {
+                // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
+                handleHoverEffect(span, globalCharIndex);
+            });
+            
+            // Hover effect solution for touch devices
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            if (isTouchDevice) {
+
+                // span.addEventListener('touchstart', () => {
+                //     handleHoverEffect(span, globalCharIndex);
+                // });
+                span.addEventListener('touchend', () => {
+                    resetHoverEffect(span); 
+                });
+            } else {
+                span.addEventListener('mouseleave', () => {
+                    // resetHoverEffect(span, randomVrot);
+                    resetHoverEffect(span); 
+                });
+            }
+
+
+            if ((globalCharIndex === LASTLETTER) && !mediaQuery.matches){ 
+                const span_infotext = document.createElement('span');
+                span_infotext.id = 'infotext-container';
+                span_infotext.innerHTML = "​ ";
+                span_infotext.classList.add('span_infotext');
+                lineDiv.appendChild(span_infotext);
+            }
+        });
+
+        textContainer.appendChild(lineDiv);
+
+        // Update charIndexOffset by adding the current line's length
+        charIndexOffset += line.length;
+
+        // <br> if needed
+        // if (lineIndex < textLines.length - 1) {
+        //     textContainer.appendChild(document.createElement('br'));
+        // }
+    });
+
+    // Store initial positions of spans after they are naturally laid out
+    // const initialPositions = [];
+
+    ////////////////////////////////// ACTION SECTION//////////////////////////////////////
+
+    // Wait for layout to be applied before capturing initial positions
+    window.addEventListener('load', function() {
+    //     // console.log('loaded');
+    //     spans.forEach(span => {
+    //         const rect = span.getBoundingClientRect();
+    //         // console.log(rect);
+    //         initialPositions.push({
+    //             x: rect.left,
+    //             y: rect.top,
+    //             width: rect.width,
+    //             height: rect.height,
+    //             data: span.textContent
     //         });
-            
-    //         // Hover effect solution for touch devices
-    //         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    //         if (isTouchDevice) {
-
-    //             // span.addEventListener('touchstart', () => {
-    //             //     handleHoverEffect(span, globalCharIndex);
-    //             // });
-    //             span.addEventListener('touchend', () => {
-    //                 resetHoverEffect(span); 
-    //             });
-    //         } else {
-    //             span.addEventListener('mouseleave', () => {
-    //                 // resetHoverEffect(span, randomVrot);
-    //                 resetHoverEffect(span); 
-    //             });
-    //         }
-
-
-    //         if ((globalCharIndex === LASTLETTER) && !mediaQuery.matches){ 
-    //             const span_infotext = document.createElement('span');
-    //             span_infotext.id = 'infotext-container';
-    //             span_infotext.innerHTML = "​ ";
-    //             span_infotext.classList.add('span_infotext');
-    //             lineDiv.appendChild(span_infotext);
-    //         }
     //     });
 
-    //     textContainer.appendChild(lineDiv);
+    //     // Apply absolute positioning relative to original positions
+        spans.forEach((span, index) => {
+    //         const { x, y, width, height } = initialPositions[index];
+    //         span.style.position = 'absolute';
+    //         span.style.left = `${x}px`;
+    //         span.style.top = `${y}px`;
+            const randomVrot = getRandomVrot(); // #vrot
+            // span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // #vrot
 
-    //     // Update charIndexOffset by adding the current line's length
-    //     charIndexOffset += line.length;
+            // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // #vrot
+        });
 
-    //     // <br> if needed
-    //     // if (lineIndex < textLines.length - 1) {
-    //     //     textContainer.appendChild(document.createElement('br'));
-    //     // }
-    // });
-
-    // // Store initial positions of spans after they are naturally laid out
-    // // const initialPositions = [];
-
-    // ////////////////////////////////// ACTION SECTION//////////////////////////////////////
-
-    // // Wait for layout to be applied before capturing initial positions
-    // window.addEventListener('load', function() {
-    // //     // console.log('loaded');
-    // //     spans.forEach(span => {
-    // //         const rect = span.getBoundingClientRect();
-    // //         // console.log(rect);
-    // //         initialPositions.push({
-    // //             x: rect.left,
-    // //             y: rect.top,
-    // //             width: rect.width,
-    // //             height: rect.height,
-    // //             data: span.textContent
-    // //         });
-    // //     });
-
-    // //     // Apply absolute positioning relative to original positions
-    //     spans.forEach((span, index) => {
-    // //         const { x, y, width, height } = initialPositions[index];
-    // //         span.style.position = 'absolute';
-    // //         span.style.left = `${x}px`;
-    // //         span.style.top = `${y}px`;
-    //         const randomVrot = getRandomVrot(); // #vrot
-    //         // span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // #vrot
-
-    //         // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // #vrot
-    //     });
-
-    // //     // console.log(initialPositions);
-    // });
+    //     // console.log(initialPositions);
+    });
 
     ////////////////////////////////// SCROLL ANIMATION //////////////////////////////////////
 
