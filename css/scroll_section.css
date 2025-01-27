@@ -55,6 +55,25 @@ p{
     }
 }
 
+/* note: animation on mobile instead of scroll */
+@media screen and (max-width: 768px) {
+    #scrollPara {
+        animation: vrotAnimation 8s ease-in-out infinite;
+    }
+}
+
+@keyframes vrotAnimation {
+    0% {
+        font-variation-settings: 'vrot' 100;
+    }
+    50% {
+        font-variation-settings: 'vrot' 700;
+    }
+    100% {
+        font-variation-settings: 'vrot' 100;
+    }
+}
+
 /* #scrollPara nobr{
     font-variation-settings: "vrot" var(--vrot);
 } */
