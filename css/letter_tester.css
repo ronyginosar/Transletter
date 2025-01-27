@@ -168,7 +168,7 @@ textarea#text_byBlock{
         overflow-wrap: break-word;
         word-wrap: break-word;
         display: block;
-        line-height: normal;
+        line-height: 90%;
     }
     textarea#text_byBlock {
         font-size: 0.5em;
