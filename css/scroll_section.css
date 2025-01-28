@@ -48,10 +48,16 @@ p{
 
 @media screen and (max-width: 768px) {
     #scrollPara {
-        font-size: 0.4em;
+        /* font-size: 0.4em; */
+        font-size: 0.45em;
     }
     p{
         width: 100%;
+    }
+
+    #scroll-section-wrapper{
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 

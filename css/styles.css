@@ -64,6 +64,13 @@ iframe{
         height: 98vh;
     }
 
+    #scroll-section-iframe{
+        padding-right: var(--page-side-padding);
+        padding-left: var(--page-side-padding);
+    }
+
+    
+
 
 
 }
