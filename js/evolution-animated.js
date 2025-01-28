@@ -1,3 +1,24 @@
+// INDEX HELPER
+// א 0
+// ב 1
+// ו 2
+// ל 3
+// ו 4
+// צ 5
+// י 6
+// ה 7
+
+// ש 8
+// ל 9
+
+// א 10
+// ו 11
+// ת 12
+// י 13
+// ו 14
+// ת 15
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const textLines = [
         'אבולוציה',
@@ -69,25 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     };
 
-// א 0
-// ב 1
-// ו 2
-// ל 3
-// ו 4
-// צ 5
-// י 6
-// ה 7
-
-// ש 8
-// ל 9
-
-// א 10
-// ו 11
-// ת 12
-// י 13
-// ו 14
-// ת 15
-
     const LASTLETTER = 15;
 
     // Initialize cumulative index offset
@@ -97,15 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxVrot = 700;
     const textContainer = document.getElementById('text-container');
     const spans = [];
-    const movingSpansIndexes = [0, 1, 2, 6, 11, 13, 14, 15]; // Only these indexes will start moving up initially
-
-    const upwardsMovement = 2;
-    const downwardsMovement = -upwardsMovement;
-    const downwardsFall = 10;
 
     let maxRandomImageContainerPosition = 33; // Arbitrary max right position for the image container
     let minRandomImageContainerPosition = 10;
-
     let imageContainerTop = '33%';
 
     // for narrow screens
@@ -117,13 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
         minRandomImageContainerPosition = 5;
         imageContainerTop = '15%';
     }
-
-    // Initialize a virtual scroll position
-    let scrollPosition = 0;
-    // TODO think of better way to maxScrollPosition, or have two seperate?
-    const maxScrollPosition = 2000; // Arbitrary max scroll simulation range
-    const minScrollPosition = 0;   // Arbitrary min scroll range
-    const fallThreshold = maxScrollPosition*0.9;
 
     // Function to create a random vrot value
     function getRandomVrot() {
@@ -140,6 +129,266 @@ document.addEventListener('DOMContentLoaded', function() {
         return minVrot + randomStep * stepSize; // Calculate the vrot value based on the step
 
     }
+
+    // Loop through each line and split words into spans
+    textLines.forEach((line, lineIndex) => {
+        const lineDiv = document.createElement('div'); // Create a container for each line
+        lineDiv.classList.add('lineDiv');
+        lineDiv.style.display = 'inline-block'; // Keep the word together
+
+        line.split('').forEach((char, charIndex) => {
+
+            // Calculate globalCharIndex based on the cumulative offset
+            const globalCharIndex = charIndexOffset + charIndex;
+
+            const span = document.createElement('span');
+            // const randomVrot = getRandomVrot();
+            const initialVrot = vrotOriginValues[globalCharIndex]; // #vrot
+            span.style.fontVariationSettings = `'vrot' ${initialVrot}`; // #vrot
+            span.textContent = char;
+
+            span.style.display = 'inline'; // Ensure letters stay inline
+            spans.push(span);
+
+            lineDiv.appendChild(span);
+
+            // Hover-end effect solution for touch devices 
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            if (isTouchDevice) {
+                // Prevent double-tap zoom and text selection (new)
+                span.style.touchAction = 'manipulation';
+                span.style.userSelect = 'none'; // Prevent text selection
+                span.style.webkitUserSelect = 'none'; // For older Safari versions
+        
+                // Prevent long-press context menu
+                span.addEventListener('contextmenu', (event) => {
+                    event.preventDefault();
+                });
+
+                // Mobile : click on mobile (new)
+
+                let hoverActive = false; // Track whether the hover effect is active
+
+                // Add touchstart to trigger hover-like behavior on touch devices
+                span.addEventListener('touchstart', (event) => {
+                    event.preventDefault(); // Prevent default touch behavior
+
+                    if (!hoverActive) {
+                        // Activate hover effect on the first touch
+                        handleHoverEffect(span, globalCharIndex);
+                        hoverActive = true;
+                    } else {
+                        // Reset hover effect on the second touch
+                        handleHoverEffect(span, globalCharIndex); // quick fix s.t. the toggle is only for the image and not the vrot change
+                        resetHoverEffect(span);
+                        hoverActive = false;
+                    }
+                });
+
+            } else {
+                // Desktop devices: hover effects
+
+                // Hover effect
+                span.addEventListener('mouseenter', () => {
+                    // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
+                    handleHoverEffect(span, globalCharIndex);
+                });
+
+                span.addEventListener('mouseleave', () => {
+                    resetHoverEffect(span); 
+                });
+            }
+
+
+            if ((globalCharIndex === LASTLETTER) && !mediaQuery.matches){ 
+                const span_infotext = document.createElement('span');
+                span_infotext.id = 'infotext-container';
+                span_infotext.innerHTML = "​ ";
+                span_infotext.classList.add('span_infotext');
+                lineDiv.appendChild(span_infotext);
+            }
+        });
+
+        textContainer.appendChild(lineDiv);
+
+        // Update charIndexOffset by adding the current line's length
+        charIndexOffset += line.length;
+
+        // <br> if needed
+        // if (lineIndex < textLines.length - 1) {
+        //     textContainer.appendChild(document.createElement('br'));
+        // }
+    });
+
+
+    ////////////////////////////////// ACTION SECTION//////////////////////////////////////
+
+    // Store initial positions of spans after they are naturally laid out
+    // const initialPositions = [];
+
+
+    // Wait for layout to be applied before capturing initial positions
+    window.addEventListener('load', function() {
+    //     // console.log('loaded');
+    //     spans.forEach(span => {
+    //         const rect = span.getBoundingClientRect();
+    //         // console.log(rect);
+    //         initialPositions.push({
+    //             x: rect.left,
+    //             y: rect.top,
+    //             width: rect.width,
+    //             height: rect.height,
+    //             data: span.textContent
+    //         });
+    //     });
+
+    //     // Apply absolute positioning relative to original positions
+        spans.forEach((span, index) => {
+    //         const { x, y, width, height } = initialPositions[index];
+    //         span.style.position = 'absolute';
+    //         span.style.left = `${x}px`;
+    //         span.style.top = `${y}px`;
+            const randomVrot = getRandomVrot(); // #vrot
+            // span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // #vrot
+
+            // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // #vrot
+        });
+
+    //     // console.log(initialPositions);
+    });
+
+    ////////////////////////////////// HOVER EFFECTS //////////////////////////////////////
+    function handleHoverEffect(span, index) {
+        span.style.transition = 'font-variation-settings 0.3s ease';
+        // console.log('hover', span.style.fontVariationSettings);
+    
+        const action = hoverActions[index];
+        // if (!action) return; // Exit if there's no action for this index
+    
+        // if (action.vrot !== undefined) { --> anyway change vrot #vrot
+            // Apply the specified vrot value
+            // span.style.fontVariationSettings = `'vrot' ${action.vrot}`; // #vrot
+            let randomVrot = getRandomVrot(); // #vrot const to let
+            // verify it's not the same #vrot
+            if (span.style.fontVariationSettings === `'vrot' ${randomVrot}`) {
+                randomVrot = getRandomVrot();
+            }
+            span.style.fontVariationSettings = `'vrot' ${randomVrot}`;   
+        // }
+    
+        // if (action.image !== undefined) {
+        if (action !== undefined && action.image !== undefined) {
+            // Display the specified image in the image container
+            // console.log(span)
+            const imageContainer = document.getElementById('image-container');
+            imageContainer.style.backgroundImage = `url(${action.image})`;
+            imageContainer.style.opacity = '1';
+            // imageContainer.style.right = Math.floor(Math.random() * maxRandomImageContainerPosition) + '%';
+            // add min: 
+            // imageContainer.style.right = Math.floor(Math.random() * (max - min) + min) + '%';
+            imageContainer.style.right = Math.floor(Math.random() * (maxRandomImageContainerPosition - minRandomImageContainerPosition) + minRandomImageContainerPosition) + '%';
+            
+            if(!mediaQuery.matches){
+                const infotextContainer = document.getElementById('infotext-container');
+                infotextContainer.innerHTML = infotext[index]
+                .replace(/\n/g, '<br>') // Replace line breaks with <br>
+                .replace(/{{en:(.*?)}}/g, '<span lang="en">$1</span>'); // Wrap English text in <span lang="en">
+            }
+            
+            if (span.innerHTML === 'צ') {
+                imageContainer.style.right = '0';
+                imageContainer.style.top = '0';
+                imageContainer.style.width = '100%';
+                imageContainer.style.height = '100%';
+            }
+            else
+            {
+                imageContainer.style.width = 'var(--imagecontainerdims)';
+                imageContainer.style.height = 'var(--imagecontainerdims)';
+                imageContainer.style.top = imageContainerTop;
+                // imageContainer.style.right = '10%';
+            }
+
+            if(mediaQuery.matches){
+                imageContainer.style.right = '0';
+                imageContainer.style.top = '0';
+                imageContainer.style.width = '100%';
+                imageContainer.style.height = '100%';
+            }
+        }
+    
+    }
+    
+    // function resetHoverEffect(span, originalVrot) {
+    //     span.style.fontVariationSettings = `'vrot' ${originalVrot}`;
+    //     const imageContainer = document.getElementById('image-container');
+    //     imageContainer.style.opacity = '0';
+    // }
+
+    function resetHoverEffect(span) {
+        const imageContainer = document.getElementById('image-container');
+        imageContainer.style.opacity = '0';
+
+        const infotextContainer = document.getElementById('infotext-container');
+        if(!mediaQuery.matches){
+            infotextContainer.textContent = " ";
+        }
+    }
+}); // end of DOMContentLoaded
+
+
+////////////////////////////////// SCROLL ANIMATION //////////////////////////////////////
+//// infrastructure for falling animation, never fully solved
+
+//     const movingSpansIndexes = [0, 1, 2, 6, 11, 13, 14, 15]; // Only these indexes will start moving up initially
+
+//     const upwardsMovement = 2;
+//     const downwardsMovement = -upwardsMovement;
+//     const downwardsFall = 10;
+    
+//     // Initialize a virtual scroll position
+//     let scrollPosition = 0;
+//     // TODO think of better way to maxScrollPosition, or have two seperate?
+//     const maxScrollPosition = 2000; // Arbitrary max scroll simulation range
+//     const minScrollPosition = 0;   // Arbitrary min scroll range
+//     const fallThreshold = maxScrollPosition*0.9;
+
+    // // Use the 'wheel' event to detect scroll gestures without moving the page
+    // window.addEventListener('wheel', function(event) {
+    //     event.preventDefault(); // Prevent default scrolling behavior
+
+    //     const deltaY = event.deltaY; // Only vertical scrolling (ignore deltaX)
+    //     // console.log(deltaY);
+    //     // console.log(event.deltaX);
+
+    //     // note: negotiable what is up and down with macs...
+    //     // HIGH PRIORITY think of better way to deltaY, it's too according to speed?
+
+    //     // scrollPosition global param
+    //     if (deltaY > 0) {
+    //         // Scrolling up
+    //         // Continue the current behavior (move spans upwards and handle collisions)
+    //         scrollPosition += deltaY;
+    //         scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
+    
+    //         // Update transformations based on the virtual scroll position
+    //         updateTransformations();
+    
+    //         // Handle collisions
+    //         handleCollisions();
+    //     } else if (deltaY < 0) {
+    //         // Scrolling down
+    //         scrollPosition -= deltaY;
+    //         scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
+    //         // Reset spans to their initial positions (move them back down and reset rotation)
+    //         resetToInitialPositions();
+
+    //         // TODO remove from scrollPosition?
+    //     }
+
+    //     // console.log(scrollPosition);
+
+    // }, { passive: false }); // Set passive: false to allow preventDefault()
 
     // // Function to generate random numbers for translation and rotation
     // function getRandomTranslation() {
@@ -300,311 +549,3 @@ document.addEventListener('DOMContentLoaded', function() {
     //     });
     //     // TODO can reset moving images at the end of the reset
     // }
-
-    // Loop through each line and split words into spans
-    textLines.forEach((line, lineIndex) => {
-        const lineDiv = document.createElement('div'); // Create a container for each line
-        lineDiv.classList.add('lineDiv');
-        lineDiv.style.display = 'inline-block'; // Keep the word together
-
-        line.split('').forEach((char, charIndex) => {
-
-            // const globalCharIndex = lineIndex * line.length + charIndex;
-            // Calculate globalCharIndex based on the cumulative offset
-            const globalCharIndex = charIndexOffset + charIndex;
-
-            const span = document.createElement('span');
-            // const randomVrot = getRandomVrot();
-            const initialVrot = vrotOriginValues[globalCharIndex]; // #vrot
-            span.style.fontVariationSettings = `'vrot' ${initialVrot}`; // #vrot
-            span.textContent = char;
-            // span.style.display = 'inline-block'; // Ensure letters stay inline
-            
-            // debug
-            // span.style.border = '1px solid black';
-            // span.style.backgroundColor = 'purple';
-
-            span.style.display = 'inline'; // Ensure letters stay inline
-            spans.push(span);
-
-            lineDiv.appendChild(span);
-
-            // // Hover effect
-            // span.addEventListener('mouseenter', () => { /// HIGH PRIORITY
-            //     // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
-            //     handleHoverEffect(span, globalCharIndex);
-            // });
-            
-            // Hover-end effect solution for touch devices HIGH PRIORITY
-            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-            if (isTouchDevice) {
-                // Prevent iOS double-tap zoom (new)
-                // span.style.touchAction = 'manipulation';
-
-                // spans.forEach((span) => {
-                    // Prevent double-tap zoom and text selection
-                    span.style.touchAction = 'manipulation';
-                    span.style.userSelect = 'none'; // Prevent text selection
-                    span.style.webkitUserSelect = 'none'; // For older Safari versions
-            
-                    // Prevent long-press context menu
-                    span.addEventListener('contextmenu', (event) => {
-                        event.preventDefault();
-                    });
-                // });
-
-                // // Mobile : click on mobile (new)
-                // // Add touchstart to trigger hover-like behavior on touch devices
-                // span.addEventListener('touchstart', () => {
-                //     handleHoverEffect(span, globalCharIndex);
-                // });
-
-                let hoverActive = false; // Track whether the hover effect is active
-
-                // Add touchstart to trigger hover-like behavior on touch devices
-                span.addEventListener('touchstart', (event) => {
-                    event.preventDefault(); // Prevent default touch behavior
-
-                    if (!hoverActive) {
-                        // Activate hover effect on the first touch
-                        handleHoverEffect(span, globalCharIndex);
-                        hoverActive = true;
-                    } else {
-                        // Reset hover effect on the second touch
-                        handleHoverEffect(span, globalCharIndex); // quick fix s.t. the toggle is only for the image and not the vrot change
-                        resetHoverEffect(span);
-                        hoverActive = false;
-                    }
-                });
-
-                // option:
-                // span.addEventListener('touchstart', (event) => {
-                //     event.preventDefault(); // Prevent default touch behavior
-                //     handleHoverEffect(span, globalCharIndex);
-                // });
-
-                // todo
-                // span.addEventListener('touchend', () => {
-                //     resetHoverEffect(span); 
-                // });
-
-                // Add touchend to reset the hover effect with a delay
-                // span.addEventListener('touchend', (event) => {
-                //     event.preventDefault(); // Prevent default touch behavior
-
-                //     // Delay resetting the hover effect to give the user time to see it
-                //     setTimeout(() => {
-                //         resetHoverEffect(span);
-                //     }, 1200); // Adjust delay (in milliseconds) as needed
-                // });
-
-                // option:
-                // span.addEventListener('touchend', (event) => {
-                //     event.preventDefault(); // Prevent default touch behavior
-                //     resetHoverEffect(span);
-                // });
-
-                // option:
-                // Fallback for click on touch devices:
-                // span.addEventListener('click', (event) => {
-                //     event.preventDefault();
-                //     handleHoverEffect(span, globalCharIndex);
-            
-                //     // Simulate hover reset after a short delay
-                //     setTimeout(() => {
-                //         resetHoverEffect(span);
-                //     }, 4000); // Adjust the delay as needed
-                // });
-
-            } else {
-                // Desktop devices: hover effects
-
-                // Hover effect
-                span.addEventListener('mouseenter', () => {
-                    // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
-                    handleHoverEffect(span, globalCharIndex);
-                });
-
-                span.addEventListener('mouseleave', () => {
-                    resetHoverEffect(span); 
-                });
-            }
-
-
-            if ((globalCharIndex === LASTLETTER) && !mediaQuery.matches){ 
-                const span_infotext = document.createElement('span');
-                span_infotext.id = 'infotext-container';
-                span_infotext.innerHTML = "​ ";
-                span_infotext.classList.add('span_infotext');
-                lineDiv.appendChild(span_infotext);
-            }
-        });
-
-        textContainer.appendChild(lineDiv);
-
-        // Update charIndexOffset by adding the current line's length
-        charIndexOffset += line.length;
-
-        // <br> if needed
-        // if (lineIndex < textLines.length - 1) {
-        //     textContainer.appendChild(document.createElement('br'));
-        // }
-    });
-
-    // Store initial positions of spans after they are naturally laid out
-    // const initialPositions = [];
-
-    ////////////////////////////////// ACTION SECTION//////////////////////////////////////
-
-    // Wait for layout to be applied before capturing initial positions
-    window.addEventListener('load', function() {
-    //     // console.log('loaded');
-    //     spans.forEach(span => {
-    //         const rect = span.getBoundingClientRect();
-    //         // console.log(rect);
-    //         initialPositions.push({
-    //             x: rect.left,
-    //             y: rect.top,
-    //             width: rect.width,
-    //             height: rect.height,
-    //             data: span.textContent
-    //         });
-    //     });
-
-    //     // Apply absolute positioning relative to original positions
-        spans.forEach((span, index) => {
-    //         const { x, y, width, height } = initialPositions[index];
-    //         span.style.position = 'absolute';
-    //         span.style.left = `${x}px`;
-    //         span.style.top = `${y}px`;
-            const randomVrot = getRandomVrot(); // #vrot
-            // span.style.fontVariationSettings = `'vrot' ${randomVrot}`; // #vrot
-
-            // span.style.fontVariationSettings = `'vrot' ${vrotOriginValues[index]}`; // #vrot
-        });
-
-    //     // console.log(initialPositions);
-    });
-
-    ////////////////////////////////// SCROLL ANIMATION //////////////////////////////////////
-
-    // // Use the 'wheel' event to detect scroll gestures without moving the page
-    // window.addEventListener('wheel', function(event) {
-    //     event.preventDefault(); // Prevent default scrolling behavior
-
-    //     const deltaY = event.deltaY; // Only vertical scrolling (ignore deltaX)
-    //     // console.log(deltaY);
-    //     // console.log(event.deltaX);
-
-    //     // note: negotiable what is up and down with macs...
-    //     // HIGH PRIORITY think of better way to deltaY, it's too according to speed?
-
-    //     // scrollPosition global param
-    //     if (deltaY > 0) {
-    //         // Scrolling up
-    //         // Continue the current behavior (move spans upwards and handle collisions)
-    //         scrollPosition += deltaY;
-    //         scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
-    
-    //         // Update transformations based on the virtual scroll position
-    //         updateTransformations();
-    
-    //         // Handle collisions
-    //         handleCollisions();
-    //     } else if (deltaY < 0) {
-    //         // Scrolling down
-    //         scrollPosition -= deltaY;
-    //         scrollPosition = Math.max(minScrollPosition, Math.min(maxScrollPosition, scrollPosition));
-    //         // Reset spans to their initial positions (move them back down and reset rotation)
-    //         resetToInitialPositions();
-
-    //         // TODO remove from scrollPosition?
-    //     }
-
-    //     // console.log(scrollPosition);
-
-    // }, { passive: false }); // Set passive: false to allow preventDefault()
-
-
-    ////////////////////////////////// HOVER EFFECTS //////////////////////////////////////
-    function handleHoverEffect(span, index) {
-        span.style.transition = 'font-variation-settings 0.3s ease';
-        // console.log('hover', span.style.fontVariationSettings);
-    
-        const action = hoverActions[index];
-        // if (!action) return; // Exit if there's no action for this index
-    
-        // if (action.vrot !== undefined) { --> anyway change vrot #vrot
-            // Apply the specified vrot value
-            // span.style.fontVariationSettings = `'vrot' ${action.vrot}`; // #vrot
-            let randomVrot = getRandomVrot(); // #vrot const to let
-            // verify it's not the same #vrot
-            if (span.style.fontVariationSettings === `'vrot' ${randomVrot}`) {
-                randomVrot = getRandomVrot();
-            }
-            span.style.fontVariationSettings = `'vrot' ${randomVrot}`;   
-        // }
-    
-        // if (action.image !== undefined) {
-        if (action !== undefined && action.image !== undefined) {
-            // Display the specified image in the image container
-            // console.log(span)
-            const imageContainer = document.getElementById('image-container');
-            imageContainer.style.backgroundImage = `url(${action.image})`;
-            imageContainer.style.opacity = '1';
-            // imageContainer.style.right = Math.floor(Math.random() * maxRandomImageContainerPosition) + '%';
-            // add min: 
-            // imageContainer.style.right = Math.floor(Math.random() * (max - min) + min) + '%';
-            imageContainer.style.right = Math.floor(Math.random() * (maxRandomImageContainerPosition - minRandomImageContainerPosition) + minRandomImageContainerPosition) + '%';
-            
-            if(!mediaQuery.matches){
-                const infotextContainer = document.getElementById('infotext-container');
-                infotextContainer.innerHTML = infotext[index]
-                .replace(/\n/g, '<br>') // Replace line breaks with <br>
-                .replace(/{{en:(.*?)}}/g, '<span lang="en">$1</span>'); // Wrap English text in <span lang="en">
-            }
-            
-            if (span.innerHTML === 'צ') {
-                imageContainer.style.right = '0';
-                imageContainer.style.top = '0';
-                imageContainer.style.width = '100%';
-                imageContainer.style.height = '100%';
-            }
-            else
-            {
-                imageContainer.style.width = 'var(--imagecontainerdims)';
-                imageContainer.style.height = 'var(--imagecontainerdims)';
-                imageContainer.style.top = imageContainerTop;
-                // imageContainer.style.right = '10%';
-            }
-
-            if(mediaQuery.matches){
-                imageContainer.style.right = '0';
-                imageContainer.style.top = '0';
-                imageContainer.style.width = '100%';
-                imageContainer.style.height = '100%';
-            }
-        }
-    
-    }
-    
-    // function resetHoverEffect(span, originalVrot) {
-    //     span.style.fontVariationSettings = `'vrot' ${originalVrot}`;
-    //     const imageContainer = document.getElementById('image-container');
-    //     imageContainer.style.opacity = '0';
-    // }
-
-    function resetHoverEffect(span) {
-        const imageContainer = document.getElementById('image-container');
-        imageContainer.style.opacity = '0';
-
-        const infotextContainer = document.getElementById('infotext-container');
-        if(!mediaQuery.matches){
-            infotextContainer.textContent = " ";
-        }
-    }
-
-
-
-}); // end of DOMContentLoaded
-
