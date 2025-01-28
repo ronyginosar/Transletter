@@ -1,6 +1,10 @@
 :root{
     --vrot-letter-range: 50;
 }
+
+/* note: lot's of old code since used to be including freeform and controllers. leaving if needed in future */
+
+
 #wrapper{
     position: absolute;
     inset: 0;

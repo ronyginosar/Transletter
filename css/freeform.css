@@ -6,15 +6,12 @@ html,body{
     height: 100%;
 }
 
+/* note: lot's of old code since used to be a part of letter-range.html. leaving if needed in future */
+
 
 #wrapper_{
-    /* position: absolute; */
-    /* inset: 0; */
-    /* TODO what do these do? */
-
     /* quick fix */
     height: 80%;
-
 
     display: flex;
     flex-direction: column;

@@ -1,8 +1,5 @@
-/* TODO clean */
-
 :root {
-    --imagecontainerdims: 18em;
-    /* --imagecontainerdims: 70%; */
+    --imagecontainerdims: 18em; /* 70% */
 }
 
 .flex-container {
@@ -32,37 +29,16 @@
 span {
     /* position: absolute; Absolute positioning for translation */
     display: inline-block;
-    /* display: block; */
-    /* transition: transform 0.1s ease-out; Smooth transformation */
-    /* line-height: 14%; */
-    /* display:block; */
-    
-    /* height:80%; */
     overflow:hidden;
     background-color: transparent;
-    /* top:-2em; */
     vertical-align: top;
     transition: transform 0.5s ease;
-
-
 }
-
-/* .lineDiv { */
-    /* background-color: cadetblue; */
-    /* height: 20%; */
-/* } */
 
 #text-container {
     position: relative;
     width: 100%;
-    /* height: 200vh; */
     height: 100vh;
-    /* font-size: 40px; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
-    
 }
 
 body {
@@ -81,7 +57,6 @@ body {
     width:  var(--imagecontainerdims);
     height: var(--imagecontainerdims);
     background-size: cover;
-    /* background-color: brown; */
     /* initial opacity, mainly controlled by js */
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -92,21 +67,15 @@ body {
     #image-container{
         /* set in js */
         top:15%;
-        
     }
 }
 
 .span_infotext{
     margin-right: 1em;
-    /* font-size: 0.1em; */
     vertical-align: bottom;
-    /* transform: translateY(-15px); */
     transform: translateY(-1.5em);
     color: var(--slider-gray);
-    /* width: 10%; */
-
     font-size: 0.07em;
-    /* line-height: 2.3em; */
     width: 10%;
     line-height: normal;
 }

@@ -6,9 +6,6 @@ html,body{
     display: flex;
     justify-content: center;
     height: 100%;
-    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
-    /* padding-left: var(--page-side-padding);
-    padding-right: var(--page-side-padding); */
     flex-direction: column;
 }
 
@@ -18,7 +15,6 @@ html,body{
     justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
-    /* font-size: 1.2vw; */
     /* based on title size */
     font-size: 0.09em;
     line-height: 2.95em;
@@ -74,49 +70,6 @@ html,body{
 #logoPara nobr span:nth-of-type(6){
     animation-name: charAnim-6;
     animation-delay: 0ms;
-}
-
-@keyframes charAnim-1 {
-    0%{font-variation-settings:     'vrot' 100;}
-    45%{font-variation-settings:    'vrot' 700;}
-    55%{font-variation-settings:    'vrot' 700;}
-    90%{font-variation-settings:    'vrot' 100;}
-    100%{font-variation-settings:   'vrot' 100;}
-}
-@keyframes charAnim-2 {
-    0%{font-variation-settings:     'vrot' 200;}
-    45%{font-variation-settings:    'vrot' 700;}
-    55%{font-variation-settings:    'vrot' 700;}
-    90%{font-variation-settings:    'vrot' 200;}
-    100%{font-variation-settings:   'vrot' 200;}
-}
-@keyframes charAnim-3 {
-    0%{font-variation-settings: 'vrot' 300;  }
-    45%{font-variation-settings: 'vrot' 700; }
-    55%{font-variation-settings: 'vrot' 700; }
-    90%{font-variation-settings: 'vrot' 300; }
-    100%{font-variation-settings: 'vrot' 300;}
-}
-@keyframes charAnim-4 {
-    0%{font-variation-settings: 'vrot' 400; }
-    45%{font-variation-settings: 'vrot' 700;}
-    55%{font-variation-settings: 'vrot' 700;}
-    90%{font-variation-settings: 'vrot' 400;}
-    100%{font-variation-settings: 'vrot' 400;}
-}
-@keyframes charAnim-5 {
-    0%{font-variation-settings: 'vrot' 500; }
-    45%{font-variation-settings: 'vrot' 700;}
-    55%{font-variation-settings: 'vrot' 700;}
-    90%{font-variation-settings: 'vrot' 500;}
-    100%{font-variation-settings:'vrot' 500;}
-}
-@keyframes charAnim-6 {
-    0%{font-variation-settings: 'vrot' 600;  }
-    45%{font-variation-settings: 'vrot' 700; }
-    55%{font-variation-settings: 'vrot' 700; }
-    90%{font-variation-settings: 'vrot' 600; }
-    100%{font-variation-settings: 'vrot' 600;}
 }
 
 @keyframes charAnim-1 {
