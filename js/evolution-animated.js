@@ -329,25 +329,103 @@ document.addEventListener('DOMContentLoaded', function() {
 
             lineDiv.appendChild(span);
 
-            // Hover effect
-            span.addEventListener('mouseenter', () => { /// HIGH PRIORITY
-                // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
-                handleHoverEffect(span, globalCharIndex);
-            });
+            // // Hover effect
+            // span.addEventListener('mouseenter', () => { /// HIGH PRIORITY
+            //     // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
+            //     handleHoverEffect(span, globalCharIndex);
+            // });
             
             // Hover-end effect solution for touch devices HIGH PRIORITY
             const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
             if (isTouchDevice) {
+                // Prevent iOS double-tap zoom (new)
+                // span.style.touchAction = 'manipulation';
 
+                // spans.forEach((span) => {
+                    // Prevent double-tap zoom and text selection
+                    span.style.touchAction = 'manipulation';
+                    span.style.userSelect = 'none'; // Prevent text selection
+                    span.style.webkitUserSelect = 'none'; // For older Safari versions
+            
+                    // Prevent long-press context menu
+                    span.addEventListener('contextmenu', (event) => {
+                        event.preventDefault();
+                    });
+                // });
+
+                // // Mobile : click on mobile (new)
+                // // Add touchstart to trigger hover-like behavior on touch devices
                 // span.addEventListener('touchstart', () => {
                 //     handleHoverEffect(span, globalCharIndex);
                 // });
-                span.addEventListener('touchend', () => {
-                    resetHoverEffect(span); 
+
+                let hoverActive = false; // Track whether the hover effect is active
+
+                // Add touchstart to trigger hover-like behavior on touch devices
+                span.addEventListener('touchstart', (event) => {
+                    event.preventDefault(); // Prevent default touch behavior
+
+                    if (!hoverActive) {
+                        // Activate hover effect on the first touch
+                        handleHoverEffect(span, globalCharIndex);
+                        hoverActive = true;
+                    } else {
+                        // Reset hover effect on the second touch
+                        handleHoverEffect(span, globalCharIndex); // quick fix s.t. the toggle is only for the image and not the vrot change
+                        resetHoverEffect(span);
+                        hoverActive = false;
+                    }
                 });
+
+                // option:
+                // span.addEventListener('touchstart', (event) => {
+                //     event.preventDefault(); // Prevent default touch behavior
+                //     handleHoverEffect(span, globalCharIndex);
+                // });
+
+                // todo
+                // span.addEventListener('touchend', () => {
+                //     resetHoverEffect(span); 
+                // });
+
+                // Add touchend to reset the hover effect with a delay
+                // span.addEventListener('touchend', (event) => {
+                //     event.preventDefault(); // Prevent default touch behavior
+
+                //     // Delay resetting the hover effect to give the user time to see it
+                //     setTimeout(() => {
+                //         resetHoverEffect(span);
+                //     }, 1200); // Adjust delay (in milliseconds) as needed
+                // });
+
+                // option:
+                // span.addEventListener('touchend', (event) => {
+                //     event.preventDefault(); // Prevent default touch behavior
+                //     resetHoverEffect(span);
+                // });
+
+                // option:
+                // Fallback for click on touch devices:
+                // span.addEventListener('click', (event) => {
+                //     event.preventDefault();
+                //     handleHoverEffect(span, globalCharIndex);
+            
+                //     // Simulate hover reset after a short delay
+                //     setTimeout(() => {
+                //         resetHoverEffect(span);
+                //     }, 4000); // Adjust the delay as needed
+                // });
+
             } else {
+                // Desktop devices: hover effects
+
+                // Hover effect
+                span.addEventListener('mouseenter', () => {
+                    // console.log('hover', globalCharIndex, lineIndex , line.length , charIndex);
+                    handleHoverEffect(span, globalCharIndex);
+                });
+
                 span.addEventListener('mouseleave', () => {
-                    // resetHoverEffect(span, randomVrot);
                     resetHoverEffect(span); 
                 });
             }
