@@ -49,17 +49,55 @@ const mediaQuery = window.matchMedia('(max-width: 768px)');
             document.querySelector(':root').style.setProperty('--vrot', window.vrotScroll);
         }
 
-        // Attach the scroll event
-        window.addEventListener('wheel', function(event) {
-            if (Math.abs(event.deltaY) > epsilonScroll) { // Ignore small scroll events
-                // console.log('wheel event', event.deltaY);
-                // Detect the scroll direction
-                const isScrollingDown = event.deltaY > 0;
+        // // Attach the scroll event
+        // window.addEventListener('wheel', function(event) {
+        //     console.log('wheel event', event.deltaY);
+        //     if (Math.abs(event.deltaY) > epsilonScroll) { // Ignore small scroll events
+        //         // console.log('wheel event', event.deltaY);
+        //         // Detect the scroll direction
+        //         const isScrollingDown = event.deltaY > 0;
 
-                // Call the changevrot function with the direction
-                changevrot(isScrollingDown);
-            }
-        });
+        //         // Call the changevrot function with the direction
+        //         changevrot(isScrollingDown);
+        //     }
+        // });
+
+        // new:
+
+        // Scroll speed modifiers
+const trackpadMultiplier = 1; // Normal speed for trackpad
+const mouseWheelMultiplier = 7; // Boosted speed for mouse wheel
+
+window.addEventListener('wheel', function(event) {
+
+    if (Math.abs(event.deltaY) > epsilonScroll) { // Ignore small scroll events
+        console.log('wheel event', event.deltaY);
+        
+        // Detect the scroll direction
+        const isScrollingDown = event.deltaY > 0;
+
+        // Detect if it's a mouse wheel:
+        const isMouseWheel = Math.abs(event.deltaY) > 10 || !Number.isInteger(event.deltaY);
+        // - Large deltaY (>50) → Mouse wheel
+        // - Non-integer deltaY → Mouse wheel (trackpads tend to have integer values)
+
+        // Adjust the speed based on input type
+        const adjustedSpeed = isMouseWheel ? vrotScroll_Speed * mouseWheelMultiplier 
+                                           : vrotScroll_Speed * trackpadMultiplier;
+
+        // Temporarily increase the speed
+        const originalSpeed = vrotScroll_Speed;
+        vrotScroll_Speed = adjustedSpeed;
+
+        // Call the function
+        changevrot(isScrollingDown);
+
+        // Restore original speed after execution
+        vrotScroll_Speed = originalSpeed;
+    }
+});
+
+
 
         }
 
