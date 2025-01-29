@@ -14,25 +14,18 @@ body {
     /* font-size: xx-small; */
 }
 
+/* note: 2 sections share this, they used to be one section. */
+
 #research-page{
     display: flex;
     flex-direction: column;
     /* justify-content: space-evenly; */
     justify-content: flex-end;
     align-items: center;
-    /* TEST */
-    /* height: 130vh;  */
-    /* height: 70vh;  */
-    /* height: 80%;  */
-    /* height: 70%;  */
-    /* flex: 0 0 70%; */
 
     /* not using top padding here, it's already not using the entire 100% height */
-    /* padding: var(--iframe-inner-top-bottom-padding) var(--page-side-padding); */
     padding-right: var(--page-side-padding);
     padding-left: var(--page-side-padding);
-    /* background-color: rgb(196, 20, 20); */
-
     flex: 0 0 100%;
 }
 

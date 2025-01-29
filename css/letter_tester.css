@@ -21,7 +21,6 @@ html{
     }
 }
 
-
 #wrapper{
     font-size: var(--title-font-size);
     display: flex;
@@ -59,7 +58,6 @@ p{
 
 .container{
     padding-top: 50px; 
-    /* background-color: var(--element-color); */
     width: 100%;            /* Fill 100% of the container's width */
     font-size: inherit;
 }
@@ -92,7 +90,6 @@ textarea {
 
     width: 90%;
     resize: none;           /* Disable corner resize functionality */
-    /* white-space: normal;    /* Allow text to break into lines */
     white-space: pre-wrap; /* Preserve spaces and new lines */
     overflow-wrap: break-word; /* Break words if they are too long */
     word-wrap: break-word;  /* Ensure word-breaking works in all browsers */
@@ -133,7 +130,7 @@ textarea#text_byBlock{
     font-size: inherit;
     /* line-height: 50%; */
     /* TODO cut bottom */
-    
+
     vertical-align: top;
     caret-color: var(--background-color); /* Blinking caret */
     font-variation-settings: "vrot" var(--vrot-letter-tester-title);
