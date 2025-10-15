@@ -344,7 +344,8 @@ section .tester_wrapper{
     height: 100%;
     border: none;
   }
-  
+
+
   .technology_title {
     flex: 0 0 50%; /* Prevent title from shrinking */
     /* font-size: 0.1em; */

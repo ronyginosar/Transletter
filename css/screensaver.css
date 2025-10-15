@@ -2,6 +2,8 @@
 html,body{
     height: 100%;
     font-size: var(--title-font-size);
+    cursor: url("../assets/technology_cursor.svg") 8 8, auto !important;
+    /* cursor: url("../assets/technology_cursor.png"); */
 }
 .screensaver {
     /* display: flex; */
