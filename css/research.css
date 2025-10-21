@@ -190,6 +190,7 @@ body {
     align-items: center;
     font-size: 3.5em;
     margin: 0 5px;
+    cursor: default;
 }
 
 #divider {
